@@ -146,6 +146,10 @@
   max-width: 1024px
 }
 
+.max-w-\[80\%\] {
+  max-width: 80%
+}
+
 .flex-none {
   flex: none
 }

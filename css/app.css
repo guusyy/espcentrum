@@ -587,6 +587,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 1024px;
 }
 
+.max-w-\[80\%\] {
+  max-width: 80%;
+}
+
 .flex-none {
   flex: none;
 }
