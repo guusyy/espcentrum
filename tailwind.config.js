@@ -27,6 +27,9 @@ module.exports = {
             'md': '768px',
             'lg': '1024px',
             'xl': tailpress.theme('settings.layout.wideSize', theme)
+        },
+        fontFamily: {
+          'sans': 'Orkney'
         }
     },
     plugins: [

@@ -79,16 +79,16 @@
           <h1 class="text-3xl lg:text-5xl tracking-tight font-normal my-4">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
-          <p class="text-gray-700 text-lg font-medium my-5 max-w-[80%]">
+          <p class="text-dark text-lg my-8 max-w-[80%]">
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
-          <div class="flex gap-3 max-w-[80%]">
+          <div class="flex gap-3 mt-8 max-w-[80%]">
             <a href="https://github.com/jeffreyvr/tailpress"
               class="w-full sm:w-auto flex-none bg-primary text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               Over Movida
             </a>
             <a href="https://github.com/jeffreyvr/tailpress"
-              class="w-full sm:w-auto flex-none bg-white border-primary text-gray-800 text-lg leading-6 font-semibold py-3 px-6 border rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="w-full sm:w-auto flex-none bg-white border-primary text-gray-800 text-lg leading-6 font-semibold py-3 px-6 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               Programma's
             </a>
           </div>
