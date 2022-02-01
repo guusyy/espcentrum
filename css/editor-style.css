@@ -177,10 +177,6 @@
   justify-content: space-between
 }
 
-.gap-4 {
-  gap: 1rem
-}
-
 .gap-3 {
   gap: 0.75rem
 }
@@ -229,14 +225,19 @@
   background-color: rgb(249 250 251 / var(--tw-bg-opacity))
 }
 
-.bg-white {
+.bg-light {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+  background-color: rgb(251 252 255 / var(--tw-bg-opacity))
 }
 
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
 .p-4 {
@@ -268,16 +269,6 @@
   padding-bottom: 1.5rem
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem
-}
-
 .pb-12 {
   padding-bottom: 3rem
 }
@@ -286,29 +277,22 @@
   text-align: center
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1
+.text-2xl {
+  font-size: 31px;
+  line-height: 43.4px
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem
+.text-base {
+  font-size: 18px
 }
 
 .text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem
+  font-size: 21px
 }
 
 .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem
+  font-size: 38px;
+  line-height: 53.2px
 }
 
 .font-light {
@@ -327,24 +311,12 @@
   font-weight: 400
 }
 
-.font-semibold {
-  font-weight: 600
-}
-
 .uppercase {
   text-transform: uppercase
 }
 
-.leading-6 {
-  line-height: 1.5rem
-}
-
 .leading-tight {
   line-height: 1.25
-}
-
-.tracking-tight {
-  letter-spacing: -0.025em
 }
 
 .text-gray-800 {
@@ -472,7 +444,7 @@
 }
 
 .wp-caption-text {
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: #4b5563
 }
 
@@ -541,8 +513,8 @@ body {
   }
 
   .md\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem
+    font-size: 38px;
+    line-height: 53.2px
   }
 }
 
@@ -589,8 +561,8 @@ body {
     padding: 0px
   }
 
-  .lg\:text-5xl {
-    font-size: 3rem;
-    line-height: 1
+  .lg\:text-3xl {
+    font-size: 38px;
+    line-height: 53.2px
   }
 }

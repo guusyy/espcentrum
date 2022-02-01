@@ -6,9 +6,5 @@
 
 @font-face {
   font-family: 'Orkney';
-  src: url('/assets/fonts/Orkney-Regular.woff2');
-}
-
-html {
-  background: red;
+  src: url('Orkney-Medium.woff2');
 }

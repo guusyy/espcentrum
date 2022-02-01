@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-light text-gray-900 antialiased text-base' ); ?>>
 
 <?php do_action( 'movida_theme_site_before' ); ?>
 
@@ -24,7 +24,7 @@
 				<div class="flex justify-between items-center">
 					<div>
 						<?php if ( has_custom_logo() ) { ?>
-                            <?php the_custom_logo(); ?>
+              <?php the_custom_logo(); ?>
 						<?php } else { ?>
 							<div class="text-lg uppercase">
 								<a href="<?php echo get_bloginfo( 'url' ); ?>" class="font-extrabold text-lg uppercase">
@@ -74,21 +74,21 @@
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
-			<div class="container mx-auto my-12 border-b pb-12 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+			<div class="container mx-auto my-12 border-b pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
         <div class="mb-40">
-          <h1 class="text-3xl lg:text-5xl tracking-tight font-normal my-4">
+          <h1 class="text-3xl lg:text-3xl font-normal my-4">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
-          <p class="text-dark text-lg my-8 max-w-[80%]">
+          <p class="text-dark my-8 max-w-[80%]">
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
           <div class="flex gap-3 mt-8 max-w-[80%]">
             <a href="https://github.com/jeffreyvr/tailpress"
-              class="w-full sm:w-auto flex-none bg-primary text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               Over Movida
             </a>
             <a href="https://github.com/jeffreyvr/tailpress"
-              class="w-full sm:w-auto flex-none bg-white border-primary text-gray-800 text-lg leading-6 font-semibold py-3 px-6 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="w-full sm:w-auto flex-none bg-white border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               Programma's
             </a>
           </div>

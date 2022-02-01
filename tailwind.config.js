@@ -29,7 +29,24 @@ module.exports = {
             'xl': tailpress.theme('settings.layout.wideSize', theme)
         },
         fontFamily: {
-          'sans': 'Orkney'
+          'sans': 'Orkney',
+          'serif': 'Orkney'
+        },
+        fontSize: {
+          'base': '18px',
+          'lg': '21px',
+          'xl': ['25px', {
+            lineHeight: '35px',
+          }],
+          '2xl': ['31px', {
+            lineHeight: '43.4px',
+          }],
+          '3xl': ['38px', {
+            lineHeight: '53.2px',
+          }],
+          '4xl': ['48px', {
+            lineHeight: '67.2px',
+          }],
         }
     },
     plugins: [
