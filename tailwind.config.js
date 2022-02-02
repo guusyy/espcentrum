@@ -33,6 +33,7 @@ module.exports = {
           'serif': 'Orkney'
         },
         fontSize: {
+          'small': '16px',
           'base': '18px',
           'lg': '21px',
           'xl': ['25px', {
