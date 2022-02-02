@@ -113,6 +113,14 @@
   height: 1.5rem
 }
 
+.h-10 {
+  height: 2.5rem
+}
+
+.h-20 {
+  height: 5rem
+}
+
 .min-h-screen {
   min-height: 100vh
 }
@@ -466,6 +474,39 @@ body {
 
 .wp-block[data-align=full] {
   max-width: 100%
+}
+
+.last\:rounded-2xl:last-child {
+  border-radius: 1rem
+}
+
+.last\:border-2:last-child {
+  border-width: 2px
+}
+
+.last\:border-primary:last-child {
+  --tw-border-opacity: 1;
+  border-color: rgb(9 12 155 / var(--tw-border-opacity))
+}
+
+.last\:bg-white:last-child {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.last\:py-2:last-child {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem
+}
+
+.last\:px-4:last-child {
+  padding-left: 1rem;
+  padding-right: 1rem
+}
+
+.last\:text-gray-800:last-child {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity))
 }
 
 .focus\:outline-none:focus {

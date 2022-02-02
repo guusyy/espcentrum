@@ -22,7 +22,7 @@
 		<div class="mx-auto container">
 			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
 				<div class="flex justify-between items-center">
-					<div>
+					<div class="h-10">
 						<?php if ( has_custom_logo() ) { ?>
               <?php the_custom_logo(); ?>
 						<?php } else { ?>
@@ -59,9 +59,9 @@
 					array(
 						'container_id'    => 'primary-menu',
 						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
-						'menu_class'      => 'lg:flex lg:-mx-4',
+						'menu_class'      => 'lg:flex lg:-mx-4 items-center',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4',
+						'li_class'        => 'lg:mx-4 font-bold last:bg-white last:border-primary last:text-gray-800 last:py-2 last:px-4 last:border-2 last:rounded-2xl',
 						'fallback_cb'     => false,
 					)
 				);
@@ -79,7 +79,7 @@
           <h1 class="text-3xl lg:text-3xl font-bold my-4">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
-          <p class="text-dark my-8 max-w-[80%]">
+          <p class="text-dark my-8 max-w-[80%] justify-">
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
           <div class="flex gap-3 mt-8 max-w-[80%]">
