@@ -76,7 +76,7 @@
 		<?php if ( is_front_page() ) : ?>
 			<div class="container mx-auto my-12 border-b pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
         <div class="mb-40">
-          <h1 class="text-3xl lg:text-3xl font-normal my-4">
+          <h1 class="text-3xl lg:text-3xl font-bold my-4">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
           <p class="text-dark my-8 max-w-[80%]">

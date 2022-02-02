@@ -277,6 +277,10 @@
   text-align: center
 }
 
+.align-middle {
+  vertical-align: middle
+}
+
 .text-2xl {
   font-size: 31px;
   line-height: 43.4px
