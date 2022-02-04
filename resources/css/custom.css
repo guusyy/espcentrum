@@ -64,3 +64,13 @@
 .sub-menu {
   display: none;
 }
+
+#menu-sub-footer {
+  @apply flex gap-8;
+}
+
+.movida-footer {
+  & a:hover {
+    text-decoration: underline;
+  }
+}

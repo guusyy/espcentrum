@@ -351,3 +351,51 @@ function themename_customize_register($wp_customize){
 }
 
 add_action('customize_register', 'themename_customize_register');
+
+function register_custom_widget_areas() {
+  register_sidebar(
+    array(
+    'id' => 'footer-col-one',
+    'name' => esc_html__( 'Footer column one', 'movida' ),
+    'description' => esc_html__( 'Footer column one', 'movida' ),
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'after_title' => '</h3></div>'
+    )
+  );
+  register_sidebar(
+    array(
+    'id' => 'footer-col-two',
+    'name' => esc_html__( 'Footer column two', 'movida' ),
+    'description' => esc_html__( 'Footer column two', 'movida' ),
+    'before_widget' => '<div id="%1$s" class="movida-widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'after_title' => '</h3></div>'
+    )
+  );
+  register_sidebar(
+    array(
+    'id' => 'footer-col-three',
+    'name' => esc_html__( 'Footer column three', 'movida' ),
+    'description' => esc_html__( 'Footer column three', 'movida' ),
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'after_title' => '</h3></div>'
+    )
+  );
+  register_sidebar(
+    array(
+    'id' => 'sub-footer',
+    'name' => esc_html__( 'Sub footer', 'movida' ),
+    'description' => esc_html__( 'Sub footer', 'movida' ),
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'after_title' => '</h3></div>'
+    )
+  );
+}
+add_action( 'widgets_init', 'register_custom_widget_areas' );

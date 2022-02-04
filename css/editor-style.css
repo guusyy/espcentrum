@@ -51,6 +51,11 @@
   margin-right: auto
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem
+}
+
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem
@@ -59,11 +64,6 @@
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem
 }
 
 .mb-8 {
@@ -174,10 +174,6 @@
   grid-template-columns: repeat(3, minmax(0, 1fr))
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr))
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr))
 }
@@ -198,24 +194,16 @@
   justify-content: space-between
 }
 
+.gap-8 {
+  gap: 2rem
+}
+
 .gap-3 {
   gap: 0.75rem
 }
 
 .gap-2 {
   gap: 0.5rem
-}
-
-.gap-4 {
-  gap: 1rem
-}
-
-.gap-5 {
-  gap: 1.25rem
-}
-
-.gap-8 {
-  gap: 2rem
 }
 
 .rounded {
@@ -305,10 +293,6 @@
   padding-bottom: 1.5rem
 }
 
-.pt-5 {
-  padding-top: 1.25rem
-}
-
 .pb-12 {
   padding-bottom: 3rem
 }
@@ -322,6 +306,10 @@
   line-height: 43.4px
 }
 
+.text-small {
+  font-size: 16px
+}
+
 .text-base {
   font-size: 18px
 }
@@ -333,10 +321,6 @@
 .text-3xl {
   font-size: 38px;
   line-height: 53.2px
-}
-
-.text-small {
-  font-size: 16px
 }
 
 .font-light {
