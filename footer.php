@@ -10,7 +10,7 @@
 <footer class="movida-footer bg-primary text-white text-small" role="contentinfo">
 	<?php do_action( 'movida_theme_footer' ); ?>
 
-  <div class="container mx-auto grid grid-cols-3 my-10">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 my-10">
     <div>
       <?php if ( is_active_sidebar( 'footer-col-one' ) ) : ?>
         <?php dynamic_sidebar( 'footer-col-one' ); ?>
@@ -28,9 +28,9 @@
     </div>
   </div>
 
-	<div class="container mx-auto text-center border-t py-8">
-    <div class="flex justify-between">
-      <div class="flex gap-8">
+	<div class="container mx-auto text-center pb-8">
+    <div class="flex justify-between flex-col-reverse md:flex-row items-start border-t pt-8">
+      <div class="flex gap-8 flex-col md:flex-row items-start">
         <?php echo date_i18n( 'Y' );?> <?php echo get_bloginfo( 'name' );?>
         <?php if ( is_active_sidebar( 'sub-footer' ) ) : ?>
           <?php dynamic_sidebar( 'sub-footer' ); ?>

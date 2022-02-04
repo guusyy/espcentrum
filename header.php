@@ -76,13 +76,13 @@
 		<?php if ( is_front_page() ) : ?>
 			<div class="container mx-auto my-12 border-b pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
         <div class="mb-40">
-          <h1 class="text-3xl lg:text-3xl font-bold my-4">
+          <h1 class="text-3xl lg:text-3xl font-bold my-4 text-center md:text-left">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
-          <p class="text-dark my-8 max-w-[80%] justify-">
+          <p class="text-dark my-8 max-w-[100%] md:max-w-[80%] justify-">
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
-          <div class="flex gap-3 mt-8 max-w-[80%]">
+          <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
             <a href="https://github.com/jeffreyvr/tailpress"
               class="w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               Over Movida

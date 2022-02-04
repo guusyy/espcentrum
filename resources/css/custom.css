@@ -66,7 +66,7 @@
 }
 
 #menu-sub-footer {
-  @apply flex gap-8;
+  @apply flex  flex-col md:flex-row items-start gap-8;
 }
 
 .movida-footer {
