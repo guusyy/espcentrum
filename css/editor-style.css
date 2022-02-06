@@ -688,4 +688,9 @@ body {
     font-size: 38px;
     line-height: 53.2px
   }
+
+  .lg\:text-4xl {
+    font-size: 48px;
+    line-height: 67.2px
+  }
 }

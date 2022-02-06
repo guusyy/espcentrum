@@ -97,9 +97,49 @@
           <img src="http://movida.local/wp-content/uploads/2022/01/movida-hero-image-839x1024.png" alt="">
         </div>
 			</div>
+      <div class="container mx-auto my-12 pb-12 grid grid-cols-1">
+        <div>
+          <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left">
+            <?php echo get_option( 'movida_programma_title' ); ?>
+          </h2>
+          <div>
+            <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownspecialist">
+              <?php 
+                global $loop;
+                
+                $all_posts = array( 'post_type' => 'programma', 'posts_per_page' => -1 );
+                $loop = new WP_Query( $all_posts );
+
+                if($loop->have_posts()){
+                  while($loop->have_posts()){
+                        $loop->the_post();
+                    ?>
+
+                    <li>
+                      <div>
+                        <?php the_post_thumbnail(); ?>
+                        <h3>
+                          <?php the_title(); ?>
+                        </h3>
+                        <p>
+                          <?php the_excerpt(); ?>
+                        </p>
+                        <a href="<?php the_permalink(); ?>">Meer info</a>
+                      </div>
+                    </li>
+                    
+                    <?php
+                  }
+                }
+                wp_reset_query();
+              ?>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="container mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
         <div class="col-span-12 md:col-start-8 md:col-span-5">
-          <h2 class="text-4xl lg:text-3xl font-bold my-4 text-center md:text-left">
+          <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left">
             <?php echo get_option( 'movida_contact_title' ); ?>
           </h2>
           <p class="text-dark my-8 max-w-[100%] md:max-w-[80%] justify-">

@@ -241,6 +241,38 @@ function themename_customize_register($wp_customize){
   ));
 
   //  =============================
+  //  = Programma's title                =
+  //  =============================
+  $wp_customize->add_setting('movida_programma_title', array(
+    'default'        => "Onze programma's",
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_programma_title_control', array(
+      'label'      => __("Programma's titel", 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_programma_title',
+  ));
+
+  //  =============================
+  //  = Programma's meer info                =
+  //  =============================
+  $wp_customize->add_setting('movida_programma_more-info', array(
+    'default'        => "Meer info",
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_programma_more-info_control', array(
+      'label'      => __("Programma link label", 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_programma_more-info',
+  ));
+
+  //  =============================
   //  = Contact title                =
   //  =============================
   $wp_customize->add_setting('movida_contact_title', array(
@@ -342,142 +374,6 @@ function themename_customize_register($wp_customize){
 	function sanitize_text( $text ) {
 	    return sanitize_text_field( $text );
 	}
-
-  //  =============================
-  //  = Radio Input               =
-  //  =============================
-  $wp_customize->add_setting('themename_theme_options[color_scheme]', array(
-      'default'        => 'value2',
-      'capability'     => 'edit_theme_options',
-      'type'           => 'option',
-  ));
-
-  $wp_customize->add_control('movida_homepage_settings', array(
-      'label'      => __('Color Scheme', 'themename'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'themename_theme_options[color_scheme]',
-      'type'       => 'radio',
-      'choices'    => array(
-          'value1' => 'Choice 1',
-          'value2' => 'Choice 2',
-          'value3' => 'Choice 3',
-      ),
-  ));
-
-
-  //  =============================
-  //  = Select Box                =
-  //  =============================
-   $wp_customize->add_setting('themename_theme_options[header_select]', array(
-      'default'        => 'value2',
-      'capability'     => 'edit_theme_options',
-      'type'           => 'option',
-
-  ));
-  $wp_customize->add_control( 'example_select_box', array(
-      'settings' => 'themename_theme_options[header_select]',
-      'label'   => 'Select Something:',
-      'section' => 'movida_homepage_settings',
-      'type'    => 'select',
-      'choices'    => array(
-          'value1' => 'Choice 1',
-          'value2' => 'Choice 2',
-          'value3' => 'Choice 3',
-      ),
-  ));
-
-
-  //  =============================
-  //  = Image Upload              =
-  //  =============================
-  $wp_customize->add_setting('themename_theme_options[image_upload_test]', array(
-      'default'           => 'image.jpg',
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'image_upload_test', array(
-      'label'    => __('Image Upload Test', 'themename'),
-      'section'  => 'movida_homepage_settings',
-      'settings' => 'themename_theme_options[image_upload_test]',
-  )));
-
-  //  =============================
-  //  = File Upload               =
-  //  =============================
-  $wp_customize->add_setting('themename_theme_options[upload_test]', array(
-      'default'           => 'arse',
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control( new WP_Customize_Upload_Control($wp_customize, 'upload_test', array(
-      'label'    => __('Upload Test', 'themename'),
-      'section'  => 'movida_homepage_settings',
-      'settings' => 'themename_theme_options[upload_test]',
-  )));
-
-
-  //  =============================
-  //  = Color Picker              =
-  //  =============================
-  $wp_customize->add_setting('themename_theme_options[link_color]', array(
-      'default'           => '#000',
-      'sanitize_callback' => 'sanitize_hex_color',
-      'capability'        => 'edit_theme_options',
-      'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'link_color', array(
-      'label'    => __('Link Color', 'themename'),
-      'section'  => 'movida_homepage_settings',
-      'settings' => 'themename_theme_options[link_color]',
-  )));
-
-
-  //  =============================
-  //  = Page Dropdown             =
-  //  =============================
-  $wp_customize->add_setting('themename_theme_options[page_test]', array(
-      'capability'     => 'edit_theme_options',
-      'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('themename_page_test', array(
-      'label'      => __('Page Test', 'themename'),
-      'section'    => 'movida_homepage_settings',
-      'type'    => 'dropdown-pages',
-      'settings'   => 'themename_theme_options[page_test]',
-  ));
-
-  // =====================
-  //  = Category Dropdown =
-  //  =====================
-  $categories = get_categories();
-  $cats = array();
-  $i = 0;
-  foreach($categories as $category){
-      if($i==0){
-          $default = $category->slug;
-          $i++;
-      }
-      $cats[$category->slug] = $category->name;
-  }
-
-  $wp_customize->add_setting('_s_f_slide_cat', array(
-      'default'        => $default
-  ));
-  $wp_customize->add_control( 'cat_select_box', array(
-      'settings' => '_s_f_slide_cat',
-      'label'   => 'Select Category:',
-      'section'  => '_s_f_home_slider',
-      'type'    => 'select',
-      'choices' => $cats,
-  ));
 }
 
 add_action('customize_register', 'themename_customize_register');
