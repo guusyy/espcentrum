@@ -473,6 +473,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
+.col-span-12 {
+  grid-column: span 12 / span 12;
+}
+
+.col-start-7 {
+  grid-column-start: 7;
+}
+
+.col-start-8 {
+  grid-column-start: 8;
+}
+
 .m-8 {
   margin: 2rem;
 }
@@ -714,6 +730,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 83 83 / var(--tw-bg-opacity));
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -774,6 +795,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl {
   font-size: 38px;
   line-height: 53.2px;
+}
+
+.text-4xl {
+  font-size: 48px;
+  line-height: 67.2px;
 }
 
 .font-light {
@@ -1088,6 +1114,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 768px) {
+  .md\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .md\:col-start-8 {
+    grid-column-start: 8;
+  }
+
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
@@ -1111,6 +1145,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
 
   .md\:flex-row {

@@ -134,32 +134,6 @@ function create_posttype() {
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
 
-// function movida_customize_register($wp_customize){
-   
-//   $wp_customize->add_section('movida_editor', array(
-//       'title'       => __('Movida homepagina editor', 'movida'),
-//       'description' => '',
-//       'priority'    => 1,
-//   ));
-
-//   //  =============================
-//   //  = Text Input                =
-//   //  =============================
-//   $wp_customize->add_setting('hero_title', array(
-//       'default'        => 'Centrum voor interdisciplinaire diagnostiek en behandeling',
-//       'capability'     => 'edit_theme',
-//       'type'           => 'option',
-//   ));
-
-//   $wp_customize->add_control('movida_text_test', array(
-//       'label'      => __('Hero titel', 'movida'),
-//       'section'    => 'movida_editor',
-//       'settings'   => 'hero_title',
-//   ));
-// }
-
-// add_action('customize_register', 'movida_customize_register');
-
 function themename_customize_register($wp_customize){
      
   $wp_customize->add_section('movida_homepage_settings', array(
@@ -169,7 +143,7 @@ function themename_customize_register($wp_customize){
   ));
 
   //  =============================
-  //  = Text Input                =
+  //  = Hero title                =
   //  =============================
   $wp_customize->add_setting('movida_hero_title', array(
       'default'        => 'Centrum voor interdisciplinaire diagnostiek en behandeling',
@@ -185,7 +159,7 @@ function themename_customize_register($wp_customize){
   ));
 
   //  =============================
-  //  = Text Area                 =
+  //  = Hero text                 =
   //  =============================
 
   // Add setting
@@ -207,6 +181,162 @@ function themename_customize_register($wp_customize){
 		    )
 	    )
 	);
+
+  //  =============================
+  //  = Hero link 1               =
+  //  =============================
+  $wp_customize->add_setting('movida_hero_button_one', array(
+    'default'        => 'Over movida',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_hero_button_one_control', array(
+      'label'      => __('Movida button label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_hero_button_one',
+  ));
+
+  $wp_customize->add_setting('movida_hero_button_one_link', array(
+    'default'        => 'over-movida/',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_hero_button_one_link_control', array(
+      'label'      => __('Movida button label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_hero_button_one_link',
+  ));
+
+  //  =============================
+  //  = Hero link 2               =
+  //  =============================
+  $wp_customize->add_setting('movida_hero_button_two', array(
+    'default'        => "Programma's",
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_hero_button_two_control', array(
+      'label'      => __('Movida button two label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_hero_button_two',
+  ));
+
+  $wp_customize->add_setting('movida_hero_button_two_link', array(
+    'default'        => '#programma-s',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_hero_button_two_link_control', array(
+      'label'      => __('Movida button two label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_hero_button_two_link',
+  ));
+
+  //  =============================
+  //  = Contact title                =
+  //  =============================
+  $wp_customize->add_setting('movida_contact_title', array(
+    'default'        => 'We helpen je graag!',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_contact_title_control', array(
+      'label'      => __('Contact titel', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_contact_title',
+  ));
+
+  //  =============================
+  //  = Contact text                 =
+  //  =============================
+
+  // Add setting
+  $wp_customize->add_setting( 'movida_contact_text', array(
+    'default'           => __( 'Ons behandelteam staat voor je klaar. Heb je nog vragen of wil je jouw hulpvraag met ons bespreken? Neem gerust contact met ons op.', 'movida' ),
+    'sanitize_callback' => 'sanitize_text',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+  ) );
+  // Add control
+  $wp_customize->add_control( new WP_Customize_Control(
+      $wp_customize,
+    'movida_contact_text_control',
+        array(
+            'label'    => __( 'Contact Text', 'movida' ),
+            'section'    => 'movida_homepage_settings',
+            'settings' => 'movida_contact_text',
+            'type'     => 'textarea'
+        )
+      )
+  );
+
+  //  =============================
+  //  = Contact link 1               =
+  //  =============================
+  $wp_customize->add_setting('movida_contact_button_one', array(
+    'default'        => 'Contact',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_contact_button_one_control', array(
+      'label'      => __('Movida button label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_contact_button_one',
+  ));
+
+  $wp_customize->add_setting('movida_contact_button_one_link', array(
+    'default'        => 'contact/',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_contact_button_one_link_control', array(
+      'label'      => __('Movida button label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_contact_button_one_link',
+  ));
+
+  //  =============================
+  //  = Contact link 2               =
+  //  =============================
+  $wp_customize->add_setting('movida_contact_button_two', array(
+    'default'        => "Vergoeding & Aanmelding",
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_contact_button_two_control', array(
+      'label'      => __('Movida button two label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_contact_button_two',
+  ));
+
+  $wp_customize->add_setting('movida_contact_button_two_link', array(
+    'default'        => '/vergoeding-aanmelding',
+    'capability'     => 'edit_theme_options',
+    'type'           => 'option',
+
+  ));
+
+  $wp_customize->add_control('movida_contact_button_two_link_control', array(
+      'label'      => __('Movida button two label', 'movida'),
+      'section'    => 'movida_homepage_settings',
+      'settings'   => 'movida_contact_button_two_link',
+  ));
 
  	// Sanitize text
 	function sanitize_text( $text ) {

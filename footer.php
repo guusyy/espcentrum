@@ -37,9 +37,11 @@
         <?php endif; ?>
       </div>
       <div class="flex items-center">
-        <?php if ( is_active_sidebar( 'logo-footer' ) ) : ?>
-          <?php dynamic_sidebar( 'logo-footer' ); ?>
-        <?php endif; ?>
+        <a href="/">
+          <?php if ( is_active_sidebar( 'logo-footer' ) ) : ?>
+            <?php dynamic_sidebar( 'logo-footer' ); ?>
+          <?php endif; ?>
+        </a>
       </div>
     </div>
 	</div>

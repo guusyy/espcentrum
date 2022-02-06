@@ -74,7 +74,7 @@
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
-			<div class="container mx-auto my-12 border-b pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
+			<div class="container mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
         <div class="mb-40">
           <h1 class="text-3xl lg:text-3xl font-bold my-4 text-center md:text-left">
             <?php echo get_option( 'movida_hero_title' ); ?>
@@ -83,18 +83,38 @@
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
-            <a href="http://movida.local/over-movida/"
+            <a href="<?php echo get_option( 'movida_hero_button_one_link' ); ?>"
               class="w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
-              Over Movida
+              <?php echo get_option( 'movida_hero_button_one' ); ?>
             </a>
-            <a href="#programma-s"
+            <a href="<?php echo get_option( 'movida_hero_button_two_link' ); ?>"
               class="w-full sm:w-auto flex-none bg-white border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
-              Programma's
+              <?php echo get_option( 'movida_hero_button_two' ); ?>
             </a>
           </div>
         </div>
         <div>
           <img src="http://movida.local/wp-content/uploads/2022/01/movida-hero-image-839x1024.png" alt="">
+        </div>
+			</div>
+      <div class="container mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
+        <div class="col-span-12 md:col-start-8 md:col-span-5">
+          <h2 class="text-4xl lg:text-3xl font-bold my-4 text-center md:text-left">
+            <?php echo get_option( 'movida_contact_title' ); ?>
+          </h2>
+          <p class="text-dark my-8 max-w-[100%] md:max-w-[80%] justify-">
+            <?php echo get_option( 'movida_contact_text' ); ?>
+          </p>
+          <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
+            <a href="<?php echo get_option( 'movida_contact_button_one_link' ); ?>"
+              class="w-full sm:w-auto flex-none bg-secondary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <?php echo get_option( 'movida_contact_button_one' ); ?>
+            </a>
+            <a href="<?php echo get_option( 'movida_contact_button_two_link' ); ?>"
+              class="w-full sm:w-auto flex-none bg-white border-secondary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              <?php echo get_option( 'movida_contact_button_two' ); ?>
+            </a>
+          </div>
         </div>
 			</div>
 		<?php endif; ?>
