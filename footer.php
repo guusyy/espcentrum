@@ -29,15 +29,17 @@
   </div>
 
 	<div class="container mx-auto text-center pb-8">
-    <div class="flex justify-between flex-col-reverse md:flex-row items-start border-t pt-8">
+    <div class="flex justify-between items-center flex-col-reverse md:flex-row border-t pt-8">
       <div class="flex gap-8 flex-col md:flex-row items-start">
         <?php echo date_i18n( 'Y' );?> <?php echo get_bloginfo( 'name' );?>
         <?php if ( is_active_sidebar( 'sub-footer' ) ) : ?>
           <?php dynamic_sidebar( 'sub-footer' ); ?>
         <?php endif; ?>
       </div>
-      <div>
-        Logo
+      <div class="flex items-center">
+        <?php if ( is_active_sidebar( 'logo-footer' ) ) : ?>
+          <?php dynamic_sidebar( 'logo-footer' ); ?>
+        <?php endif; ?>
       </div>
     </div>
 	</div>

@@ -397,5 +397,16 @@ function register_custom_widget_areas() {
     'after_title' => '</h3></div>'
     )
   );
+  register_sidebar(
+    array(
+    'id' => 'logo-footer',
+    'name' => esc_html__( 'Logo footer', 'movida' ),
+    'description' => esc_html__( 'Logo footer', 'movida' ),
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'after_title' => '</h3></div>'
+    )
+  );
 }
 add_action( 'widgets_init', 'register_custom_widget_areas' );

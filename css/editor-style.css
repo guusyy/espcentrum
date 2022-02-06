@@ -146,10 +146,6 @@
   max-width: 24rem
 }
 
-.max-w-\[80\%\] {
-  max-width: 80%
-}
-
 .max-w-\[100\%\] {
   max-width: 100%
 }
@@ -172,10 +168,6 @@
 
 .list-decimal {
   list-style-type: decimal
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr))
 }
 
 .grid-cols-1 {
@@ -206,20 +198,12 @@
   justify-content: space-between
 }
 
-.justify-items-start {
-  justify-items: start
-}
-
 .gap-8 {
   gap: 2rem
 }
 
 .gap-3 {
   gap: 0.75rem
-}
-
-.gap-2 {
-  gap: 0.5rem
 }
 
 .rounded {
@@ -246,6 +230,10 @@
   border-top-width: 1px
 }
 
+.border-b-2 {
+  border-bottom-width: 2px
+}
+
 .border-primary {
   --tw-border-opacity: 1;
   border-color: rgb(9 12 155 / var(--tw-border-opacity))
@@ -253,6 +241,11 @@
 
 .border-transparent {
   border-color: transparent
+}
+
+.border-secondary {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 83 83 / var(--tw-border-opacity))
 }
 
 .bg-primary {
@@ -299,18 +292,9 @@
   padding-right: 0.75rem
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem
-}
-
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem
-}
-
-.pb-12 {
-  padding-bottom: 3rem
 }
 
 .pb-8 {
@@ -321,8 +305,8 @@
   padding-top: 2rem
 }
 
-.text-left {
-  text-align: left
+.pb-12 {
+  padding-bottom: 3rem
 }
 
 .text-center {
@@ -404,6 +388,11 @@
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(9 12 155 / var(--tw-text-opacity))
 }
 
 .antialiased {
@@ -592,12 +581,12 @@ body {
     max-width: 80%
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr))
-  }
-
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr))
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr))
   }
 
   .md\:flex-row {

@@ -27,6 +27,40 @@
           "color": "#FBFCFF"
         }
       ]
+    },
+    "typography": {
+      "fontSizes": [
+        {
+          "name": "Small",
+          "slug": "small",
+          "size": "16px"
+        },
+        {
+          "slug": "base",
+          "name": "Base",
+          "size": "18px"
+        },
+        {
+          "slug": "large",
+          "name": "Large",
+          "size": "21px"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "25px"
+        },
+        {
+          "slug": "xxl",
+          "name": "2XL",
+          "size": "31px"
+        },
+        {
+          "slug": "xxxl",
+          "name": "3XL",
+          "size": "38px"
+        }
+      ]
     }
   }
 }
