@@ -98,43 +98,48 @@
         </div>
 			</div>
       <div class="container mx-auto my-12 pb-12 grid grid-cols-1">
-        <div>
-          <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left">
+        <div class="relative">
+          <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left text-white">
             <?php echo get_option( 'movida_programma_title' ); ?>
           </h2>
-          <div>
-            <ul class="dropdown-menu scrollable-menu" aria-labelledby="dropdownspecialist">
-              <?php 
-                global $loop;
-                
-                $all_posts = array( 'post_type' => 'programma', 'posts_per_page' => -1 );
-                $loop = new WP_Query( $all_posts );
+          <ul class="grid grid-cols-1 md:grid-cols-3 gap-5 my-12">
+            <?php 
+              global $loop;
+              
+              $all_posts = array( 'post_type' => 'programma', 'posts_per_page' => -1 );
+              $loop = new WP_Query( $all_posts );
 
-                if($loop->have_posts()){
-                  while($loop->have_posts()){
-                        $loop->the_post();
-                    ?>
+              if($loop->have_posts()){
+                while($loop->have_posts()){
+                      $loop->the_post();
+                  ?>
 
-                    <li>
-                      <div>
+                  <li>
+                    <div class="shadow-lg rounded-2xl bg-white overflow-hidden h-full flex flex-col">
+                      <div class="h-44 program-thumbnail">
                         <?php the_post_thumbnail(); ?>
-                        <h3>
-                          <?php the_title(); ?>
-                        </h3>
-                        <p>
-                          <?php the_excerpt(); ?>
-                        </p>
-                        <a href="<?php the_permalink(); ?>">Meer info</a>
                       </div>
-                    </li>
-                    
-                    <?php
-                  }
+                      <div class="p-4 flex flex-col justify-between gap-5 h-full">
+                        <div class="flex flex-col gap-5">
+                          <h3 class="text-xl font-bold">
+                            <?php the_title(); ?>
+                          </h3>
+                          <div class="">
+                            <?php the_excerpt(); ?>
+                          </div>
+                        </div>
+                        <a class="font-bold" href="<?php the_permalink(); ?>">Meer info</a>
+                      </div>
+                    </div>
+                  </li>
+                  
+                  <?php
                 }
-                wp_reset_query();
-              ?>
-            </ul>
-          </div>
+              }
+              wp_reset_query();
+            ?>
+          </ul>
+          <figure class="absolute w-[960px] h-[960px] top-[-150px] bottom-0 left-[-275px] bg-primary rounded-full -z-10"></figure>
         </div>
       </div>
       <div class="container mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
