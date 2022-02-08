@@ -654,6 +654,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 960px;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-\[380px\] {
+  height: 380px;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -848,6 +860,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 83 83 / var(--tw-bg-opacity));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-top {
+  -o-object-position: top;
+     object-position: top;
 }
 
 .p-4 {
@@ -1182,7 +1204,7 @@ Ensure the default browser behavior of the `hidden` attribute.
        object-fit: cover;
   }
 
-.current_page_item:not(:last-child) {
+#primary-menu .current_page_item:not(:last-child) {
   box-sizing: border-box;
   border-bottom-width: 2px;
   --tw-border-opacity: 1;
@@ -1272,6 +1294,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
   }
 
   .md\:w-1\/2 {

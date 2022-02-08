@@ -83,6 +83,6 @@
   }
 }
 
-.current_page_item:not(:last-child) {
+#primary-menu .current_page_item:not(:last-child) {
   @apply border-b-2 box-border border-secondary
 }

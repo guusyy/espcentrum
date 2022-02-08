@@ -206,6 +206,18 @@
   height: 960px;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-\[380px\] {
+  height: 380px;
+}
+
+.max-h-96 {
+  max-height: 24rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -400,6 +412,16 @@
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 83 83 / var(--tw-bg-opacity));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-top {
+  -o-object-position: top;
+     object-position: top;
 }
 
 .p-4 {
@@ -727,6 +749,10 @@ body {
 
   .md\:flex {
     display: flex;
+  }
+
+  .md\:h-96 {
+    height: 24rem;
   }
 
   .md\:w-1\/2 {
