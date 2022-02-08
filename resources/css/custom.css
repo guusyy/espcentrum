@@ -86,3 +86,27 @@
 #primary-menu .current_page_item:not(:last-child) {
   @apply border-b-2 box-border border-secondary
 }
+
+.main-footer .menu-item {
+  margin-left: 30px;
+  position: relative;
+  line-height: 30px;
+
+  &:hover {
+    &:before {
+      transform: translateX(3px);
+    }
+  }
+
+  &:before {
+    transition: all .3s ease;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    left: -30px;
+    top: 5px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuMDEzNjcgMEwxNC4wMjczIDcuMDEzNjdMNy4wMTM2NyAxNC4wMjczTDUuNzgzMiAxMi43OTY5TDEwLjY2NDEgNy44NzVIMFY2LjE1MjM0SDEwLjY2NDFMNS43ODMyIDEuMjMwNDdMNy4wMTM2NyAwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==');
+  }
+}
