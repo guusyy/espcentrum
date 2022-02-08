@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Boxed page layout
-Template Post Type: post, page, product
+Template Post Type: post, page, product, programma
 */
 ?>
 
