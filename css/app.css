@@ -466,9 +466,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 984px) {
+@media (min-width: 780px) {
   .container {
-    max-width: 984px;
+    max-width: 780px;
   }
 }
 
@@ -478,8 +478,38 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 1496px) {
-  .container {
+.container-xl {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 640px;
+}
+
+@media (min-width: 640px) {
+  .container-xl {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-xl {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-xl {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-xl {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container-xl {
     max-width: 1496px;
   }
 }

@@ -26,7 +26,8 @@ module.exports = {
             'sm': '640px',
             'md': '768px',
             'lg': '1024px',
-            'xl': tailpress.theme('settings.layout.wideSize', theme)
+            'xl': tailpress.theme('settings.layout.wideSize', theme),
+            '2xl': '1600px'
         },
         fontFamily: {
           'sans': 'Orkney',
@@ -58,13 +59,38 @@ module.exports = {
           screens: {
             sm: '600px',
             md: '728px',
-            lg: '984px',
+            lg: '780px',
             xl: '1240px',
-            '2xl': '1496px',
           },
         }
     },
     plugins: [
-        tailpress.tailwind
+        tailpress.tailwind,
+        ({ addComponents, theme }) => {
+          addComponents({
+            ".container-xl": {
+              marginInline: "auto",
+              paddingInline: theme("spacing.4"),
+              maxWidth: theme("screens.sm"),
+    
+              // Breakpoints
+              "@screen sm": {
+                maxWidth: theme("screens.sm"),
+              },
+              "@screen md": {
+                maxWidth: theme("screens.md"),
+              },
+              "@screen lg": {
+                maxWidth: theme("screens.lg"),
+              },
+              "@screen xl": {
+                maxWidth: theme("screens.xl"),
+              },
+              "@screen 2xl": {
+                maxWidth: '1496px',
+              }
+            },
+          });
+        },
     ]
 };

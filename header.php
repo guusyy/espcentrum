@@ -19,7 +19,7 @@
 
 	<header>
 
-		<div class="mx-auto container">
+		<div class="mx-auto container-xl">
 			<div class="lg:flex lg:justify-between lg:items-center py-6">
 				<div class="flex justify-between items-center">
 					<div class="h-10">
@@ -74,7 +74,7 @@
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
-			<div class="container mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
+			<div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
         <div class="mb-40">
           <h1 class="text-3xl lg:text-3xl font-bold my-4 text-center md:text-left">
             <?php echo get_option( 'movida_hero_title' ); ?>
@@ -97,7 +97,7 @@
           <img src="http://movida.local/wp-content/uploads/2022/01/movida-hero-image-839x1024.png" alt="">
         </div>
 			</div>
-      <div class="container mx-auto my-12 pb-12 grid grid-cols-1">
+      <div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1">
         <div class="relative">
           <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left text-white">
             <?php echo get_option( 'movida_programma_title' ); ?>
@@ -142,7 +142,7 @@
           <figure class="absolute w-[960px] h-[960px] top-[-150px] bottom-0 left-[-275px] bg-primary rounded-full -z-10"></figure>
         </div>
       </div>
-      <div class="container mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
+      <div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
         <div class="col-span-12 md:col-start-8 md:col-span-5">
           <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left">
             <?php echo get_option( 'movida_contact_title' ); ?>
