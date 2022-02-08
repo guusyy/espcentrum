@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="bg-slate-400">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
@@ -9,11 +9,11 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-light text-gray-900 antialiased text-base' ); ?>>
+<body <?php body_class( 'bg-light text-gray-900 antialiased text-base max-w-[1920px] mx-auto shadow-lg -z-20' ); ?>>
 
 <?php do_action( 'movida_theme_site_before' ); ?>
 
-<div id="page" class="min-h-screen flex flex-col">
+<div id="page" class="min-h-screen flex flex-col overflow-x-hidden">
 
 	<?php do_action( 'movida_theme_header' ); ?>
 
@@ -70,7 +70,7 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow">
+	<div id="content" class="site-content flex-grow z-10">
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
