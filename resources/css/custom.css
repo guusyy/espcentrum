@@ -82,3 +82,7 @@
     object-fit: cover;
   }
 }
+
+.current_page_item:not(:last-child) {
+  @apply border-b-2 box-border border-secondary
+}

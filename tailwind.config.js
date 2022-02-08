@@ -60,7 +60,7 @@ module.exports = {
             sm: '600px',
             md: '728px',
             lg: '780px',
-            xl: '1240px',
+            xl: '780px',
           },
         }
     },
@@ -84,10 +84,10 @@ module.exports = {
                 maxWidth: theme("screens.lg"),
               },
               "@screen xl": {
-                maxWidth: theme("screens.xl"),
+                maxWidth: '1180px',
               },
               "@screen 2xl": {
-                maxWidth: '1496px',
+                maxWidth: '1180px',
               }
             },
           });

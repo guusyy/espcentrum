@@ -423,7 +423,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.border, .border-2, .border-b, .border-t, .border-b-2, .last\:border-2 {
+.border, .border-2, .border-y-2, .border-b, .border-t, .border-b-2, .current_page_item:not(:last-child), .last\:border-2 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
@@ -472,12 +472,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-@media (min-width: 1240px) {
-  .container {
-    max-width: 1240px;
-  }
-}
-
 .container-xl {
   margin-inline: auto;
   padding-inline: 1rem;
@@ -504,13 +498,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 1280px) {
   .container-xl {
-    max-width: 1280px;
+    max-width: 1180px;
   }
 }
 
 @media (min-width: 1600px) {
   .container-xl {
-    max-width: 1496px;
+    max-width: 1180px;
   }
 }
 
@@ -616,6 +610,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 3rem;
 }
 
+.box-border {
+  box-sizing: border-box;
+}
+
 .inline-block {
   display: inline-block;
 }
@@ -680,8 +678,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 24rem;
 }
 
-.max-w-\[1920px\] {
-  max-width: 1920px;
+.max-w-\[1440px\] {
+  max-width: 1440px;
 }
 
 .max-w-\[100\%\] {
@@ -776,6 +774,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-width: 2px;
 }
 
+.border-y-2 {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -802,6 +805,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(255 83 83 / var(--tw-border-opacity));
 }
 
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-light {
+  --tw-border-opacity: 1;
+  border-color: rgb(251 252 255 / var(--tw-border-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(9 12 155 / var(--tw-bg-opacity));
@@ -812,9 +825,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-gray-500 {
+.bg-slate-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
 .bg-light {
@@ -835,16 +848,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(255 83 83 / var(--tw-bg-opacity));
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
 .p-4 {
@@ -881,6 +884,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-12 {
   padding-bottom: 3rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {
@@ -1174,6 +1181,17 @@ Ensure the default browser behavior of the `hidden` attribute.
     -o-object-fit: cover;
        object-fit: cover;
   }
+
+.current_page_item:not(:last-child) {
+  box-sizing: border-box;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 83 83 / var(--tw-border-opacity));
+}
+
+.last\:mt-4:last-child {
+  margin-top: 1rem;
+}
 
 .last\:rounded-2xl:last-child {
   border-radius: 1rem;
