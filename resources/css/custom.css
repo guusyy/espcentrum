@@ -87,6 +87,23 @@
   @apply border-b-2 box-border border-secondary
 }
 
+#primary-menu .menu-item-has-children a {
+  padding-right: 25px;
+  position: relative;
+
+  &:before {
+    transition: all .3s ease;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: 0;
+    bottom: 5px;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQwOF8zNjQpIj4KPHBhdGggZD0iTTE0LjAyNzMgNy4wMTM2N0w3LjAxMzYxIDE0LjAyNzNMLTYuMTAzNTJlLTA1IDcuMDEzNjdMMS4yNzE0MiA1Ljc4MzJMNi4xNTIyOCAxMC42NjQxVjBINy44NzQ5NFYxMC42NjQxTDEyLjc5NjggNS43ODMyTDE0LjAyNzMgNy4wMTM2N1oiIGZpbGw9ImJsYWNrIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDA4XzM2NCI+CjxyZWN0IHdpZHRoPSIxNC4wMjczIiBoZWlnaHQ9IjE0LjAyNzMiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==');
+  }
+}
+
 .main-footer .menu-item {
   margin-left: 30px;
   position: relative;
