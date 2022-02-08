@@ -1,7 +1,7 @@
 <article <?php post_class( 'mb-12' ); ?>>
 
   <?php if ( has_post_thumbnail() ) : ?>
-    <div class="h-[380px] md:h-96 overflow-hidden">
+    <div class="container mx-auto h-[380px] md:h-96 overflow-hidden">
       <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
     </div>
   <?php endif; ?>
