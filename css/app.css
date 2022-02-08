@@ -1238,6 +1238,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuMDEzNjcgMEwxNC4wMjczIDcuMDEzNjdMNy4wMTM2NyAxNC4wMjczTDUuNzgzMiAxMi43OTY5TDEwLjY2NDEgNy44NzVIMFY2LjE1MjM0SDEwLjY2NDFMNS43ODMyIDEuMjMwNDdMNy4wMTM2NyAwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==');
   }
 
+.btn--link svg {
+    transition: all .3s ease;
+  }
+
+.btn--link:hover svg {
+      transform: translateX(3px);
+    }
+
 .last\:mt-4:last-child {
   margin-top: 1rem;
 }

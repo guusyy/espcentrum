@@ -128,7 +128,19 @@
                             <?php the_excerpt(); ?>
                           </div>
                         </div>
-                        <a class="font-bold" href="<?php the_permalink(); ?>">Meer info</a>
+                        <a class="font-bold flex items-center gap-3 btn--link" href="<?php the_permalink(); ?>">
+                          <svg class="mb-1" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_104_680)">
+                            <path d="M7.01367 0L14.0273 7.01367L7.01367 14.0273L5.7832 12.7969L10.6641 7.875H0V6.15234H10.6641L5.7832 1.23047L7.01367 0Z" fill="black"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_104_680">
+                            <rect width="14.0273" height="14.0273" fill="white"/>
+                            </clipPath>
+                            </defs>
+                          </svg>
+                          Meer info
+                        </a>
                       </div>
                     </div>
                   </li>
