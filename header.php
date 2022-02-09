@@ -94,7 +94,7 @@
           </div>
         </div>
         <div>
-          <img src="http://movida.local/wp-content/uploads/2022/01/movida-hero-image-839x1024.png" alt="">
+          <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image">
         </div>
 			</div>
       <div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1">

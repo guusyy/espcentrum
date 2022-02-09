@@ -663,6 +663,26 @@ body {
   max-width: 100%;
 }
 
+@font-face {
+  font-family: "Orkney";
+
+  src: url("Orkney-Medium.woff2");
+
+  font-weight: bold;
+
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Orkney";
+
+  src: url('Orkney-Regular.woff2');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
 .last\:mt-4:last-child {
   margin-top: 1rem;
 }
@@ -790,11 +810,6 @@ body {
   .lg\:-mx-4 {
     margin-left: -1rem;
     margin-right: -1rem;
-  }
-
-  .lg\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
   }
 
   .lg\:mx-3 {

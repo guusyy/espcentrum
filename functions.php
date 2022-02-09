@@ -183,6 +183,28 @@ function themename_customize_register($wp_customize){
 	);
 
   //  =============================
+  //  = Hero image                 =
+  //  =============================
+
+  $wp_customize->add_setting( 'movida_hero_image', array(
+      'default' => get_theme_file_uri('assets/image/movida-hero-image.png'), // Add Default Image URL 
+      'sanitize_callback' => 'esc_url_raw',
+      'capability'     => 'edit_theme_options',
+      'type'           => 'option',
+  ));
+
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'movida_hero_image_control', array(
+      'label' => 'Hero Image',
+      'section' => 'movida_homepage_settings',
+      'settings' => 'movida_hero_image',
+      'button_labels' => array(// All These labels are optional
+                  'select' => 'Select Hero Image',
+                  'remove' => 'Remove Hero Image',
+                  'change' => 'Change Hero Image',
+                  )
+  )));
+
+  //  =============================
   //  = Hero link 1               =
   //  =============================
   $wp_customize->add_setting('movida_hero_button_one', array(

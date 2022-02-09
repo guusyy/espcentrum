@@ -16,3 +16,17 @@ body {
 .wp-block[data-align=full] {
     @apply max-w-full;
 }
+
+@font-face {
+  font-family: "Orkney";
+  src: url("Orkney-Medium.woff2");
+  font-weight: bold;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Orkney";
+  src: url('Orkney-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+}
