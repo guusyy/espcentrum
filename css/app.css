@@ -1446,6 +1446,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(255 83 83 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1549,43 +1562,56 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: #4b5563;
 }
 
-/* .entry-content, .block-editor-block-list__layout {
-    h1 {
-        @apply text-2xl;
+.entry-content h1, .block-editor-block-list__layout h1 {
+    font-size: 31px;
+    line-height: 43.4px;
+  }
+
+.entry-content h2, .block-editor-block-list__layout h2 {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+.entry-content h3, .block-editor-block-list__layout h3 {
+    font-size: 21px;
+  }
+
+.entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
+      font-weight: 700;
     }
 
-    h2 {
-        @apply text-xl;
+.entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
+      --tw-text-opacity: 1;
+      color: rgb(255 83 83 / var(--tw-text-opacity));
     }
 
-    h3 {
-        @apply text-lg;
+.entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
+      text-decoration: none;
     }
 
-    p, ul, ol {
-        a {
-            @apply text-blue-500 underline;
+.entry-content p a:hover, .entry-content ul a:hover, .entry-content ol a:hover, .block-editor-block-list__layout p a:hover, .block-editor-block-list__layout ul a:hover, .block-editor-block-list__layout ol a:hover {
+        text-decoration: underline;
+      }
 
-            &:hover {
-                @apply no-underline;
-            }
-        }
+.entry-content p, .entry-content ul, .entry-content ol, .block-editor-block-list__layout p, .block-editor-block-list__layout ul, .block-editor-block-list__layout ol {
+    margin-bottom: 2rem;
+  }
 
-        @apply mb-8;
+.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
+      list-style-position: inside;
     }
 
-    ul:not(.block-editor-block-variation-picker__variations) {
-        li {
-            @apply list-disc list-inside;
-        }
+.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
+      list-style-type: disc;
     }
 
-    ol {
-        li {
-            @apply list-decimal list-inside;
-        }
+.entry-content ol li, .block-editor-block-list__layout ol li {
+      list-style-position: inside;
     }
-} */
+
+.entry-content ol li, .block-editor-block-list__layout ol li {
+      list-style-type: decimal;
+    }
 
 @font-face {
   font-family: "Orkney";

@@ -1,4 +1,4 @@
-/* .entry-content, .block-editor-block-list__layout {
+.entry-content, .block-editor-block-list__layout {
     h1 {
         @apply text-2xl;
     }
@@ -13,10 +13,10 @@
 
     p, ul, ol {
         a {
-            @apply text-blue-500 underline;
+            @apply text-secondary no-underline font-bold;
 
             &:hover {
-                @apply no-underline;
+                @apply underline;
             }
         }
 
@@ -34,7 +34,7 @@
             @apply list-decimal list-inside;
         }
     }
-} */
+}
 
 @font-face {
   font-family: "Orkney";
