@@ -303,6 +303,10 @@
   cursor: pointer;
 }
 
+.scroll-mt-10 {
+  scroll-margin-top: 2.5rem;
+}
+
 .list-\[square\] {
   list-style-type: square;
 }
