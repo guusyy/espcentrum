@@ -71,6 +71,11 @@
   position: relative;
 }
 
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
 .top-\[-150px\] {
   top: -150px;
 }
@@ -133,6 +138,11 @@
   margin-bottom: 1rem;
 }
 
+.my-28 {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -171,6 +181,26 @@
 
 .mb-28 {
   margin-bottom: 7rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-28 {
+  margin-top: 7rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .box-border {
@@ -337,6 +367,10 @@
   border-radius: 9999px;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .border {
   border-width: 1px;
 }
@@ -411,6 +445,10 @@
   background-color: rgb(255 83 83 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .fill-primary {
   fill: #090C9B;
 }
@@ -482,6 +520,16 @@
   padding-right: 1.25rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -496,6 +544,10 @@
 
 .pb-12 {
   padding-bottom: 3rem;
+}
+
+.pt-0 {
+  padding-top: 0px;
 }
 
 .text-center {
@@ -840,6 +892,14 @@ ol li {
 }
 
 @media (min-width: 768px) {
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:-left-8 {
+    left: -2rem;
+  }
+
   .md\:col-span-5 {
     grid-column: span 5 / span 5;
   }
@@ -851,6 +911,14 @@ ol li {
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .md\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .md\:mt-0 {
+    margin-top: 0px;
   }
 
   .md\:flex {

@@ -13,11 +13,15 @@
 
 <?php do_action( 'movida_theme_site_before' ); ?>
 
-<div id="page" class="min-h-screen flex flex-col overflow-x-hidden">
+<div id="page" class="min-h-screen flex flex-col">
 
 	<?php do_action( 'movida_theme_header' ); ?>
 
-	<header>
+  <?php if ( is_front_page() ) { ?>
+    <header class="movida-header bg-light">
+    <?php } else { ?>
+      <header class="movida-header bg-light always-sticky">
+    <?php } ?>
 
 		<div class="mx-auto container-xl">
 			<div class="lg:flex lg:justify-between lg:items-center py-6">
@@ -58,10 +62,10 @@
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+						'container_class' => 'hidden mt-4 p-4 lg:mt-0 lg:p-0 bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4 items-center',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-3 font-bold border-b-2 border-light pt-4',
+						'li_class'        => 'lg:mx-3 font-bold border-b-2 border-transparent pt-4',
 						'fallback_cb'     => false,
 					)
 				);
@@ -70,7 +74,7 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow z-10">
+	<div id="content" class="site-content flex-grow z-10 overflow-x-hidden">
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>

@@ -6,7 +6,7 @@
     </div>
   <?php endif; ?>
   
-  <div class="container mx-auto my-8">
+  <div class="container mx-auto my-8 mt-12">
     <?php if ( !is_front_page() ) : ?>
       <header class="entry-header mb-4">
         <?php the_title( sprintf( '<h1 class="entry-title text-primary text-2xl md:text-3xl font-extrabold leading-tight mb-1"><span class="border-b-2 border-secondary">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
