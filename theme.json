@@ -29,6 +29,7 @@
       ]
     },
     "typography": {
+      "lineHeight": true,
       "fontSizes": [
         {
           "name": "Small",
@@ -43,7 +44,8 @@
         {
           "slug": "large",
           "name": "Large",
-          "size": "21px"
+          "size": "21px",
+          "lineHeight": "31.5px"
         },
         {
           "slug": "xl",

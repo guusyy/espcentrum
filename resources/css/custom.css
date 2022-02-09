@@ -1,14 +1,30 @@
+.entry-header .entry-title {
+  @apply text-4xl mb-8;
+}
+
 .entry-content, .block-editor-block-list__layout {
     h1 {
-        @apply text-2xl;
+        @apply text-2xl font-bold mb-4;
     }
 
     h2 {
-        @apply text-xl;
+        @apply text-xl font-bold mb-4;
     }
 
     h3 {
-        @apply text-lg;
+        @apply text-lg font-bold mb-4;
+    }
+
+    h4 {
+      @apply text-lg;
+    }
+
+    .has-small-font-size {
+      @apply text-small;
+    }
+
+    .has-large-font-size {
+      @apply text-lg;
     }
 
     p, ul, ol {
@@ -20,7 +36,7 @@
             }
         }
 
-        @apply mb-8;
+        @apply mb-12;
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {
@@ -33,6 +49,10 @@
         li {
             @apply list-decimal list-inside;
         }
+    }
+
+    .movida-contact-link a {
+      @apply text-primary
     }
 }
 
