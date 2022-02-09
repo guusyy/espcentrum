@@ -1,4 +1,4 @@
-.entry-content, .block-editor-block-list__layout {
+/* .entry-content, .block-editor-block-list__layout {
     h1 {
         @apply text-2xl;
     }
@@ -34,7 +34,7 @@
             @apply list-decimal list-inside;
         }
     }
-}
+} */
 
 @font-face {
   font-family: "Orkney";

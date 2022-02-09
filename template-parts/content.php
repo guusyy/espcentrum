@@ -28,7 +28,7 @@
       
       <?php else : ?>
   
-      <div class="entry-content">
+      <div class="entry-content prose">
         <?php
         /* translators: %s: Name of current post */
         the_content(

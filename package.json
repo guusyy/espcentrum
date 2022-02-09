@@ -29,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@jeffreyvr/tailwindcss-tailpress": "^0.1.0",
+		"@tailwindcss/typography": "^0.5.1",
 		"autoprefixer": "^10.4.0",
 		"browser-sync": "^2.26.14",
 		"concurrently": "^6.2.1",

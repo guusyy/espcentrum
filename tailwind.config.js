@@ -66,6 +66,7 @@ module.exports = {
     },
     plugins: [
         tailpress.tailwind,
+        require('@tailwindcss/typography'),
         ({ addComponents, theme }) => {
           addComponents({
             ".container-xl": {
