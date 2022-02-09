@@ -53,7 +53,7 @@
 
     ol {
       @apply pl-8;
-      
+
         li {
             @apply list-decimal;
         }
@@ -62,6 +62,10 @@
     .movida-contact-link a {
       @apply text-primary
     }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply scroll-mt-10;
 }
 
 @font-face {
@@ -89,8 +93,33 @@
   }
 }
 
-.sub-menu {
-  display: none;
+
+.menu-item-has-children {
+
+  position: relative;
+
+  & .sub-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -40px;
+    z-index: 20;
+  }
+
+  &:hover {
+
+    & .sub-menu {
+      display: block;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+      width: 350px;
+      
+      @apply block bg-light p-2 rounded-xl;
+    }
+
+    & a:before {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 #menu-sub-footer {
@@ -115,7 +144,11 @@
   @apply border-b-2 box-border border-secondary
 }
 
-#primary-menu .menu-item-has-children a {
+#menu-primary-menu > li:last-child a {
+  @apply  bg-white border-primary text-gray-800 py-3 px-5 border-2 rounded-2xl mt-4;
+}
+
+#primary-menu .menu-item-has-children > a {
   padding-right: 25px;
   position: relative;
 

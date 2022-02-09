@@ -40,7 +40,7 @@
 					</div>
 
 					<div class="lg:hidden">
-						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
+						<a class="text-primary" href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
 							<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
 								 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 								<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
@@ -61,7 +61,7 @@
 						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4 items-center',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-3 font-bold last:bg-white last:border-primary last:text-gray-800 last:py-2 last:px-4 last:border-2 last:rounded-2xl last:mt-4 border-b-2 border-light pt-4',
+						'li_class'        => 'lg:mx-3 font-bold border-b-2 border-light pt-4',
 						'fallback_cb'     => false,
 					)
 				);
@@ -99,7 +99,7 @@
 			</div>
       <div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1">
         <div class="relative">
-          <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left text-white">
+          <h2 id="programma-s" class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left text-white">
             <?php echo get_option( 'movida_programma_title' ); ?>
           </h2>
           <ul class="grid grid-cols-1 md:grid-cols-3 gap-5 my-12">

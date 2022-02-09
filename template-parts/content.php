@@ -1,4 +1,4 @@
-<article <?php post_class( 'mb-12' ); ?>>
+<article <?php post_class( 'mb-28' ); ?>>
 
   <?php if ( has_post_thumbnail() ) : ?>
     <div class="container mx-auto h-[380px] md:h-96 overflow-hidden">

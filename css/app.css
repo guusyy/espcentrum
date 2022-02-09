@@ -434,12 +434,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.border, .border-2, .border-b, .border-t, .border-b-2, .current_page_item:not(:last-child), .last\:border-2 {
+.border, .border-2, .border-b, .border-t, .border-b-2, .current_page_item:not(:last-child), a, .last\:border-2 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.shadow-lg {
+.shadow-lg, .shadow-xl {
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -624,8 +624,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.mb-28 {
+  margin-bottom: 7rem;
+}
+
 .box-border {
   box-sizing: border-box;
+}
+
+.block {
+  display: block;
 }
 
 .inline-block {
@@ -870,6 +882,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 83 83 / var(--tw-bg-opacity));
 }
 
+.fill-primary {
+  fill: #090C9B;
+}
+
+.stroke-primary {
+  stroke: #090C9B;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -882,6 +902,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-4 {
@@ -902,6 +926,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .pb-8 {
@@ -1030,6 +1079,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1236,6 +1291,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     color: rgb(9 12 155 / var(--tw-text-opacity));
   }
 
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 2.5rem;
+}
+
 @font-face {
   font-family: "Orkney";
 
@@ -1267,9 +1326,44 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: auto;
   }
 
-.sub-menu {
-  display: none;
+.menu-item-has-children {
+  position: relative;
 }
+
+.menu-item-has-children .sub-menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: -40px;
+    z-index: 20;
+  }
+
+.menu-item-has-children:hover .sub-menu {
+      display: block;
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+      width: 350px;
+    }
+
+.menu-item-has-children:hover .sub-menu {
+      display: block;
+    }
+
+.menu-item-has-children:hover .sub-menu {
+      border-radius: 0.75rem;
+    }
+
+.menu-item-has-children:hover .sub-menu {
+      --tw-bg-opacity: 1;
+      background-color: rgb(251 252 255 / var(--tw-bg-opacity));
+    }
+
+.menu-item-has-children:hover .sub-menu {
+      padding: 0.5rem;
+    }
+
+.menu-item-has-children:hover a:before {
+      transform: rotate(180deg);
+    }
 
 #menu-sub-footer {
   display: flex;
@@ -1302,12 +1396,28 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(255 83 83 / var(--tw-border-opacity));
 }
 
-#primary-menu .menu-item-has-children a {
+#menu-primary-menu > li:last-child a {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(9 12 155 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
+#primary-menu .menu-item-has-children > a {
   padding-right: 25px;
   position: relative;
 }
 
-#primary-menu .menu-item-has-children a:before {
+#primary-menu .menu-item-has-children > a:before {
     transition: all .3s ease;
     content: '';
     display: inline-block;
