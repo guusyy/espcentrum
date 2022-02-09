@@ -57,9 +57,9 @@ module.exports = {
           },
           // default breakpoints but with 40px removed
           screens: {
-            sm: '600px',
-            md: '728px',
-            lg: '780px',
+            sm: '640px',
+            md: '768px',
+            lg: '768px',
             xl: '780px',
           },
         }
@@ -76,12 +76,15 @@ module.exports = {
               // Breakpoints
               "@screen sm": {
                 maxWidth: theme("screens.sm"),
+                paddingInline: '2rem',
               },
               "@screen md": {
                 maxWidth: theme("screens.md"),
+                paddingInline: '1.5rem',
               },
               "@screen lg": {
                 maxWidth: theme("screens.lg"),
+                paddingInline: '1rem',
               },
               "@screen xl": {
                 maxWidth: '1180px',

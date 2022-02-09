@@ -61,7 +61,7 @@
 						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4 items-center',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-4 font-bold last:bg-white last:border-primary last:text-gray-800 last:py-2 last:px-4 last:border-2 last:rounded-2xl last:mt-4 border-b-2 border-light pt-4',
+						'li_class'        => 'lg:mx-3 font-bold last:bg-white last:border-primary last:text-gray-800 last:py-2 last:px-4 last:border-2 last:rounded-2xl last:mt-4 border-b-2 border-light pt-4',
 						'fallback_cb'     => false,
 					)
 				);
