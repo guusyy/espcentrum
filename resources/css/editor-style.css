@@ -30,3 +30,23 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+ul:not(.block-editor-block-variation-picker__variations) {
+  @apply pl-8;
+
+    li {
+        @apply list-[square] leading-8;
+
+        &::marker {
+          @apply text-secondary;
+        }
+    }
+}
+
+ol {
+  @apply pl-8;
+  
+    li {
+        @apply list-decimal;
+    }
+}

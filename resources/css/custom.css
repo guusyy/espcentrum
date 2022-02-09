@@ -40,14 +40,22 @@
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {
+      @apply pl-8;
+
         li {
-            @apply list-disc list-inside;
+            @apply list-[square] leading-8;
+
+            &::marker {
+              @apply text-secondary;
+            }
         }
     }
 
     ol {
+      @apply pl-8;
+      
         li {
-            @apply list-decimal list-inside;
+            @apply list-decimal;
         }
     }
 

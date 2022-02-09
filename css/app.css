@@ -720,12 +720,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   cursor: pointer;
 }
 
+.list-inside {
+  list-style-position: inside;
+}
+
 .list-disc {
   list-style-type: disc;
 }
 
 .list-decimal {
   list-style-type: decimal;
+}
+
+.list-\[square\] {
+  list-style-type: square;
 }
 
 .grid-cols-1 {
@@ -1198,17 +1206,26 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-bottom: 3rem;
   }
 
+.entry-content ul:not(.block-editor-block-variation-picker__variations), .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) {
+    padding-left: 2rem;
+  }
+
 .entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
-      list-style-position: inside;
+      list-style-type: square;
     }
 
 .entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
-      list-style-type: disc;
+      line-height: 2rem;
     }
 
-.entry-content ol li, .block-editor-block-list__layout ol li {
-      list-style-position: inside;
-    }
+.entry-content ul:not(.block-editor-block-variation-picker__variations) li::marker, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li::marker {
+        --tw-text-opacity: 1;
+        color: rgb(255 83 83 / var(--tw-text-opacity));
+      }
+
+.entry-content ol, .block-editor-block-list__layout ol {
+    padding-left: 2rem;
+  }
 
 .entry-content ol li, .block-editor-block-list__layout ol li {
       list-style-type: decimal;
