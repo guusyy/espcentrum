@@ -78,32 +78,32 @@
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
-			<div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
-        <div class="mb-40">
-          <h1 class="text-3xl lg:text-3xl font-bold my-4 text-center md:text-left">
+			<div class="md:container-xl mx-auto mt-12 md:my-12 pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
+        <div class="px-5 py-6 md:pb-40 md:row-start-1 row-start-2 md:mt-0 -mt-24 z-10 drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent">
+          <h1 class="text-lg md:text-3xl font-bold my-4 text-left">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
-          <p class="text-dark my-8 max-w-[100%] md:max-w-[80%] justify-">
+          <p class="text-dark mb-8 md:my-8 max-w-[100%] md:max-w-[80%] justify-">
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
             <a href="<?php echo get_option( 'movida_hero_button_one_link' ); ?>"
-              class="w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="text-center md:text-left w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               <?php echo get_option( 'movida_hero_button_one' ); ?>
             </a>
             <a href="<?php echo get_option( 'movida_hero_button_two_link' ); ?>"
-              class="w-full sm:w-auto flex-none bg-white border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="text-center md:text-left w-full sm:w-auto flex-none bg-white border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               <?php echo get_option( 'movida_hero_button_two' ); ?>
             </a>
           </div>
         </div>
-        <div>
+        <div class="px-5 md:px-0 md:row-start-1 row-start-1">
           <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image">
         </div>
 			</div>
-      <div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1">
+      <div class="container-xl mx-auto mb-4 md:mt-12 pb-12 grid grid-cols-1">
         <div class="relative">
-          <h2 id="programma-s" class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left text-white">
+          <h2 id="programma-s" class="text-m3xl md:text-4xl font-bold my-4 text-left text-white">
             <?php echo get_option( 'movida_programma_title' ); ?>
           </h2>
           <ul class="grid grid-cols-1 md:grid-cols-3 gap-5 my-12">
@@ -155,24 +155,24 @@
               wp_reset_query();
             ?>
           </ul>
-          <figure class="absolute w-[960px] h-[960px] top-[-150px] bottom-0 left-[-275px] bg-primary rounded-full -z-10"></figure>
+          <figure class="absolute w-[960px] h-[960px] top-[-150px] bottom-0 left-[-240px] md:left-[-275px] bg-primary rounded-full -z-10"></figure>
         </div>
       </div>
-      <div class="container-xl mx-auto my-12 pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
-        <div class="col-span-12 md:col-start-8 md:col-span-5">
-          <h2 class="text-4xl lg:text-4xl font-bold my-4 text-center md:text-left">
+      <div class="container-xl mx-auto md:my-12 md:pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
+        <div class="col-span-full md:col-start-5 lg:col-start-7 xl:col-start-8">
+          <h2 class="text-m2xl md:text-4xl font-bold md:my-4 text-left">
             <?php echo get_option( 'movida_contact_title' ); ?>
           </h2>
-          <p class="text-dark my-8 max-w-[100%] md:max-w-[80%] justify-">
+          <p class="text-dark my-2 md:my-8 max-w-[100%] md:max-w-[80%]">
             <?php echo get_option( 'movida_contact_text' ); ?>
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
             <a href="<?php echo get_option( 'movida_contact_button_one_link' ); ?>"
-              class="w-full sm:w-auto flex-none bg-secondary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="text-center md:text-left w-full sm:w-auto flex-none bg-secondary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               <?php echo get_option( 'movida_contact_button_one' ); ?>
             </a>
             <a href="<?php echo get_option( 'movida_contact_button_two_link' ); ?>"
-              class="w-full sm:w-auto flex-none bg-white border-secondary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="text-center md:text-left w-full sm:w-auto flex-none bg-white border-secondary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
               <?php echo get_option( 'movida_contact_button_two' ); ?>
             </a>
           </div>

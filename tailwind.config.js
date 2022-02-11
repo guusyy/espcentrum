@@ -14,8 +14,8 @@ module.exports = {
     theme: {
         container: {
             padding: {
-                DEFAULT: '1rem',
-                sm: '2rem',
+                DEFAULT: '20px',
+                sm: '20px',
                 lg: '0rem'
             },
         },
@@ -49,10 +49,20 @@ module.exports = {
             '25px', {
             lineHeight: '35px',
           }],
+          'm2xl': [
+            '28px', {
+              lineHeight: '39.2px',
+            }
+          ],
           '2xl': [
             '31px', {
             lineHeight: '43.4px',
           }],
+          'm3xl': [
+            '36px', {
+              lineHeight: '50.4px',
+            }
+          ],
           '3xl': [
             '38px', {
             lineHeight: '53.2px',
@@ -83,7 +93,7 @@ module.exports = {
           addComponents({
             ".container-xl": {
               marginInline: "auto",
-              paddingInline: theme("spacing.4"),
+              paddingInline: theme("spacing.5"),
               maxWidth: theme("screens.sm"),
     
               // Breakpoints
