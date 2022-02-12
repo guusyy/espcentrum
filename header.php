@@ -88,11 +88,11 @@
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
             <a href="<?php echo get_option( 'movida_hero_button_one_link' ); ?>"
-              class="text-center md:text-left w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:bg-primaryHover transition-all duration-200">
               <?php echo get_option( 'movida_hero_button_one' ); ?>
             </a>
             <a href="<?php echo get_option( 'movida_hero_button_two_link' ); ?>"
-              class="text-center md:text-left w-full sm:w-auto flex-none bg-white border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-white border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:border-primaryHover transition-all duration-200">
               <?php echo get_option( 'movida_hero_button_two' ); ?>
             </a>
           </div>
@@ -168,11 +168,11 @@
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
             <a href="<?php echo get_option( 'movida_contact_button_one_link' ); ?>"
-              class="text-center md:text-left w-full sm:w-auto flex-none bg-secondary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-secondary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-secondary focus:outline-none hover:bg-secondaryHover transition-all duration-200">
               <?php echo get_option( 'movida_contact_button_one' ); ?>
             </a>
             <a href="<?php echo get_option( 'movida_contact_button_two_link' ); ?>"
-              class="text-center md:text-left w-full sm:w-auto flex-none bg-white border-secondary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900 focus:outline-none transition-colors duration-200">
+              class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-white border-secondary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-secondary focus:outline-none hover:border-secondaryHover transition-all duration-200">
               <?php echo get_option( 'movida_contact_button_two' ); ?>
             </a>
           </div>

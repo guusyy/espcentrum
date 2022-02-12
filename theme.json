@@ -12,9 +12,19 @@
           "color": "#090C9B"
         },
         {
+          "name": "PrimaryHover",
+          "slug": "primaryHover",
+          "color": "#3A3DAF"
+        },
+        {
           "name": "Secondary",
           "slug": "secondary",
           "color": "#FF5353"
+        },
+        {
+          "name": "SecondaryHover",
+          "slug": "secondaryHover",
+          "color": "#FF7575"
         },
         {
           "name": "Dark",

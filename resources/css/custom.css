@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-#primary-menu .current_page_item:not(:last-child), #primary-menu .current-menu-ancestor:not(:last-child) {
+#primary-menu .current_page_item:not(:last-child) > a, #primary-menu .current-menu-ancestor:not(:last-child) > a {
   @apply border-b-2 box-border border-secondary
 }
 
@@ -103,7 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 /*-- ARTICLE --*/
 
 .entry-header .entry-title {
-  @apply text-4xl mb-8;
+  @apply text-m3xl md:text-4xl mb-8;
 }
 
 .entry-content, .block-editor-block-list__layout {
