@@ -915,6 +915,10 @@ ol li {
   .sm\:w-auto {
     width: auto;
   }
+
+  .sm\:rounded-2xl {
+    border-radius: 1rem;
+  }
 }
 
 @media (min-width: 768px) {

@@ -318,15 +318,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.movida-team-beschrijving p {
+  margin-bottom: 0;
+}
+
 /*--- form styling ---*/
 
-.movida-form {
+.movida-form-column {
 
   @media (min-width: 640px) {
     min-width: 440px;
   }
 
-  @apply md:rounded-2xl -m-4 p-4 md:m-0 md:p-12 bg-white shadow-xl !important;
+  @apply sm:rounded-2xl -m-4 p-4 md:m-0 md:p-12 bg-white shadow-xl !important;
+
+}
+
+.movida-form {
 
   input, textarea {
     @apply p-4 rounded-2xl resize-none border-border font-semibold accent-primary !important;
@@ -354,6 +362,17 @@ h1, h2, h3, h4, h5, h6 {
 
   button {
     @apply flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:bg-primaryHover transition-all duration-200 !important;
+  }
+
+  .wpforms-confirmation-container-full, div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+
+    h4 {
+      @apply font-bold mb-2 !important;
+    }
   }
 }
 

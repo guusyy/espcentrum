@@ -30,7 +30,7 @@
                   <?php the_title(); ?>
                 </h3>
                 <?php if( get_field('beschrijving') ): ?>
-                  <div class="m-0">
+                  <div class="m-0 movida-team-beschrijving">
                     <?php the_field('beschrijving'); ?>
                   </div>
                 <?php endif; ?>
