@@ -78,12 +78,12 @@
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
-			<div class="md:container-xl mx-auto mt-12 md:my-12 pb-12 grid grid-cols-1 md:grid-cols-2 items-center">
-        <div class="px-5 py-6 md:pb-40 md:row-start-1 row-start-2 md:mt-0 -mt-24 z-10 drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent">
+			<div class="md:container-xl mx-auto mt-12 md:my-12 pb-12 grid grid-cols-1 md:grid-cols-2 md:items-start lg:items-center">
+        <div class="px-5 md:px-0 py-6 md:pb-40 md:row-start-1 row-start-2 md:mt-0 -mt-24 z-10 drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent">
           <h1 class="text-lg md:text-3xl font-bold my-4 text-left">
             <?php echo get_option( 'movida_hero_title' ); ?>
           </h1>
-          <p class="text-dark mb-8 md:my-8 max-w-[100%] md:max-w-[80%] justify-">
+          <p class="text-dark mb-8 md:my-8 max-w-[100%] md:max-w-[80%]">
             <?php echo get_option( 'movida_hero_text' ); ?>
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
@@ -97,7 +97,7 @@
             </a>
           </div>
         </div>
-        <div class="px-5 md:px-0 md:row-start-1 row-start-1">
+        <div class="px-5 md:px-0 md:row-start-1 row-start-1 md:pt-16 lg:pt-0">
           <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image">
         </div>
 			</div>
