@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-light text-gray-900 antialiased text-base max-w-[2040px] mx-auto -z-20' ); ?>>
+<body <?php body_class( 'bg-light text-gray-900 antialiased text-base max-w-[2040px] mx-auto -z-20 shadow-xl' ); ?>>
 
 <?php do_action( 'movida_theme_site_before' ); ?>
 
