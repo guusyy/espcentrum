@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #menu-primary-menu > li:last-child a {
-  @apply  bg-white border-primary text-gray-800 py-3 px-5 border-2 rounded-2xl text-center mt-2 md:mt-0 block md:inline;
+  @apply  bg-white border-primary hover:border-primaryHover transition-all duration-200 text-gray-800 py-3 px-5 border-2 rounded-2xl text-center mt-2 md:mt-0 block md:inline;
 }
 
 #primary-menu .menu-item-has-children > a {

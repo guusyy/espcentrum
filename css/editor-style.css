@@ -59,7 +59,7 @@
 
 @media (min-width: 1600px) {
   .container-xl {
-    max-width: 1180px;
+    max-width: 1600px;
   }
 }
 
@@ -262,12 +262,20 @@
   max-width: 24rem;
 }
 
-.max-w-\[1440px\] {
-  max-width: 1440px;
+.max-w-\[2140px\] {
+  max-width: 2140px;
 }
 
 .max-w-\[100\%\] {
   max-width: 100%;
+}
+
+.max-w-\[2100px\] {
+  max-width: 2100px;
+}
+
+.max-w-\[2040px\] {
+  max-width: 2040px;
 }
 
 .flex-none {
@@ -624,12 +632,6 @@
   transition-duration: 150ms;
 }
 
-.transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -799,11 +801,6 @@ ol li {
   background-color: rgb(255 117 117 / var(--tw-bg-opacity));
 }
 
-.hover\:brightness-90:hover {
-  --tw-brightness: brightness(.9);
-  filter: var(--tw-filter);
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -875,7 +872,7 @@ ol li {
 
   @media (min-width: 1600px) {
     .md\:container-xl {
-      max-width: 1180px;
+      max-width: 1600px;
     }
   }
 
@@ -978,10 +975,6 @@ ol li {
 
   .md\:pb-12 {
     padding-bottom: 3rem;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-3xl {

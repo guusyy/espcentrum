@@ -130,6 +130,26 @@ function create_posttype() {
           'template' => true
       )
   );
+
+  register_post_type( 'Bedrijven',
+  // CPT Options
+      array(
+          'labels' => array(
+              'name' => __( 'Bedrijven' ),
+              'singular_name' => __( 'Bedrijf' )
+          ),
+          'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
+          'public' => true,
+          'has_archive' => true,
+          'rewrite' => array('slug' => 'bedrijf'),
+          'show_in_rest' => true,
+          'menu_icon' => 'dashicons-building',
+          'publicly_queryable' =>  true,
+          'hierarchical'        => true,
+          'menu_position'       => 21,
+          'template' => true
+      )
+  );
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );

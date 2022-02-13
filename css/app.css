@@ -457,7 +457,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: 0 0 #0000;
 }
 
-.drop-shadow-\[0_-20px_25px_rgba\(0\2c 0\2c 0\2c 0\.15\)\], .hover\:brightness-90 {
+.drop-shadow-\[0_-20px_25px_rgba\(0\2c 0\2c 0\2c 0\.15\)\] {
   --tw-blur: var(--tw-empty,/*!*/ /*!*/);
   --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
   --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
@@ -531,7 +531,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 1600px) {
   .container-xl {
-    max-width: 1180px;
+    max-width: 1600px;
   }
 }
 
@@ -734,12 +734,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 24rem;
 }
 
-.max-w-\[1440px\] {
-  max-width: 1440px;
+.max-w-\[2140px\] {
+  max-width: 2140px;
 }
 
 .max-w-\[100\%\] {
   max-width: 100%;
+}
+
+.max-w-\[2100px\] {
+  max-width: 2100px;
+}
+
+.max-w-\[2040px\] {
+  max-width: 2040px;
 }
 
 .flex-none {
@@ -1096,12 +1104,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
-.transition-colors {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
 .transition {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1337,6 +1339,14 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+#menu-primary-menu > li:last-child a:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(58 61 175 / var(--tw-border-opacity));
 }
 
 @media (min-width: 768px) {
@@ -1562,11 +1572,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(255 117 117 / var(--tw-bg-opacity));
 }
 
-.hover\:brightness-90:hover {
-  --tw-brightness: brightness(.9);
-  filter: var(--tw-filter);
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -1638,7 +1643,7 @@ h1, h2, h3, h4, h5, h6 {
 
   @media (min-width: 1600px) {
     .md\:container-xl {
-      max-width: 1180px;
+      max-width: 1600px;
     }
   }
 
@@ -1741,10 +1746,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .md\:pb-12 {
     padding-bottom: 3rem;
-  }
-
-  .md\:text-left {
-    text-align: left;
   }
 
   .md\:text-3xl {
