@@ -29,8 +29,9 @@
   </div>
 
 	<div class="container-xl mx-auto text-center pb-8">
-    <div class="flex justify-between items-center flex-col-reverse md:flex-row border-t pt-8">
-      <div class="flex gap-8 flex-col md:flex-row items-start">
+    <div class="flex justify-between items-start md:items-center flex-col-reverse md:flex-row border-t pt-8">
+      <div class="flex md:gap-8 flex-col md:flex-row items-start">
+        ©
         <?php echo date_i18n( 'Y' );?> <?php echo get_bloginfo( 'name' );?>
         <?php if ( is_active_sidebar( 'sub-footer' ) ) : ?>
           <?php dynamic_sidebar( 'sub-footer' ); ?>

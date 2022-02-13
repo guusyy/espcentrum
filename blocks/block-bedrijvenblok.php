@@ -36,21 +36,21 @@
                 <?php endif; ?>
                 <table>
                   <?php if( get_field('email') ): ?>
-                    <tr>
-                      <td>E-mail</td>
-                      <td><?php the_field('email'); ?></td>
+                    <tr class="text-small">
+                      <td class="font-semibold w-24">E-mail</td>
+                      <td><a href="mailto:<?php the_field('email'); ?>" class="text-primary-important"><?php the_field('email'); ?></a></td>
                     </tr>
                   <?php endif; ?>
                   <?php if( get_field('website') ): ?>
-                    <tr>
-                      <td>Website</td>
-                      <td><?php the_field('website'); ?></td>
+                    <tr class="text-small">
+                      <td class="font-semibold w-24">Website</td>
+                      <td><a href="https://<?php the_field('website'); ?>" target="_blank" class="text-primary-important"><?php the_field('website'); ?></a></td>
                     </tr>
                   <?php endif; ?>
                   <?php if( get_field('Telefoonnummer') ): ?>
-                    <tr>
-                      <td>Telefoon</td>
-                      <td><?php the_field('Telefoonnummer'); ?></td>
+                    <tr class="text-small">
+                      <td class="font-semibold w-24">Telefoon</td>
+                      <td><a href="tel:<?php the_field('Telefoonnummer'); ?>" class="text-primary-important"><?php the_field('Telefoonnummer'); ?></a></td>
                     </tr>
                   <?php endif; ?>
                 </table>

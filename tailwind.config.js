@@ -59,7 +59,7 @@ module.exports = {
             lineHeight: '43.4px',
           }],
           'm3xl': [
-            '36px', {
+            '34px', {
               lineHeight: '50.4px',
             }
           ],
