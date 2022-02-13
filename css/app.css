@@ -583,6 +583,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin: 2rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -674,6 +678,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
@@ -710,6 +718,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 380px;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.max-h-full {
+  max-height: 100%;
+}
+
+.max-h-32 {
+  max-height: 8rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -730,6 +758,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 960px;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -748,6 +780,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-w-\[2040px\] {
   max-width: 2040px;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-none {
@@ -772,6 +808,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .list-\[square\] {
   list-style-type: square;
+}
+
+.list-none {
+  list-style-type: none;
 }
 
 .grid-cols-1 {
@@ -906,6 +946,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 83 83 / var(--tw-bg-opacity));
 }
 
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -958,6 +1003,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .pb-8 {
@@ -1472,19 +1522,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 3rem;
   }
 
-.entry-content ul:not(.block-editor-block-variation-picker__variations), .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) {
+.entry-content ul:not([class]), .block-editor-block-list__layout ul:not([class]) {
     padding-left: 2rem;
   }
 
-.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
+.entry-content ul:not([class]) li, .block-editor-block-list__layout ul:not([class]) li {
       list-style-type: square;
     }
 
-.entry-content ul:not(.block-editor-block-variation-picker__variations) li, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li {
+.entry-content ul:not([class]) li, .block-editor-block-list__layout ul:not([class]) li {
       line-height: 2rem;
     }
 
-.entry-content ul:not(.block-editor-block-variation-picker__variations) li::marker, .block-editor-block-list__layout ul:not(.block-editor-block-variation-picker__variations) li::marker {
+.entry-content ul:not([class]) li::marker, .block-editor-block-list__layout ul:not([class]) li::marker {
         --tw-text-opacity: 1;
         color: rgb(255 83 83 / var(--tw-text-opacity));
       }

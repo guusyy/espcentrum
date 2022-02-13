@@ -143,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
         @apply mb-12;
     }
 
-    ul:not(.block-editor-block-variation-picker__variations) {
+    ul:not([class]) {
       @apply pl-8;
 
         li {

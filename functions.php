@@ -138,7 +138,7 @@ function create_posttype() {
               'name' => __( 'Bedrijven' ),
               'singular_name' => __( 'Bedrijf' )
           ),
-          'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
+          'supports'            => array( 'title', 'custom-fields'),
           'public' => true,
           'has_archive' => true,
           'rewrite' => array('slug' => 'bedrijf'),
@@ -147,7 +147,7 @@ function create_posttype() {
           'publicly_queryable' =>  true,
           'hierarchical'        => true,
           'menu_position'       => 21,
-          'template' => true
+          'template' => false
       )
   );
 }
