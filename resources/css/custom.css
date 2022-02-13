@@ -239,7 +239,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 24px;
   position: relative;
 
-  @apply mt-[8px] md:mt-[4px];
+  @apply mt-4;
   
   a.main-nav-toggle {
     display: block;

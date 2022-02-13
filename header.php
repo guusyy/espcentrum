@@ -99,7 +99,7 @@
           </div>
         </div>
         <div class="max-w-2xl px-5 md:px-0 md:row-start-1 row-start-1 md:pt-16 lg:pt-0">
-          <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image">
+          <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image" style="aspect-ratio: 1200 / 1464">
         </div>
 			</div>
       <div class="container-xl mx-auto mb-4 md:mt-12 pb-20 md:pb-12 grid grid-cols-1">
