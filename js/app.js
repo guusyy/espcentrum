@@ -4,7 +4,6 @@
     let main_navigation = document.querySelector("#primary-menu");
     document.querySelector("#primary-menu-toggle").addEventListener("click", function(e) {
       e.preventDefault();
-      e.currentTarget.classList.toggle("active-menu")
       main_navigation.classList.toggle("hidden");
     });
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -24,40 +23,29 @@
       var header = document.querySelector(".movida-header");
       header.classList.toggle("movida-sticky", window.scrollY > 0);
     });
-
-    const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      direction: 'horizontal',
+    const swiper = new Swiper(".swiper", {
+      direction: "horizontal",
       spaceBetween: 19,
       centerSlider: true,
       slidesPerView: 1.1,
-
-      // If we need pagination
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination"
       },
-    
-      // Navigation arrows
       navigation: {
-        nextEl: '.swiper-next',
-        prevEl: '.swiper-prev',
+        nextEl: ".swiper-next",
+        prevEl: ".swiper-prev"
       },
-      // Responsive breakpoints
       breakpoints: {
-        // when window width is >= 320px
         640: {
-          slidesPerView: 1.1,
+          slidesPerView: 1.1
         },
-        // when window width is >= 480px
         768: {
-          slidesPerView: 2.1,
+          slidesPerView: 2.1
         },
-        // when window width is >= 640px
         1010: {
-          slidesPerView: 3.1,
+          slidesPerView: 3.1
         }
       }
     });
   });
-
 })();

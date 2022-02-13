@@ -26,4 +26,38 @@ window.addEventListener('load', function () {
 			var header = document.querySelector('.movida-header');
 			header.classList.toggle("movida-sticky", window.scrollY > 0);
 		})
+
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      spaceBetween: 19,
+      centerSlider: true,
+      slidesPerView: 1.1,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-next',
+        prevEl: '.swiper-prev',
+      },
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+        640: {
+          slidesPerView: 1.1,
+        },
+        // when window width is >= 480px
+        768: {
+          slidesPerView: 2.1,
+        },
+        // when window width is >= 640px
+        1010: {
+          slidesPerView: 3.1,
+        }
+      }
+    });
 });

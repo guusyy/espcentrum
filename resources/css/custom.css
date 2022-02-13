@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 8px;
 
-    @apply bg-transparent py-5 px-2 rounded-xl md:shadow-xl;
+    @apply bg-transparent md:bg-white py-5 px-2 rounded-xl md:shadow-xl;
   }
 
   & a:before {
@@ -306,3 +306,54 @@ h1, h2, h3, h4, h5, h6 {
     opacity: .5;
   }
 }
+
+@media (max-width: 1012px) {
+  .wp-block-columns {
+    flex-wrap: wrap !important;
+  }
+
+  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
+    flex-basis: 100%!important;
+    margin: 0 !important;
+  }
+}
+
+/*--- form styling ---*/
+
+.movida-form {
+
+  @media (min-width: 640px) {
+    min-width: 440px;
+  }
+
+  @apply md:rounded-2xl -m-4 p-4 md:m-0 md:p-12 bg-white shadow-xl !important;
+
+  input, textarea {
+    @apply p-4 rounded-2xl resize-none border-border font-semibold accent-primary !important;
+
+    &:focus {
+      @apply border-primary !important;
+    }
+
+    &.wpforms-error {
+      @apply border-secondary !important;
+    }
+  }
+
+  .wpforms-error {
+    @apply text-secondary !important;
+  }
+
+  .wpforms-required-label {
+    @apply text-secondary font-normal !important;
+  }
+
+  input[type="checkbox"], input[type="checkbox"] + label {
+    @apply cursor-pointer !important;
+  }
+
+  button {
+    @apply flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:bg-primaryHover transition-all duration-200 !important;
+  }
+}
+
