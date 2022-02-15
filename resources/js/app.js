@@ -60,4 +60,11 @@ window.addEventListener('load', function () {
         }
       }
     });
+
+    anime({
+      targets: '.fade',
+      opacity: 1,
+      delay: anime.stagger(100),
+      duration: 800
+    });
 });

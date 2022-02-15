@@ -439,7 +439,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.shadow-xl, .shadow-lg, .sub-menu, .movida-form-column, .md\:shadow-none, .md\:shadow-xl {
+.shadow-xl, .shadow-lg, .sub-menu, .movida-form-column, .md\:shadow-none {
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -791,6 +791,10 @@ button, .focus\:ring-2 {
   scroll-margin-top: 2.5rem;
 }
 
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -961,18 +965,6 @@ button, .focus\:ring-2 {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-12 {
-  padding: 3rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-4 {
@@ -1274,7 +1266,7 @@ button, .focus\:ring-2 {
 /*-- Global --*/
 
 h1, h2, h3, h4, h5, h6 {
-  scroll-margin-top: 2.5rem;
+  scroll-margin-top: 5rem;
 }
 
 @media (min-width: 768px) {
@@ -1325,7 +1317,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1010px) {
   .menu-item-has-children .sub-menu {
     position: absolute;
   }
@@ -1371,14 +1363,14 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 0.5rem;
   }
 
-@media (min-width: 768px) {
+@media (min-width: 1010px) {
     .menu-item-has-children.movida-open .sub-menu {
       --tw-bg-opacity: 1;
       background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     }
   }
 
-@media (min-width: 768px) {
+@media (min-width: 1010px) {
     .menu-item-has-children.movida-open .sub-menu {
       --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
       --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -1450,6 +1442,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+#menu-primary-menu > li:last-child a:after {
+    content: none;
+  }
+
 #primary-menu .menu-item-has-children > a {
   padding-right: 25px;
   position: relative;
@@ -1466,6 +1462,35 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 5px;
     background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQwOF8zNjQpIj4KPHBhdGggZD0iTTE0LjAyNzMgNy4wMTM2N0w3LjAxMzYxIDE0LjAyNzNMLTYuMTAzNTJlLTA1IDcuMDEzNjdMMS4yNzE0MiA1Ljc4MzJMNi4xNTIyOCAxMC42NjQxVjBINy44NzQ5NFYxMC42NjQxTDEyLjc5NjggNS43ODMyTDE0LjAyNzMgNy4wMTM2N1oiIGZpbGw9ImJsYWNrIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDA4XzM2NCI+CjxyZWN0IHdpZHRoPSIxNC4wMjczIiBoZWlnaHQ9IjE0LjAyNzMiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==');
   }
+
+#primary-menu .menu-item > a {
+    position: relative;
+  }
+
+#primary-menu .menu-item > a:after {
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+    }
+
+#primary-menu .menu-item > a:hover:after {
+        transform-origin: 0% 50%;
+        transform: scale3d(1, 1, 1);
+      }
+
+#primary-menu .menu-item > a:after {
+      content: '';
+    }
+
+#primary-menu .menu-item > a:after {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #ff5353;
+      top: 100%;
+      left: 0;
+      pointer-events: none;
+    }
 
 /*-- ARTICLE --*/
 
@@ -1739,6 +1764,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
+@media (min-width: 1012px) {
+  .hide-desktop {
+    display: none;
+  }
+}
+
 /*--- form styling ---*/
 
 @media (min-width: 640px) {
@@ -1949,6 +1980,11 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: 700 !important;
     }
 
+.fade {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
 .hover\:border-primaryHover:hover {
   --tw-border-opacity: 1;
   border-color: rgb(58 61 175 / var(--tw-border-opacity));
@@ -2048,20 +2084,12 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  .md\:absolute {
-    position: absolute;
-  }
-
   .md\:top-\[-100px\] {
     top: -100px;
   }
 
   .md\:left-\[-200px\] {
     left: -200px;
-  }
-
-  .md\:-left-8 {
-    left: -2rem;
   }
 
   .md\:col-start-5 {
@@ -2174,17 +2202,8 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
   }
 
-  .md\:rounded-2xl {
-    border-radius: 1rem;
-  }
-
   .md\:bg-transparent {
     background-color: transparent;
-  }
-
-  .md\:bg-white {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .md\:p-12 {
@@ -2228,15 +2247,13 @@ h1, h2, h3, h4, h5, h6 {
     --tw-shadow-colored: 0 0 #0000;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
-
-  .md\:shadow-xl {
-    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
 }
 
 @media (min-width: 1010px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+
   .lg\:top-\[-100px\] {
     top: -100px;
   }
@@ -2245,12 +2262,12 @@ h1, h2, h3, h4, h5, h6 {
     left: -200px;
   }
 
-  .lg\:col-start-7 {
-    grid-column-start: 7;
+  .lg\:-left-8 {
+    left: -2rem;
   }
 
-  .lg\:m-0 {
-    margin: 0px;
+  .lg\:col-start-7 {
+    grid-column-start: 7;
   }
 
   .lg\:-mx-4 {
@@ -2291,20 +2308,21 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
   }
 
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+
   .lg\:justify-between {
     justify-content: space-between;
   }
 
-  .lg\:rounded-2xl {
-    border-radius: 1rem;
+  .lg\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .lg\:p-0 {
     padding: 0px;
-  }
-
-  .lg\:p-12 {
-    padding: 3rem;
   }
 
   .lg\:pt-0 {

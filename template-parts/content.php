@@ -8,7 +8,7 @@
   
   <div class="container mx-auto my-8 mt-12">
     <?php if ( !is_front_page() ) : ?>
-      <header class="entry-header mb-4">
+      <header class="entry-header mb-4 fade">
         <?php the_title( sprintf( '<h1 class="entry-title text-primary text-m3xl md:text-3xl font-extrabold leading-tight mb-1"><span class="border-b-2 border-secondary">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
       </header>
     <?php endif; ?>
@@ -16,7 +16,7 @@
     <?php if ( is_search() || is_archive() ) : ?>
 
       <?php if ( !is_front_page() ) : ?>
-        <header class="entry-header mb-4">
+        <header class="entry-header mb-4 fade">
           <?php the_title( sprintf( '<h1 class="entry-title text-primary text-m3xl md:text-3xl font-extrabold leading-tight mb-1"><span class="border-b-2 border-secondary">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
         </header>
       <?php endif; ?>
@@ -28,7 +28,7 @@
       
       <?php else : ?>
   
-      <div class="entry-content">
+      <div class="entry-content fade">
         <?php
         /* translators: %s: Name of current post */
         the_content(

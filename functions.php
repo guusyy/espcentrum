@@ -42,6 +42,7 @@ function movida_theme_enqueue_scripts() {
 	$theme = wp_get_theme();
 
 	wp_enqueue_style( 'tailpress', movida_theme_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
+  wp_enqueue_script( 'anime', movida_theme_asset( 'js/anime.min.js' ), array(), $theme->get( 'Version' ) );
 	wp_enqueue_script( 'tailpress', movida_theme_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
 }
 

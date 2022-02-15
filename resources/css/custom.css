@@ -1,7 +1,7 @@
 /*-- Global --*/
 
 h1, h2, h3, h4, h5, h6 {
-  @apply scroll-mt-10 md:scroll-mt-28;
+  @apply scroll-mt-20 md:scroll-mt-28;
 }
 
 @font-face {
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 350px;
   max-width: 100%;    
 
-  @apply md:absolute md:-left-8 md:max-w-none;
+  @apply lg:absolute lg:-left-8 lg:max-w-none;
 
   & .menu-item {
     @apply pt-0;
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 8px;
 
-    @apply bg-transparent md:bg-white py-5 px-2 rounded-xl md:shadow-xl;
+    @apply bg-transparent lg:bg-white py-5 px-2 rounded-xl lg:shadow-xl;
   }
 
   & a:before {
@@ -85,6 +85,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #menu-primary-menu > li:last-child a {
   @apply  bg-white border-primary hover:border-primaryHover transition-all duration-200 text-gray-800 py-3 px-5 border-2 rounded-2xl text-center mt-2 md:mt-0 block md:inline;
+
+  &:after {
+    content: none;
+  }
 }
 
 #primary-menu .menu-item-has-children > a {
@@ -101,6 +105,41 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 5px;
     background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQwOF8zNjQpIj4KPHBhdGggZD0iTTE0LjAyNzMgNy4wMTM2N0w3LjAxMzYxIDE0LjAyNzNMLTYuMTAzNTJlLTA1IDcuMDEzNjdMMS4yNzE0MiA1Ljc4MzJMNi4xNTIyOCAxMC42NjQxVjBINy44NzQ5NFYxMC42NjQxTDEyLjc5NjggNS43ODMyTDE0LjAyNzMgNy4wMTM2N1oiIGZpbGw9ImJsYWNrIi8+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDA4XzM2NCI+CjxyZWN0IHdpZHRoPSIxNC4wMjczIiBoZWlnaHQ9IjE0LjAyNzMiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==');
+  }
+}
+
+#primary-menu {
+  & .menu-item > a {
+
+    position: relative;
+
+    &:after {
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+    }
+
+    &:hover {  
+
+      &:after {
+        transform-origin: 0% 50%;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+    &:after {
+    content: '';
+    }
+
+    &:after {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #ff5353;
+      top: 100%;
+      left: 0;
+      pointer-events: none;
+    }
   }
 }
 
@@ -322,6 +361,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
+@media (min-width: 1012px) {
+  .hide-desktop {
+      @apply hidden;
+  }
+}
+
 /*--- form styling ---*/
 
 .movida-form-column {
@@ -376,3 +421,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.fade {
+  opacity: 0;
+  transform: translateY(8px);
+}

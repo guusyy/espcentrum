@@ -319,6 +319,10 @@
   scroll-margin-top: 2.5rem;
 }
 
+.scroll-mt-20 {
+  scroll-margin-top: 5rem;
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -489,18 +493,6 @@
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-12 {
-  padding: 3rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-0 {
-  padding: 0px;
 }
 
 .px-4 {
@@ -961,20 +953,12 @@ ol li {
     }
   }
 
-  .md\:absolute {
-    position: absolute;
-  }
-
   .md\:top-\[-100px\] {
     top: -100px;
   }
 
   .md\:left-\[-200px\] {
     left: -200px;
-  }
-
-  .md\:-left-8 {
-    left: -2rem;
   }
 
   .md\:col-start-5 {
@@ -1087,17 +1071,8 @@ ol li {
     gap: 2rem;
   }
 
-  .md\:rounded-2xl {
-    border-radius: 1rem;
-  }
-
   .md\:bg-transparent {
     background-color: transparent;
-  }
-
-  .md\:bg-white {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .md\:p-12 {
@@ -1141,15 +1116,13 @@ ol li {
     --tw-shadow-colored: 0 0 #0000;
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
-
-  .md\:shadow-xl {
-    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
 }
 
 @media (min-width: 1010px) {
+  .lg\:absolute {
+    position: absolute;
+  }
+
   .lg\:top-\[-100px\] {
     top: -100px;
   }
@@ -1158,12 +1131,12 @@ ol li {
     left: -200px;
   }
 
-  .lg\:col-start-7 {
-    grid-column-start: 7;
+  .lg\:-left-8 {
+    left: -2rem;
   }
 
-  .lg\:m-0 {
-    margin: 0px;
+  .lg\:col-start-7 {
+    grid-column-start: 7;
   }
 
   .lg\:-mx-4 {
@@ -1204,20 +1177,21 @@ ol li {
     align-items: center;
   }
 
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+
   .lg\:justify-between {
     justify-content: space-between;
   }
 
-  .lg\:rounded-2xl {
-    border-radius: 1rem;
+  .lg\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .lg\:p-0 {
     padding: 0px;
-  }
-
-  .lg\:p-12 {
-    padding: 3rem;
   }
 
   .lg\:pt-0 {

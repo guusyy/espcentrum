@@ -78,15 +78,15 @@
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
 			<div class="md:container-xl mx-auto mt-12 md:my-12 pb-12 grid grid-cols-1 md:grid-cols-2 md:items-start lg:items-center">
-        <div class="drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent md:row-start-1 row-start-2 z-10 -mt-32 md:mt-0">
+        <div class="drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent md:row-start-1 row-start-2 z-10 -mt-32 md:mt-0 fade">
           <div class="container-xl px-5 md:px-0 py-6 md:pb-40">
-            <h1 class="text-lg md:text-3xl font-bold my-4 text-left">
+            <h1 class="text-lg md:text-3xl font-bold my-4 text-left fade">
               <?php echo get_option( 'movida_hero_title' ); ?>
             </h1>
-            <p class="text-dark mb-8 md:my-8 max-w-[100%] md:max-w-[80%]">
+            <p class="text-dark mb-8 md:my-8 max-w-[100%] md:max-w-[80%] fade">
               <?php echo get_option( 'movida_hero_text' ); ?>
             </p>
-            <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
+            <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%] fade">
               <a href="<?php echo get_option( 'movida_hero_button_one_link' ); ?>"
                 class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:bg-primaryHover transition-all duration-200">
                 <?php echo get_option( 'movida_hero_button_one' ); ?>
@@ -98,16 +98,23 @@
             </div>
           </div>
         </div>
-        <div class="max-w-2xl px-5 md:px-0 md:row-start-1 row-start-1 md:pt-16 lg:pt-0">
+        <div class="max-w-2xl px-5 md:px-0 md:row-start-1 row-start-1 md:pt-16 lg:pt-0 fade">
           <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image" style="aspect-ratio: 1200 / 1464">
         </div>
 			</div>
       <div class="container-xl mx-auto mb-4 md:mt-12 pb-20 md:pb-12 grid grid-cols-1">
         <div class="relative">
-          <h2 id="programma-s" class="text-m3xl md:text-4xl font-bold my-4 text-left text-white">
+          <h2 id="programma-s" class="text-m3xl md:text-4xl font-bold my-4 text-left text-white fade">
             <?php echo get_option( 'movida_programma_title' ); ?>
           </h2>
           <!-- Slider main container -->
+          <figure class="absolute 
+          w-[960px] h-[960px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[64%]
+          md:w-[780px] md:h-[780px] md:top-[-100px] md:left-[-200px] md:translate-x-0 md:translate-y-0
+          lg:w-[800px] lg:h-[800px] lg:top-[-100px] lg:left-[-200px]
+          xl:w-[860px] xl:h-[860px] xl:top-[-120px] xl:left-[-240px]
+          2xl:w-[920px] 2xl:h-[920px] 2xl:top-[-150px] 2xl:left-[-240px]
+          bottom-0 bg-primary rounded-full -z-10 fade"></figure>
           <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -122,7 +129,7 @@
                         $loop->the_post();
                     ?>
 
-                    <div class="swiper-slide h-auto">
+                    <div class="swiper-slide h-auto fade">
                       <div class="shadow-lg rounded-2xl bg-white overflow-hidden flex flex-col">
                         <div class="h-44 program-thumbnail">
                           <?php the_post_thumbnail(); ?>
@@ -189,13 +196,6 @@
               </button>
             </div>
           </div>
-          <figure class="absolute 
-            w-[960px] h-[960px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[64%]
-            md:w-[780px] md:h-[780px] md:top-[-100px] md:left-[-200px] md:translate-x-0 md:translate-y-0
-            lg:w-[800px] lg:h-[800px] lg:top-[-100px] lg:left-[-200px]
-            xl:w-[860px] xl:h-[860px] xl:top-[-120px] xl:left-[-240px]
-            2xl:w-[920px] 2xl:h-[920px] 2xl:top-[-150px] 2xl:left-[-240px]
-            bottom-0 bg-primary rounded-full -z-10"></figure>
         </div>
       </div>
       <div class="container-xl mx-auto md:my-12 md:pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
