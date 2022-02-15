@@ -52,7 +52,7 @@
       opacity: [0, 1],
       translateY: [8, 0],
       delay: anime.stagger(150),
-      duration: 1200
+      duration: 1400
     });
   });
 })();
