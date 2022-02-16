@@ -47,12 +47,19 @@
         }
       }
     });
-    anime({
+    var tl = anime.timeline({
+      easing: "easeOutExpo"
+    });
+    tl.add({
       targets: ".fade",
       opacity: [0, 1],
       translateY: [8, 0],
-      delay: anime.stagger(150),
-      duration: 1400
-    });
+      duration: 1e3,
+      delay: anime.stagger(150)
+    }).add({
+      targets: ".appear",
+      opacity: [0, 1],
+      duration: 1e3
+    }, "-=600");
   });
 })();

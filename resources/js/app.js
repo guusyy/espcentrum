@@ -61,10 +61,23 @@ window.addEventListener('load', function () {
       }
     });
 
-    anime({
-      targets: '.fade',
-      opacity: 1,
-      delay: anime.stagger(100),
-      duration: 800
+    // Create a timeline with default parameters
+    var tl = anime.timeline({
+      easing: 'easeOutExpo'
     });
+
+    // Add children
+    tl
+    .add({
+      targets: '.fade',
+      opacity: [0, 1],
+      translateY: [8, 0],
+      duration: 1000,
+      delay: anime.stagger(150)
+    })
+    .add({
+      targets: '.appear',
+      opacity: [0, 1],
+      duration: 1000
+    }, '-=600')
 });

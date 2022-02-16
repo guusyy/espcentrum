@@ -73,7 +73,7 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow z-10 overflow-x-hidden">
+	<div id="content" class="site-content flex-grow z-10 overflow-hidden">
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
@@ -111,6 +111,11 @@
           <figure class="absolute 
           w-[960px] h-[960px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[64%]
           md:w-[780px] md:h-[780px] md:top-[-100px] md:left-[-200px] md:translate-x-0 md:translate-y-0
+          lg:hidden
+          bottom-0 bg-primary rounded-full -z-10 appear"></figure>
+          <figure class="absolute 
+          hidden
+          lg:block
           lg:w-[800px] lg:h-[800px] lg:top-[-100px] lg:left-[-200px]
           xl:w-[860px] xl:h-[860px] xl:top-[-120px] xl:left-[-240px]
           2xl:w-[920px] 2xl:h-[920px] 2xl:top-[-150px] 2xl:left-[-240px]

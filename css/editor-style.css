@@ -225,6 +225,10 @@
   height: 28px;
 }
 
+.h-\[960px\] {
+  height: 960px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -235,10 +239,6 @@
 
 .h-full {
   height: 100%;
-}
-
-.h-\[960px\] {
-  height: 960px;
 }
 
 .h-\[380px\] {
@@ -313,10 +313,6 @@
 
 .resize-none {
   resize: none;
-}
-
-.scroll-mt-10 {
-  scroll-margin-top: 2.5rem;
 }
 
 .scroll-mt-20 {

@@ -697,6 +697,10 @@ button, .focus\:ring-2 {
   height: 28px;
 }
 
+.h-\[960px\] {
+  height: 960px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -707,10 +711,6 @@ button, .focus\:ring-2 {
 
 .h-full {
   height: 100%;
-}
-
-.h-\[960px\] {
-  height: 960px;
 }
 
 .h-\[380px\] {
@@ -785,10 +785,6 @@ button, .focus\:ring-2 {
 
 .resize-none {
   resize: none;
-}
-
-.scroll-mt-10 {
-  scroll-margin-top: 2.5rem;
 }
 
 .scroll-mt-20 {
@@ -1983,6 +1979,10 @@ h1, h2, h3, h4, h5, h6 {
 .fade {
   opacity: 0;
   transform: translateY(8px);
+}
+
+.appear {
+  opacity: 0;
 }
 
 .hover\:border-primaryHover:hover {

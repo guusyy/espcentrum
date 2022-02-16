@@ -28,7 +28,7 @@
       
       <?php else : ?>
   
-      <div class="entry-content fade">
+      <div class="entry-content appear">
         <?php
         /* translators: %s: Name of current post */
         the_content(
