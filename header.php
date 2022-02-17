@@ -135,7 +135,7 @@
                     ?>
 
                     <div class="swiper-slide h-auto fade">
-                      <div class="shadow-lg rounded-2xl bg-white overflow-hidden flex flex-col">
+                      <div class="shadow-lg rounded-2xl bg-white overflow-hidden flex flex-col h-full">
                         <div class="h-44 program-thumbnail">
                           <?php the_post_thumbnail(); ?>
                         </div>
