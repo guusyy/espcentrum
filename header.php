@@ -9,6 +9,8 @@
     rel="stylesheet"
     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
   />
+  <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+
 
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
@@ -126,7 +128,7 @@
               <?php 
                 global $loop;
                 
-                $all_posts = array( 'post_type' => 'programma', 'posts_per_page' => -1 );
+                $all_posts = array( 'post_type' => 'programma', 'posts_per_page' => -1, 'order' => 'ASC' );
                 $loop = new WP_Query( $all_posts );
 
                 if($loop->have_posts()){
@@ -137,7 +139,7 @@
                     <div class="swiper-slide h-auto fade">
                       <div class="shadow-lg rounded-2xl bg-white overflow-hidden flex flex-col h-full">
                         <div class="h-44 program-thumbnail">
-                          <?php the_post_thumbnail(); ?>
+                          <?php the_post_thumbnail('medium_large'); ?>
                         </div>
                         <div class="p-4 flex flex-col justify-between gap-5 h-full">
                           <div class="flex flex-col gap-5">
@@ -172,7 +174,7 @@
               ?>
             </div>
             
-            <div class="mt-5 flex align-center justify-center gap-2">
+            <div class="mt-5 flex align-center justify-center md:justify-start gap-2">
               <button class="swiper-prev">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="49" y="49" width="48" height="48" rx="15" transform="rotate(-180 49 49)" stroke="white" stroke-width="2"/>
