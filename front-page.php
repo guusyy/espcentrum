@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Start introduction -->
-  <main class="flex-grow">
+  <main class="flex-grow pb-28">
       <div class="md:container-xl mx-auto mt-12 md:my-12 pb-12 grid grid-cols-1 md:grid-cols-2 md:items-start lg:items-center">
         <div class="drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent md:row-start-1 row-start-2 z-10 -mt-32 md:mt-0 fade">
           <div class="container-xl px-5 md:px-0 py-6 md:pb-40">
@@ -62,7 +62,7 @@
                     <div class="swiper-slide h-auto fade">
                       <a href="<?php the_permalink(); ?>">
                         <div class="shadow-lg rounded-2xl bg-white overflow-hidden flex flex-col h-full">
-                          <div class="h-44 program-thumbnail">
+                          <div class="h-44 program-thumbnail min-h-[176px] bg-slate-300">
                             <?php the_post_thumbnail('medium_large'); ?>
                           </div>
                           <div class="p-4 flex flex-col justify-between gap-5 h-full">

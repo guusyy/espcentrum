@@ -190,6 +190,14 @@ h1, h2, h3, h4, h5, h6 {
         @apply mb-12;
     }
 
+    ul ul {
+      @apply mb-0;
+    }
+
+    picture, figure {
+      @apply mb-12;
+    }
+
     ul:not([class]) {
       @apply pl-8;
 

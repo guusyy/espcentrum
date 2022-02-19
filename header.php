@@ -75,6 +75,6 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow z-10 overflow-hidden flex">
+	<div id="content" class="site-content flex-grow z-10 overflow-hidden flex bg-light">
 
 		<?php do_action( 'movida_theme_content_start' ); ?>
