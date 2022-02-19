@@ -11,8 +11,8 @@
         ?>
 
         <li>
-          <div class="shadow-lg rounded-2xl bg-white flex flex-col p-4">
-            <div class="flex align-center justify-center max-w-full p-4">
+          <div class="shadow-lg rounded-2xl bg-white flex flex-col p-4 h-full">
+            <div class="flex align-center justify-center max-w-full max-h-40 p-4">
               <?php if( get_field('logo') ): ?>
                 <?php $image = get_field('logo'); ?>
                 <img 
@@ -25,15 +25,17 @@
               <?php endif; ?>
             </div>
             <div class="flex flex-col justify-between gap-5 h-full">
-              <div class="flex flex-col gap-5">
-                <h3 class="text-xl font-bold">
-                  <?php the_title(); ?>
-                </h3>
-                <?php if( get_field('beschrijving') ): ?>
-                  <div class="m-0 movida-team-beschrijving">
-                    <?php the_field('beschrijving'); ?>
-                  </div>
-                <?php endif; ?>
+              <div class="flex flex-col h-full justify-between gap-5">
+                <div>
+                  <h3 class="text-xl font-bold">
+                    <?php the_title(); ?>
+                  </h3>
+                  <?php if( get_field('beschrijving') ): ?>
+                    <div class="m-0 movida-team-beschrijving">
+                      <?php the_field('beschrijving'); ?>
+                    </div>
+                  <?php endif; ?>
+                </div>
                 <table>
                   <?php if( get_field('email') ): ?>
                     <tr class="text-small">
