@@ -423,7 +423,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-.-translate-x-1\/2, .-translate-y-\[64\%\], .transform, .md\:translate-x-0, .md\:translate-y-0 {
+.-translate-x-1\/2, .-translate-y-\[64\%\], .transform, .group-hover\:translate-x-\[3px\], .group-hover\:scale-105, .group-hover\:scale-\[102\], .group-hover\:scale-\[1\.01\], .group-hover\:scale-\[1\.02\], .group-hover\:scale-\[1\.03\], .md\:translate-x-0, .md\:translate-y-0 {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -1201,6 +1201,10 @@ button, .focus\:ring-2 {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .ease-out {
@@ -2067,6 +2071,41 @@ h1, h2, h3, h4, h5, h6 {
 
 .focus\:ring-offset-white:focus {
   --tw-ring-offset-color: #fff;
+}
+
+.group:hover .group-hover\:translate-x-\[3px\] {
+  --tw-translate-x: 3px;
+  transform: var(--tw-transform);
+}
+
+.group:hover .group-hover\:scale-105 {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: var(--tw-transform);
+}
+
+.group:hover .group-hover\:scale-\[102\] {
+  --tw-scale-x: 102;
+  --tw-scale-y: 102;
+  transform: var(--tw-transform);
+}
+
+.group:hover .group-hover\:scale-\[1\.01\] {
+  --tw-scale-x: 1.01;
+  --tw-scale-y: 1.01;
+  transform: var(--tw-transform);
+}
+
+.group:hover .group-hover\:scale-\[1\.02\] {
+  --tw-scale-x: 1.02;
+  --tw-scale-y: 1.02;
+  transform: var(--tw-transform);
+}
+
+.group:hover .group-hover\:scale-\[1\.03\] {
+  --tw-scale-x: 1.03;
+  --tw-scale-y: 1.03;
+  transform: var(--tw-transform);
 }
 
 @media (min-width: 640px) {

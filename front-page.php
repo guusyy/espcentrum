@@ -60,10 +60,10 @@
                     ?>
 
                     <div class="swiper-slide h-auto fade">
-                      <a href="<?php the_permalink(); ?>">
+                      <a href="<?php the_permalink(); ?>" class="group">
                         <div class="shadow-lg rounded-2xl bg-white overflow-hidden flex flex-col h-full">
-                          <div class="h-44 program-thumbnail min-h-[176px] bg-slate-300">
-                            <?php the_post_thumbnail('medium_large'); ?>
+                          <div class="h-44 program-thumbnail min-h-[176px] bg-slate-300 overflow-hidden">
+                            <?php the_post_thumbnail('medium_large', ['class' => 'group-hover:scale-[1.03] duration-500 transition-all contain']); ?>
                           </div>
                           <div class="p-4 flex flex-col justify-between gap-5 h-full">
                             <div class="flex flex-col gap-5">
@@ -75,7 +75,7 @@
                               </div>
                             </div>
                             <span class="font-bold flex items-center gap-3 btn--link">
-                              <svg class="mb-1" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <svg class="mb-1 group-hover:translate-x-[3px]" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_104_680)">
                                 <path d="M7.01367 0L14.0273 7.01367L7.01367 14.0273L5.7832 12.7969L10.6641 7.875H0V6.15234H10.6641L5.7832 1.23047L7.01367 0Z" fill="black"/>
                                 </g>
