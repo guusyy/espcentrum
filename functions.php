@@ -3,7 +3,7 @@
 /**
  * Theme setup.
  */
-function movida_theme_setup() {
+function espcentrum_theme_setup() {
 	add_theme_support( 'title-tag' );
 
 	register_nav_menus(
@@ -33,20 +33,20 @@ function movida_theme_setup() {
 	add_editor_style( 'css/editor-style.css' );
 }
 
-add_action( 'after_setup_theme', 'movida_theme_setup' );
+add_action( 'after_setup_theme', 'espcentrum_theme_setup' );
 
 /**
  * Enqueue theme assets.
  */
-function movida_theme_enqueue_scripts() {
+function espcentrum_theme_enqueue_scripts() {
 	$theme = wp_get_theme();
 
-	wp_enqueue_style( 'tailpress', movida_theme_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-  wp_enqueue_script( 'anime', movida_theme_asset( 'js/anime.min.js' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', movida_theme_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_style( 'tailpress', espcentrum_theme_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
+  wp_enqueue_script( 'anime', espcentrum_theme_asset( 'js/anime.min.js' ), array(), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'tailpress', espcentrum_theme_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'movida_theme_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'espcentrum_theme_enqueue_scripts' );
 
 /**
  * Get asset path.
@@ -55,7 +55,7 @@ add_action( 'wp_enqueue_scripts', 'movida_theme_enqueue_scripts' );
  *
  * @return string
  */
-function movida_theme_asset( $path ) {
+function espcentrum_theme_asset( $path ) {
 	if ( wp_get_environment_type() === 'production' ) {
 		return get_stylesheet_directory_uri() . '/' . $path;
 	}
@@ -72,7 +72,7 @@ function movida_theme_asset( $path ) {
  *
  * @return array
  */
-function movida_theme_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
+function espcentrum_theme_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
 	if ( isset( $args->li_class ) ) {
 		$classes[] = $args->li_class;
 	}
@@ -84,7 +84,7 @@ function movida_theme_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
 	return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'movida_theme_nav_menu_add_li_class', 10, 4 );
+add_filter( 'nav_menu_css_class', 'espcentrum_theme_nav_menu_add_li_class', 10, 4 );
 
 /**
  * Adds option 'submenu_class' to 'wp_nav_menu'.
@@ -95,7 +95,7 @@ add_filter( 'nav_menu_css_class', 'movida_theme_nav_menu_add_li_class', 10, 4 );
  *
  * @return array
  */
-function movida_theme_nav_menu_add_submenu_class( $classes, $args, $depth ) {
+function espcentrum_theme_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 	if ( isset( $args->submenu_class ) ) {
 		$classes[] = $args->submenu_class;
 	}
@@ -107,7 +107,7 @@ function movida_theme_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 	return $classes;
 }
 
-add_filter( 'nav_menu_submenu_css_class', 'movida_theme_nav_menu_add_submenu_class', 10, 3 );
+add_filter( 'nav_menu_submenu_css_class', 'espcentrum_theme_nav_menu_add_submenu_class', 10, 3 );
 
 // Our custom post type function
 function create_posttype() {
@@ -157,8 +157,8 @@ add_action( 'init', 'create_posttype' );
 
 function themename_customize_register($wp_customize){
      
-  $wp_customize->add_section('movida_homepage_settings', array(
-      'title'    => __('Movida homepagina settings', 'themename'),
+  $wp_customize->add_section('espcentrum_homepage_settings', array(
+      'title'    => __('Espcentrum homepagina settings', 'themename'),
       'description' => '',
       'priority' => 1,
   ));
@@ -166,17 +166,17 @@ function themename_customize_register($wp_customize){
   //  =============================
   //  = Hero title                =
   //  =============================
-  $wp_customize->add_setting('movida_hero_title', array(
+  $wp_customize->add_setting('espcentrum_hero_title', array(
       'default'        => 'Centrum voor interdisciplinaire diagnostiek en behandeling',
       'capability'     => 'edit_theme_options',
       'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_hero_title_control', array(
-      'label'      => __('Hero titel', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_hero_title',
+  $wp_customize->add_control('espcentrum_hero_title_control', array(
+      'label'      => __('Hero titel', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_hero_title',
   ));
 
   //  =============================
@@ -184,8 +184,8 @@ function themename_customize_register($wp_customize){
   //  =============================
 
   // Add setting
-	$wp_customize->add_setting( 'movida_hero_text', array(
-		 'default'           => __( 'Wanneer u wordt getroffen door een ongeval of een ernstige aandoening kan uw leven totaal veranderen. Uw dagelijkse activiteiten rondom huis, sporten, werken en hobby’s zijn niet meer vanzelfsprekend. Movida kan u helpen om de kwaliteit van uw leven zo optimaal mogelijk te maken.', 'movida' ),
+	$wp_customize->add_setting( 'espcentrum_hero_text', array(
+		 'default'           => __( 'Wanneer u wordt getroffen door een ongeval of een ernstige aandoening kan uw leven totaal veranderen. Uw dagelijkse activiteiten rondom huis, sporten, werken en hobby’s zijn niet meer vanzelfsprekend. Espcentrum kan u helpen om de kwaliteit van uw leven zo optimaal mogelijk te maken.', 'espcentrum' ),
 		 'sanitize_callback' => 'sanitize_text',
      'capability'     => 'edit_theme_options',
      'type'           => 'option',
@@ -193,11 +193,11 @@ function themename_customize_register($wp_customize){
 	// Add control
 	$wp_customize->add_control( new WP_Customize_Control(
 	    $wp_customize,
-		'movida_hero_text_control',
+		'espcentrum_hero_text_control',
 		    array(
-		        'label'    => __( 'Hero Text', 'movida' ),
-		        'section'    => 'movida_homepage_settings',
-		        'settings' => 'movida_hero_text',
+		        'label'    => __( 'Hero Text', 'espcentrum' ),
+		        'section'    => 'espcentrum_homepage_settings',
+		        'settings' => 'espcentrum_hero_text',
 		        'type'     => 'textarea'
 		    )
 	    )
@@ -207,17 +207,17 @@ function themename_customize_register($wp_customize){
   //  = Hero image                 =
   //  =============================
 
-  $wp_customize->add_setting( 'movida_hero_image', array(
-      'default' => get_theme_file_uri('assets/image/movida-hero-image.png'), // Add Default Image URL 
+  $wp_customize->add_setting( 'espcentrum_hero_image', array(
+      'default' => get_theme_file_uri('assets/image/espcentrum-hero-image.png'), // Add Default Image URL 
       'sanitize_callback' => 'esc_url_raw',
       'capability'     => 'edit_theme_options',
       'type'           => 'option',
   ));
 
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'movida_hero_image_control', array(
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'espcentrum_hero_image_control', array(
       'label' => 'Hero Image',
-      'section' => 'movida_homepage_settings',
-      'settings' => 'movida_hero_image',
+      'section' => 'espcentrum_homepage_settings',
+      'settings' => 'espcentrum_hero_image',
       'button_labels' => array(// All These labels are optional
                   'select' => 'Select Hero Image',
                   'remove' => 'Remove Hero Image',
@@ -228,107 +228,107 @@ function themename_customize_register($wp_customize){
   //  =============================
   //  = Hero link 1               =
   //  =============================
-  $wp_customize->add_setting('movida_hero_button_one', array(
-    'default'        => 'Over movida',
+  $wp_customize->add_setting('espcentrum_hero_button_one', array(
+    'default'        => 'Over espcentrum',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_hero_button_one_control', array(
-      'label'      => __('Movida button label', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_hero_button_one',
+  $wp_customize->add_control('espcentrum_hero_button_one_control', array(
+      'label'      => __('Espcentrum button label', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_hero_button_one',
   ));
 
-  $wp_customize->add_setting('movida_hero_button_one_link', array(
-    'default'        => 'over-movida/',
+  $wp_customize->add_setting('espcentrum_hero_button_one_link', array(
+    'default'        => 'over-espcentrum/',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_hero_button_one_link_control', array(
-      'label'      => __('Movida button link', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_hero_button_one_link',
+  $wp_customize->add_control('espcentrum_hero_button_one_link_control', array(
+      'label'      => __('Espcentrum button link', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_hero_button_one_link',
   ));
 
   //  =============================
   //  = Hero link 2               =
   //  =============================
-  $wp_customize->add_setting('movida_hero_button_two', array(
+  $wp_customize->add_setting('espcentrum_hero_button_two', array(
     'default'        => "Programma's",
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_hero_button_two_control', array(
-      'label'      => __('Movida button two label', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_hero_button_two',
+  $wp_customize->add_control('espcentrum_hero_button_two_control', array(
+      'label'      => __('Espcentrum button two label', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_hero_button_two',
   ));
 
-  $wp_customize->add_setting('movida_hero_button_two_link', array(
+  $wp_customize->add_setting('espcentrum_hero_button_two_link', array(
     'default'        => '#programma-s',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_hero_button_two_link_control', array(
-      'label'      => __('Movida button two link', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_hero_button_two_link',
+  $wp_customize->add_control('espcentrum_hero_button_two_link_control', array(
+      'label'      => __('Espcentrum button two link', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_hero_button_two_link',
   ));
 
   //  =============================
   //  = Programma's title                =
   //  =============================
-  $wp_customize->add_setting('movida_programma_title', array(
+  $wp_customize->add_setting('espcentrum_programma_title', array(
     'default'        => "Onze programma's",
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_programma_title_control', array(
-      'label'      => __("Programma's titel", 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_programma_title',
+  $wp_customize->add_control('espcentrum_programma_title_control', array(
+      'label'      => __("Programma's titel", 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_programma_title',
   ));
 
   //  =============================
   //  = Programma's meer info                =
   //  =============================
-  $wp_customize->add_setting('movida_programma_more-info', array(
+  $wp_customize->add_setting('espcentrum_programma_more-info', array(
     'default'        => "Meer info",
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_programma_more-info_control', array(
-      'label'      => __("Programma link label", 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_programma_more-info',
+  $wp_customize->add_control('espcentrum_programma_more-info_control', array(
+      'label'      => __("Programma link label", 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_programma_more-info',
   ));
 
   //  =============================
   //  = Contact title                =
   //  =============================
-  $wp_customize->add_setting('movida_contact_title', array(
+  $wp_customize->add_setting('espcentrum_contact_title', array(
     'default'        => 'We helpen je graag!',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_contact_title_control', array(
-      'label'      => __('Contact titel', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_contact_title',
+  $wp_customize->add_control('espcentrum_contact_title_control', array(
+      'label'      => __('Contact titel', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_contact_title',
   ));
 
   //  =============================
@@ -336,8 +336,8 @@ function themename_customize_register($wp_customize){
   //  =============================
 
   // Add setting
-  $wp_customize->add_setting( 'movida_contact_text', array(
-    'default'           => __( 'Ons behandelteam staat voor je klaar. Heb je nog vragen of wil je jouw hulpvraag met ons bespreken? Neem gerust contact met ons op.', 'movida' ),
+  $wp_customize->add_setting( 'espcentrum_contact_text', array(
+    'default'           => __( 'Ons behandelteam staat voor je klaar. Heb je nog vragen of wil je jouw hulpvraag met ons bespreken? Neem gerust contact met ons op.', 'espcentrum' ),
     'sanitize_callback' => 'sanitize_text',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
@@ -345,11 +345,11 @@ function themename_customize_register($wp_customize){
   // Add control
   $wp_customize->add_control( new WP_Customize_Control(
       $wp_customize,
-    'movida_contact_text_control',
+    'espcentrum_contact_text_control',
         array(
-            'label'    => __( 'Contact Text', 'movida' ),
-            'section'    => 'movida_homepage_settings',
-            'settings' => 'movida_contact_text',
+            'label'    => __( 'Contact Text', 'espcentrum' ),
+            'section'    => 'espcentrum_homepage_settings',
+            'settings' => 'espcentrum_contact_text',
             'type'     => 'textarea'
         )
       )
@@ -358,59 +358,59 @@ function themename_customize_register($wp_customize){
   //  =============================
   //  = Contact link 1               =
   //  =============================
-  $wp_customize->add_setting('movida_contact_button_one', array(
+  $wp_customize->add_setting('espcentrum_contact_button_one', array(
     'default'        => 'Contact',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_contact_button_one_control', array(
-      'label'      => __('Movida button label', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_contact_button_one',
+  $wp_customize->add_control('espcentrum_contact_button_one_control', array(
+      'label'      => __('Espcentrum button label', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_contact_button_one',
   ));
 
-  $wp_customize->add_setting('movida_contact_button_one_link', array(
+  $wp_customize->add_setting('espcentrum_contact_button_one_link', array(
     'default'        => 'contact/',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_contact_button_one_link_control', array(
-      'label'      => __('Movida button label', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_contact_button_one_link',
+  $wp_customize->add_control('espcentrum_contact_button_one_link_control', array(
+      'label'      => __('Espcentrum button label', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_contact_button_one_link',
   ));
 
   //  =============================
   //  = Contact link 2               =
   //  =============================
-  $wp_customize->add_setting('movida_contact_button_two', array(
+  $wp_customize->add_setting('espcentrum_contact_button_two', array(
     'default'        => "Vergoeding & Aanmelding",
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_contact_button_two_control', array(
-      'label'      => __('Movida button two label', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_contact_button_two',
+  $wp_customize->add_control('espcentrum_contact_button_two_control', array(
+      'label'      => __('Espcentrum button two label', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_contact_button_two',
   ));
 
-  $wp_customize->add_setting('movida_contact_button_two_link', array(
+  $wp_customize->add_setting('espcentrum_contact_button_two_link', array(
     'default'        => '/vergoeding-aanmelding',
     'capability'     => 'edit_theme_options',
     'type'           => 'option',
 
   ));
 
-  $wp_customize->add_control('movida_contact_button_two_link_control', array(
-      'label'      => __('Movida button two label', 'movida'),
-      'section'    => 'movida_homepage_settings',
-      'settings'   => 'movida_contact_button_two_link',
+  $wp_customize->add_control('espcentrum_contact_button_two_link_control', array(
+      'label'      => __('Espcentrum button two label', 'espcentrum'),
+      'section'    => 'espcentrum_homepage_settings',
+      'settings'   => 'espcentrum_contact_button_two_link',
   ));
 
  	// Sanitize text
@@ -425,55 +425,55 @@ function register_custom_widget_areas() {
   register_sidebar(
     array(
     'id' => 'footer-col-one',
-    'name' => esc_html__( 'Footer column one', 'movida' ),
-    'description' => esc_html__( 'Footer column one', 'movida' ),
+    'name' => esc_html__( 'Footer column one', 'espcentrum' ),
+    'description' => esc_html__( 'Footer column one', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
     'after_title' => '</h3></div>'
     )
   );
   register_sidebar(
     array(
     'id' => 'footer-col-two',
-    'name' => esc_html__( 'Footer column two', 'movida' ),
-    'description' => esc_html__( 'Footer column two', 'movida' ),
-    'before_widget' => '<div id="%1$s" class="movida-widget %2$s">',
+    'name' => esc_html__( 'Footer column two', 'espcentrum' ),
+    'description' => esc_html__( 'Footer column two', 'espcentrum' ),
+    'before_widget' => '<div id="%1$s" class="espcentrum-widget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
     'after_title' => '</h3></div>'
     )
   );
   register_sidebar(
     array(
     'id' => 'footer-col-three',
-    'name' => esc_html__( 'Footer column three', 'movida' ),
-    'description' => esc_html__( 'Footer column three', 'movida' ),
+    'name' => esc_html__( 'Footer column three', 'espcentrum' ),
+    'description' => esc_html__( 'Footer column three', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
     'after_title' => '</h3></div>'
     )
   );
   register_sidebar(
     array(
     'id' => 'sub-footer',
-    'name' => esc_html__( 'Sub footer', 'movida' ),
-    'description' => esc_html__( 'Sub footer', 'movida' ),
+    'name' => esc_html__( 'Sub footer', 'espcentrum' ),
+    'description' => esc_html__( 'Sub footer', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
     'after_title' => '</h3></div>'
     )
   );
   register_sidebar(
     array(
     'id' => 'logo-footer',
-    'name' => esc_html__( 'Logo footer', 'movida' ),
-    'description' => esc_html__( 'Logo footer', 'movida' ),
+    'name' => esc_html__( 'Logo footer', 'espcentrum' ),
+    'description' => esc_html__( 'Logo footer', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="movida-widget-title-holder"><h3 class="movida-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
     'after_title' => '</h3></div>'
     )
   );
@@ -491,14 +491,14 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
 function my_custom_dashboard_widgets() {
 global $wp_meta_boxes;
  
-wp_add_dashboard_widget('custom_help_widget', 'Movida Wordpress uitleg', 'custom_dashboard_help');
+wp_add_dashboard_widget('custom_help_widget', 'Espcentrum Wordpress uitleg', 'custom_dashboard_help');
 }
  
 function custom_dashboard_help() {
-echo '<h2>Welkom bij de Movida website</h2>
+echo '<h2>Welkom bij de Espcentrum website</h2>
     <h3 style="font-size: 18px; font-weight: bold;">Wijzigen van de homepage content</h3>
     <p>
-      Het aanpassen van de teksten op de homepagina kan gemakkelijk onder het tabblad <strong>Weergave</strong> -> <strong>Customizer</strong>. Dit opent de customizer. In de customizer selecteer het tabblad <strong>Movida homepagina settings</strong>. Hierin kunnen gemakkelijk de teksten, afbeelding en links worden aangepast. Je ziet rechts direct in de preview het resultaat. Pas na het opslaan van de wijzingen worden de wijzigingen definietf.
+      Het aanpassen van de teksten op de homepagina kan gemakkelijk onder het tabblad <strong>Weergave</strong> -> <strong>Customizer</strong>. Dit opent de customizer. In de customizer selecteer het tabblad <strong>Espcentrum homepagina settings</strong>. Hierin kunnen gemakkelijk de teksten, afbeelding en links worden aangepast. Je ziet rechts direct in de preview het resultaat. Pas na het opslaan van de wijzingen worden de wijzigingen definietf.
     </p>
     <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van een pagina</h3>
     <p>
@@ -524,6 +524,6 @@ echo '<h2>Welkom bij de Movida website</h2>
       Programma-s worden niet automatisch toegevoegd aan het menu. Dit kun je vervolgens doen in het tabblad <strong>Weergave</strong> -> <strong>Menu-s</strong>. In menu-s selecteer je "primary menu" en vanuit het tabblad programma-s kan het nieuwe programmam gesleept worden naar het programma menu item. Vervolgens om dit programma ook toe te voegen aan de footer selecteer je het menu <strong>footer column two</strong> en voeg je het nieuwe programma hier aan toe.
     </p>
     <h3 style="font-size: 18px; font-weight: bold;">Contact informatie van de bedrijven wijzigen</h3>
-    <p>In het tabblad <strong>bedrijven</strong> is het mogelijk van de verschillende bedrijven de contact informatie aan te passen. Hier zijn verschillende velden instelbaar. Bij het wijzigen van deze data wordt het automatisch weergegeven in de bedrijven blokken op de "Over Movida" pagina.</p>
+    <p>In het tabblad <strong>bedrijven</strong> is het mogelijk van de verschillende bedrijven de contact informatie aan te passen. Hier zijn verschillende velden instelbaar. Bij het wijzigen van deze data wordt het automatisch weergegeven in de bedrijven blokken op de "Over Espcentrum" pagina.</p>
   ';
 }

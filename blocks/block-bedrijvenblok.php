@@ -31,7 +31,7 @@
                     <?php the_title(); ?>
                   </h3>
                   <?php if( get_field('beschrijving') ): ?>
-                    <div class="m-0 movida-team-beschrijving">
+                    <div class="m-0 espcentrum-team-beschrijving">
                       <?php the_field('beschrijving'); ?>
                     </div>
                   <?php endif; ?>

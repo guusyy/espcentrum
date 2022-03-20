@@ -439,7 +439,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.shadow-lg, .shadow-xl, .sub-menu, .movida-form-column, .md\:shadow-none {
+.shadow-lg, .shadow-xl, .sub-menu, .espcentrum-form-column, .md\:shadow-none {
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
@@ -1361,54 +1361,54 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0px;
   }
 
-.menu-item-has-children.movida-open {
+.menu-item-has-children.espcentrum-open {
   position: relative;
 }
 
-.menu-item-has-children.movida-open .sub-menu {
+.menu-item-has-children.espcentrum-open .sub-menu {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
 
-.menu-item-has-children.movida-open .sub-menu {
+.menu-item-has-children.espcentrum-open .sub-menu {
     border-radius: 0.75rem;
   }
 
-.menu-item-has-children.movida-open .sub-menu {
+.menu-item-has-children.espcentrum-open .sub-menu {
     background-color: transparent;
   }
 
-.menu-item-has-children.movida-open .sub-menu {
+.menu-item-has-children.espcentrum-open .sub-menu {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
   }
 
-.menu-item-has-children.movida-open .sub-menu {
+.menu-item-has-children.espcentrum-open .sub-menu {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 
 @media (min-width: 1010px) {
-    .menu-item-has-children.movida-open .sub-menu {
+    .menu-item-has-children.espcentrum-open .sub-menu {
       --tw-bg-opacity: 1;
       background-color: rgb(255 255 255 / var(--tw-bg-opacity));
     }
   }
 
 @media (min-width: 1010px) {
-    .menu-item-has-children.movida-open .sub-menu {
+    .menu-item-has-children.espcentrum-open .sub-menu {
       --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
       --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
       box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
   }
 
-.menu-item-has-children.movida-open a:before {
+.menu-item-has-children.espcentrum-open a:before {
     transform: rotate(180deg);
   }
 
-.movida-header {
+.espcentrum-header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -1416,12 +1416,12 @@ h1, h2, h3, h4, h5, h6 {
   transition: all .3s ease;
 }
 
-.movida-header.movida-sticky, .movida-header.always-sticky {
+.espcentrum-header.espcentrum-sticky, .espcentrum-header.always-sticky {
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     background: white;
   }
 
-.movida-header.movida-sticky .sub-menu, .movida-header.always-sticky .sub-menu {
+.espcentrum-header.espcentrum-sticky .sub-menu, .espcentrum-header.always-sticky .sub-menu {
       background: white;
     }
 
@@ -1641,14 +1641,14 @@ h1, h2, h3, h4, h5, h6 {
       list-style-type: decimal;
     }
 
-.entry-content .movida-contact-link a, .block-editor-block-list__layout .movida-contact-link a {
+.entry-content .espcentrum-contact-link a, .block-editor-block-list__layout .espcentrum-contact-link a {
     --tw-text-opacity: 1;
     color: rgb(9 12 155 / var(--tw-text-opacity));
   }
 
 /*-- FOOTER --*/
 
-.movida-footer a:hover {
+.espcentrum-footer a:hover {
     text-decoration: underline;
   }
 
@@ -1795,7 +1795,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.movida-team-beschrijving p {
+.espcentrum-team-beschrijving p {
   margin-bottom: 0;
 }
 
@@ -1809,12 +1809,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 640px) {
 
-.movida-form-column {
+.espcentrum-form-column {
     min-width: 440px;
 }
   }
 
-.movida-form-column {
+.espcentrum-form-column {
   margin: -1rem !important;
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
@@ -1825,193 +1825,193 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 640px) {
-  .movida-form-column {
+  .espcentrum-form-column {
     border-radius: 1rem !important;
   }
 }
 
 @media (min-width: 768px) {
-  .movida-form-column {
+  .espcentrum-form-column {
     margin: 0px !important;
   }
 
-  .movida-form-column {
+  .espcentrum-form-column {
     padding: 3rem !important;
   }
 }
 
-.movida-form input, .movida-form textarea {
+.espcentrum-form input, .espcentrum-form textarea {
     resize: none !important;
   }
 
-.movida-form input, .movida-form textarea {
+.espcentrum-form input, .espcentrum-form textarea {
     border-radius: 1rem !important;
   }
 
-.movida-form input, .movida-form textarea {
+.espcentrum-form input, .espcentrum-form textarea {
     --tw-border-opacity: 1 !important;
     border-color: rgb(150 150 150 / var(--tw-border-opacity)) !important;
   }
 
-.movida-form input, .movida-form textarea {
+.espcentrum-form input, .espcentrum-form textarea {
     padding: 1rem !important;
   }
 
-.movida-form input, .movida-form textarea {
+.espcentrum-form input, .espcentrum-form textarea {
     font-weight: 600 !important;
   }
 
-.movida-form input, .movida-form textarea {
+.espcentrum-form input, .espcentrum-form textarea {
     accent-color: #090C9B !important;
   }
 
-.movida-form input:focus, .movida-form textarea:focus {
+.espcentrum-form input:focus, .espcentrum-form textarea:focus {
       --tw-border-opacity: 1 !important;
       border-color: rgb(9 12 155 / var(--tw-border-opacity)) !important;
     }
 
-.movida-form input.wpforms-error, .movida-form textarea.wpforms-error {
+.espcentrum-form input.wpforms-error, .espcentrum-form textarea.wpforms-error {
       --tw-border-opacity: 1 !important;
       border-color: rgb(255 83 83 / var(--tw-border-opacity)) !important;
     }
 
-.movida-form .wpforms-error {
+.espcentrum-form .wpforms-error {
     --tw-text-opacity: 1 !important;
     color: rgb(255 83 83 / var(--tw-text-opacity)) !important;
   }
 
-.movida-form .wpforms-required-label {
+.espcentrum-form .wpforms-required-label {
     font-weight: 400 !important;
   }
 
-.movida-form .wpforms-required-label {
+.espcentrum-form .wpforms-required-label {
     --tw-text-opacity: 1 !important;
     color: rgb(255 83 83 / var(--tw-text-opacity)) !important;
   }
 
-.movida-form input[type="checkbox"], .movida-form input[type="checkbox"] + label {
+.espcentrum-form input[type="checkbox"], .espcentrum-form input[type="checkbox"] + label {
     cursor: pointer !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     display: flex !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     width: 100% !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     flex: none !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     align-items: center !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     justify-content: center !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     border-radius: 1rem !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     border-width: 1px !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     border-color: transparent !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(9 12 155 / var(--tw-bg-opacity)) !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     padding-top: 0.5rem !important;
     padding-bottom: 0.5rem !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     text-align: center !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     --tw-text-opacity: 1 !important;
     color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     transition-property: all !important;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
     transition-duration: 150ms !important;
   }
 
-.movida-form button {
+.espcentrum-form button {
     transition-duration: 200ms !important;
   }
 
-.movida-form button:hover {
+.espcentrum-form button:hover {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(58 61 175 / var(--tw-bg-opacity)) !important;
   }
 
-.movida-form button:focus {
+.espcentrum-form button:focus {
     outline: 2px solid transparent !important;
     outline-offset: 2px !important;
   }
 
-.movida-form button:focus {
+.espcentrum-form button:focus {
     --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color) !important;
     --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color) !important;
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important;
   }
 
-.movida-form button:focus {
+.espcentrum-form button:focus {
     --tw-ring-opacity: 1 !important;
     --tw-ring-color: rgb(9 12 155 / var(--tw-ring-opacity)) !important;
   }
 
-.movida-form button:focus {
+.espcentrum-form button:focus {
     --tw-ring-offset-width: 2px !important;
   }
 
-.movida-form button:focus {
+.espcentrum-form button:focus {
     --tw-ring-offset-color: #fff !important;
   }
 
 @media (min-width: 640px) {
-    .movida-form button {
+    .espcentrum-form button {
       width: auto !important;
     }
   }
 
 @media (min-width: 768px) {
-    .movida-form button {
+    .espcentrum-form button {
       justify-content: flex-start !important;
     }
   }
 
-.movida-form .wpforms-confirmation-container-full, .movida-form div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
+.espcentrum-form .wpforms-confirmation-container-full, .espcentrum-form div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
     margin-bottom: 0 !important;
   }
 
-.movida-form .wpforms-confirmation-container-full h4, .movida-form div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) h4 {
+.espcentrum-form .wpforms-confirmation-container-full h4, .espcentrum-form div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) h4 {
       margin-bottom: 0.5rem !important;
     }
 
-.movida-form .wpforms-confirmation-container-full h4, .movida-form div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) h4 {
+.espcentrum-form .wpforms-confirmation-container-full h4, .espcentrum-form div[submit-success]>.wpforms-confirmation-container-full:not(.wpforms-redirection-message) h4 {
       font-weight: 700 !important;
     }
 

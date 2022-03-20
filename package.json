@@ -1,15 +1,15 @@
 {
-	"name": "movida-theme",
+	"name": "espcentrum-theme",
 	"version": "0.1.0",
 	"description": "Boilerplate WordPress theme with Tailwind CSS.",
 	"author": "Jeffrey van Rossum",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/username/movida-theme"
+		"url": "https://github.com/username/espcentrum-theme"
 	},
-	"theme_uri": "https://github.com/username/movida-theme",
+	"theme_uri": "https://github.com/username/espcentrum-theme",
 	"author_uri": "https://vanrossum.dev",
-	"text_domain": "movida-theme",
+	"text_domain": "espcentrum-theme",
 	"license": "MIT",
 	"scripts": {
 		"production:css-app": "tailwindcss -i ./resources/css/app.css -o ./css/app.css --postcss --minify",
@@ -24,7 +24,7 @@
 		"production": "cross-env NODE_ENV=production concurrently \"npm run production:css-app\" \"npm run production:css-editor\" \"npm run production:js\"",
 		"dev": "cross-env NODE_ENV=development concurrently \"npm run dev:css-app\" \"npm run dev:css-editor\" \"npm run dev:js\"",
 		"watch": "cross-env NODE_ENV=development concurrently \"npm run watch:css-app\" \"npm run watch:css-editor\" \"npm run watch:js\"",
-		"browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"movida-theme.test\" --host=\"movida-theme.test\" --no-inject-changes --files=\"./\"",
+		"browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"espcentrum-theme.test\" --host=\"espcentrum-theme.test\" --no-inject-changes --files=\"./\"",
 		"watch-sync": "concurrently \"npm run browser-sync\" \"npm run watch\""
 	},
 	"devDependencies": {

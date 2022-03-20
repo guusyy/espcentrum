@@ -20,16 +20,16 @@
 
 <body <?php body_class( 'bg-white text-gray-900 antialiased text-base mx-auto -z-20 shadow-xl' ); ?>>
 
-<?php do_action( 'movida_theme_site_before' ); ?>
+<?php do_action( 'espcentrum_theme_site_before' ); ?>
 
 <div id="page" class="min-h-screen flex flex-col">
 
-	<?php do_action( 'movida_theme_header' ); ?>
+	<?php do_action( 'espcentrum_theme_header' ); ?>
 
   <?php if ( is_front_page() ) { ?>
-    <header class="movida-header bg-light">
+    <header class="espcentrum-header bg-light">
   <?php } else { ?>
-    <header class="movida-header bg-light always-sticky">
+    <header class="espcentrum-header bg-light always-sticky">
   <?php } ?>
 
 		<div class="mx-auto container-xl">
@@ -77,4 +77,4 @@
 
 	<div id="content" class="site-content flex-grow z-10 overflow-hidden flex bg-light">
 
-		<?php do_action( 'movida_theme_content_start' ); ?>
+		<?php do_action( 'espcentrum_theme_content_start' ); ?>

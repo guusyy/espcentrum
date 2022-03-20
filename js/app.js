@@ -17,12 +17,12 @@
     });
     document.querySelectorAll(".menu-item-has-children").forEach((menuItem) => {
       menuItem.addEventListener("click", function(e) {
-        e.currentTarget.classList.toggle("movida-open");
+        e.currentTarget.classList.toggle("espcentrum-open");
       });
     });
     window.addEventListener("scroll", function() {
-      var header = document.querySelector(".movida-header");
-      header.classList.toggle("movida-sticky", window.scrollY > 0);
+      var header = document.querySelector(".espcentrum-header");
+      header.classList.toggle("espcentrum-sticky", window.scrollY > 0);
     });
     const swiper = new Swiper(".swiper", {
       direction: "horizontal",

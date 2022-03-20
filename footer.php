@@ -1,14 +1,14 @@
 
 </main>
 
-<?php do_action( 'movida_theme_content_end' ); ?>
+<?php do_action( 'espcentrum_theme_content_end' ); ?>
 
 </div>
 
-<?php do_action( 'movida_theme_content_after' ); ?>
+<?php do_action( 'espcentrum_theme_content_after' ); ?>
 
-<footer class="movida-footer bg-primary text-white text-small" role="contentinfo">
-	<?php do_action( 'movida_theme_footer' ); ?>
+<footer class="espcentrum-footer bg-primary text-white text-small" role="contentinfo">
+	<?php do_action( 'espcentrum_theme_footer' ); ?>
 
   <div class="main-footer container-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
     <div>

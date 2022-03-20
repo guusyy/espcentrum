@@ -6,31 +6,31 @@
         <div class="drop-shadow-[0_-20px_25px_rgba(0,0,0,0.15)] md:shadow-none bg-white md:bg-transparent md:row-start-1 row-start-2 z-10 -mt-32 md:mt-0 fade">
           <div class="container-xl px-5 md:px-0 py-6 md:pb-40">
             <h1 class="text-lg md:text-3xl font-bold my-4 text-left fade">
-              <?php echo get_option( 'movida_hero_title' ); ?>
+              <?php echo get_option( 'espcentrum_hero_title' ); ?>
             </h1>
             <p class="text-dark mb-8 md:my-8 max-w-[100%] md:max-w-[80%] fade">
-              <?php echo get_option( 'movida_hero_text' ); ?>
+              <?php echo get_option( 'espcentrum_hero_text' ); ?>
             </p>
             <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%] fade">
-              <a href="<?php echo get_option( 'movida_hero_button_one_link' ); ?>"
+              <a href="<?php echo get_option( 'espcentrum_hero_button_one_link' ); ?>"
                 class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-primary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:bg-primaryHover transition-all duration-200">
-                <?php echo get_option( 'movida_hero_button_one' ); ?>
+                <?php echo get_option( 'espcentrum_hero_button_one' ); ?>
               </a>
-              <a href="<?php echo get_option( 'movida_hero_button_two_link' ); ?>"
+              <a href="<?php echo get_option( 'espcentrum_hero_button_two_link' ); ?>"
                 class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-transparent border-primary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-primary focus:outline-none hover:border-primaryHover transition-all duration-200">
-                <?php echo get_option( 'movida_hero_button_two' ); ?>
+                <?php echo get_option( 'espcentrum_hero_button_two' ); ?>
               </a>
             </div>
           </div>
         </div>
         <div class="max-w-2xl px-5 md:px-0 md:row-start-1 row-start-1 md:pt-16 lg:pt-0 fade">
-          <img src="<?php echo get_option( 'movida_hero_image' ); ?>" alt="Movida Hero Image" style="aspect-ratio: 1200 / 1464">
+          <img src="<?php echo get_option( 'espcentrum_hero_image' ); ?>" alt="Espcentrum Hero Image" style="aspect-ratio: 1200 / 1464">
         </div>
       </div>
       <div class="container-xl mx-auto mb-4 md:mt-12 pb-20 md:pb-12 grid grid-cols-1">
         <div class="relative">
           <h2 id="programma-s" class="text-m3xl md:text-4xl font-bold my-4 text-left text-white fade">
-            <?php echo get_option( 'movida_programma_title' ); ?>
+            <?php echo get_option( 'espcentrum_programma_title' ); ?>
           </h2>
           <!-- Slider main container -->
           <figure class="absolute 
@@ -133,19 +133,19 @@
       <div class="container-xl mx-auto md:my-12 md:pb-12 grid grid-cols-1 md:grid-cols-12 items-center">
         <div class="col-span-full md:col-start-5 lg:col-start-7 xl:col-start-8">
           <h2 class="text-m2xl md:text-4xl font-bold md:my-4 text-left">
-            <?php echo get_option( 'movida_contact_title' ); ?>
+            <?php echo get_option( 'espcentrum_contact_title' ); ?>
           </h2>
           <p class="text-dark my-2 md:my-8 max-w-[100%] md:max-w-[80%]">
-            <?php echo get_option( 'movida_contact_text' ); ?>
+            <?php echo get_option( 'espcentrum_contact_text' ); ?>
           </p>
           <div class="flex flex-col md:flex-row gap-3 mt-8 max-w-[100%] md:max-w-[80%]">
-            <a href="<?php echo get_option( 'movida_contact_button_one_link' ); ?>"
+            <a href="<?php echo get_option( 'espcentrum_contact_button_one_link' ); ?>"
               class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-secondary text-white py-2 px-4 border border-transparent rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-secondary focus:outline-none hover:bg-secondaryHover transition-all duration-200">
-              <?php echo get_option( 'movida_contact_button_one' ); ?>
+              <?php echo get_option( 'espcentrum_contact_button_one' ); ?>
             </a>
-            <a href="<?php echo get_option( 'movida_contact_button_two_link' ); ?>"
+            <a href="<?php echo get_option( 'espcentrum_contact_button_two_link' ); ?>"
               class="flex items-center text-center justify-center md:justify-start w-full sm:w-auto flex-none bg-transparent border-secondary text-gray-800 py-2 px-4 border-2 rounded-2xl focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-secondary focus:outline-none hover:border-secondaryHover transition-all duration-200">
-              <?php echo get_option( 'movida_contact_button_two' ); ?>
+              <?php echo get_option( 'espcentrum_contact_button_two' ); ?>
             </a>
           </div>
         </div>

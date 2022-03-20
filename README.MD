@@ -1,3 +1,3 @@
-## Movida Wordpress Theme
+## ESP Centrum Wordpress theme
 
-This is the start of the Movida Wordpress theme using awesome TailwindCSS
+This is the ESP Centrum Wordpress theme using awesome TailwindCSS
