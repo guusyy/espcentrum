@@ -1,6 +1,3 @@
-
-</main>
-
 <?php do_action( 'espcentrum_theme_content_end' ); ?>
 
 </div>

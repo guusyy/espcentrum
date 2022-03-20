@@ -112,17 +112,17 @@ add_filter( 'nav_menu_submenu_css_class', 'espcentrum_theme_nav_menu_add_submenu
 // Our custom post type function
 function create_posttype() {
  
-  register_post_type( 'Programma',
+  register_post_type( 'Nieuws',
   // CPT Options
       array(
           'labels' => array(
-              'name' => __( 'Programma&rsquo;s' ),
-              'singular_name' => __( 'Programma' )
+              'name' => __( 'Nieuws' ),
+              'singular_name' => __( 'Nieuws' )
           ),
           'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'programma-s'),
+          'rewrite' => array('slug' => 'actueel'),
           'show_in_rest' => true,
           'menu_icon' => 'dashicons-format-aside',
           'publicly_queryable' =>  true,
@@ -132,17 +132,17 @@ function create_posttype() {
       )
   );
 
-  register_post_type( 'Bedrijven',
+  register_post_type( 'Partners',
   // CPT Options
       array(
           'labels' => array(
-              'name' => __( 'Bedrijven' ),
-              'singular_name' => __( 'Bedrijf' )
+              'name' => __( 'Partners' ),
+              'singular_name' => __( 'Partner' )
           ),
           'supports'            => array( 'title', 'custom-fields'),
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'bedrijf'),
+          'rewrite' => array('slug' => 'partner'),
           'show_in_rest' => true,
           'menu_icon' => 'dashicons-building',
           'publicly_queryable' =>  true,
@@ -151,273 +151,29 @@ function create_posttype() {
           'template' => false
       )
   );
+
+  register_post_type( 'Medewerkers',
+  // CPT Options
+      array(
+          'labels' => array(
+              'name' => __( 'Medewerkers' ),
+              'singular_name' => __( 'Medewerker' )
+          ),
+          'supports'            => array( 'title', 'custom-fields'),
+          'public' => true,
+          'has_archive' => true,
+          'rewrite' => array('slug' => 'medewerker'),
+          'show_in_rest' => false,
+          'menu_icon' => 'dashicons-groups',
+          'publicly_queryable' =>  false,
+          'hierarchical'        => true,
+          'menu_position'       => 31,
+          'template' => false
+      )
+  );
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
-
-function themename_customize_register($wp_customize){
-     
-  $wp_customize->add_section('espcentrum_homepage_settings', array(
-      'title'    => __('Espcentrum homepagina settings', 'themename'),
-      'description' => '',
-      'priority' => 1,
-  ));
-
-  //  =============================
-  //  = Hero title                =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_hero_title', array(
-      'default'        => 'Centrum voor interdisciplinaire diagnostiek en behandeling',
-      'capability'     => 'edit_theme_options',
-      'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_hero_title_control', array(
-      'label'      => __('Hero titel', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_hero_title',
-  ));
-
-  //  =============================
-  //  = Hero text                 =
-  //  =============================
-
-  // Add setting
-	$wp_customize->add_setting( 'espcentrum_hero_text', array(
-		 'default'           => __( 'Wanneer u wordt getroffen door een ongeval of een ernstige aandoening kan uw leven totaal veranderen. Uw dagelijkse activiteiten rondom huis, sporten, werken en hobby’s zijn niet meer vanzelfsprekend. Espcentrum kan u helpen om de kwaliteit van uw leven zo optimaal mogelijk te maken.', 'espcentrum' ),
-		 'sanitize_callback' => 'sanitize_text',
-     'capability'     => 'edit_theme_options',
-     'type'           => 'option',
-	) );
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Control(
-	    $wp_customize,
-		'espcentrum_hero_text_control',
-		    array(
-		        'label'    => __( 'Hero Text', 'espcentrum' ),
-		        'section'    => 'espcentrum_homepage_settings',
-		        'settings' => 'espcentrum_hero_text',
-		        'type'     => 'textarea'
-		    )
-	    )
-	);
-
-  //  =============================
-  //  = Hero image                 =
-  //  =============================
-
-  $wp_customize->add_setting( 'espcentrum_hero_image', array(
-      'default' => get_theme_file_uri('assets/image/espcentrum-hero-image.png'), // Add Default Image URL 
-      'sanitize_callback' => 'esc_url_raw',
-      'capability'     => 'edit_theme_options',
-      'type'           => 'option',
-  ));
-
-  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'espcentrum_hero_image_control', array(
-      'label' => 'Hero Image',
-      'section' => 'espcentrum_homepage_settings',
-      'settings' => 'espcentrum_hero_image',
-      'button_labels' => array(// All These labels are optional
-                  'select' => 'Select Hero Image',
-                  'remove' => 'Remove Hero Image',
-                  'change' => 'Change Hero Image',
-                  )
-  )));
-
-  //  =============================
-  //  = Hero link 1               =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_hero_button_one', array(
-    'default'        => 'Over espcentrum',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_hero_button_one_control', array(
-      'label'      => __('Espcentrum button label', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_hero_button_one',
-  ));
-
-  $wp_customize->add_setting('espcentrum_hero_button_one_link', array(
-    'default'        => 'over-espcentrum/',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_hero_button_one_link_control', array(
-      'label'      => __('Espcentrum button link', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_hero_button_one_link',
-  ));
-
-  //  =============================
-  //  = Hero link 2               =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_hero_button_two', array(
-    'default'        => "Programma's",
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_hero_button_two_control', array(
-      'label'      => __('Espcentrum button two label', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_hero_button_two',
-  ));
-
-  $wp_customize->add_setting('espcentrum_hero_button_two_link', array(
-    'default'        => '#programma-s',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_hero_button_two_link_control', array(
-      'label'      => __('Espcentrum button two link', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_hero_button_two_link',
-  ));
-
-  //  =============================
-  //  = Programma's title                =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_programma_title', array(
-    'default'        => "Onze programma's",
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_programma_title_control', array(
-      'label'      => __("Programma's titel", 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_programma_title',
-  ));
-
-  //  =============================
-  //  = Programma's meer info                =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_programma_more-info', array(
-    'default'        => "Meer info",
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_programma_more-info_control', array(
-      'label'      => __("Programma link label", 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_programma_more-info',
-  ));
-
-  //  =============================
-  //  = Contact title                =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_contact_title', array(
-    'default'        => 'We helpen je graag!',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_contact_title_control', array(
-      'label'      => __('Contact titel', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_contact_title',
-  ));
-
-  //  =============================
-  //  = Contact text                 =
-  //  =============================
-
-  // Add setting
-  $wp_customize->add_setting( 'espcentrum_contact_text', array(
-    'default'           => __( 'Ons behandelteam staat voor je klaar. Heb je nog vragen of wil je jouw hulpvraag met ons bespreken? Neem gerust contact met ons op.', 'espcentrum' ),
-    'sanitize_callback' => 'sanitize_text',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-  ) );
-  // Add control
-  $wp_customize->add_control( new WP_Customize_Control(
-      $wp_customize,
-    'espcentrum_contact_text_control',
-        array(
-            'label'    => __( 'Contact Text', 'espcentrum' ),
-            'section'    => 'espcentrum_homepage_settings',
-            'settings' => 'espcentrum_contact_text',
-            'type'     => 'textarea'
-        )
-      )
-  );
-
-  //  =============================
-  //  = Contact link 1               =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_contact_button_one', array(
-    'default'        => 'Contact',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_contact_button_one_control', array(
-      'label'      => __('Espcentrum button label', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_contact_button_one',
-  ));
-
-  $wp_customize->add_setting('espcentrum_contact_button_one_link', array(
-    'default'        => 'contact/',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_contact_button_one_link_control', array(
-      'label'      => __('Espcentrum button label', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_contact_button_one_link',
-  ));
-
-  //  =============================
-  //  = Contact link 2               =
-  //  =============================
-  $wp_customize->add_setting('espcentrum_contact_button_two', array(
-    'default'        => "Vergoeding & Aanmelding",
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_contact_button_two_control', array(
-      'label'      => __('Espcentrum button two label', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_contact_button_two',
-  ));
-
-  $wp_customize->add_setting('espcentrum_contact_button_two_link', array(
-    'default'        => '/vergoeding-aanmelding',
-    'capability'     => 'edit_theme_options',
-    'type'           => 'option',
-
-  ));
-
-  $wp_customize->add_control('espcentrum_contact_button_two_link_control', array(
-      'label'      => __('Espcentrum button two label', 'espcentrum'),
-      'section'    => 'espcentrum_homepage_settings',
-      'settings'   => 'espcentrum_contact_button_two_link',
-  ));
-
- 	// Sanitize text
-	function sanitize_text( $text ) {
-	    return sanitize_text_field( $text );
-	}
-}
 
 add_action('customize_register', 'themename_customize_register');
 
