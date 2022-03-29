@@ -30,8 +30,8 @@ module.exports = {
             '2xl': '1600px'
         },
         fontFamily: {
-          'sans': 'Orkney',
-          'serif': 'Orkney'
+          'sans': 'Karla',
+          'serif': 'Karla'
         },
         fontSize: {
           'small': ['16px', {

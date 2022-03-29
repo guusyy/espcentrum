@@ -4,7 +4,7 @@
 
 <?php do_action( 'espcentrum_theme_content_after' ); ?>
 
-<footer class="espcentrum-footer bg-primary text-white text-small" role="contentinfo">
+<footer class="espcentrum-footer bg-gray2 text-small" role="contentinfo">
 	<?php do_action( 'espcentrum_theme_footer' ); ?>
 
   <div class="main-footer container-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
@@ -26,7 +26,7 @@
   </div>
 
 	<div class="container-xl mx-auto text-center pb-8">
-    <div class="flex justify-between items-start md:items-center flex-col-reverse md:flex-row border-t pt-8">
+    <div class="flex justify-between items-start md:items-center flex-col-reverse md:flex-row border-t border-gray4 pt-8">
       <div class="flex md:gap-8 flex-col md:flex-row items-start">
         ©
         <?php echo date_i18n( 'Y' );?> <?php echo get_bloginfo( 'name' );?>

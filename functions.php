@@ -23,7 +23,7 @@ function espcentrum_theme_setup() {
 		)
 	);
 
-    add_theme_support( 'custom-logo' );
+  add_theme_support( 'custom-logo' );
 	add_theme_support( 'post-thumbnails' );
 
 	add_theme_support( 'align-wide' );
@@ -109,6 +109,11 @@ function espcentrum_theme_nav_menu_add_submenu_class( $classes, $args, $depth ) 
 
 add_filter( 'nav_menu_submenu_css_class', 'espcentrum_theme_nav_menu_add_submenu_class', 10, 3 );
 
+function wpb_custom_new_menu() {
+  register_nav_menu('cta-menu',__( 'Call to action menu' ));
+}
+add_action( 'init', 'wpb_custom_new_menu' );
+
 // Our custom post type function
 function create_posttype() {
  
@@ -174,8 +179,6 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
-
-add_action('customize_register', 'themename_customize_register');
 
 function register_custom_widget_areas() {
   register_sidebar(

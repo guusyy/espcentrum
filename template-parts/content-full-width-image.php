@@ -1,4 +1,4 @@
-<main class="bg-slate-200 flex-grow">
+<main class="bg-white flex-grow">
   <article <?php post_class( 'pb-28 container-xl bg-white min-h-full' ); ?>>
 
     <?php if ( has_post_thumbnail() ) : ?>
@@ -10,7 +10,7 @@
     <div class="container mx-auto pt-12">
       <?php if ( !is_front_page() ) : ?>
         <header class="entry-header mb-4 fade">
-          <?php the_title( sprintf( '<h1 class="entry-title text-primary text-m3xl md:text-3xl font-extrabold leading-tight mb-1 border-b-[3px] border-secondary"><span class="">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
+          <?php the_title( sprintf( '<h1 class="entry-title text-primary text-m3xl md:text-3xl font-extrabold leading-tight mb-1"><span class="">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
         </header>
       <?php endif; ?>
 
@@ -18,7 +18,7 @@
 
         <?php if ( !is_front_page() ) : ?>
           <header class="entry-header mb-4 fade">
-            <?php the_title( sprintf( '<h1 class="entry-title text-primary text-m3xl md:text-3xl font-extrabold leading-tight mb-1 border-b-[3px] border-secondary"><span class="">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
+            <?php the_title( sprintf( '<h1 class="entry-title text-primary text-m3xl md:text-3xl font-extrabold leading-tight mb-1"><span class="">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
           </header>
         <?php endif; ?>
 

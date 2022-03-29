@@ -9,22 +9,22 @@
         {
           "name": "Primary",
           "slug": "primary",
-          "color": "#090C9B"
+          "color": "#ED7E06"
         },
         {
           "name": "PrimaryHover",
           "slug": "primaryHover",
-          "color": "#3A3DAF"
+          "color": "#D97307"
         },
         {
           "name": "Secondary",
           "slug": "secondary",
-          "color": "#FF5353"
+          "color": "#004A93"
         },
         {
           "name": "SecondaryHover",
           "slug": "secondaryHover",
-          "color": "#FF7575"
+          "color": "#002346"
         },
         {
           "name": "Dark",
@@ -32,14 +32,14 @@
           "color": "#000000"
         },
         {
-          "name": "Light",
-          "slug": "light",
-          "color": "#FBFCFF"
+          "name": "Gray2",
+          "slug": "gray2",
+          "color": "#F5F5F5"
         },
         {
-          "name": "Border",
-          "slug": "border",
-          "color": "#969696"
+          "name": "Gray4",
+          "slug": "gray4",
+          "color": "#A8A8A8"
         }
       ]
     },
