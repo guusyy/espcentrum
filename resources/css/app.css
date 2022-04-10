@@ -3,4 +3,5 @@
 @import "tailwindcss/utilities";
 
 @import "custom.css";
+@import "footer.css";
 @import "navigation.css"

@@ -230,6 +230,17 @@ function register_custom_widget_areas() {
   );
   register_sidebar(
     array(
+    'id' => 'footer-col-four',
+    'name' => esc_html__( 'Footer column four', 'espcentrum' ),
+    'description' => esc_html__( 'Footer column four', 'espcentrum' ),
+    'before_widget' => '<div id="%1$s" class="%2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'after_title' => '</h3></div>'
+    )
+  );
+  register_sidebar(
+    array(
     'id' => 'sub-footer',
     'name' => esc_html__( 'Sub footer', 'espcentrum' ),
     'description' => esc_html__( 'Sub footer', 'espcentrum' ),

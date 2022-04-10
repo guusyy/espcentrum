@@ -115,36 +115,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/*-- FOOTER --*/
-
-.espcentrum-footer {
-}
-
-#menu-sub-footer {
-  @apply flex  flex-col md:flex-row items-start gap-2 md:gap-8;
-}
-
-.main-footer .menu-item {
-  margin-left: 30px;
-  position: relative;
-  line-height: 30px;
-}
-
-.text-primary-important {
-  @apply text-primary !important;
-}
-
-@media (max-width: 1012px) {
-  .wp-block-columns {
-    flex-wrap: wrap !important;
-  }
-
-  .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
-    flex-basis: 100%!important;
-    margin: 0 !important;
-  }
-}
-
 /*--- form styling ---*/
 
 .espcentrum-form {
