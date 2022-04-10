@@ -39,28 +39,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/*-- NAVIGATION --*/
-
-.espcentrum-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: all .3s ease;
-
-  &.espcentrum-sticky, &.always-sticky {
-    @apply shadow-md;
-    background: white;
-
-    & .sub-menu {
-      background: white;
-    }
-  }
-
-  & .cta-menu a {
-    @apply block font-bold py-[0.5rem] px-4 border-2 border-primary shadow rounded;
-  }
-}
-
 /*-- ARTICLE --*/
 
 .entry-header .entry-title {

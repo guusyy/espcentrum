@@ -84,6 +84,20 @@ function espcentrum_theme_nav_menu_add_li_class( $classes, $item, $args, $depth 
 	return $classes;
 }
 
+
+// Add mega menu to submenu
+class WPSE_78121_Sublevel_Walker extends Walker_Nav_Menu
+{
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<div class='sub-menu-holder'><div class='sub-menu-wrap'><ul class='sub-menu'>\n";
+    }
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul><div class='sub-menu-bg'></div></div></div>\n";
+    }
+}
+
 add_filter( 'nav_menu_css_class', 'espcentrum_theme_nav_menu_add_li_class', 10, 4 );
 
 /**

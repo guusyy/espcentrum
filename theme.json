@@ -27,6 +27,21 @@
           "color": "#002346"
         },
         {
+          "name": "Purple",
+          "slug": "themepurple",
+          "color": "#8221B9"
+        },
+        {
+          "name": "Red",
+          "slug": "themered",
+          "color": "#C93438"
+        },
+        {
+          "name": "Green",
+          "slug": "themegreen",
+          "color": "#01B132"
+        },
+        {
           "name": "Dark",
           "slug": "dark",
           "color": "#000000"

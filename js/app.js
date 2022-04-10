@@ -24,6 +24,30 @@
       var header = document.querySelector(".espcentrum-header");
       header.classList.toggle("espcentrum-sticky", window.scrollY > 0);
     });
+    const swiper = new Swiper(".swiper", {
+      direction: "horizontal",
+      spaceBetween: 19,
+      centerSlider: true,
+      slidesPerView: 1.1,
+      pagination: {
+        el: ".swiper-pagination"
+      },
+      navigation: {
+        nextEl: ".swiper-next",
+        prevEl: ".swiper-prev"
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 1.1
+        },
+        768: {
+          slidesPerView: 2.1
+        },
+        1010: {
+          slidesPerView: 3.1
+        }
+      }
+    });
     var tl = anime.timeline({
       easing: "easeOutExpo"
     });
