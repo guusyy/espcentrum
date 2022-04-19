@@ -34,6 +34,9 @@ module.exports = {
           'serif': 'Karla'
         },
         fontSize: {
+          'xs': ['14px', {
+            lineHeight: '22px',
+          }],
           'small': ['16px', {
             lineHeight: '28px',
           }],

@@ -55,12 +55,22 @@
           "name": "Gray4",
           "slug": "gray4",
           "color": "#A8A8A8"
+        },
+        {
+          "name": "Gray5",
+          "slug": "gray5",
+          "color": "#575757"
         }
       ]
     },
     "typography": {
       "lineHeight": true,
       "fontSizes": [
+        {
+          "name": "xs",
+          "slug": "xs",
+          "size": "14px"
+        },
         {
           "name": "Small",
           "slug": "small",
