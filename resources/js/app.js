@@ -81,4 +81,5 @@ window.addEventListener('load', function () {
       opacity: [0, 1],
       duration: 1000
     }, '-=600')
+
 });

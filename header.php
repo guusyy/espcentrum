@@ -30,9 +30,10 @@
         <div class="hidden lg:block bg-gray2 border-b shadow-[0px_1px_0px_rgba(0, 0, 0, 0.25)]">
           <div class="px-10 py-2 flex justify-between">
             <ul class="flex gap-5 xl:gap-12 text-xs xl:text-small">
-              <li class="flex items-center gap-2">
+              <li class="flex items-center gap-2" opening-time>
                 <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" /></svg>
+                  <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" />
+                </svg>
                 Vandaag open van 08:00 - 20:30
               </li>
               <li>
@@ -141,7 +142,7 @@
               </div>
             </div>
 
-            <div class="hidden lg:block absolute overflow-scroll overscroll-contain lg:overflow-visible lg:static w-full bg-white h-[calc(100vh-5rem)] lg:h-fit" id="navigation-menu">
+            <div class="hidden lg:block absolute overflow-y-scroll overscroll-contain lg:overflow-visible lg:static w-full bg-white h-[calc(100vh-5rem)] lg:h-fit" id="navigation-menu">
               <div class="flex flex-col lg:flex-row lg:justify-between gap-5 lg:gap-10 items-center w-full lg:flex px-5 py-8 lg:py-0 lg:px-0 min-h-screen lg:min-h-0">
                   <?php
                   wp_nav_menu(

@@ -12,9 +12,14 @@
           "color": "#ED7E06"
         },
         {
+          "name": "PrimaryAlt",
+          "slug": "primaryAlt",
+          "color": "#D97307"
+        },
+        {
           "name": "PrimaryHover",
           "slug": "primaryHover",
-          "color": "#D97307"
+          "color": "#824300"
         },
         {
           "name": "Secondary",
@@ -47,9 +52,19 @@
           "color": "#000000"
         },
         {
+          "name": "Gray1",
+          "slug": "gray1",
+          "color": "#FAFAFA"
+        },
+        {
           "name": "Gray2",
           "slug": "gray2",
           "color": "#F5F5F5"
+        },
+        {
+          "name": "Gray3",
+          "slug": "gray3",
+          "color": "#E0E0E0"
         },
         {
           "name": "Gray4",
