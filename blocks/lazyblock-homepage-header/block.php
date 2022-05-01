@@ -5,7 +5,7 @@
   </figure>
 
   <!-- col left -->
-  <div class="col-span-7 col-start-1 row-start-1 h-full z-20 p-20 pr-60">
+  <div class="col-span-7 col-start-1 row-start-1 h-full z-20 p-20 pl-10 pr-60">
     <h1 class="text-black text-4xl font-bold mt-10"><?php echo $attributes['title']; ?></h1>
     <div class="text-lg text-black mt-10 max-w-[44rem]">
       <?php echo $attributes['intro-text']; ?>
@@ -61,6 +61,5 @@
           <img class="w-full h-full max-h-full object-cover" src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>">
       <?php endforeach; ?>
     </div>
-    <!-- <img class="w-full h-full max-h-full object-cover" src="<?php block_field( 'image-1' ); ?>" alt="<?php block_field( 'title' ); ?>" /> -->
   </div>
 </section>
