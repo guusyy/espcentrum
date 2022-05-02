@@ -91,6 +91,7 @@ module.exports = {
     },
     plugins: [
         tailpress.tailwind,
+        require('@tailwindcss/line-clamp'),
         require('@tailwindcss/typography'),
         ({ addComponents, theme }) => {
           addComponents({

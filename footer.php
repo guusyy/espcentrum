@@ -33,8 +33,10 @@
   <div class="container-xl mx-auto text-center pb-8">
     <div class="flex justify-between items-start lg:items-center flex-col-reverse lg:flex-row border-t border-gray4 pt-8">
       <div class="flex lg:gap-8 flex-col lg:flex-row items-start">
-        ©
-        <?php echo date_i18n('Y'); ?> ESP Centrum |
+        <span class="border-r lg:border-gray5 lg:pr-5">
+          ©
+          <?php echo date_i18n('Y'); ?> ESP Centrum
+        </span>
         <?php if (is_active_sidebar('sub-footer')) : ?>
           <?php dynamic_sidebar('sub-footer'); ?>
         <?php endif; ?>

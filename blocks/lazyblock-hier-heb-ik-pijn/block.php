@@ -10,8 +10,6 @@
           <?php echo $attributes['button-label']; ?>
         </button>
         <script type="text/javascript" src="https://www.hierhebikpijn.nl/widget/js/hhip_widget-3.0.js?id=1858"></script>
-        <br><br>
-        In samenwerking met <a href='https://www.hierhebikpijn.nl/'>Hierhebikpijn.nl</a>
       </div>
       <div class="flex justify-center">
         <?php if ( isset( $attributes['image']['url'] ) ) : ?>
