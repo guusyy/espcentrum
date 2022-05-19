@@ -155,7 +155,7 @@
     }
   }
 
-  @media (max-width: theme('screens.lg')) {
+  @media (max-width: calc(theme('screens.lg') - 1px)) {
     #primary-menu {
       > ul > li {
         a {

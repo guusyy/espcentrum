@@ -1,11 +1,11 @@
 <section>
-  <div class="px-4 lg:px-10 py-16">
+  <div class="container-base py-16">
     <div class="grid grid-cols-12 gap-x-10 items-center">
       <div class="col-span-full mb-4 pb-3 border-b-2 border-primary flex items-center gap-10">
         <h2 class="text-3xl font-bold"><?php echo $attributes['title']; ?></h2>
-        <a href="<?php echo $attributes['button-url']; ?>" class="btn btn--outline"><?php echo $attributes['button-label']; ?></a>
+        <a href="<?php echo $attributes['button-url']; ?>" class="btn btn--outline hidden lg:inline-block"><?php echo $attributes['button-label']; ?></a>
       </div>
-      <ul class="col-span-full grid grid-cols-2 gap-10">
+      <ul class="col-span-full grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10">
         <?php 
           global $loop;
           
@@ -50,6 +50,9 @@
           wp_reset_query();
         ?>
       </ul>
+      <div class="lg:hidden my-8 col-span-full">
+        <a href="<?php echo $attributes['button-url']; ?>" class="btn btn--outline"><?php echo $attributes['button-label']; ?></a>
+      </div>
     </div>
   </div>
 </section>

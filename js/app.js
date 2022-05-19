@@ -28,7 +28,7 @@
       direction: "horizontal",
       spaceBetween: 19,
       centerSlider: true,
-      slidesPerView: 1.1,
+      slidesPerView: 1,
       pagination: {
         el: ".swiper-pagination"
       },
@@ -38,13 +38,13 @@
       },
       breakpoints: {
         640: {
-          slidesPerView: 1.1
+          slidesPerView: 1
         },
         768: {
-          slidesPerView: 2.1
+          slidesPerView: 2
         },
         1010: {
-          slidesPerView: 3.1
+          slidesPerView: 3
         }
       }
     });

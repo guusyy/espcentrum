@@ -171,7 +171,11 @@ h1, h2, h3, h4, h5, h6 {
 /* homepage header  */
 .intro-container {
   background: white;
-  clip-path: polygon(0% 0%, 100% 0%, 30% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 100%);
+
+  @screen 2xl {
+    clip-path: polygon(0% 0%, 100% 0%, 30% 100%, 0% 100%);
+  }
 }
 
 ::-moz-selection { /* Code for Firefox */
@@ -182,4 +186,10 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   color: white;
   @apply bg-primary;
+}
+
+/* swiper */
+
+.swiper-button-disabled {
+  opacity: .5;
 }

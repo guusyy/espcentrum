@@ -71,8 +71,8 @@ module.exports = {
             lineHeight: '53.2px',
           }],
           '4xl': [
-            '48px', {
-            lineHeight: '67.2px',
+            'clamp(1.875rem, 2vw + 1rem, 3.25rem)', {
+            lineHeight: 'clamp(2.375rem, 3vw + 1rem, 4rem)',
           }],
         },
         container: {
@@ -118,6 +118,31 @@ module.exports = {
               },
               "@screen 2xl": {
                 maxWidth: '1200px',
+              }
+            },
+            ".container-base": {
+              marginInline: "auto",
+              paddingInline: theme("spacing.5"),
+              maxWidth: theme("screens.sm"),
+    
+              // Breakpoints
+              "@screen sm": {
+                maxWidth: theme("screens.sm"),
+                paddingInline: '2rem',
+              },
+              "@screen md": {
+                maxWidth: theme("screens.md"),
+                paddingInline: '1.5rem',
+              },
+              "@screen lg": {
+                maxWidth: theme("screens.lg"),
+                paddingInline: '1rem',
+              },
+              "@screen xl": {
+                maxWidth: '1180px',
+              },
+              "@screen 2xl": {
+                maxWidth: '1380px',
               }
             },
           });

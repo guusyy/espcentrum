@@ -33,7 +33,8 @@ window.addEventListener('load', function () {
       direction: 'horizontal',
       spaceBetween: 19,
       centerSlider: true,
-      slidesPerView: 1.1,
+      slidesPerView: 1,
+      draggable: true,
 
       // If we need pagination
       pagination: {
@@ -49,15 +50,15 @@ window.addEventListener('load', function () {
       breakpoints: {
         // when window width is >= 320px
         640: {
-          slidesPerView: 1.1,
+          slidesPerView: 1,
         },
         // when window width is >= 480px
         768: {
-          slidesPerView: 2.1,
+          slidesPerView: 2,
         },
         // when window width is >= 640px
         1010: {
-          slidesPerView: 3.1,
+          slidesPerView: 3,
         }
       }
     });
