@@ -7,8 +7,7 @@
   transition: all .3s ease;
 
   &.espcentrum-sticky, &.always-sticky {
-    @apply shadow-md;
-    background: white;
+    @apply shadow-md -translate-y-[44px];
 
     & .sub-menu {
       background: white;

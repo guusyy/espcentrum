@@ -423,7 +423,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-a, .translate-y-0, .transform, .hover\:-translate-y-0\.5, .hover\:-translate-y-0, .group-hover\:translate-x-0\.5, .group-hover\:translate-x-0, .group-hover\:scale-\[1\.03\], .group-focus\:scale-\[1\.03\] {
+a, .espcentrum-sticky, .always-sticky, .translate-y-0, .transform, .hover\:-translate-y-0\.5, .hover\:-translate-y-0, .group-hover\:translate-x-0\.5, .group-hover\:translate-x-0, .group-hover\:scale-\[1\.03\], .group-focus\:scale-\[1\.03\] {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -969,13 +969,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .espcentrum-header.espcentrum-sticky, .espcentrum-header.always-sticky {
-    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    --tw-translate-y: -44px;
+    transform: var(--tw-transform);
   }
 
 .espcentrum-header.espcentrum-sticky, .espcentrum-header.always-sticky {
-    background: white;
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
 .espcentrum-header.espcentrum-sticky .sub-menu, .espcentrum-header.always-sticky .sub-menu {
@@ -1776,6 +1777,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .min-h-full {
   min-height: 100%;
+}
+
+.min-h-\[80vh\] {
+  min-height: 80vh;
+}
+
+.min-h-\[70vh\] {
+  min-height: 70vh;
 }
 
 .w-full {
@@ -2618,45 +2627,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 1010px) {
-  .lg\:container-base {
-    margin-inline: auto;
-    padding-inline: 1.25rem;
-    max-width: 640px;
-  }
-
-  @media (min-width: 640px) {
-    .lg\:container-base {
-      max-width: 640px;
-      padding-inline: 2rem;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .lg\:container-base {
-      max-width: 768px;
-      padding-inline: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1010px) {
-    .lg\:container-base {
-      max-width: 1010px;
-      padding-inline: 1rem;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .lg\:container-base {
-      max-width: 1180px;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    .lg\:container-base {
-      max-width: 1380px;
-    }
-  }
-
   .lg\:static {
     position: static;
   }
@@ -2910,10 +2880,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .xl\:gap-12 {
     gap: 3rem;
-  }
-
-  .xl\:gap-10 {
-    gap: 2.5rem;
   }
 
   .xl\:p-20 {

@@ -261,6 +261,14 @@ function register_custom_widget_areas() {
     'after_title' => '</h3></div>'
     )
   );
+  register_sidebar( array(
+		'name'          => 'Page Sidebar',
+		'id'            => 'page-sidebar',
+		'before_widget' => '<div class="widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'register_custom_widget_areas' );
 
@@ -311,3 +319,6 @@ echo '<h2>Welkom bij de Espcentrum website</h2>
     <p>In het tabblad <strong>bedrijven</strong> is het mogelijk van de verschillende bedrijven de contact informatie aan te passen. Hier zijn verschillende velden instelbaar. Bij het wijzigen van deze data wordt het automatisch weergegeven in de bedrijven blokken op de "Over Espcentrum" pagina.</p>
   ';
 }
+
+// Widgets
+require_once('functions/widgets/esp_wg_subpages.php');

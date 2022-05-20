@@ -18,15 +18,11 @@
 
   <?php do_action('espcentrum_theme_site_before'); ?>
 
-  <div id="page" class="min-h-screen flex flex-col overflow-hidden">
+  <div id="page" class="min-h-screen flex flex-col">
 
     <?php do_action('espcentrum_theme_header'); ?>
 
-    <?php if (is_front_page()) { ?>
-      <header class="espcentrum-header bg-light shadow">
-      <?php } else { ?>
-        <header class="espcentrum-header bg-light shadow always-sticky">
-        <?php } ?>
+      <header class="espcentrum-header bg-light shadow bg-white">
         <div class="hidden lg:block bg-gray2 border-b shadow-[0px_1px_0px_rgba(0, 0, 0, 0.25)]">
           <div class="px-10 py-2 flex justify-between">
             <ul class="flex gap-5 xl:gap-12 text-xs xl:text-small">
@@ -254,6 +250,6 @@
         </div>
         </header>
 
-        <div id="content" class="site-content flex-grow z-10 overflow-hidden flex bg-light">
+        <div id="content" class="site-content flex-grow z-10 overflow-hidden flex bg-light min-h-[70vh]">
 
           <?php do_action('espcentrum_theme_content_start'); ?>

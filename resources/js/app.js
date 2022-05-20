@@ -23,10 +23,23 @@ window.addEventListener('load', function () {
 			})
 		})
 
+    // NAVIGATION SCROLL
+
+    var lastScrollTop = 0;
+
 		window.addEventListener('scroll', function(){
 			var header = document.querySelector('.espcentrum-header');
-			header.classList.toggle("espcentrum-sticky", window.scrollY > 0);
+      
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop){
+        header.classList.toggle("espcentrum-sticky", window.scrollY > 0);
+      } else {
+        header.classList.remove("espcentrum-sticky");
+      }
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 		})
+
+    // SWIPER INIT
 
     const swiper = new Swiper('.swiper', {
       // Optional parameters
@@ -63,6 +76,8 @@ window.addEventListener('load', function () {
       }
     });
 
+    // ANIMATIONS
+
     // Create a timeline with default parameters
     var tl = anime.timeline({
       easing: 'easeOutExpo'
@@ -73,14 +88,14 @@ window.addEventListener('load', function () {
     .add({
       targets: '.fade',
       opacity: [0, 1],
-      translateY: [8, 0],
-      duration: 1000,
+      translateY: [-8, 0],
+      duration: 600,
       delay: anime.stagger(150)
     })
     .add({
       targets: '.appear',
       opacity: [0, 1],
-      duration: 1000
-    }, '-=600')
+      duration: 600
+    }, '-=400')
 
 });
