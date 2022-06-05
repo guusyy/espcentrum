@@ -1238,6 +1238,9 @@ h1, h2, h3, h4, h5, h6 {
                     .espcentrum-header #primary-menu > ul > li > .sub-menu-holder > .sub-menu-wrap > .sub-menu > li .sub-menu a:hover:after {
                       opacity: 1;
                     }
+                  .espcentrum-header #primary-menu > ul > li > .sub-menu-holder > .sub-menu-wrap > .sub-menu > li .sub-menu .sub-menu {
+                    display: none;
+                  }
             .espcentrum-header #primary-menu > ul > li > .sub-menu-holder > .sub-menu-wrap > .sub-menu-bg {
               pointer-events: none;
             }
@@ -1376,6 +1379,43 @@ h1, h2, h3, h4, h5, h6 {
       text-align: left;
     }
   }
+
+.sidenav .sidebarmenu > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+
+.sidenav .sidebarmenu .menu-item {
+      font-weight: 700;
+    }
+
+.sidenav .sidebarmenu .menu-item.current_page_item > a {
+          text-decoration: underline;
+        }
+
+.sidenav .sidebarmenu .sub-menu {
+      margin-left: 2rem;
+    }
+
+.sidenav .sidebarmenu .sub-menu .menu-item {
+        font-weight: 400;
+      }
+
+.sidenav--fysiotherapie .current_page_item > a {
+      --tw-text-opacity: 1;
+      color: rgb(130 33 185 / var(--tw-text-opacity));
+    }
+
+.sidenav--medische-fitness .current_page_item > a {
+      --tw-text-opacity: 1;
+      color: rgb(201 52 56 / var(--tw-text-opacity));
+    }
+
+.sidenav--leefstijl-interventies .current_page_item > a {
+      --tw-text-opacity: 1;
+      color: rgb(1 177 50 / var(--tw-text-opacity));
+    }
 
 .btn {
   display: block;
@@ -1627,8 +1667,24 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: span 9 / span 9;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-span-8 {
+  grid-column: span 8 / span 8;
+}
+
+.col-span-7 {
+  grid-column: span 7 / span 7;
+}
+
 .col-start-1 {
   grid-column-start: 1;
+}
+
+.col-start-5 {
+  grid-column-start: 5;
 }
 
 .row-start-1 {
@@ -1699,6 +1755,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .ml-auto {
   margin-left: auto;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
 }
 
 .block {
@@ -1777,10 +1845,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .min-h-full {
   min-height: 100%;
-}
-
-.min-h-\[80vh\] {
-  min-height: 80vh;
 }
 
 .min-h-\[70vh\] {
@@ -1935,6 +1999,12 @@ h1, h2, h3, h4, h5, h6 {
 .gap-x-10 {
   -moz-column-gap: 2.5rem;
        column-gap: 2.5rem;
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -2207,6 +2277,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 0.5rem;
 }
 
+.pt-20 {
+  padding-top: 5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2330,6 +2404,21 @@ h1, h2, h3, h4, h5, h6 {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-themepurple {
+  --tw-text-opacity: 1;
+  color: rgb(130 33 185 / var(--tw-text-opacity));
+}
+
+.text-themered {
+  --tw-text-opacity: 1;
+  color: rgb(201 52 56 / var(--tw-text-opacity));
+}
+
+.text-themegreen {
+  --tw-text-opacity: 1;
+  color: rgb(1 177 50 / var(--tw-text-opacity));
 }
 
 .underline {

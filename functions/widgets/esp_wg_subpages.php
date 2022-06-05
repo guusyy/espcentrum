@@ -21,7 +21,7 @@ class ESP_subpages_widget extends WP_Widget
 		global $post;
     // Last item in array is the main parent
 		$baseid = wp_get_post_parent_id($post);
-    
+
     // save the current post date
 		$temp = $post;
     // set the post data to the base (parent) post
@@ -29,7 +29,12 @@ class ESP_subpages_widget extends WP_Widget
 		setup_postdata( $post );
 
     ?>
-      <h3 class="text-xl font-semibold text-primary mb-4"><?php the_title(); ?></h3>
+      <div class="sidenav <?php if($baseid === 38) { echo 'sidenav--fysiotherapie'; } ?><?php if($baseid === 40) { echo 'sidenav--medische-fitness'; } ?><?php if($baseid === 42) { echo 'sidenav--leefstijl-interventies'; } ?>">
+        <h3 
+          class="text-xl font-semibold text-secondary mb-4 <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>"
+        >
+          <?php the_title(); ?>
+        </h3>
     <?php
 
 		// reset the post data to the original post
@@ -38,7 +43,7 @@ class ESP_subpages_widget extends WP_Widget
 
     function esp_exclude_menu_items( $items, $menu, $args ) {
 			global $post;
-      
+
 			$baseid = wp_get_post_parent_id($post);
 
 			$pages = get_pages('child_of='.$baseid);
@@ -68,6 +73,10 @@ class ESP_subpages_widget extends WP_Widget
 		));
 
     remove_all_filters( 'wp_get_nav_menu_items' );
+
+    ?>
+      </div>
+    <?php
 
     echo $args['after_widget'];
   }
