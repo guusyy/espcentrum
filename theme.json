@@ -82,11 +82,6 @@
       "lineHeight": true,
       "fontSizes": [
         {
-          "name": "xs",
-          "slug": "xs",
-          "size": "14px"
-        },
-        {
           "name": "Small",
           "slug": "small",
           "size": "16px"
@@ -97,31 +92,15 @@
           "size": "18px"
         },
         {
-          "slug": "large",
-          "name": "Large",
-          "size": "21px",
-          "lineHeight": "31.5px"
-        },
-        {
           "slug": "intro text",
           "name": "Intro tekst",
           "size": "22px",
           "lineHeight": "35.2px"
         },
         {
-          "slug": "xl",
-          "name": "XL",
-          "size": "25px"
-        },
-        {
           "slug": "xxl",
           "name": "2XL",
           "size": "31px"
-        },
-        {
-          "slug": "xxxl",
-          "name": "3XL",
-          "size": "38px"
         }
       ],
       "fontFamily": {

@@ -44,13 +44,21 @@ class ESP_subpages_widget extends WP_Widget
 
     ?>
       <div class="sidenav <?php if($baseid === 18) { echo 'sidenav--praktijk'; } ?> <?php if($baseid === 38) { echo 'sidenav--fysiotherapie'; } ?><?php if($baseid === 40) { echo 'sidenav--medische-fitness'; } ?><?php if($baseid === 42) { echo 'sidenav--leefstijl-interventies'; } ?>">
-        <a class="hover:underline underline-offset-2 text-secondary <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>" href="<?php the_permalink();?>">
-          <h3 
-            class="text-xl font-semibold"
-          >
-            <?php the_title(); ?>
-          </h3>
-        </a>
+        <div class="group px-6 py-3 shadow-md rounded-md lg:shadow-none lg:px-0 lg:py-0">
+          <div class="group-open:mb-6 lg:mb-6 flex items-center justify-between">
+            <a class="hover:underline underline-offset-2 text-secondary <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>" href="<?php the_permalink();?>">
+              <h3
+                class="text-xl font-semibold"
+              >
+                <?php the_title(); ?>
+              </h3>
+            </a>
+            <button class="p-4 group-open:rotate-180 lg:hidden transition-all fill-secondary <?php if($baseid === 38) { echo 'fill-themepurple'; } ?><?php if($baseid === 40) { echo 'fill-themered'; } ?><?php if($baseid === 42) { echo 'fill-themegreen'; } ?>" toggle-open>
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="inherit" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.12 0.879999L-3.93402e-07 3L9 12L18 3L15.88 0.879998L9 7.76L2.12 0.879999Z" fill="inherit"/>
+              </svg>
+            </button>
+          </div>
     <?php
 
     function esp_exclude_menu_items( $items, $menu, $args ) {
@@ -91,6 +99,7 @@ class ESP_subpages_widget extends WP_Widget
 		$post = $temp;
 
     ?>
+        </div>
       </div>
     <?php
 

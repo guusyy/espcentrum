@@ -23,7 +23,7 @@ Template Post Type: post, page, product, programma
         <?php endif; ?>
         <div class="container-xl mx-auto w-full">
           <div class="my-8 lg:my-14 grid grid-cols-12 lg:gap-x-5 xl:gap-x-10">
-            <aside class="col-span-full lg:col-span-4 my-8 lg:my-0 lg:pt-24">
+            <aside class="col-span-full lg:col-span-4 my-8 lg:my-0 lg:pt-[5.5rem]">
               <?php if (is_active_sidebar('page-sidebar')) : ?>
                 <?php dynamic_sidebar('page-sidebar'); ?>
               <?php endif; ?>

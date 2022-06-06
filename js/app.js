@@ -1,11 +1,47 @@
 (() => {
   // resources/js/app.js
   window.addEventListener("load", function() {
-    let main_navigation = document.querySelector("#primary-menu");
+    let main_navigation = document.querySelector("#navigation-menu");
     document.querySelector("#primary-menu-toggle").addEventListener("click", function(e) {
       e.preventDefault();
       e.currentTarget.classList.toggle("active-menu");
       main_navigation.classList.toggle("hidden");
+      anime({
+        targets: main_navigation.querySelectorAll("#primary-menu > ul > li"),
+        opacity: [0, 1],
+        translateY: [10, 0],
+        delay: anime.stagger(100)
+      });
+      var tl2 = anime.timeline({
+        easing: "easeOutExpo",
+        complete: () => {
+          [
+            ...main_navigation.querySelectorAll("#primary-menu > ul > li"),
+            ...main_navigation.querySelectorAll("#cta-menu > ul > li"),
+            ...main_navigation.querySelectorAll("[top-nav-items] > li"),
+            ...main_navigation.querySelectorAll("[social-items]")
+          ].forEach((elem) => elem.style = "");
+        }
+      });
+      tl2.add({
+        targets: main_navigation.querySelectorAll("#primary-menu > ul > li"),
+        opacity: [0, 1],
+        translateY: [10, 0],
+        delay: anime.stagger(100)
+      }).add({
+        targets: main_navigation.querySelectorAll("#cta-menu > ul > li"),
+        opacity: [0, 1],
+        translateY: [10, 0]
+      }, "-=800").add({
+        targets: main_navigation.querySelectorAll("[top-nav-items] > li"),
+        opacity: [0, 1],
+        translateY: [10, 0],
+        delay: anime.stagger(100)
+      }, "-=1000").add({
+        targets: main_navigation.querySelectorAll("[social-items]"),
+        opacity: [0, 1],
+        translateY: [10, 0]
+      }, "-=1000");
     });
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function(e) {
@@ -18,6 +54,18 @@
     document.querySelectorAll(".menu-item-has-children").forEach((menuItem) => {
       menuItem.addEventListener("click", function(e) {
         e.currentTarget.classList.toggle("espcentrum-open");
+      });
+    });
+    document.querySelectorAll("[toggle-open]")?.forEach((button) => {
+      button.addEventListener("click", () => {
+        const group = button.closest(".group");
+        group?.toggleAttribute("open");
+        anime({
+          targets: group.querySelectorAll(".sidebarmenu > li"),
+          opacity: [0, 1],
+          translateY: [10, 0],
+          delay: anime.stagger(100)
+        });
       });
     });
     var lastScrollTop = 0;

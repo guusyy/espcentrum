@@ -1,10 +1,3 @@
-<?php
-/*
-Template Name: Boxed page layout
-Template Post Type: post, page, product, programma
-*/
-?>
-
 <?php get_header(); ?>
 
 <main class="bg-white min-h-full flex-grow">

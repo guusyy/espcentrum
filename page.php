@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Boxed page layout
+Template Name: Full-width page layout
 Template Post Type: post, page, product, programma
 */
 ?>
@@ -9,11 +9,11 @@ Template Post Type: post, page, product, programma
 
 	<?php if ( have_posts() ) : ?>
 		<?php
-      while ( have_posts() ) :
-        the_post();
+		while ( have_posts() ) :
+			the_post();
 			?>
 
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+			<?php get_template_part( 'template-parts/content-full-width-image', get_post_format() ); ?>
 
 		<?php endwhile; ?>
 

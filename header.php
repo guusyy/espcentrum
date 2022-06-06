@@ -24,7 +24,7 @@
 
       <header class="espcentrum-header bg-light shadow bg-white">
         <div class="hidden lg:block bg-gray2 border-b shadow-[0px_1px_0px_rgba(0, 0, 0, 0.25)]">
-          <div class="px-10 py-2 flex justify-between">
+          <div class="container-base mx-auto px-10 py-2 flex justify-between">
             <ul class="flex gap-5 xl:gap-12 text-xs xl:text-small">
               <li class="flex items-center gap-2" opening-time>
                 <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +40,7 @@
                 </a>
               </li>
               <li>
-                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="#">
+                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="https://espcentrum.virtuagym.com/" target="_blank">
                   <svg width="14" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.667 7.2H3.11v1.6h1.556V7.2Zm3.11 0H6.223v1.6h1.556V7.2Zm3.112 0H9.333v1.6h1.556V7.2Zm1.555-5.6h-.777V0H10.11v1.6H3.89V0H2.333v1.6h-.777C.692 1.6.008 2.32.008 3.2L0 14.4c0 .88.692 1.6 1.556 1.6h10.888C13.3 16 14 15.28 14 14.4V3.2c0-.88-.7-1.6-1.556-1.6Zm0 12.8H1.556V5.6h10.888v8.8Z" fill="#575757" /></svg>
                   Reserveer trainingsmoment
@@ -49,7 +49,7 @@
                 </a>
               </li>
               <li>
-                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="#">
+                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="https://espcentrum.virtuagym.com/" target="_blank">
                   <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 8c1.66 0 2.99-1.34 2.99-3S10.66 2 9 2C7.34 2 6 3.34 6 5s1.34 3 3 3Zm0 2c-2.33 0-7 1.17-7 3.5V16h14v-2.5c0-2.33-4.67-3.5-7-3.5Z" fill="#575757" /></svg>
                   Mijn account
@@ -105,7 +105,7 @@
           </div>
         </div>
         <div class="lg:px-10 relative">
-          <div class="lg:flex lg:justify-between lg:items-center lg:py-6">
+          <div class="lg:container-base lg:mx-auto lg:flex lg:justify-between lg:items-center lg:py-6">
             <div class="flex justify-between items-center lg:shadow-none shadow-md py-2 px-5 lg:py-0 lg:px-0">
               <div class="h-[2.6rem] lg:h-[3.5rem] max-w-[148px] lg:min-w-[13rem]">
                 <?php if (has_custom_logo()) { ?>
@@ -166,7 +166,7 @@
                   );
                   ?>
                   <div class="py-2 flex flex-col justify-between w-full lg:hidden my-10 gap-10">
-                    <ul class="flex flex-col gap-5 xl:gap-12 text-xs xl:text-small">
+                    <ul class="flex flex-col gap-5 xl:gap-12 text-xs xl:text-small" top-nav-items>
                       <li class="flex items-center gap-2">
                         <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" /></svg>
@@ -198,7 +198,7 @@
                         </a>
                       </li>
                     </ul>
-                    <ul class="flex gap-2">
+                    <ul class="flex gap-2" social-items>
                       <li>
                         <a href="#">
                           <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -60,6 +60,8 @@
                 }
 
                 &:only-child {
+                  @apply col-start-2;
+
                   > a {
                     @apply border-secondary flex gap-3;
                     &:before {
@@ -197,15 +199,15 @@
 
 .sidenav {
 
-  > a {
-    @apply hover:underline underline-offset-[5px] flex gap-3 items-center mb-6;
+  > div > div > a {
+    @apply hover:underline underline-offset-[5px] flex gap-3 items-center;
   }
 
   .sidebarmenu {
-    @apply space-y-2;
+    @apply hidden group-open:block lg:block my-6 lg:my-0 space-y-3 lg:space-y-2;
 
     .menu-item {
-      @apply font-bold text-[20px];
+      @apply font-medium lg:font-bold text-[20px];
 
       &.current_page_item {
 
@@ -225,7 +227,11 @@
   }
 
   &--fysiotherapie {
-    > a {
+    > div {
+      @apply bg-themepurple/10 lg:bg-transparent;
+    }
+
+    > div > div > a {
       @apply border-themepurple;
       &:before {
         content: '';
@@ -244,7 +250,11 @@
   }
 
   &--medische-fitness {
-    > a {
+    > div {
+      @apply bg-themered/10 lg:bg-transparent;
+    }
+
+    > div > div > a {
       @apply border-themered;
       &:before {
         content: '';
@@ -263,7 +273,11 @@
   }
 
   &--leefstijl-interventies {
-    > a {
+    > div {
+      @apply bg-themegreen/10 lg:bg-transparent;
+    }
+
+    > div > div > a {
       @apply border-themegreen;
       &:before {
         content: '';
@@ -282,7 +296,11 @@
   }
 
   &--praktijk {
-    > a {
+    > div {
+      @apply bg-secondary/10 lg:bg-transparent;
+    }
+
+    > div > div > a {
       @apply border-secondary;
       &:before {
         content: '';
