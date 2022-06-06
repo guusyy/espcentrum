@@ -34,13 +34,19 @@ class ESP_subpages_widget extends WP_Widget
       }
     }
 
+    if(wp_get_post_parent_id( $post ) != 21 && wp_get_post_parent_id( $post ) != 0) {
+      $baseid = wp_get_post_parent_id($post);
+      $post = get_post( $baseid );
+      $level = count(get_post_ancestors( $post->ID )) + 1;
+    }
+
 		setup_postdata( $post );
 
     ?>
-      <div class="sidenav <?php if($baseid === 38) { echo 'sidenav--fysiotherapie'; } ?><?php if($baseid === 40) { echo 'sidenav--medische-fitness'; } ?><?php if($baseid === 42) { echo 'sidenav--leefstijl-interventies'; } ?>">
+      <div class="sidenav <?php if($baseid === 18) { echo 'sidenav--praktijk'; } ?> <?php if($baseid === 38) { echo 'sidenav--fysiotherapie'; } ?><?php if($baseid === 40) { echo 'sidenav--medische-fitness'; } ?><?php if($baseid === 42) { echo 'sidenav--leefstijl-interventies'; } ?>">
         <a class="hover:underline underline-offset-2 text-secondary <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>" href="<?php the_permalink();?>">
           <h3 
-            class="text-xl font-semibold mb-4"
+            class="text-xl font-semibold"
           >
             <?php the_title(); ?>
           </h3>
