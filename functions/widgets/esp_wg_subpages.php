@@ -19,32 +19,38 @@ class ESP_subpages_widget extends WP_Widget
 
     /* Get an array of Ancestors and Parents if thezy exist */
 		global $post;
-    // Last item in array is the main parent
-		$baseid = wp_get_post_parent_id($post);
+
+    $level = count(get_post_ancestors( $post->ID )) + 1;
 
     // save the current post date
-		$temp = $post;
-    // set the post data to the base (parent) post
-		$post = get_post( $baseid );
+    $temp = $post;
+    $baseid = get_the_ID();
+    
+    if($level > 2) {
+      while($level > 2) {
+        $baseid = wp_get_post_parent_id($post);
+        $post = get_post( $baseid );
+        $level = count(get_post_ancestors( $post->ID )) + 1;
+      }
+    }
+
 		setup_postdata( $post );
 
     ?>
       <div class="sidenav <?php if($baseid === 38) { echo 'sidenav--fysiotherapie'; } ?><?php if($baseid === 40) { echo 'sidenav--medische-fitness'; } ?><?php if($baseid === 42) { echo 'sidenav--leefstijl-interventies'; } ?>">
-        <h3 
-          class="text-xl font-semibold text-secondary mb-4 <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>"
-        >
-          <?php the_title(); ?>
-        </h3>
+        <a class="hover:underline underline-offset-2 text-secondary <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>" href="<?php the_permalink();?>">
+          <h3 
+            class="text-xl font-semibold mb-4"
+          >
+            <?php the_title(); ?>
+          </h3>
+        </a>
     <?php
-
-		// reset the post data to the original post
-		wp_reset_postdata();
-		$post = $temp;
 
     function esp_exclude_menu_items( $items, $menu, $args ) {
 			global $post;
 
-			$baseid = wp_get_post_parent_id($post);
+			$baseid = get_the_ID();
 
 			$pages = get_pages('child_of='.$baseid);
       $childpageids = array();
@@ -73,6 +79,10 @@ class ESP_subpages_widget extends WP_Widget
 		));
 
     remove_all_filters( 'wp_get_nav_menu_items' );
+
+    // reset the post data to the original post
+		wp_reset_postdata();
+		$post = $temp;
 
     ?>
       </div>

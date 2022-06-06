@@ -48,6 +48,10 @@ module.exports = {
             '21px', {
             lineHeight: '31.5px',
           }],
+          'lg2': [
+            '22px', {
+            lineHeight: '35.2px',
+          }],
           'xl': [
             '25px', {
             lineHeight: '35px',

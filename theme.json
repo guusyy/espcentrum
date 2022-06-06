@@ -103,6 +103,12 @@
           "lineHeight": "31.5px"
         },
         {
+          "slug": "intro text",
+          "name": "Intro tekst",
+          "size": "22px",
+          "lineHeight": "35.2px"
+        },
+        {
           "slug": "xl",
           "name": "XL",
           "size": "25px"
