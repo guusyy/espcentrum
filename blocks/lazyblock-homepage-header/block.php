@@ -1,4 +1,4 @@
-<section class="grid grid-cols-12 items-center justify-center lg:min-h-[87vh] lg:max-h-[87vh] overflow-hidden">
+<section class="grid grid-cols-12 items-center justify-center lg:min-h-[87vh] overflow-hidden">
 
   <!-- decorative background -->
   <figure class="hidden lg:block intro-container col-span-9 2xl:col-span-7 col-start-1 2xl:col-start-1 row-start-1 h-full w-full z-10">

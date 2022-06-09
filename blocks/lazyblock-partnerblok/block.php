@@ -1,6 +1,6 @@
 <section>
   <div class="container-xl mx-auto my-20">
-    <div class="grid grid-cols-12 gap-x-10 items-center">
+    <div class="grid grid-cols-12 lg:gap-x-10 items-center">
       <div class="col-span-full mb-4 text-center">
         <h2 class="text-3xl font-bold"><?php echo $attributes['title']; ?></h2>
       </div>

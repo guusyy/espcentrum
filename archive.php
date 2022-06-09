@@ -3,7 +3,7 @@
 <main class="bg-white min-h-full flex-grow">
   <section>
     <div class="container-base mx-auto py-16">
-      <div class="grid grid-cols-12 gap-x-10 items-center">
+      <div class="grid grid-cols-12 lg:gap-x-10 items-center">
 
         <div class="col-span-full mb-12 pb-3 border-b-2 border-primary flex items-center gap-10">
           <h2 class="text-3xl font-bold">Actueel</h2>

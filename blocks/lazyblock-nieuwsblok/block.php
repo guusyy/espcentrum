@@ -1,6 +1,6 @@
 <section>
   <div class="container-base py-16">
-    <div class="grid grid-cols-12 gap-x-10 items-center">
+    <div class="grid grid-cols-12 lg:gap-x-10 items-center">
       <div class="col-span-full mb-4 pb-3 border-b-2 border-primary flex items-center gap-10">
         <h2 class="text-3xl font-bold"><?php echo $attributes['title']; ?></h2>
         <a href="<?php echo $attributes['button-url']; ?>" class="btn btn--outline hidden lg:inline-block"><?php echo $attributes['button-label']; ?></a>
