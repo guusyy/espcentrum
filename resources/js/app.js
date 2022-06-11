@@ -1,5 +1,8 @@
 // Navigation toggle
 window.addEventListener('load', function () {
+
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
   let main_navigation = document.querySelector('#navigation-menu');
 
   document.querySelector('#primary-menu-toggle').addEventListener('click', function (e) {
@@ -87,17 +90,20 @@ window.addEventListener('load', function () {
 
   var lastScrollTop = 0;
 
-  window.addEventListener('scroll', function () {
-    var header = document.querySelector('.espcentrum-header');
-
-    var st = window.pageYOffset || document.documentElement.scrollTop;
-    if (st > lastScrollTop) {
-      header.classList.toggle("espcentrum-sticky", window.scrollY > 0);
-    } else {
-      header.classList.remove("espcentrum-sticky");
-    }
-    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-  })
+  // STICKY NAVIGATION THAT HIDES TOPBAR (NOT FOR SAFARI DUE TO BUG)
+  if (!isSafari) {
+    window.addEventListener('scroll', function () {
+      var header = document.querySelector('.espcentrum-header');
+  
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop) {
+        header.classList.toggle("espcentrum-sticky", window.scrollY > 0);
+      } else {
+        header.classList.remove("espcentrum-sticky");
+      }
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    })
+  }
 
   // SWIPER INIT
 

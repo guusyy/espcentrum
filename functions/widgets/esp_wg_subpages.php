@@ -44,8 +44,8 @@ class ESP_subpages_widget extends WP_Widget
 
     ?>
       <div class="sidenav <?php if($baseid === 18) { echo 'sidenav--praktijk'; } ?> <?php if($baseid === 38) { echo 'sidenav--fysiotherapie'; } ?><?php if($baseid === 40) { echo 'sidenav--medische-fitness'; } ?><?php if($baseid === 42) { echo 'sidenav--leefstijl-interventies'; } ?>">
-        <div class="group px-6 py-3 shadow-md rounded-md lg:shadow-none lg:px-0 lg:py-0">
-          <div class="group-open:mb-6 lg:mb-6 flex items-center justify-between">
+        <div class="px-5 py-2 rounded-md shadow-md group lg:shadow-none lg:px-0 lg:py-0">
+          <div class="flex items-center justify-between group-open:mb-6 lg:mb-6">
             <a class="hover:underline underline-offset-2 text-secondary <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>" href="<?php the_permalink();?>">
               <h3
                 class="text-xl font-semibold"

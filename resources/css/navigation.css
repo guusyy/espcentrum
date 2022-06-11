@@ -207,7 +207,11 @@
     @apply hidden group-open:block lg:block my-6 lg:my-0 space-y-3 lg:space-y-2;
 
     .menu-item {
-      @apply font-medium lg:font-bold text-[20px];
+      @apply font-medium lg:font-bold text-[20px] underline-offset-[3px];
+
+      & a:hover {
+        @apply underline;
+      }
 
       &.current_page_item {
 

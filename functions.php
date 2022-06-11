@@ -151,22 +151,22 @@ function create_posttype() {
       )
   );
 
-  register_post_type( 'Partners',
+  register_post_type( 'Vestigingen',
   // CPT Options
       array(
           'labels' => array(
-              'name' => __( 'Partners' ),
-              'singular_name' => __( 'Partner' )
+              'name' => __( 'Vestigingen' ),
+              'singular_name' => __( 'Vestiging' )
           ),
           'supports'            => array( 'title', 'custom-fields'),
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'partner'),
-          'show_in_rest' => true,
-          'menu_icon' => 'dashicons-building',
-          'publicly_queryable' =>  true,
+          'rewrite' => array('slug' => 'vestiging'),
+          'show_in_rest' => false,
+          'menu_icon' => 'dashicons-location',
+          'publicly_queryable' =>  false,
           'hierarchical'        => true,
-          'menu_position'       => 21,
+          'menu_position'       => 30,
           'template' => false
       )
   );
@@ -186,7 +186,27 @@ function create_posttype() {
           'menu_icon' => 'dashicons-groups',
           'publicly_queryable' =>  false,
           'hierarchical'        => true,
-          'menu_position'       => 31,
+          'menu_position'       => 40,
+          'template' => false
+      )
+  );
+
+  register_post_type( 'Partners',
+  // CPT Options
+      array(
+          'labels' => array(
+              'name' => __( 'Partners' ),
+              'singular_name' => __( 'Partner' )
+          ),
+          'supports'            => array( 'title', 'custom-fields'),
+          'public' => true,
+          'has_archive' => true,
+          'rewrite' => array('slug' => 'partner'),
+          'show_in_rest' => true,
+          'menu_icon' => 'dashicons-building',
+          'publicly_queryable' =>  true,
+          'hierarchical'        => true,
+          'menu_position'       => 50,
           'template' => false
       )
   );
@@ -202,7 +222,7 @@ function register_custom_widget_areas() {
     'description' => esc_html__( 'Footer column one', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="mb-2 font-bold espcentrum-widget-title">',
     'after_title' => '</h3></div>'
     )
   );
@@ -213,7 +233,7 @@ function register_custom_widget_areas() {
     'description' => esc_html__( 'Footer column two', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="espcentrum-widget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="mb-2 font-bold espcentrum-widget-title">',
     'after_title' => '</h3></div>'
     )
   );
@@ -224,7 +244,7 @@ function register_custom_widget_areas() {
     'description' => esc_html__( 'Footer column three', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="mb-2 font-bold espcentrum-widget-title">',
     'after_title' => '</h3></div>'
     )
   );
@@ -235,7 +255,7 @@ function register_custom_widget_areas() {
     'description' => esc_html__( 'Footer column four', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="mb-2 font-bold espcentrum-widget-title">',
     'after_title' => '</h3></div>'
     )
   );
@@ -246,7 +266,7 @@ function register_custom_widget_areas() {
     'description' => esc_html__( 'Sub footer', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="mb-2 font-bold espcentrum-widget-title">',
     'after_title' => '</h3></div>'
     )
   );
@@ -257,7 +277,7 @@ function register_custom_widget_areas() {
     'description' => esc_html__( 'Logo footer', 'espcentrum' ),
     'before_widget' => '<div id="%1$s" class="%2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="espcentrum-widget-title font-bold mb-2">',
+    'before_title' => '<div class="espcentrum-widget-title-holder"><h3 class="mb-2 font-bold espcentrum-widget-title">',
     'after_title' => '</h3></div>'
     )
   );

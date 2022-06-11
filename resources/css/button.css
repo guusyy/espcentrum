@@ -1,4 +1,4 @@
-.btn {
+.btn, .wp-block-button__link {
   @apply text-base block w-full lg:w-fit text-center lg:inline-block font-bold py-2 px-4 bg-primaryAlt shadow-md rounded transition-all duration-500 text-white; 
 
   &:hover, &:focus {

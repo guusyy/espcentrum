@@ -13,28 +13,28 @@ Template Post Type: nieuws
         the_post();
 			?>
 
-      <main class="bg-white min-h-full flex-grow">
+      <main class="flex-grow min-h-full bg-white">
 
       <div class="">
         <article <?php post_class( 'pb-28 bg-white min-h-full' ); ?>>
 
           <?php if ( has_post_thumbnail() ) : ?>
-            <div class="container-base mx-auto h-[380px] md:h-96 overflow-hidden">
+            <div class="container-base mx-auto h-[200px] lg:h-[380px] md:h-96 overflow-hidden">
               <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
             </div>
           <?php endif; ?>
           
-          <div class="container-xl mx-auto">
+          <div class="mx-auto container-xl">
             <div class="grid grid-cols-12 lg:gap-x-5 xl:gap-x-10">
               <div class="col-span-full lg:col-start-3 lg:col-span-8">
                 <div class="mt-12 mb-8">
                   <a class="btn" href="<?php echo get_post_type_archive_link('nieuws'); ?>">Terug naar overzicht</a>
                 </div>
-                <header class="entry-header mt-8 fade">
-                  <?php the_title( sprintf( '<h2 class="entry-title text-black text-4xl font-bold mb-2"><span>', esc_url( get_permalink() ) ), '</span></h2>' ); ?>
+                <header class="mt-8 entry-header fade">
+                  <?php the_title( sprintf( '<h2 class="mb-2 text-4xl font-bold text-black entry-title"><span>', esc_url( get_permalink() ) ), '</span></h2>' ); ?>
                 </header>
                 <div class="entry-content appear">
-                  <span class="block text-secondary font-semibold text-small mb-6">
+                  <span class="block mb-6 font-semibold text-secondary text-small">
                     <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
                   </span>
                   <?php

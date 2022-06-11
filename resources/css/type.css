@@ -1,0 +1,18 @@
+.rte {
+
+    ul, ol {
+        @apply my-2;
+
+        li {
+            @apply mb-0.5;
+        }
+    }
+
+    ul li:before {
+        @apply content-["•"] mr-3;
+    }
+
+    ol {
+        @apply list-decimal pl-5;
+    }
+}

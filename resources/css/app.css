@@ -1,5 +1,6 @@
 @import "tailwindcss/base";
 
+@import "type.css";
 @import "custom.css";
 @import "footer.css";
 @import "navigation.css";
