@@ -4,7 +4,7 @@
 
         <div medewerkers-container class="relative !max-h-[min(70vh,_1000px)] overflow-hidden transition-all duration-1000">
 
-            <ul class="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-8>
+            <ul class="grid grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4 gap-y-8">
                 <?php 
                     global $loop;
                     
