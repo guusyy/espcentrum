@@ -12,6 +12,7 @@
                     $loop = new WP_Query( $all_posts );
         
                     if($loop->have_posts()){
+                        for ($x = 0; $x <= 10; $x++) {
                         while($loop->have_posts()){
                                 $loop->the_post();
                             ?>
@@ -49,6 +50,7 @@
                                 </article>
                             </li>
                             <?php
+                        }
                         }
                     }
                     wp_reset_query();
