@@ -48,7 +48,7 @@ class ESP_subpages_widget extends WP_Widget
           <div class="flex items-center justify-between group-open:mb-6 lg:mb-6">
             <a class="hover:underline underline-offset-2 text-secondary <?php if($baseid === 38) { echo 'text-themepurple'; } ?><?php if($baseid === 40) { echo 'text-themered'; } ?><?php if($baseid === 42) { echo 'text-themegreen'; } ?>" href="<?php the_permalink();?>">
               <h3
-                class="text-xl font-semibold"
+                class="text-lg font-semibold lg:text-xl"
               >
                 <?php the_title(); ?>
               </h3>
