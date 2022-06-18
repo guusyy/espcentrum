@@ -19,7 +19,7 @@ Template Post Type: nieuws
         <article <?php post_class( 'pb-28 bg-white min-h-full' ); ?>>
 
           <?php if ( has_post_thumbnail() ) : ?>
-            <div class="container-base mx-auto h-[200px] lg:h-[380px] md:h-96 overflow-hidden">
+            <div class="container-base mx-auto h-[200px] lg:h-[360px] md:h-96 overflow-hidden">
               <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
             </div>
           <?php endif; ?>

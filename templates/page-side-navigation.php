@@ -16,13 +16,13 @@ Template Post Type: post, page, product, programma
       <main class="flex-grow bg-white">
         <?php if ( has_post_thumbnail() ) : ?>
           <div class="w-full mx-auto container-base">
-            <div class="h-[200px] lg:h-[380px] md:h-96 overflow-hidden -mx-8 md:-mx-6 lg:-mx-4">
+            <div class="h-[200px] lg:h-[360px] md:h-96 overflow-hidden -mx-8 md:-mx-6 lg:-mx-4">
               <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
             </div>
           </div>
         <?php endif; ?>
         <div class="w-full mx-auto container-xl">
-          <div class="grid grid-cols-12 my-4 lg:my-14 lg:gap-x-5 xl:gap-x-10">
+          <section class="grid grid-cols-12 my-4 lg:my-14 lg:gap-x-5 xl:gap-x-10">
             <aside class="col-span-full lg:col-span-4 my-4 mb-7 lg:my-0 lg:pt-[5.5rem]">
               <?php if (is_active_sidebar('page-sidebar')) : ?>
                 <?php dynamic_sidebar('page-sidebar'); ?>
@@ -75,8 +75,11 @@ Template Post Type: post, page, product, programma
         
               <?php endif; ?>
             </article>
-          </div>
+          </section>
         </div>
+        <?php if ( get_field('toon_medewerkers')) : ?>
+          <?php get_template_part( 'template-parts/medewerkers' ); ?>
+        <?php endif; ?>
 
       </main>
 

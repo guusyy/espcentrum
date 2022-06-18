@@ -142,6 +142,30 @@ window.addEventListener('load', function () {
     }
   });
 
+  // MEDEWERKERS SHOW ALL OR HIDE ALL
+
+  [...document.querySelectorAll('[medewerkers-show]')].forEach(button => {
+    button.addEventListener('click', () => {
+      const hideButton = document.querySelector('[medewerkers-hide]');
+      const overlay = document.querySelector('[medewerkers-overlay]');
+      const container = document.querySelector('[medewerkers-container]');
+      const contentHeight = container.querySelector('ul').clientHeight + button.clientHeight;
+
+      button.classList.add('hidden');
+      hideButton.classList.remove('hidden');
+      overlay.classList.add('hidden');
+      container.classList.remove('!max-h-[min(70vh,_1000px)]', 'overflow-hidden');
+      container.style.maxHeight = contentHeight + 'px';
+
+      hideButton.addEventListener('click', () => {
+        button.classList.remove('hidden');
+        hideButton.classList.add('hidden');
+        overlay.classList.remove('hidden');
+        container.classList.add('!max-h-[min(70vh,_1000px)]', 'overflow-hidden');
+      })
+    })
+  })
+
   // ANIMATIONS
 
   // Create a timeline with default parameters

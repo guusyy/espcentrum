@@ -145,7 +145,7 @@
                     array(
                       'container_id'    => 'primary-menu',
                       'container_class' => 'w-full',
-                      'menu_class'      => 'flex flex-col lg:flex-row lg:items-center justify-center gap-0 lg:gap-12 divide-y divide-gray4 lg:divide-y-0',
+                      'menu_class'      => 'flex flex-col lg:flex-row lg:items-center justify-center gap-0 lg:gap-6 xl:gap-12 divide-y divide-gray4 lg:divide-y-0',
                       'theme_location'  => 'primary',
                       'li_class'        => 'lg:font-regular lg:text-[20px] group lg:py-0 py-4',
                       'fallback_cb'     => false,
@@ -250,6 +250,6 @@
         </div>
         </header>
 
-        <div id="content" class="site-content flex-grow z-10 overflow-hidden flex bg-light min-h-[70vh]">
+        <div id="content" class="site-content flex-grow z-10 flex bg-light min-h-[70vh]">
 
           <?php do_action('espcentrum_theme_content_start'); ?>

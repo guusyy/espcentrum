@@ -156,7 +156,10 @@ function create_posttype() {
       array(
           'labels' => array(
               'name' => __( 'Vestigingen' ),
-              'singular_name' => __( 'Vestiging' )
+              'singular_name' => __( 'Vestiging' ),
+              'add_new'               => __( 'Nieuwe vestiging', 'vestiging' ),
+              'add_new_item'          => __( 'Nieuwe vestiging', 'vestiging' ),
+              'new_item'              => __( 'Nieuwe vestiging', 'vestiging' ),
           ),
           'supports'            => array( 'title', 'custom-fields'),
           'public' => true,
@@ -176,7 +179,10 @@ function create_posttype() {
       array(
           'labels' => array(
               'name' => __( 'Medewerkers' ),
-              'singular_name' => __( 'Medewerker' )
+              'singular_name' => __( 'Medewerker' ),
+              'add_new'               => __( 'Nieuwe medewerker', 'medewerker' ),
+              'add_new_item'          => __( 'Nieuwe medewerker', 'medewerker' ),
+              'new_item'              => __( 'Nieuwe medewerker', 'medewerker' ),
           ),
           'supports'            => array( 'title', 'custom-fields'),
           'public' => true,
@@ -196,7 +202,10 @@ function create_posttype() {
       array(
           'labels' => array(
               'name' => __( 'Partners' ),
-              'singular_name' => __( 'Partner' )
+              'singular_name' => __( 'Partner' ),
+              'add_new'               => __( 'Nieuwe partner', 'partner' ),
+              'add_new_item'          => __( 'Nieuwe partner', 'partner' ),
+              'new_item'              => __( 'Nieuwe partner', 'partner' ),
           ),
           'supports'            => array( 'title', 'custom-fields'),
           'public' => true,

@@ -2,7 +2,7 @@
   <article <?php post_class( 'pb-28 container-base bg-white min-h-full g' ); ?>>
 
     <?php if ( has_post_thumbnail() ) : ?>
-      <div class="h-[200px] lg:h-[380px] md:h-96 overflow-hidden -mx-8 md:-mx-6 lg:-mx-4">
+      <div class="h-[200px] lg:h-[360px] md:h-96 overflow-hidden -mx-8 md:-mx-6 lg:-mx-4">
         <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
       </div>
     <?php endif; ?>
