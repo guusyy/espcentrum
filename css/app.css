@@ -2360,6 +2360,18 @@ h1, h2, h3, h4, h5, h6 {
   max-height: fit-content;
 }
 
+.max-h-\[120px\] {
+  max-height: 120px;
+}
+
+.max-h-\[150px\] {
+  max-height: 150px;
+}
+
+.max-h-\[125px\] {
+  max-height: 125px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2448,6 +2460,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-\[200px\] {
+  max-width: 200px;
+}
+
+.max-w-\[250px\] {
+  max-width: 250px;
 }
 
 .flex-none {
@@ -3801,6 +3821,10 @@ h1, h2, h3, h4, h5, h6 {
     max-height: fit-content;
   }
 
+  .lg\:max-h-\[150px\] {
+    max-height: 150px;
+  }
+
   .lg\:min-h-0 {
     min-height: 0px;
   }
@@ -3837,6 +3861,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .lg\:min-w-\[13rem\] {
     min-width: 13rem;
+  }
+
+  .lg\:max-w-\[250px\] {
+    max-width: 250px;
   }
 
   .lg\:translate-x-0 {
@@ -4023,6 +4051,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .xl\:col-start-1 {
     grid-column-start: 1;
+  }
+
+  .xl\:max-h-\[180px\] {
+    max-height: 180px;
+  }
+
+  .xl\:max-w-\[300px\] {
+    max-width: 300px;
   }
 
   .xl\:gap-12 {
