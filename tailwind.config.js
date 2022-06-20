@@ -78,6 +78,10 @@ module.exports = {
             'clamp(1.875rem, 2vw + 1rem, 3.25rem)', {
             lineHeight: 'clamp(2.375rem, 3vw + 1rem, 4rem)',
           }],
+          '5xl': [
+            'clamp(1.875rem, 1.75vw + 1rem, 3.25rem)', {
+            lineHeight: 'clamp(2.375rem, 2.25vw + 1rem, 4rem)',
+          }]
         },
         container: {
           padding: {

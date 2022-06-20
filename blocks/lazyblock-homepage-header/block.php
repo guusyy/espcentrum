@@ -6,7 +6,7 @@
 
   <!-- col left -->
   <div class="z-20 flex flex-col h-full col-start-1 row-start-2 gap-6 p-6 lg:gap-8 col-span-full lg:col-span-9 xl:col-span-7 lg:col-start-1 xl:col-start-1 lg:row-start-1 lg:p-10 xl:p-20 lg:pr-60">
-    <h1 class="text-4xl font-bold text-black lg:pr-14 2xl:pr-28"><?php echo $attributes['title']; ?></h1>
+    <h1 class="text-5xl font-bold text-black lg:pr-14 2xl:pr-28"><?php echo $attributes['title']; ?></h1>
     <div class="order-2 lg:order-1 text-base xl:text-lg text-black max-w-[72rem] lg:pr-10 xl:pr-32 2xl:pr-60">
       <?php echo $attributes['intro-text']; ?>
     </div>

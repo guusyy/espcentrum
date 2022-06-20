@@ -21,7 +21,7 @@ Template Post Type: post, page, product, programma
                 <div class="lg:rows-start-1 col-span-full lg:col-start-1 lg:col-span-6">
                   <div class="h-full py-6 lg:py-10 xl:py-14">
                     <div class="flex items-center gap-5 mb-4 lg:mb-8">
-                      <svg class="!w-[25px] !h-[25px] lg:!w-[54px] lg:!h-[54px]" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg class="!w-[25px] !h-[25px] lg:!w-[46px] lg:!h-[46px]" width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M50.139 34.722L54 30.861L50.139 27L40.5 36.639L17.361 13.5L27 3.861L23.139 0L19.278 3.861L15.417 0L9.639 5.778L5.778 1.917L1.917 5.778L5.778 9.639L0 15.417L3.861 19.278L0 23.139L3.861 27L13.5 17.361L36.639 40.5L27 50.139L30.861 54L34.722 50.139L38.583 54L44.361 48.222L48.222 52.083L52.083 48.222L48.222 44.361L54 38.583L50.139 34.722Z" fill="#C93438"/>
                       </svg>
                       <h1 class="text-4xl font-bold leading-[1.1] text-themered"><?php echo get_field('titel'); ?></h1>
