@@ -15,9 +15,23 @@ Template Post Type: post, page, product, programma
 
       <main class="flex-grow bg-white">
         <?php if ( has_post_thumbnail() ) : ?>
-          <div class="w-full mx-auto container-base">
-            <div class="h-[200px] lg:h-[360px] md:h-96 overflow-hidden -mx-8 md:-mx-6 lg:-mx-4">
-              <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
+          <div class="overflow-hidden">
+            <div class="w-full mx-auto container-base">
+              <div class="h-[200px] lg:h-[360px] md:h-96 relative">
+                <div class="absolute bottom-0 z-50 hidden lg:block right-full">
+                  <svg class="z-50 h-full fill-white" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                      <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" />
+                  </svg>
+                </div>
+                <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+calc(247px*2))] overflow-hidden">
+                  <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-top')); ?>
+                </div>
+                <div class="absolute bottom-0 z-50 hidden lg:block left-full">
+                  <svg class="z-50 h-full rotate-180 fill-white" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                      <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         <?php endif; ?>

@@ -15,27 +15,27 @@
             </div>
             <div class="relative row-start-1 col-span-full lg:col-start-7 lg:col-span-6">
                 <div class="h-[200px] lg:h-[374px]">
-                <div class="absolute bottom-0 left-0 z-50 hidden h-full lg:block">
-                    <svg class="fill-[#FAF1FF] group-hover:fill-[#f0e6f5] transition-all duration-500 z-50 h-full" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z"/>
-                    </svg>
-                </div>
-                <div class="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+247px)] overflow-hidden">
-                    <?php if ( isset( $attributes['afbeelding']['url'] ) ) : ?>
-                        <img 
-                        class="object-cover object-center w-full h-full group-hover:scale-[1.04] duration-500 transition-all" 
-                        src="<?php echo esc_url( $attributes['afbeelding']['url'] ); ?>" 
-                        alt="<?php echo esc_attr( $attributes['afbeelding']['alt'] ); ?>"
-                        />
-                    <?php endif; ?>
-                </div>
+                    <div class="absolute bottom-0 left-0 z-50 hidden h-full lg:block">
+                        <svg class="fill-[#FAF1FF] group-hover:fill-[#f0e6f5] transition-all duration-500 z-50 h-full" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                            <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z"/>
+                        </svg>
+                    </div>
+                    <div class="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+247px)] overflow-hidden">
+                        <?php if ( isset( $attributes['afbeelding']['url'] ) ) : ?>
+                            <img 
+                            class="object-cover object-center w-full h-full group-hover:scale-[1.04] duration-500 transition-all" 
+                            src="<?php echo esc_url( $attributes['afbeelding']['url'] ); ?>" 
+                            alt="<?php echo esc_attr( $attributes['afbeelding']['alt'] ); ?>"
+                            />
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
             </div>
             <div class="absolute bottom-0 z-50 hidden lg:block left-full">
-            <svg class="fill-[#FAF1FF] group-hover:fill-[#f0e6f5] transition-all duration-500 z-50 rotate-180 h-full" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" />
-            </svg>
+                <svg class="fill-[#FAF1FF] group-hover:fill-[#f0e6f5] transition-all duration-500 z-50 rotate-180 h-full" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" />
+                </svg>
             </div>
         </div>
     </a>

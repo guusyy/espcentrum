@@ -2041,6 +2041,14 @@ h1, h2, h3, h4, h5, h6 {
   top: 2.5rem;
 }
 
+.right-full {
+  right: 100%;
+}
+
+.right-\[calc\(100\%\+247px\)\] {
+  right: calc(100% + 247px);
+}
+
 .-z-20 {
   z-index: -20;
 }
@@ -2384,6 +2392,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .max-w-\[200px\] {
   max-width: 200px;
+}
+
+.max-w-\[320px\] {
+  max-width: 320px;
+}
+
+.max-w-\[380px\] {
+  max-width: 380px;
 }
 
 .flex-none {
@@ -2784,6 +2800,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .fill-themegreen {
   fill: #01B132;
+}
+
+.fill-white {
+  fill: #fff;
 }
 
 .object-contain {
@@ -3787,6 +3807,10 @@ h1, h2, h3, h4, h5, h6 {
     width: fit-content;
   }
 
+  .lg\:w-\[calc\(100\%\+calc\(247px\*2\)\)\] {
+    width: calc(100% + calc(247px * 2));
+  }
+
   .lg\:min-w-\[13rem\] {
     min-width: 13rem;
   }
@@ -4049,6 +4073,11 @@ h1, h2, h3, h4, h5, h6 {
   .\32xl\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .\32xl\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .\32xl\:pr-28 {
