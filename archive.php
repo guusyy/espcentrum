@@ -33,7 +33,7 @@
                       </span>
                       <div class="mb-4 line-clamp-3">
                         <?php 
-                          $str= get_the_content();
+                          $str= wp_strip_all_tags(get_the_content());
                           echo $str1= substr ($str,0,500);
                         ?> 
                       </div>
