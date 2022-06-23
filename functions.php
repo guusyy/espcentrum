@@ -316,36 +316,37 @@ wp_add_dashboard_widget('custom_help_widget', 'Espcentrum Wordpress uitleg', 'cu
 }
  
 function custom_dashboard_help() {
-echo '<h2>Welkom bij de Espcentrum website</h2>
+echo '<h2 style="margin-bottom:1rem">Hulp bij aanpassen van de content van ESPCentrum website</h2>
     <h3 style="font-size: 18px; font-weight: bold;">Wijzigen van de homepage content</h3>
     <p>
-      Het aanpassen van de teksten op de homepagina kan gemakkelijk onder het tabblad <strong>Weergave</strong> -> <strong>Customizer</strong>. Dit opent de customizer. In de customizer selecteer het tabblad <strong>Espcentrum homepagina settings</strong>. Hierin kunnen gemakkelijk de teksten, afbeelding en links worden aangepast. Je ziet rechts direct in de preview het resultaat. Pas na het opslaan van de wijzingen worden de wijzigingen definietf.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
     </p>
+    <h3 style="font-size: 18px; font-weight: bold;">Nieuws artikelen</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
+    </p>
+    <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van medewerkers</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
+    </p>
+    <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van Partners (voor de partner slider)</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.</p>
     <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van een pagina</h3>
     <p>
-      Onder het tabblad <strong>pagina-s</strong> kun je pagina-s toevoegen en wijzigen.
-    </p>
-    <p>
-      Bij het aanmaken of wijzingen van een pagina kan er uit twee templates gekozen worden.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
     </p>
     <h4 style="font-size: 14px; font-weight: bold;">Full width page layout</h4>
     <p>
-      Uitgelichte afbeelding wordt over de gehele breedte bovenin de pagina getoond.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
     </p>
     <h4 style="font-size: 14px; font-weight: bold;">Boxed page layout</h4>
     <p>
-      Uitgelichte afbeelding wordt afgekaderd samen met de tekst/content van de pagina. Dit is handig wanneer het belangrijk is als de afbeelding op alle schermen zoveel mogelijk in zijn geheel zichtbaar is.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
     </p>
     <p>
       Selecteer het gewenste template rechts in de pagina editor, onder het tabblad "Template".
     </p>
-    <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van een behandel programma</h3>
-    <p>
-      Onder het tabblad <strong>programma-s</strong> is het mogelijk de programmma-s te wijzigen. Dit gaat op dezelfde manier als een pagina. Vergeet hierbij de <strong>uitgelichte afbeelding</strong> niet. Deze afbeelding kan rechts in het scherm onder <strong>Uitgelichte afbeelding</strong> worden toegevoegd. Deze afbeelding wordt na het toevoegen automatisch weergegeven in de bovenkant van de pagina en de tegel in de homepage programma slider.</br>
-      Programma-s worden niet automatisch toegevoegd aan het menu. Dit kun je vervolgens doen in het tabblad <strong>Weergave</strong> -> <strong>Menu-s</strong>. In menu-s selecteer je "primary menu" en vanuit het tabblad programma-s kan het nieuwe programmam gesleept worden naar het programma menu item. Vervolgens om dit programma ook toe te voegen aan de footer selecteer je het menu <strong>footer column two</strong> en voeg je het nieuwe programma hier aan toe.
-    </p>
-    <h3 style="font-size: 18px; font-weight: bold;">Contact informatie van de bedrijven wijzigen</h3>
-    <p>In het tabblad <strong>bedrijven</strong> is het mogelijk van de verschillende bedrijven de contact informatie aan te passen. Hier zijn verschillende velden instelbaar. Bij het wijzigen van deze data wordt het automatisch weergegeven in de bedrijven blokken op de "Over Espcentrum" pagina.</p>
   ';
 }
 
