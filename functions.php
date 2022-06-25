@@ -307,6 +307,14 @@ function my_remove_admin_menus() {
 }
 add_action( 'admin_init', 'my_remove_admin_menus' );
 
+// add editor the privilege to edit theme
+
+// get the the role object
+$role_object = get_role( 'editor' );
+
+// add $cap capability to this role object
+$role_object->add_cap( 'edit_theme_options' );
+
 add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
   
 function my_custom_dashboard_widgets() {
