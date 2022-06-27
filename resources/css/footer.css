@@ -6,16 +6,16 @@
   }
 
   .menu-item a {
-    @apply block underline underline-offset-4 hover:pl-1 transition-all mb-1;
+    @apply block underline underline-offset-4 transition-all mb-1 hover:text-secondaryHover hover:underline-offset-[4px] hover:decoration-[2px];
+  }
+
+  a {
+    @apply hover:underline hover:text-secondaryHover hover:underline-offset-[4px] hover:decoration-[2px];
   }
 }
 
 #menu-sub-footer {
   @apply flex  flex-col md:flex-row items-start gap-2 md:gap-8;
-
-  .menu-item a {
-    @apply hover:pl-0 hover:-translate-y-0.5;
-  }
 }
 
 .main-footer .menu-item {

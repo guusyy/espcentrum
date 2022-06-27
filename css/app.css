@@ -423,7 +423,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-a, .espcentrum-sticky, .always-sticky, .-translate-x-1\/2, .-translate-y-1\/2, .translate-y-0, .rotate-180, .transform, .hover\:-translate-y-0\.5, .hover\:-translate-y-0, .group-open\:rotate-180, .group-hover\:translate-x-0\.5, .group-hover\:translate-x-0, .group-hover\:translate-y-1, .group-hover\:scale-\[1\.03\], .group-hover\:scale-\[1\.04\], .group-focus\:-translate-y-0\.5, .group-focus\:-translate-y-0, .group-focus\:scale-\[1\.03\], .lg\:translate-x-0 {
+.espcentrum-sticky, .always-sticky, a, .-translate-x-1\/2, .-translate-y-1\/2, .translate-y-0, .rotate-180, .transform, .hover\:-translate-y-0\.5, .hover\:-translate-y-0, .group-open\:rotate-180, .group-hover\:translate-x-0\.5, .group-hover\:translate-x-0, .group-hover\:translate-y-1, .group-hover\:scale-\[1\.03\], .group-hover\:scale-\[1\.04\], .group-focus\:-translate-y-0\.5, .group-focus\:-translate-y-0, .group-focus\:scale-\[1\.03\], .lg\:translate-x-0 {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -1064,7 +1064,33 @@ h1, h2, h3, h4, h5, h6 {
   }
 
 .espcentrum-footer .menu-item a:hover {
-    padding-left: 0.25rem;
+    --tw-text-opacity: 1;
+    color: rgb(0 35 70 / var(--tw-text-opacity));
+  }
+
+.espcentrum-footer .menu-item a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+.espcentrum-footer .menu-item a:hover {
+    text-underline-offset: 4px;
+  }
+
+.espcentrum-footer a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(0 35 70 / var(--tw-text-opacity));
+  }
+
+.espcentrum-footer a:hover {
+    text-decoration: underline;
+  }
+
+.espcentrum-footer a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+.espcentrum-footer a:hover {
+    text-underline-offset: 4px;
   }
 
 #menu-sub-footer {
@@ -1083,15 +1109,6 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
   }
 }
-
-#menu-sub-footer .menu-item a:hover {
-    --tw-translate-y: -0.125rem;
-    transform: var(--tw-transform);
-  }
-
-#menu-sub-footer .menu-item a:hover {
-    padding-left: 0px;
-  }
 
 .main-footer .menu-item {
   position: relative;
@@ -2145,16 +2162,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
 
 .mb-12 {
   margin-bottom: 3rem;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
 }
 
 .mb-2 {
@@ -2167,6 +2184,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 
 .mt-12 {
@@ -2187,10 +2208,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.mb-7 {
-  margin-bottom: 1.75rem;
 }
 
 .\!mb-2 {
@@ -2497,6 +2514,10 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
@@ -2507,10 +2528,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .gap-1 {
@@ -2957,6 +2974,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Karla;
 }
 
+.text-base {
+  font-size: 18px;
+  line-height: 27px;
+}
+
 .text-5xl {
   font-size: clamp(1.875rem, 1.75vw + 1rem, 3.25rem);
   line-height: clamp(2.375rem, 2.25vw + 1rem, 4rem);
@@ -2982,19 +3004,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 28px;
 }
 
-.text-base {
-  font-size: 18px;
-  line-height: 27px;
-}
-
 .text-xs {
   font-size: 14px;
   line-height: 22px;
-}
-
-.text-4xl {
-  font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem);
-  line-height: clamp(2.375rem, 3vw + 1rem, 4rem);
 }
 
 .text-m3xl {
@@ -3002,9 +3014,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 50.4px;
 }
 
+.text-4xl {
+  font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem);
+  line-height: clamp(2.375rem, 3vw + 1rem, 4rem);
+}
+
 .\!text-4xl {
   font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem) !important;
   line-height: clamp(2.375rem, 3vw + 1rem, 4rem) !important;
+}
+
+.\!text-lg2 {
+  font-size: 22px !important;
+  line-height: 35.2px !important;
 }
 
 .text-m2xl {
@@ -3020,17 +3042,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
 }
 
-.\!text-lg2 {
-  font-size: 22px !important;
-  line-height: 35.2px !important;
+.font-bold {
+  font-weight: 700;
 }
 
 .font-light {
   font-weight: 300;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .font-semibold {
@@ -3099,12 +3116,12 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(87 87 87 / var(--tw-text-opacity));
 }
 
-.text-black {
+.text-dark {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-dark {
+.text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
@@ -3207,16 +3224,16 @@ h1, h2, h3, h4, h5, h6 {
           backdrop-filter: var(--tw-backdrop-filter);
 }
 
-.transition {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+.transition-all {
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.transition-all {
-  transition-property: all;
+.transition {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -3377,12 +3394,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(130 67 0 / var(--tw-bg-opacity));
 }
 
-.hover\:pl-1:hover {
-  padding-left: 0.25rem;
-}
-
-.hover\:pl-0:hover {
-  padding-left: 0px;
+.hover\:text-secondaryHover:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 35 70 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -3391,6 +3405,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .hover\:\!no-underline:hover {
   text-decoration: none !important;
+}
+
+.hover\:underline-offset-\[4px\]:hover {
+  text-underline-offset: 4px;
 }
 
 .focus\:outline-none:focus {
@@ -3635,6 +3653,10 @@ h1, h2, h3, h4, h5, h6 {
     grid-column: span 2 / span 2;
   }
 
+  .lg\:col-span-full {
+    grid-column: 1 / -1;
+  }
+
   .lg\:col-span-8 {
     grid-column: span 8 / span 8;
   }
@@ -3643,16 +3665,16 @@ h1, h2, h3, h4, h5, h6 {
     grid-column: span 6 / span 6;
   }
 
-  .lg\:col-span-full {
-    grid-column: 1 / -1;
-  }
-
   .lg\:col-span-9 {
     grid-column: span 9 / span 9;
   }
 
   .lg\:col-span-10 {
     grid-column: span 10 / span 10;
+  }
+
+  .lg\:col-start-5 {
+    grid-column-start: 5;
   }
 
   .lg\:col-start-3 {
@@ -3665,10 +3687,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .lg\:col-start-7 {
     grid-column-start: 7;
-  }
-
-  .lg\:col-start-5 {
-    grid-column-start: 5;
   }
 
   .lg\:row-start-1 {

@@ -1664,12 +1664,29 @@ ol li {
   padding-left: 0px;
 }
 
+.hover\:text-secondaryHover:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 35 70 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration: underline;
 }
 
 .hover\:\!no-underline:hover {
   text-decoration: none !important;
+}
+
+.hover\:underline-offset-2:hover {
+  text-underline-offset: 2px;
+}
+
+.hover\:underline-offset-\[3px\]:hover {
+  text-underline-offset: 3px;
+}
+
+.hover\:underline-offset-\[4px\]:hover {
+  text-underline-offset: 4px;
 }
 
 .focus\:outline-none:focus {
