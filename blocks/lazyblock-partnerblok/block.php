@@ -25,7 +25,7 @@
                           $loop->the_post();
                       ?>
                       <li class="swiper-slide group">
-                        <a href="<?php echo get_field('partner_url'); ?>" aria-label="<?php the_title(); ?>">
+                        <a href="<?php echo get_field('partner_url'); ?>" aria-label="<?php the_title(); ?>" target="_blank">
                           <article class="">
                             <div class="flex items-center justify-center w-full">
                               <?php 

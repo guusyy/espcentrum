@@ -3020,6 +3020,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
 }
 
+.\!text-lg2 {
+  font-size: 22px !important;
+  line-height: 35.2px !important;
+}
+
 .font-light {
   font-weight: 300;
 }

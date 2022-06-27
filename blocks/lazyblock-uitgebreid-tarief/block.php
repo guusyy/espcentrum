@@ -1,5 +1,5 @@
 <article class="my-4 border rounded shadow border-gray4 first:mt-0">
-    <h2 class="!mb-2 !my-0 bg-gray2 block !text-gray5 !font-medium text-center px-2 py-4 lg:!text-xl"><?php echo $attributes['titel']; ?></h2>
+    <h2 class="!mb-2 !my-0 bg-gray2 block !text-gray5 !font-medium text-center px-2 py-4 !text-lg2 lg:!text-xl"><?php echo $attributes['titel']; ?></h2>
     <div class="p-4">
         <div class="pb-5 text-center">
             <span class="block"><?php echo $attributes['interval-1']; ?></span>

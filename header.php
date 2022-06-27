@@ -27,16 +27,22 @@
           <div class="flex justify-between py-2 mx-auto container-base">
             <ul class="flex gap-5 text-xs xl:gap-12 xl:text-small">
               <li class="flex items-center gap-2" opening-time>
-                <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" />
-                </svg>
-                Vandaag open van 08:00 - 20:30
+                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="http://espcentrum.local/de-praktijk/openingstijden/">
+                  <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" />
+                  </svg>
+                  Vandaag open van 08:00 - 20:30
+                  <svg class="group-hover:translate-x-0.5 transition-all" width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" /></svg>
+                </a>
               </li>
               <li>
-                <a class="flex items-center gap-2 hover:underline underline-offset-4" href="tel:0485516009">
+                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="tel:0485516009">
                   <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3.222 6.929a13.387 13.387 0 0 0 5.858 5.853l1.956-1.96a.892.892 0 0 1 .902-.218c.995.33 2.066.507 3.173.507.493 0 .889.396.889.889v3.111a.886.886 0 0 1-.889.889C6.764 16 0 9.236 0 .889 0 .396.4 0 .889 0H4c.493 0 .889.396.889.889 0 1.107.178 2.178.507 3.173a.892.892 0 0 1-.218.902L3.222 6.93Z" fill="#575757" /></svg>
                   Direct contact? 0485-516009
+                  <svg class="group-hover:translate-x-0.5 transition-all" width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" /></svg>
                 </a>
               </li>
               <li>
@@ -58,7 +64,7 @@
                 </a>
               </li>
             </ul>
-            <ul class="flex gap-2">
+            <ul class="flex items-center min-h-full gap-2">
               <li>
                 <a href="https://nl-nl.facebook.com/espcentrum/" target="_blank" aria-label="Facebook">
                   <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,15 +174,21 @@
                   <div class="flex flex-col justify-between w-full gap-10 py-2 my-10 lg:hidden">
                     <ul class="flex flex-col gap-5 text-xs xl:gap-12 xl:text-small" top-nav-items>
                       <li class="flex items-center gap-2">
-                        <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" /></svg>
-                        Vandaag open van 08:00 - 20:30
+                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="http://espcentrum.local/de-praktijk/openingstijden/">
+                          <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" /></svg>
+                          Vandaag open van 08:00 - 20:30
+                          <svg class="group-hover:translate-x-0.5 transition-all" width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" /></svg>
+                        </a>
                       </li>
                       <li>
-                        <a class="flex items-center gap-2 hover:underline underline-offset-4" href="tel:0485516009">
+                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="tel:0485516009">
                           <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3.222 6.929a13.387 13.387 0 0 0 5.858 5.853l1.956-1.96a.892.892 0 0 1 .902-.218c.995.33 2.066.507 3.173.507.493 0 .889.396.889.889v3.111a.886.886 0 0 1-.889.889C6.764 16 0 9.236 0 .889 0 .396.4 0 .889 0H4c.493 0 .889.396.889.889 0 1.107.178 2.178.507 3.173a.892.892 0 0 1-.218.902L3.222 6.93Z" fill="#575757" /></svg>
                           Direct contact? 0485-516009
+                          <svg class="group-hover:translate-x-0.5 transition-all" width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" /></svg>
                         </a>
                       </li>
                       <li>
