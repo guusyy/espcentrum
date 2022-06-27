@@ -331,6 +331,7 @@ echo '<h2 style="margin-bottom:1rem">Hulp bij aanpassen van de content van ESPCe
       <li>Druk op de knop "nieuwe pagina"</li>
       <li>Vul de content en de "uitgelichte afbeelding"</li>
       <li>Selecteer het juiste template (met of zonder zijnavigatie)</li>
+      <li>Selecteer rechts in het scherm onder "Pagina attributen" de bovenliggende pagina (van bijvoorbeeld de discipline.</li>
       <li>Publiceer de pagina <b>Let op: De pagina is niet standaard te zien in het menu op de website</b></li>
       <li>Indien nodig: Vergeet de pagina niet toe te voegen aan het navigatie menu</li>
     </ol>
