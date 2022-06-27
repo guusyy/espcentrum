@@ -114,6 +114,10 @@ window.addEventListener('load', function () {
     centerSlider: true,
     slidesPerView: 1,
     draggable: true,
+    speed: 900,
+    autoplay: {
+      delay: 3000
+    },
 
     // If we need pagination
     pagination: {

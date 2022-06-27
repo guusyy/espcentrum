@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full-width contentblocks only
+Template Name: Alleen contentblocks
 Template Post Type: post, page, product, programma
 */
 ?>

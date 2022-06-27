@@ -88,6 +88,10 @@
       centerSlider: true,
       slidesPerView: 1,
       draggable: true,
+      speed: 900,
+      autoplay: {
+        delay: 3e3
+      },
       pagination: {
         el: ".swiper-pagination"
       },

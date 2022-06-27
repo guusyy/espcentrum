@@ -325,35 +325,41 @@ wp_add_dashboard_widget('custom_help_widget', 'Espcentrum Wordpress uitleg', 'cu
  
 function custom_dashboard_help() {
 echo '<h2 style="margin-bottom:1rem">Hulp bij aanpassen van de content van ESPCentrum website</h2>
-    <h3 style="font-size: 18px; font-weight: bold;">Wijzigen van de homepage content</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
-    </p>
-    <h3 style="font-size: 18px; font-weight: bold;">Nieuws artikelen</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
-    </p>
-    <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van medewerkers</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
-    </p>
-    <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van Partners (voor de partner slider)</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.</p>
     <h3 style="font-size: 18px; font-weight: bold;">Toevoegen of wijzigen van een pagina</h3>
+    <ol>
+      <li>Selecteer tabblad pagina"s</li>
+      <li>Druk op de knop "nieuwe pagina"</li>
+      <li>Vul de content en de "uitgelichte afbeelding"</li>
+      <li>Selecteer het juiste template (met of zonder zijnavigatie)</li>
+      <li>Publiceer de pagina <b>Let op: De pagina is niet standaard te zien in het menu op de website</b></li>
+      <li>Indien nodig: Vergeet de pagina niet toe te voegen aan het navigatie menu</li>
+    </ol>
+    <h3 style="font-size: 18px; font-weight: bold;">Pagina toevoegen aan het navigatiemenu (en zijnavigatie)</h3>
+    <ol>
+      <li>Selecteer "Weergave > Menus"</li>
+      <li>Selecteer de (nieuwe) pagina links onder paginas en klik op "Aan menu toevoegen"</li>
+      <li>Sleep de pagina naar de juiste positie in het rechterscherm</li>
+      <li>Druk op "Menu opslaan"</li>
+    </ol>
+    <h3 style="font-size: 18px; font-weight: bold;">Toevoegen van Nieuwsartikelen</h3>
+    <ol>
+      <li>Selecteer tabblad "Nieuws"</li>
+      <li>Maak een nieuw nieuws artikel aan</li>
+      <li>Vul de content</li>
+      <li>Selecteer een uitgelichte afbeelding</li>
+      <li>Publiceer het nieuwsartikel</li>
+    </ol>
+    <h3 style="font-size: 18px; font-weight: bold;">Medewerkers tabblad</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
+      Medewerkers worden getoond in het medewerkersblok op bijvoorbeeld de "Praktijk" pagina.
     </p>
-    <h4 style="font-size: 14px; font-weight: bold;">Full width page layout</h4>
+    <h3 style="font-size: 18px; font-weight: bold;">Vestigingen tabblad</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
+      Vestigingen worden getoond in het vestigingenblok op bijvoorbeeld de "Contact" pagina.
     </p>
-    <h4 style="font-size: 14px; font-weight: bold;">Boxed page layout</h4>
+    <h3 style="font-size: 18px; font-weight: bold;">Partners tabblad</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed semper purus. Etiam dui enim, varius sed feugiat sagittis, interdum id tellus. Nulla justo massa, scelerisque et velit sed, facilisis volutpat est.
-    </p>
-    <p>
-      Selecteer het gewenste template rechts in de pagina editor, onder het tabblad "Template".
+      Partners worden getoond in de partnerslider op bijvoorbeeld de "Homepagina".
     </p>
   ';
 }

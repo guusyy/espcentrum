@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page with sidenavigation
+Template Name: Pagina met zij-navigatie
 Template Post Type: post, page, product, programma
 */
 ?>

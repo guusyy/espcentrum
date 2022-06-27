@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Full-width page layout
+Template Name: Pagina afbeelding met content
 Template Post Type: post, page, product, programma
 */
 ?>
