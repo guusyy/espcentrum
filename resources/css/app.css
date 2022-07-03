@@ -5,6 +5,7 @@
 @import "footer.css";
 @import "navigation.css";
 @import "button.css";
+@import "form.css";
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";

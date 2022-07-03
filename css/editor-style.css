@@ -307,6 +307,10 @@
   margin-top: 0.5rem;
 }
 
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -325,10 +329,6 @@
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.mb-7 {
-  margin-bottom: 1.75rem;
 }
 
 .\!mb-2 {
@@ -351,12 +351,20 @@
   margin-bottom: 0px;
 }
 
+.\!ml-0 {
+  margin-left: 0px !important;
+}
+
 .block {
   display: block;
 }
 
 .flex {
   display: flex;
+}
+
+.\!flex {
+  display: flex !important;
 }
 
 .table {
@@ -667,6 +675,10 @@
   gap: 0.75rem;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-x-4 {
   -moz-column-gap: 1rem;
        column-gap: 1rem;
@@ -809,6 +821,11 @@
 .border-themegreen {
   --tw-border-opacity: 1;
   border-color: rgb(1 177 50 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-t-gray4 {
@@ -1083,6 +1100,10 @@
   padding-bottom: 0.5rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -1130,19 +1151,24 @@
   line-height: 22px;
 }
 
-.text-4xl {
-  font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem);
-  line-height: clamp(2.375rem, 3vw + 1rem, 4rem);
-}
-
 .text-m3xl {
   font-size: 34px;
   line-height: 50.4px;
 }
 
+.text-4xl {
+  font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem);
+  line-height: clamp(2.375rem, 3vw + 1rem, 4rem);
+}
+
 .\!text-4xl {
   font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem) !important;
   line-height: clamp(2.375rem, 3vw + 1rem, 4rem) !important;
+}
+
+.\!text-lg2 {
+  font-size: 22px !important;
+  line-height: 35.2px !important;
 }
 
 .text-m2xl {
@@ -1156,11 +1182,6 @@
 
 .text-\[20px\] {
   font-size: 20px;
-}
-
-.\!text-lg2 {
-  font-size: 22px !important;
-  line-height: 35.2px !important;
 }
 
 .font-light {
@@ -1237,12 +1258,12 @@
   color: rgb(87 87 87 / var(--tw-text-opacity));
 }
 
-.text-black {
+.text-dark {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.text-dark {
+.text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
@@ -1280,6 +1301,11 @@
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(237 126 6 / var(--tw-text-opacity));
+}
+
+.\!text-secondary {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 74 147 / var(--tw-text-opacity)) !important;
 }
 
 .underline {
@@ -1616,6 +1642,16 @@ ol li {
   margin-top: 0px;
 }
 
+.focus-within\:border-secondary:focus-within {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 74 147 / var(--tw-border-opacity));
+}
+
+.focus-within\:\!border-secondary:focus-within {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(0 74 147 / var(--tw-border-opacity)) !important;
+}
+
 .hover\:-translate-y-0\.5:hover {
   --tw-translate-y: -0.125rem;
   transform: var(--tw-transform);
@@ -1656,14 +1692,6 @@ ol li {
   background-color: rgb(130 67 0 / var(--tw-bg-opacity));
 }
 
-.hover\:pl-1:hover {
-  padding-left: 0.25rem;
-}
-
-.hover\:pl-0:hover {
-  padding-left: 0px;
-}
-
 .hover\:text-secondaryHover:hover {
   --tw-text-opacity: 1;
   color: rgb(0 35 70 / var(--tw-text-opacity));
@@ -1677,16 +1705,13 @@ ol li {
   text-decoration: none !important;
 }
 
-.hover\:underline-offset-2:hover {
-  text-underline-offset: 2px;
-}
-
-.hover\:underline-offset-\[3px\]:hover {
-  text-underline-offset: 3px;
-}
-
 .hover\:underline-offset-\[4px\]:hover {
   text-underline-offset: 4px;
+}
+
+.focus\:border-secondary:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 74 147 / var(--tw-border-opacity));
 }
 
 .focus\:outline-none:focus {
@@ -1845,6 +1870,18 @@ ol li {
     height: 24rem;
   }
 
+  .md\:w-\[35\%\] {
+    width: 35%;
+  }
+
+  .md\:w-\[30\%\] {
+    width: 30%;
+  }
+
+  .md\:w-\[25\%\] {
+    width: 25%;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1931,6 +1968,10 @@ ol li {
     grid-column: span 2 / span 2;
   }
 
+  .lg\:col-span-full {
+    grid-column: 1 / -1;
+  }
+
   .lg\:col-span-8 {
     grid-column: span 8 / span 8;
   }
@@ -1939,16 +1980,16 @@ ol li {
     grid-column: span 6 / span 6;
   }
 
-  .lg\:col-span-full {
-    grid-column: 1 / -1;
-  }
-
   .lg\:col-span-9 {
     grid-column: span 9 / span 9;
   }
 
   .lg\:col-span-10 {
     grid-column: span 10 / span 10;
+  }
+
+  .lg\:col-start-5 {
+    grid-column-start: 5;
   }
 
   .lg\:col-start-3 {
@@ -1961,10 +2002,6 @@ ol li {
 
   .lg\:col-start-7 {
     grid-column-start: 7;
-  }
-
-  .lg\:col-start-5 {
-    grid-column-start: 5;
   }
 
   .lg\:row-start-1 {
