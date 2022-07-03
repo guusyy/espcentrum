@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     h2 {
-        @apply text-m2xl 2xl:text-2xl font-bold mb-4 mt-10;
+        @apply text-m3xl 2xl:text-3xl font-bold mb-4 mt-10;
     }
 
     h3 {
