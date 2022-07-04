@@ -26,6 +26,9 @@
                 @apply font-normal;
             }
         }
+        .nf-field-element {
+            @apply w-full md:w-[75%];
+        }
         .nf-after-field {
             @apply ml-0;
         }

@@ -1975,6 +1975,16 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 400;
       }
 
+.nf-form-cont .label-left .nf-field-element {
+      width: 100%;
+    }
+
+@media (min-width: 768px) {
+      .nf-form-cont .label-left .nf-field-element {
+        width: 75%;
+      }
+    }
+
 .nf-form-cont .label-left .nf-after-field {
       margin-left: 0px;
     }
