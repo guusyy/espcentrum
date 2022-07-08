@@ -4434,6 +4434,10 @@ h1, h2, h3, h4, h5, h6 {
     border-color: rgb(87 87 87 / var(--tw-border-opacity));
   }
 
+  .lg\:p-10 {
+    padding: 2.5rem;
+  }
+
   .lg\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
@@ -4477,6 +4481,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .lg\:pr-10 {
     padding-right: 2.5rem;
+  }
+
+  .lg\:pr-60 {
+    padding-right: 15rem;
   }
 
   .lg\:text-left {
@@ -4565,6 +4573,10 @@ h1, h2, h3, h4, h5, h6 {
   .xl\:gap-x-10 {
     -moz-column-gap: 2.5rem;
          column-gap: 2.5rem;
+  }
+
+  .xl\:p-20 {
+    padding: 5rem;
   }
 
   .xl\:py-14 {
