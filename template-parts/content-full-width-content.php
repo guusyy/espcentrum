@@ -2,7 +2,7 @@
   <article <?php post_class( 'pb-16 bg-white min-h-full g' ); ?>>
       <?php if ( is_search() || is_archive() ) : ?>
         <?php if ( !is_front_page() ) : ?>
-          <header class="mb-4 entry-header fade">
+          <header class="mb-4 entry-header">
             <?php the_title( sprintf( '<h1 class="mb-1 font-extrabold leading-tight entry-title text-dark text-m3xl md:text-3xl"><span class="">', esc_url( get_permalink() ) ), '</span></h1>' ); ?>
           </header>
         <?php endif; ?>
@@ -13,7 +13,7 @@
     
         <?php else : ?>
     
-        <div class="entry-content appear">
+        <div class="entry-content">
           <?php
           /* translators: %s: Name of current post */
           the_content(
