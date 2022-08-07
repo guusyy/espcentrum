@@ -16,6 +16,10 @@
 
   @screen lg {
     #primary-menu {
+      > ul > li:nth-child(1) .sub-menu {
+        @apply !grid-cols-3;
+      }
+
       > ul > li {
         & > a {
           position: relative;
