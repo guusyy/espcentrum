@@ -33,7 +33,7 @@ Template Post Type: nieuws
                 <header class="mt-8 entry-header fade">
                   <?php the_title( sprintf( '<h2 class="mb-2 text-4xl font-bold text-black entry-title"><span>', esc_url( get_permalink() ) ), '</span></h2>' ); ?>
                 </header>
-                <div class="entry-content appear">
+                <div class="entry-content">
                   <span class="block mb-6 font-semibold text-secondary text-small">
                     <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
                   </span>
