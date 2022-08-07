@@ -435,6 +435,10 @@
   height: 22px !important;
 }
 
+.\!h-\[36px\] {
+  height: 36px !important;
+}
+
 .\!h-5 {
   height: 1.25rem !important;
 }
@@ -451,14 +455,6 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.\!h-\[32px\] {
-  height: 32px !important;
-}
-
-.\!h-\[36px\] {
-  height: 36px !important;
 }
 
 .max-h-\[22\.5rem\] {
@@ -491,6 +487,10 @@
 
 .min-h-\[70vh\] {
   min-height: 70vh;
+}
+
+.min-h-\[63px\] {
+  min-height: 63px;
 }
 
 .w-full {
@@ -527,6 +527,10 @@
   width: 25px !important;
 }
 
+.\!w-\[28px\] {
+  width: 28px !important;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -537,10 +541,6 @@
 
 .\!w-5 {
   width: 1.25rem !important;
-}
-
-.\!w-\[28px\] {
-  width: 28px !important;
 }
 
 .max-w-sm {
@@ -876,6 +876,11 @@
   border-color: rgb(130 33 185 / var(--tw-border-opacity));
 }
 
+.border-themeblue {
+  --tw-border-opacity: 1;
+  border-color: rgb(23 67 153 / var(--tw-border-opacity));
+}
+
 .border-themered {
   --tw-border-opacity: 1;
   border-color: rgb(201 52 56 / var(--tw-border-opacity));
@@ -884,11 +889,6 @@
 .border-themegreen {
   --tw-border-opacity: 1;
   border-color: rgb(1 177 50 / var(--tw-border-opacity));
-}
-
-.border-themeblue {
-  --tw-border-opacity: 1;
-  border-color: rgb(23 67 153 / var(--tw-border-opacity));
 }
 
 .border-b-\[rgba\(0\2c 0\2c 0\2c 0\.25\)\] {
@@ -935,6 +935,11 @@
   background-color: rgb(255 237 237 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#ECF1FF\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 241 255 / var(--tw-bg-opacity));
+}
+
 .bg-gray1 {
   --tw-bg-opacity: 1;
   background-color: rgb(250 250 250 / var(--tw-bg-opacity));
@@ -958,6 +963,10 @@
   background-color: rgb(130 33 185 / 0.1);
 }
 
+.bg-themeblue\/10 {
+  background-color: rgb(23 67 153 / 0.1);
+}
+
 .bg-themered\/10 {
   background-color: rgb(201 52 56 / 0.1);
 }
@@ -968,15 +977,6 @@
 
 .bg-secondary\/10 {
   background-color: rgb(0 74 147 / 0.1);
-}
-
-.bg-themeblue\/10 {
-  background-color: rgb(23 67 153 / 0.1);
-}
-
-.bg-\[\#ECF1FF\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 241 255 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-t {
@@ -1020,6 +1020,10 @@
   fill: #FFEDED;
 }
 
+.fill-\[\#ECF1FF\] {
+  fill: #ECF1FF;
+}
+
 .fill-secondary {
   fill: #004A93;
 }
@@ -1034,10 +1038,6 @@
 
 .fill-themegreen {
   fill: #01B132;
-}
-
-.fill-\[\#ECF1FF\] {
-  fill: #ECF1FF;
 }
 
 .object-contain {
@@ -1268,10 +1268,6 @@
   line-height: 39.2px;
 }
 
-.text-\[24px\] {
-  font-size: 24px;
-}
-
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -1375,6 +1371,11 @@
   color: rgb(201 52 56 / var(--tw-text-opacity));
 }
 
+.text-themeblue {
+  --tw-text-opacity: 1;
+  color: rgb(23 67 153 / var(--tw-text-opacity));
+}
+
 .\!text-primaryHover {
   --tw-text-opacity: 1 !important;
   color: rgb(130 67 0 / var(--tw-text-opacity)) !important;
@@ -1398,11 +1399,6 @@
 .\!text-secondary {
   --tw-text-opacity: 1 !important;
   color: rgb(0 74 147 / var(--tw-text-opacity)) !important;
-}
-
-.text-themeblue {
-  --tw-text-opacity: 1;
-  color: rgb(23 67 153 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1814,24 +1810,14 @@ ol li {
   background-color: rgb(255 226 226 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-primaryHover:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(130 67 0 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#ECF1FF\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(236 241 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#dde2f1\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(221 226 241 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-\[\#dee6f9\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(222 230 249 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primaryHover:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(130 67 0 / var(--tw-bg-opacity));
 }
 
 .hover\:text-secondaryHover:hover {
@@ -2220,10 +2206,6 @@ ol li {
     height: 46px !important;
   }
 
-  .lg\:\!h-\[60px\] {
-    height: 60px !important;
-  }
-
   .lg\:max-h-fit {
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
@@ -2262,18 +2244,14 @@ ol li {
     width: 46px !important;
   }
 
+  .lg\:\!w-\[53px\] {
+    width: 53px !important;
+  }
+
   .lg\:w-fit {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-  }
-
-  .lg\:\!w-\[39px\] {
-    width: 39px !important;
-  }
-
-  .lg\:\!w-\[53px\] {
-    width: 53px !important;
   }
 
   .lg\:min-w-\[13rem\] {
@@ -2494,6 +2472,10 @@ ol li {
 
   .xl\:pr-32 {
     padding-right: 8rem;
+  }
+
+  .xl\:pt-12 {
+    padding-top: 3rem;
   }
 
   .xl\:text-small {
