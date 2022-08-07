@@ -23,7 +23,7 @@
     <?php do_action('espcentrum_theme_header'); ?>
 
       <header class="bg-white shadow espcentrum-header bg-light">
-        <div class="hidden lg:block bg-gray2 border-b shadow-[0px_1px_0px_rgba(0, 0, 0, 0.25)]">
+        <div class="hidden lg:block bg-gray2 border-b border-b-[rgba(0,0,0,0.25)] shadow-[0px_1px_0px_rgba(0, 0, 0, 0.25)]">
           <div class="flex justify-between py-2 mx-auto container-base">
             <ul class="flex gap-5 text-xs xl:gap-12 xl:text-small">
               <li class="flex items-center gap-2" opening-time>

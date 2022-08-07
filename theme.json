@@ -47,6 +47,11 @@
           "color": "#01B132"
         },
         {
+          "name": "Blue",
+          "slug": "themeblue",
+          "color": "#174399"
+        },
+        {
           "name": "Dark",
           "slug": "dark",
           "color": "#000000"
