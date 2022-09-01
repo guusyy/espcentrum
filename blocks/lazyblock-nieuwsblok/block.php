@@ -20,8 +20,8 @@
                 <li>
                   <a class="group" href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
                     <article class="h-full transition duration-300 bg-white border-2 rounded shadow overf low-hidden group-hover:border-black border-gray2">
-                      <div class="w-full max-h-[22.5rem] overflow-hidden flex items-center">
-                        <?php the_post_thumbnail('medium_large', ['class' => 'group-hover:scale-[1.03] group-focus:scale-[1.03] duration-[400ms] transition-all object-cover w-full']); ?>
+                      <div class="w-full max-h-[15.5rem] overflow-hidden flex items-center">
+                        <?php the_post_thumbnail('medium_large', ['class' => 'group-hover:scale-[1.03] group-focus:scale-[1.03] duration-[400ms] transition-all object-cover w-full aspect-[339/152]']); ?>
                       </div>
                       <div class="p-4">
                         <h3 class="mb-1 text-lg font-bold">

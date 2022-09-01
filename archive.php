@@ -20,8 +20,8 @@
                 <a class="group" href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
                   <article class="h-full overflow-hidden transition duration-300 bg-white border-2 rounded shadow border-gray2 group-hover:border-black">
                     <?php if ( $counter < 2 ) : ?>
-                      <div class="w-full max-h-[22.5rem] overflow-hidden flex items-center">
-                        <?php the_post_thumbnail('medium_large', ['class' => 'group-hover:scale-[1.03] group-focus:scale-[1.03] duration-[400ms] transition-all object-cover w-full']); ?>
+                      <div class="w-full max-h-[15.5rem] overflow-hidden flex items-center">
+                        <?php the_post_thumbnail('medium_large', ['class' => 'group-hover:scale-[1.03] group-focus:scale-[1.03] duration-[400ms] transition-all object-cover w-full aspect-[339/152]']); ?>
                       </div>
                     <?php endif; ?>
                     <div class="p-4">
