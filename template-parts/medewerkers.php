@@ -24,7 +24,7 @@
                                                 
                                                 if( !empty( $image ) ): ?>
                                                     <img 
-                                                        class="absolute top-0 left-0 z-10 w-full h-full transition duration-300 rounded opacity-0 group-focus:opacity-100 group-hover:opacity-100" 
+                                                        class="absolute top-0 left-0 z-10 w-full h-full transition duration-300 rounded opacity-0 group-focus:opacity-100 group-hover:opacity-100 aspect-square" 
                                                         src="<?php echo esc_url($image['url']); ?>" 
                                                         alt="<?php echo esc_attr($image['alt']); ?>" 
                                                     />

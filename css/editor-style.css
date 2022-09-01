@@ -407,6 +407,14 @@
   aspect-ratio: 1 / 1;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-\[339\/152\] {
+  aspect-ratio: 339 / 152;
+}
+
 .h-1 {
   height: 0.25rem;
 }
