@@ -1,4 +1,4 @@
-<section id="medewerkers" class="py-10 my-10 scroll-mt-16 2xl:py-16 bg-gray2">
+<section id="medewerkers" class="py-10 mt-10 scroll-mt-16 2xl:py-16 bg-gray2">
     <div class="container-xl">
         <h2 class="mb-10 font-bold text-center text-m3xl xl:text-3xl">Ons team</h2>
 
@@ -12,7 +12,6 @@
                     $loop = new WP_Query( $all_posts );
         
                     if($loop->have_posts()){
-                        for ($x = 0; $x <= 10; $x++) {
                         while($loop->have_posts()){
                                 $loop->the_post();
                             ?>
@@ -50,7 +49,6 @@
                                 </article>
                             </li>
                             <?php
-                        }
                         }
                     }
                     wp_reset_query();

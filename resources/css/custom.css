@@ -155,6 +155,30 @@ h1, h2, h3, h4, h5, h6 {
       aspect-ratio: 16 / 9;
       height: auto;
     }
+
+    .osteopathie {
+      thead {
+        @apply border-themeblue;
+      }
+    }
+
+    .fysiotherapie {
+      thead {
+        @apply border-themepurple;
+      }
+    }
+
+    .medische-fitness {
+      thead {
+        @apply border-themered;
+      }
+    }
+
+    .leefstijlinterventies {
+      thead {
+        @apply border-themegreen;
+      }
+    }
 }
 
 /*--- form styling ---*/

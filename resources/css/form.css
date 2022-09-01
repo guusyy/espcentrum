@@ -103,10 +103,13 @@
                 }
             }
             &:nth-child(4) {
+                .ninja-forms-field.nf-element {
+                    @apply checked:bg-themeblue checked:border-themeblue;
+                }
                 label {
                     &:before {
                         content: '';
-                        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTExLjYxMyAxNi42MTNjLS4wNTQuMDU5LS4xMDQuMTIyLS4xNS4xODdhLjk1MS45NTEgMCAwIDAtLjExMy4yMjUuODAyLjgwMiAwIDAgMC0uMDc1LjIyNSAxLjcxIDEuNzEgMCAwIDAgMCAuMjVjLS4wMDQuMTY0LjAzLjMyNy4xLjQ3NWExLjEyNCAxLjEyNCAwIDAgMCAuNjc1LjY3NSAxLjE3NSAxLjE3NSAwIDAgMCAuOTUgMCAxLjEyNCAxLjEyNCAwIDAgMCAuNjc1LS42NzUgMS4yNSAxLjI1IDAgMCAwIC4wNzUtLjQ3NSAxLjI1IDEuMjUgMCAwIDAtMi4xMzctLjg4N1pNMTIuNSAwYTEyLjUgMTIuNSAwIDEgMCAwIDI1IDEyLjUgMTIuNSAwIDAgMCAwLTI1Wm0wIDIyLjVhMTAgMTAgMCAxIDEgMC0yMCAxMCAxMCAwIDAgMSAwIDIwWm0wLTE2LjI1YTMuNzUgMy43NSAwIDAgMC0zLjI1IDEuODc1IDEuMjUgMS4yNSAwIDEgMCAyLjE2MiAxLjI1QTEuMjUgMS4yNSAwIDAgMSAxMi41IDguNzVhMS4yNSAxLjI1IDAgMSAxIDAgMi41IDEuMjUgMS4yNSAwIDAgMC0xLjI1IDEuMjV2MS4yNWExLjI1IDEuMjUgMCAwIDAgMi41IDB2LS4yMjVBMy43NSAzLjc1IDAgMCAwIDEyLjUgNi4yNVoiIGZpbGw9IiM1NzU3NTciLz48L3N2Zz4=');
+                        @apply i-osteopathie;
                         background-size: 24px;
                         background-repeat: no-repeat;
                         width: 24px;

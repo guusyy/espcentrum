@@ -288,6 +288,10 @@
     .current_page_item > a {
       @apply text-themepurple;
     }
+
+    & a:hover {
+      @apply !decoration-themepurple;
+    }
   }
 
   &--osteopathie {
@@ -312,6 +316,10 @@
     .current_page_item > a {
       @apply text-themeblue;
     }
+
+    & a:hover {
+      @apply !decoration-themeblue;
+    }
   }
 
   &--medische-fitness {
@@ -334,6 +342,10 @@
 
     .current_page_item > a {
       @apply text-themered;
+    }
+
+    & a:hover {
+      @apply !decoration-themered;
     }
   }
 
@@ -358,6 +370,10 @@
     .current_page_item > a {
       @apply text-themegreen;
     }
+
+    & a:hover {
+      @apply !decoration-themegreen;
+    }
   }
 
   &--praktijk {
@@ -380,6 +396,10 @@
 
     .current_page_item > a {
       @apply text-secondary;
+    }
+
+    & a:hover {
+      @apply !decoration-themeblue;
     }
   }
 }

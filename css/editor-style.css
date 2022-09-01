@@ -371,8 +371,16 @@
   margin-bottom: 0px;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -602,6 +610,11 @@
   transform: var(--tw-transform);
 }
 
+.\!translate-x-0 {
+  --tw-translate-x: 0px !important;
+  transform: var(--tw-transform) !important;
+}
+
 .rotate-180 {
   --tw-rotate: 180deg;
   transform: var(--tw-transform);
@@ -763,6 +776,10 @@
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .overflow-y-scroll {
@@ -1190,6 +1207,14 @@
 
 .pt-\[2\.5rem\] {
   padding-top: 2.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .text-left {
@@ -1770,6 +1795,11 @@ ol li {
   background-color: rgb(237 126 6 / var(--tw-bg-opacity));
 }
 
+.checked\:bg-themeblue:checked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(23 67 153 / var(--tw-bg-opacity));
+}
+
 .focus-within\:\!border-secondary:focus-within {
   --tw-border-opacity: 1 !important;
   border-color: rgb(0 74 147 / var(--tw-border-opacity)) !important;
@@ -2315,6 +2345,10 @@ ol li {
     border-bottom-width: calc(0px * var(--tw-divide-y-reverse));
   }
 
+  .lg\:overflow-auto {
+    overflow: auto;
+  }
+
   .lg\:overflow-visible {
     overflow: visible;
   }
@@ -2470,12 +2504,12 @@ ol li {
     padding-bottom: 3.5rem;
   }
 
-  .xl\:pr-32 {
-    padding-right: 8rem;
-  }
-
   .xl\:pt-12 {
     padding-top: 3rem;
+  }
+
+  .xl\:pr-32 {
+    padding-right: 8rem;
   }
 
   .xl\:text-small {
