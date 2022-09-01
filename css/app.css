@@ -2905,6 +2905,9 @@ h1, h2, h3, h4, h5, h6 {
   aspect-ratio: 1 / 1;
 }
 
+.aspect-\[339\/152\] {
+  aspect-ratio: 339 / 152;
+}
 .h-0 {
   height: 0px;
 }
