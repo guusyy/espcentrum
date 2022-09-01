@@ -8,7 +8,7 @@
                 <?php 
                     global $loop;
                     
-                    $all_posts = array( 'post_type' => 'medewerkers', 'meta_value' => true, 'order' => 'ASC' );
+                    $all_posts = array( 'post_type' => 'medewerkers', 'meta_value' => true, 'order' => 'ASC', 'posts_per_page'=>-1 );
                     $loop = new WP_Query( $all_posts );
         
                     if($loop->have_posts()){
