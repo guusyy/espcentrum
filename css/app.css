@@ -657,17 +657,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 31.5px;
   }
 
-.entry-content .has-small-font-size, .block-editor-block-list__layout .has-small-font-size {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
-.entry-content .has-large-font-size, .block-editor-block-list__layout .has-large-font-size {
+.entry-content .has-large-font-size:not(h1, h2, h3, h4), .block-editor-block-list__layout .has-large-font-size:not(h1, h2, h3, h4) {
     font-size: 21px;
     line-height: 31.5px;
   }
 
-.entry-content .has-intro-text-font-size, .block-editor-block-list__layout .has-intro-text-font-size {
+.entry-content .has-intro-text-font-size:not(h1, h2, h3, h4), .block-editor-block-list__layout .has-intro-text-font-size:not(h1, h2, h3, h4) {
     font-size: 22px;
     line-height: 35.2px;
   }
@@ -726,19 +721,19 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 3rem;
   }
 
-.entry-content ul:not([class]), .block-editor-block-list__layout ul:not([class]) {
+.entry-content ul, .block-editor-block-list__layout ul {
     padding-left: 2rem;
   }
 
-.entry-content ul:not([class]) li, .block-editor-block-list__layout ul:not([class]) li {
+.entry-content ul li, .block-editor-block-list__layout ul li {
       list-style-type: square;
     }
 
-.entry-content ul:not([class]) li, .block-editor-block-list__layout ul:not([class]) li {
+.entry-content ul li, .block-editor-block-list__layout ul li {
       line-height: 2rem;
     }
 
-.entry-content ul:not([class]) li::marker, .block-editor-block-list__layout ul:not([class]) li::marker {
+.entry-content ul li::marker, .block-editor-block-list__layout ul li::marker {
         --tw-text-opacity: 1;
         color: rgb(0 74 147 / var(--tw-text-opacity));
       }
