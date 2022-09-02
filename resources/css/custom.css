@@ -62,15 +62,15 @@ h1, h2, h3, h4, h5, h6 {
       @apply text-lg;
     }
 
-    .has-small-font-size {
+    .has-small-font-size:not(h1,h2,h3,h4) {
       @apply text-small;
     }
 
-    .has-large-font-size {
+    .has-large-font-size:not(h1,h2,h3,h4) {
       @apply text-lg;
     }
 
-    .has-intro-text-font-size {
+    .has-intro-text-font-size:not(h1,h2,h3,h4) {
       @apply text-lg2;
     }
 
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
       @apply mb-12;
     }
 
-    ul:not([class]) {
+    ul {
       @apply pl-8;
 
         li {
