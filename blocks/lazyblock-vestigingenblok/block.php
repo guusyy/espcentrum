@@ -1,5 +1,5 @@
 <section class="my-8">
-    <h2><?php echo $attributes['titel']; ?></h2>
+    <h2 id="vestigingen"><?php echo $attributes['titel']; ?></h2>
     <ul class="space-y-4 list-none">
         <?php 
             global $loop;
