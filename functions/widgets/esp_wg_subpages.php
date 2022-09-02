@@ -74,8 +74,13 @@ class ESP_subpages_widget extends WP_Widget
 
 			// Iterate over the items to search and destroy
       foreach ( $items as $key => $item ) {
+
+        // In het geval van de praktijk pagina moet "Onze medewerkers" WEL getoond worden ondanks dat het geen subpagina is
+        if(get_the_title() == 'De praktijk') {
+          if ( !in_array($item->object_id, $childpageids) && $item->title != 'Onze medewerkers') unset( $items[$key] );
+        } else {
           if ( !in_array($item->object_id, $childpageids)) unset( $items[$key] );
-          // if ( $item->object_id != 8 ) unset( $items[$key] );
+        }
       }
       return $items;
     }
