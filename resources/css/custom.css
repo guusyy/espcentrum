@@ -51,27 +51,27 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     h2 {
-        @apply !text-m3xl 2xl:!text-3xl !font-bold !mb-4 !mt-10;
+        @apply text-m3xl 2xl:text-3xl font-bold mb-4 mt-10;
     }
 
     h3 {
-        @apply !text-lg !font-bold !mb-4 !mt-10;
+        @apply text-lg font-bold mb-4 mt-10;
     }
 
     h4 {
-      @apply !text-lg;
+      @apply text-lg;
     }
 
-    .has-small-font-size:not(h1,h2,h3,h4) {
-      @apply !text-base;
+    .has-small-font-size {
+      @apply text-small;
     }
 
-    .has-large-font-size:not(h1,h2,h3,h4) {
-      @apply !text-lg;
+    .has-large-font-size {
+      @apply text-lg;
     }
 
-    .has-intro-text-font-size:not(h1,h2,h3,h4) {
-      @apply !text-lg2;
+    .has-intro-text-font-size {
+      @apply text-lg2;
     }
 
     p, ul, ol {
