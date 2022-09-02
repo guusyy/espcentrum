@@ -87,11 +87,6 @@
       "lineHeight": true,
       "fontSizes": [
         {
-          "name": "Small",
-          "slug": "small",
-          "size": "16px"
-        },
-        {
           "slug": "base",
           "name": "Base",
           "size": "18px"
@@ -101,11 +96,6 @@
           "name": "Intro tekst",
           "size": "22px",
           "lineHeight": "35.2px"
-        },
-        {
-          "slug": "xxl",
-          "name": "2XL",
-          "size": "31px"
         }
       ],
       "fontFamily": {
