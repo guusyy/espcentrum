@@ -25,15 +25,56 @@
       <header class="bg-white shadow espcentrum-header bg-light">
         <div class="hidden lg:block bg-gray2 border-b border-b-[rgba(0,0,0,0.25)] shadow-[0px_1px_0px_rgba(0, 0, 0, 0.25)]">
           <div class="flex justify-between py-2 mx-auto container-base">
-            <ul class="flex gap-5 text-xs xl:gap-12 xl:text-small">
+            <ul class="flex gap-5 text-xs xl:gap-10 xl:text-small">
               <li class="flex items-center gap-2" opening-time>
-                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="http://espcentrum.local/de-praktijk/openingstijden/">
-                  <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" />
-                  </svg>
-                  Vandaag open van 08:00 - 20:30
+                <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="/de-praktijk/openingstijden/">
+                  <?php 
+                    $dayNumber = date('w');
+                    
+                    $openingsTijd = get_field('openingstijd_' . $dayNumber, get_option('page_on_front'));
+                    $sluitingsTijd = get_field('sluitingstijd_'  . $dayNumber, get_option('page_on_front'));
+                    $isOpen = false;
+
+                    if($openingsTijd == '' || $sluitingsTijd == '') {
+                      $isOpen = false;
+                    } else {
+                      $huidigeTijd = DateTime::createFromFormat('H:i', date("H:i"));
+                      $dateOpeningsTijd = DateTime::createFromFormat('H:i', $openingsTijd);
+                      $dateSluitingsTijd = DateTime::createFromFormat('H:i', $sluitingsTijd);
+  
+                      if ($huidigeTijd > $dateOpeningsTijd && $huidigeTijd < $dateSluitingsTijd)
+                      {
+                        $isOpen = true;
+                      }
+                    }
+
+                    if ($isOpen) { ?>
+                      <svg class="fill-themegreen" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" />
+                      </svg>
+                    <?php } else { ?>
+                        <svg class="fill-themered" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" />
+                        </svg>
+                    <?php }
+                    
+                    if ($isOpen) {
+                      echo 'Vandaag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+                    } else if($dayNumber == '5' || $dayNumber == '6' || $dayNumber == '7') {
+                      $openingsTijd = get_field('openingstijd_1', get_option('page_on_front'));
+                      $sluitingsTijd = get_field('sluitingstijd_1', get_option('page_on_front'));
+
+                      echo 'Maandag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+                    } else {
+                      $openingsTijd = get_field('openingstijd_' . ($dayNumber + 1), get_option('page_on_front'));
+                      $sluitingsTijd = get_field('sluitingstijd_' . ($dayNumber + 1), get_option('page_on_front'));
+
+                      echo 'Morgen open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+                    }
+                  ?>
                   <svg class="group-hover:translate-x-0.5 transition-all" width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" /></svg>
+                    <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" />
+                  </svg>
                 </a>
               </li>
               <li>
@@ -145,7 +186,7 @@
             </div>
 
             <div class="hidden lg:block absolute overflow-y-scroll overscroll-contain lg:overflow-visible lg:static w-full bg-white h-[calc(100vh-5rem)] lg:h-fit" id="navigation-menu">
-              <div class="flex flex-col items-center w-full min-h-screen gap-5 px-5 py-8 lg:flex-row lg:justify-between lg:gap-10 lg:flex lg:py-0 lg:px-0 lg:min-h-0">
+              <div class="flex flex-col items-center w-full min-h-screen gap-5 px-5 py-8 overflow-x-hidden lg:overflow-auto lg:flex-row lg:justify-between lg:gap-10 lg:flex lg:py-0 lg:px-0 lg:min-h-0">
                   <?php
                   wp_nav_menu(
                     array(
@@ -174,10 +215,51 @@
                   <div class="flex flex-col justify-between w-full gap-10 py-2 my-10 lg:hidden">
                     <ul class="flex flex-col gap-5 text-xs xl:gap-12 xl:text-small" top-nav-items>
                       <li class="flex items-center gap-2">
-                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="http://espcentrum.local/de-praktijk/openingstijden/">
-                          <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" fill="#01B132" /></svg>
-                          Vandaag open van 08:00 - 20:30
+                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="/de-praktijk/openingstijden/">
+                          <?php 
+                            $dayNumber = date('w');
+                            
+                            $openingsTijd = get_field('openingstijd_' . $dayNumber, get_option('page_on_front'));
+                            $sluitingsTijd = get_field('sluitingstijd_'  . $dayNumber, get_option('page_on_front'));
+                            $isOpen = false;
+
+                            if($openingsTijd == '' || $sluitingsTijd == '') {
+                              $isOpen = false;
+                            } else {
+                              $huidigeTijd = DateTime::createFromFormat('H:i', date("H:i"));
+                              $dateOpeningsTijd = DateTime::createFromFormat('H:i', $openingsTijd);
+                              $dateSluitingsTijd = DateTime::createFromFormat('H:i', $sluitingsTijd);
+          
+                              if ($huidigeTijd > $dateOpeningsTijd && $huidigeTijd < $dateSluitingsTijd)
+                              {
+                                $isOpen = true;
+                              }
+                            }
+
+                            if ($isOpen) { ?>
+                              <svg class="fill-themegreen" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" />
+                              </svg>
+                            <?php } else { ?>
+                                <svg class="fill-themered" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" />
+                                </svg>
+                            <?php }
+                            
+                            if ($isOpen) {
+                              echo 'Vandaag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+                            } else if($dayNumber == '5' || $dayNumber == '6' || $dayNumber == '7') {
+                              $openingsTijd = get_field('openingstijd_1', get_option('page_on_front'));
+                              $sluitingsTijd = get_field('sluitingstijd_1', get_option('page_on_front'));
+
+                              echo 'Maandag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+                            } else {
+                              $openingsTijd = get_field('openingstijd_' . ($dayNumber + 1), get_option('page_on_front'));
+                              $sluitingsTijd = get_field('sluitingstijd_' . ($dayNumber + 1), get_option('page_on_front'));
+
+                              echo 'Morgen open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+                            }
+                          ?>
                           <svg class="group-hover:translate-x-0.5 transition-all" width="6" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 8.822 1.144 10 6 5 1.144 0 0 1.178 3.712 5 0 8.822Z" fill="#575757" /></svg>
                         </a>
