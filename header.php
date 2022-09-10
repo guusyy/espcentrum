@@ -35,6 +35,8 @@
                     $sluitingsTijd = get_field('sluitingstijd_'  . $dayNumber, get_option('page_on_front'));
                     $isOpen = false;
 
+                    echo date("H:i");
+
                     if($openingsTijd == '' || $sluitingsTijd == '') {
                       $isOpen = false;
                     } else {
@@ -229,7 +231,7 @@
                               $huidigeTijd = DateTime::createFromFormat('H:i', date("H:i"));
                               $dateOpeningsTijd = DateTime::createFromFormat('H:i', $openingsTijd);
                               $dateSluitingsTijd = DateTime::createFromFormat('H:i', $sluitingsTijd);
-          
+
                               if ($huidigeTijd > $dateOpeningsTijd && $huidigeTijd < $dateSluitingsTijd)
                               {
                                 $isOpen = true;
