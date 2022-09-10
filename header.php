@@ -35,8 +35,6 @@
                     $sluitingsTijd = get_field('sluitingstijd_'  . $dayNumber, get_option('page_on_front'));
                     $isOpen = false;
 
-                    echo date("H:i");
-
                     if($openingsTijd == '' || $sluitingsTijd == '') {
                       $isOpen = false;
                     } else {
