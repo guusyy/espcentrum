@@ -327,6 +327,10 @@
   margin-bottom: 1.5rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -371,10 +375,6 @@
   margin-bottom: 0px;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .block {
   display: block;
 }
@@ -403,16 +403,12 @@
   display: none;
 }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
 .aspect-\[339\/152\] {
   aspect-ratio: 339 / 152;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .h-1 {
@@ -473,8 +469,8 @@
   height: fit-content;
 }
 
-.max-h-\[22\.5rem\] {
-  max-height: 22.5rem;
+.max-h-\[15\.5rem\] {
+  max-height: 15.5rem;
 }
 
 .\!max-h-\[min\(70vh\2c _1000px\)\] {
@@ -656,6 +652,10 @@
   list-style-type: none;
 }
 
+.\!list-none {
+  list-style-type: none !important;
+}
+
 .list-\[square\] {
   list-style-type: square;
 }
@@ -686,6 +686,10 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -704,6 +708,14 @@
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1029,6 +1041,14 @@
   background-repeat: no-repeat;
 }
 
+.fill-themegreen {
+  fill: #01B132;
+}
+
+.fill-themered {
+  fill: #C93438;
+}
+
 .fill-white {
   fill: #fff;
 }
@@ -1057,12 +1077,8 @@
   fill: #8221B9;
 }
 
-.fill-themered {
-  fill: #C93438;
-}
-
-.fill-themegreen {
-  fill: #01B132;
+.fill-primary {
+  fill: #ED7E06;
 }
 
 .object-contain {
@@ -1203,6 +1219,10 @@
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.\!pl-0 {
+  padding-left: 0px !important;
 }
 
 .pr-2 {
@@ -1798,14 +1818,14 @@ ol li {
   background-color: rgb(1 177 50 / var(--tw-bg-opacity));
 }
 
-.checked\:bg-primary:checked {
-  --tw-bg-opacity: 1;
-  background-color: rgb(237 126 6 / var(--tw-bg-opacity));
-}
-
 .checked\:bg-themeblue:checked {
   --tw-bg-opacity: 1;
   background-color: rgb(23 67 153 / var(--tw-bg-opacity));
+}
+
+.checked\:bg-primary:checked {
+  --tw-bg-opacity: 1;
+  background-color: rgb(237 126 6 / var(--tw-bg-opacity));
 }
 
 .focus-within\:\!border-secondary:focus-within {
@@ -2492,6 +2512,10 @@ ol li {
 
   .xl\:max-w-\[300px\] {
     max-width: 300px;
+  }
+
+  .xl\:gap-10 {
+    gap: 2.5rem;
   }
 
   .xl\:gap-12 {

@@ -1,6 +1,6 @@
 <section class="my-8">
     <h2 id="vestigingen"><?php echo $attributes['titel']; ?></h2>
-    <ul class="space-y-4 list-none">
+    <ul class="!pl-0 space-y-4 list-none">
         <?php 
             global $loop;
             
@@ -11,7 +11,7 @@
             while($loop->have_posts()){
                     $loop->the_post();
                 ?>
-                <li class="">
+                <li class="!list-none">
                     <a class="!no-underline hover:!no-underline group" href="<?php echo get_field('google_maps_url'); ?>" aria-label="<?php echo get_field('titel'); ?>" target="_blank">
                         <article class="relative flex flex-col gap-1 px-4 py-3 transition bg-white border-2 rounded shadow border-gray2 group-focus:bg-gray2 hover:border-black hover:-translate-y-0.5 group-focus:border-black group-focus:-translate-y-0.5 duration-300">
                             <dl class="w-[calc(100%-4rem)]">

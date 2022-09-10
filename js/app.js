@@ -7,6 +7,7 @@
       e.preventDefault();
       e.currentTarget.classList.toggle("active-menu");
       main_navigation.classList.toggle("hidden");
+      main_navigation.querySelectorAll(".sub-menu-holder").forEach((elem) => elem.classList.remove("!translate-x-0"));
       anime({
         targets: main_navigation.querySelectorAll("#primary-menu > ul > li"),
         opacity: [0, 1],
@@ -52,9 +53,16 @@
         });
       });
     });
-    document.querySelectorAll(".menu-item-has-children").forEach((menuItem) => {
+    document.querySelectorAll(".js-menuCollapse").forEach((menuItem) => {
       menuItem.addEventListener("click", function(e) {
-        e.currentTarget.classList.toggle("espcentrum-open");
+        anime.remove(main_navigation.querySelectorAll("#primary-menu > ul > li"));
+        main_navigation.querySelectorAll("#primary-menu > ul > li").forEach((elem) => elem.style = "");
+        const navItem = e.target.closest(".menu-item");
+        if (navItem.nextElementSibling == void 0 && navItem.previousElementSibling == void 0) {
+          e.target.closest(".sub-menu-holder")?.classList.remove("!translate-x-0");
+        } else {
+          navItem.querySelector(".sub-menu-holder")?.classList.add("!translate-x-0");
+        }
       });
     });
     document.querySelectorAll("[toggle-open]")?.forEach((button) => {

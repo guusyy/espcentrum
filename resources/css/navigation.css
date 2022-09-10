@@ -54,7 +54,7 @@
               @apply container-xl mx-auto grid grid-cols-4 gap-5;
 
               & > li {
-                > a {
+                > .menu-parent > a {
                   @apply text-[20px] xl:text-[24px] border-b-2 pb-2 block mb-[1px] font-semibold transition-all pl-0;
 
                   &:hover {
@@ -66,7 +66,7 @@
                 &:only-child {
                   @apply col-start-2;
 
-                  > a {
+                  > .menu-parent > a {
                     @apply border-secondary flex gap-3;
                     &:before {
                       @apply i-praktijk;
@@ -85,7 +85,7 @@
                 }
 
                 &:nth-child(1):not(:only-child) {
-                  > a {
+                  > .menu-parent > a {
                     @apply border-themepurple flex gap-3;
                     &:before {
                       @apply i-fysiotherapie;
@@ -102,7 +102,7 @@
                   }
                 } 
                 &:nth-child(2):not(:only-child) {
-                  > a {
+                  > .menu-parent > a {
                     @apply border-themeblue flex gap-3;
                     &:before {
                       @apply i-osteopathie;
@@ -120,7 +120,7 @@
                   }
                 } 
                 &:nth-child(3):not(:only-child) {
-                  > a {
+                  > .menu-parent > a {
                     @apply border-themered flex gap-3;
                     &:before {
                       @apply i-medischefitness;
@@ -137,7 +137,7 @@
                   }
                 } 
                 &:nth-child(4):not(:only-child) {
-                  > a {
+                  > .menu-parent > a {
                     @apply border-themegreen flex gap-3;
                     &:before {
                       @apply i-leefstijlinterventies;
@@ -218,9 +218,125 @@
         a {
           @apply font-bold text-[25px];
         }
-        > .sub-menu-holder {
-          @apply hidden;
+        .sub-menu-holder {
+
         }
+        
+        > .sub-menu-holder {
+          @apply absolute left-0 top-0 w-screen h-screen bg-white z-50 px-5 translate-x-full;
+
+          > .sub-menu-wrap > .sub-menu > .menu-item:only-child {
+            > .menu-parent {
+              @apply pb-4 mb-2 border-b border-gray4 flex-row-reverse justify-end;
+
+              > .menu-collapse {
+                @apply rotate-180;
+              }
+            }
+            .sub-menu-holder .menu-item {
+              @apply py-1.5;
+
+              a {
+                @apply text-base;
+              }
+            }
+          }
+
+          > .sub-menu-wrap > .sub-menu > .menu-item:not(:only-child) {
+            > .sub-menu-holder {
+              @apply absolute left-0 top-0 w-screen h-screen bg-white z-50 px-5 translate-x-full;
+
+              a {
+                @apply text-base;
+              }
+
+              .menu-item {
+                @apply py-2;
+
+              }
+
+              .sub-menu-holder, .menu-collapse {
+                display: none;
+              }
+            }
+
+            &:not(:last-child) {
+              @apply border-b border-gray4;
+            }
+
+            &:nth-child(1) {
+              > .menu-parent > a {
+                @apply border-themepurple flex gap-3;
+                &:before {
+                  @apply i-fysiotherapie;
+                  flex-shrink: 0;
+                  content: '';
+                  width: 25px;
+                  height: 25px;
+                  display: block;
+                }
+              }
+              > .menu-parent svg {
+                @apply fill-themepurple;
+              }
+            }
+            &:nth-child(2) {
+              > .menu-parent > a {
+                @apply border-themeblue flex gap-3;
+                &:before {
+                  @apply i-osteopathie;
+                  flex-shrink: 0;
+                  content: '';
+                  width: 25px;
+                  height: 24px;
+                  background-position: 0 2px;
+                  display: block;
+                }
+              }
+              > .menu-parent svg {
+                @apply fill-themeblue;
+              }
+            }
+            &:nth-child(3) {
+              > .menu-parent > a {
+                @apply border-themered flex gap-3;
+                &:before {
+                  @apply i-medischefitness;
+                  flex-shrink: 0;
+                  content: '';
+                  width: 25px;
+                  height: 25px;
+                  display: block;
+                }
+              }
+              > .menu-parent svg {
+                @apply fill-themered;
+              }
+            }
+            &:nth-child(4) {
+              > .menu-parent > a {
+                @apply border-themegreen flex gap-3;
+                &:before {
+                  @apply i-leefstijlinterventies;
+                  flex-shrink: 0;
+                  content: '';
+                  width: 25px;
+                  height: 25px;
+                  display: block;
+                }
+              }
+              > .menu-parent svg {
+                @apply fill-themegreen;
+              }
+            }
+          }
+        }
+      }
+      .menu-parent {
+        @apply flex justify-between;
+      }
+      .menu-collapse {
+        @apply inline-block pl-8 py-4 -my-4;
       }
     }
   }

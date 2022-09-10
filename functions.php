@@ -85,6 +85,7 @@ function espcentrum_theme_nav_menu_add_li_class( $classes, $item, $args, $depth 
 }
 
 
+
 // Add mega menu to submenu
 class WPSE_78121_Sublevel_Walker extends Walker_Nav_Menu
 {
@@ -99,6 +100,18 @@ class WPSE_78121_Sublevel_Walker extends Walker_Nav_Menu
 }
 
 add_filter( 'nav_menu_css_class', 'espcentrum_theme_nav_menu_add_li_class', 10, 4 );
+
+function yourprefix_menu_arrow($item_output, $item, $depth, $args) {
+  if (in_array('menu-item-has-children', $item->classes)) {
+      $arrow = '<button class="hidden menu-collapse js-menuCollapse"><svg class="fill-primary" width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.000116534 15.88L2.12012 18L11.1201 9L2.12012 -7.86805e-07L0.000117737 2.12L6.88012 9L0.000116534 15.88Z" />
+      </svg></button></div>'; // Change the class to your font icon
+      $item_output = str_replace('</a>', '</a>'. $arrow .'', $item_output);
+      $item_output = str_replace('<a', '<div class="menu-parent"><a', $item_output);
+  }
+  return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'yourprefix_menu_arrow', 10, 4);
 
 /**
  * Adds option 'submenu_class' to 'wp_nav_menu'.
