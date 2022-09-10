@@ -1648,6 +1648,9 @@ h1, h2, h3, h4, h5, h6 {
                 font-size: 18px;
                 line-height: 27px;
               }
+              .espcentrum-header #primary-menu > ul > li > .sub-menu-holder > .sub-menu-wrap > .sub-menu > .menu-item:only-child .sub-menu-holder .menu-item .menu-collapse, .espcentrum-header #primary-menu > ul > li > .sub-menu-holder > .sub-menu-wrap > .sub-menu > .menu-item:only-child .sub-menu-holder .menu-item .sub-menu-holder {
+                display: none;
+              }
             .espcentrum-header #primary-menu > ul > li > .sub-menu-holder > .sub-menu-wrap > .sub-menu > .menu-item:not(:only-child) > .sub-menu-holder {
               position: absolute;
             }

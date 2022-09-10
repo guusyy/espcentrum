@@ -239,6 +239,10 @@
               a {
                 @apply text-base;
               }
+
+              .menu-collapse, .sub-menu-holder {
+                @apply hidden;
+              }
             }
           }
 
