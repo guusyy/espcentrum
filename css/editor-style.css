@@ -2320,6 +2320,10 @@ ol li {
     width: fit-content;
   }
 
+  .lg\:w-\[calc\(100\%\+260px\)\] {
+    width: calc(100% + 260px);
+  }
+
   .lg\:min-w-\[13rem\] {
     min-width: 13rem;
   }
