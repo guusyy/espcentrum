@@ -29,7 +29,7 @@
                                                 $image = get_field('foto');
                                                 
                                                 if( !empty( $image ) ): ?>
-                                                    <?php echo wp_get_attachment_image( $image['id'], array('278', '310'), "", array( "class" => "w-full rounded aspect-[386/430]" ) ); ?>
+                                                    <?php echo wp_get_attachment_image( $image['id'], array('278', '310'), "", array( "class" => "w-full rounded aspect-[386/430] object-cover" ) ); ?>
                                                 <?php endif; ?>
                                         </div>
                                         <div class="py-4">
