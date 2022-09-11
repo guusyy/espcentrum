@@ -37,8 +37,8 @@ Template Post Type: post, page, product, programma
                         <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" fill="#ECF1FF"/>
                       </svg>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+260px)]">
-                      <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-center')); ?>
+                    <div class="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+260px)] bg-themeblue/20">
+                      <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover object-center')); ?>
                     </div>
                   </div>
                 </div>

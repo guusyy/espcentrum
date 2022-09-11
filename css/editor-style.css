@@ -1020,6 +1020,35 @@
   background-color: rgb(0 74 147 / 0.1);
 }
 
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
+.bg-themegreen\/50 {
+  background-color: rgb(1 177 50 / 0.5);
+}
+
+.bg-themegreen\/30 {
+  background-color: rgb(1 177 50 / 0.3);
+}
+
+.bg-themegreen\/20 {
+  background-color: rgb(1 177 50 / 0.2);
+}
+
+.bg-themepurple\/20 {
+  background-color: rgb(130 33 185 / 0.2);
+}
+
+.bg-themered\/20 {
+  background-color: rgb(201 52 56 / 0.2);
+}
+
+.bg-themeblue\/20 {
+  background-color: rgb(23 67 153 / 0.2);
+}
+
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }

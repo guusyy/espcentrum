@@ -32,12 +32,12 @@ Template Post Type: post, page, product, programma
                 <div class="relative row-start-1 col-span-full lg:col-start-7 lg:col-span-6">
                   <div class="h-[250px] lg:h-[374px]">
                     <div class="absolute bottom-0 left-0 z-50 hidden h-full lg:block">
-                      <svg class="fill-[#ECFFF1] z-50 h-full w-auto" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                      <svg class="fill-[#ECFFF1] z-50 h-full" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                         <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" fill="#ECFFF1"/>
                       </svg>
                     </div>
-                    <div class="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+260px)]">
-                      <?php the_post_thumbnail('full', array('class' => 'w-full h-full object-cover object-center')); ?>
+                    <div class="absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 top-1/2 -translate-y-1/2 h-full w-screen lg:w-[calc(100%+260px)] bg-themegreen/20">
+                      <?php the_post_thumbnail('large', array('class' => 'w-full h-full object-cover object-center')); ?>
                     </div>
                   </div>
                 </div>
