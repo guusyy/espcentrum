@@ -42,7 +42,7 @@ Template Post Type: post, page, product, programma
                   </div>
                 </div>
               </div>
-              <div class="absolute bottom-0 z-50 hidden lg:block left-full">
+              <div class="absolute bottom-0 z-50 hidden lg:block left-full h-full">
                 <svg class="fill-[#ECFFF1] z-50 rotate-180" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg">
                   <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" fill="#ECFFF1"/>
                 </svg>

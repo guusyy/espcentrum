@@ -1567,6 +1567,10 @@
   transition-duration: 200ms;
 }
 
+.duration-\[2000ms\] {
+  transition-duration: 2000ms;
+}
+
 .content-\[\"\2022\"\] {
   --tw-content: "•";
   content: var(--tw-content);

@@ -4285,6 +4285,10 @@ h1, h2, h3, h4, h5, h6 {
   transition-duration: 200ms;
 }
 
+.duration-\[2000ms\] {
+  transition-duration: 2000ms;
+}
+
 .content-\[\"\2022\"\] {
   --tw-content: "•";
   content: var(--tw-content);

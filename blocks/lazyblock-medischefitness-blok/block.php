@@ -32,7 +32,7 @@
                 </div>
             </div>
             </div>
-            <div class="absolute bottom-0 z-50 hidden lg:block left-full">
+            <div class="absolute bottom-0 z-50 hidden lg:block left-full h-full">
             <svg class="fill-[#FFEDED] group-hover:fill-[#ffe2e2] transition-all duration-500 z-50 rotate-180 h-full" width="247" height="374" viewBox="0 0 247 374" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <path d="M246.534 0.000224087L0.000366211 374V0.000213623L246.534 0.000224087Z" />
             </svg>
