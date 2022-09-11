@@ -60,7 +60,7 @@
                     
                     if ($isOpen) {
                       echo 'Vandaag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
-                    } else if($dayNumber == '5' || $dayNumber == '6' || $dayNumber == '7') {
+                    } else if($dayNumber == '5' || $dayNumber == '6') {
                       $openingsTijd = get_field('openingstijd_1', get_option('page_on_front'));
                       $sluitingsTijd = get_field('sluitingstijd_1', get_option('page_on_front'));
 
@@ -248,7 +248,7 @@
                             
                             if ($isOpen) {
                               echo 'Vandaag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
-                            } else if($dayNumber == '5' || $dayNumber == '6' || $dayNumber == '7') {
+                            } else if($dayNumber == '5' || $dayNumber == '6') {
                               $openingsTijd = get_field('openingstijd_1', get_option('page_on_front'));
                               $sluitingsTijd = get_field('sluitingstijd_1', get_option('page_on_front'));
 

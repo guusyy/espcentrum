@@ -42,7 +42,12 @@
                                         </div>
                                         <div class="py-4">
                                             <h3 class="mb-2 font-semibold text-mxl 2xl:text-xl"><?php echo get_field('naam'); ?></h3>
-                                            <span class="block text-gray5 px-2.5 lg:leading-snug text-xs rounded lg:text-small border border-gray5 w-fit mb-2 leading-snug">BIG-nummer: <?php echo get_field('big-nummer'); ?></span>
+                                            <?php if( get_field('big-nummer') ): ?>
+                                                <span class="block text-gray5 px-2.5 lg:leading-snug text-xs rounded lg:text-small border border-gray5 w-fit mb-2 leading-snug">BIG-nummer: <span class="whitespace-nowrap"><?php echo get_field('big-nummer'); ?></span></span>
+                                            <?php endif; ?>
+                                            <?php if( get_field('nro-nummer') ): ?>
+                                                <span class="block text-gray5 px-2.5 lg:leading-snug text-xs rounded lg:text-small border border-gray5 w-fit mb-2 leading-snug">Lidnummer NRO: <span class="whitespace-nowrap"><?php echo get_field('nro-nummer'); ?></span></span>
+                                            <?php endif; ?>
                                             <span class="block text-xs leading-snug lg:leading-snug text-gray5 lg:text-small"><?php echo get_field('functies'); ?></span>
                                         </div>
                                     </div>
