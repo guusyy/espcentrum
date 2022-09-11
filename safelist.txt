@@ -9,3 +9,4 @@ wp-caption-text
 text-purple
 text-green
 text-red
+md:whitespace-nowrap

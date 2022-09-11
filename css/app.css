@@ -4731,6 +4731,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: flex-start;
   }
 
+  .md\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+
   .md\:text-3xl {
     font-size: 38px;
     line-height: 53.2px;

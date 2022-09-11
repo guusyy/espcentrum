@@ -2085,6 +2085,10 @@ ol li {
     justify-content: flex-start;
   }
 
+  .md\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+
   .md\:text-3xl {
     font-size: 38px;
     line-height: 53.2px;
