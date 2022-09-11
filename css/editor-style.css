@@ -1012,6 +1012,11 @@
   background-color: rgb(0 74 147 / 0.1);
 }
 
+.bg-gray3 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 224 224 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }

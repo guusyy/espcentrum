@@ -66,7 +66,7 @@
     <!-- col right -->
     <div class="z-0 h-full row-start-1 col-span-full lg:col-span-10 lg:col-start-4">
       <div class="relative aspect-video lg:aspect-auto lg:h-full">
-        <div class="absolute top-0 h-full homepage-clip bg-gray1">
+        <div class="absolute top-0 h-full homepage-clip bg-gray3">
           <?php foreach ($attributes['images'] as $image) : ?>
             <?php echo wp_get_attachment_image( $image['id'], array('1605', '1000'), "", array( "class" => "absolute top-0 left-0 object-cover w-full h-full" ) ); ?>
           <?php endforeach; ?>
