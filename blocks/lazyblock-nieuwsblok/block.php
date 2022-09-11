@@ -9,7 +9,7 @@
         <?php 
           global $loop;
           
-          $all_posts = array( 'post_type' => 'nieuws', 'meta_key' => 'toon_in_uitgelicht_nieuws', 'meta_value' => true, 'posts_per_page' => 2, 'order' => 'DESC' );
+          $all_posts = array( 'post_type' => 'nieuws', 'meta_key' => 'toon_in_uitgelicht_nieuws', 'posts_per_page' => 2, 'order' => 'DESC' );
           $loop = new WP_Query( $all_posts );
 
           if($loop->have_posts()){

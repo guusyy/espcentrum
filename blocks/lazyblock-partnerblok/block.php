@@ -17,7 +17,7 @@
                 <?php 
                   global $loop;
                   
-                  $all_posts = array( 'post_type' => 'partners', 'meta_key' => 'toon_in_partnerweergave', 'meta_value' => true, 'order' => 'DESC' );
+                  $all_posts = array( 'post_type' => 'partners', 'meta_key' => 'toon_in_partnerweergave', 'order' => 'DESC' );
                   $loop = new WP_Query( $all_posts );
         
                   if($loop->have_posts()){
