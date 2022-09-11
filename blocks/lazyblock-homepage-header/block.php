@@ -71,7 +71,7 @@
   <!-- col right -->
   <div class="z-0 h-full row-start-1 col-span-full lg:col-span-10 lg:col-start-3">
 
-    <div class="h-full max-h-64 lg:max-h-fit">
+    <div class="h-full max-h-64 lg:max-h-fit bg-gray1">
       <?php foreach ($attributes['images'] as $image) : ?>
         <img class="object-cover w-full h-full max-h-full" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
       <?php endforeach; ?>

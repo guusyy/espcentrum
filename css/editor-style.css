@@ -2311,6 +2311,10 @@ ol li {
     max-height: 150px;
   }
 
+  .lg\:max-h-full {
+    max-height: 100%;
+  }
+
   .lg\:min-h-0 {
     min-height: 0px;
   }
