@@ -12,13 +12,6 @@ module.exports = {
         './safelist.txt'
     ],
     theme: {
-        container: {
-            padding: {
-                DEFAULT: '20px',
-                sm: '20px',
-                lg: '0rem'
-            },
-        },
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme))
         },
@@ -79,16 +72,14 @@ module.exports = {
             lineHeight: 'clamp(2.375rem, 3vw + 1rem, 4rem)',
           }],
           '5xl': [
-            'clamp(1.875rem, 1.75vw + 1rem, 3.25rem)', {
-            lineHeight: 'clamp(2.375rem, 2.25vw + 1rem, 4rem)',
+            'clamp(2rem, 2vw + 1rem, 3.25rem)', {
+            lineHeight: '1.3',
           }]
         },
         container: {
           padding: {
-            DEFAULT: '1rem',
-            sm: '2rem',
+            DEFAULT: '1.25rem',
           },
-          // default breakpoints but with 40px removed
           screens: {
             sm: '640px',
             md: '768px',
@@ -105,21 +96,18 @@ module.exports = {
           addComponents({
             ".container-xl": {
               marginInline: "auto",
-              paddingInline: theme("spacing.5"),
+              paddingInline: '1.25rem',
               maxWidth: theme("screens.sm"),
     
               // Breakpoints
               "@screen sm": {
                 maxWidth: theme("screens.sm"),
-                paddingInline: '2rem',
               },
               "@screen md": {
                 maxWidth: theme("screens.md"),
-                paddingInline: '1.5rem',
               },
               "@screen lg": {
                 maxWidth: theme("screens.lg"),
-                paddingInline: '1rem',
               },
               "@screen xl": {
                 maxWidth: '1180px',
@@ -130,21 +118,18 @@ module.exports = {
             },
             ".container-base": {
               marginInline: "auto",
-              paddingInline: theme("spacing.5"),
+              paddingInline: '1.25rem',
               maxWidth: theme("screens.sm"),
     
               // Breakpoints
               "@screen sm": {
                 maxWidth: theme("screens.sm"),
-                paddingInline: '2rem',
               },
               "@screen md": {
                 maxWidth: theme("screens.md"),
-                paddingInline: '1.5rem',
               },
               "@screen lg": {
                 maxWidth: theme("screens.lg"),
-                paddingInline: '1rem',
               },
               "@screen xl": {
                 maxWidth: '1180px',
