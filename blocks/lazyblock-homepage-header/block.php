@@ -68,7 +68,7 @@
       <div class="relative aspect-video lg:aspect-auto lg:h-full">
         <div class="absolute top-0 h-full homepage-clip bg-gray1">
           <?php foreach ($attributes['images'] as $image) : ?>
-            <img class="absolute top-0 left-0 object-cover w-full h-full" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            <?php echo wp_get_attachment_image( $image['id'], array('1605', '1000'), "", array( "class" => "absolute top-0 left-0 object-cover w-full h-full" ) ); ?>
           <?php endforeach; ?>
         </div>
       </div>

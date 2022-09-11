@@ -31,8 +31,8 @@
                               <?php 
                                 $image = get_field('logo');
                                 if( !empty( $image ) ): ?>
-                                    <img class="max-h-[120px] max-w-[200px] lg:max-h-[150px] lg:max-w-[250px] xl:max-h-[180px] xl:max-w-[300px]" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                              <?php endif; ?>
+                                  <?php echo wp_get_attachment_image( $image['id'], array('300', '180'), "", array( "class" => "max-h-[120px] max-w-[200px] lg:max-h-[150px] lg:max-w-[250px] xl:max-h-[180px] xl:max-w-[300px]" ) ); ?>
+                                <?php endif; ?>
                             </div>
                           </article>
                         </a>
