@@ -403,6 +403,10 @@
   aspect-ratio: 16 / 9;
 }
 
+.aspect-\[386\/430\] {
+  aspect-ratio: 386 / 430;
+}
+
 .h-1 {
   height: 0.25rem;
 }

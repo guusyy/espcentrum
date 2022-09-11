@@ -23,22 +23,14 @@
                                                 $image = get_field('foto_2');
                                                 
                                                 if( !empty( $image ) ): ?>
-                                                    <img 
-                                                        class="absolute top-0 left-0 z-10 w-full h-full transition duration-300 rounded opacity-0 group-focus:opacity-100 group-hover:opacity-100 aspect-square" 
-                                                        src="<?php echo esc_url($image['url']); ?>" 
-                                                        alt="<?php echo esc_attr($image['alt']); ?>" 
-                                                    />
-                                            <?php endif; ?>
+                                                    <?php echo wp_get_attachment_image( $image['id'], array('278', '310'), "", array( "class" => "absolute top-0 left-0 z-10 w-full h-full transition duration-300 rounded opacity-0 object-cover group-focus:opacity-100 group-hover:opacity-100" ) ); ?>
+                                                <?php endif; ?>
                                             <?php 
                                                 $image = get_field('foto');
                                                 
                                                 if( !empty( $image ) ): ?>
-                                                    <img 
-                                                        class="w-full rounded" 
-                                                        src="<?php echo esc_url($image['url']); ?>" 
-                                                        alt="<?php echo esc_attr($image['alt']); ?>" 
-                                                    />
-                                            <?php endif; ?>
+                                                    <?php echo wp_get_attachment_image( $image['id'], array('278', '310'), "", array( "class" => "w-full rounded aspect-[386/430]" ) ); ?>
+                                                <?php endif; ?>
                                         </div>
                                         <div class="py-4">
                                             <h3 class="mb-2 font-semibold text-mxl 2xl:text-xl"><?php echo get_field('naam'); ?></h3>
