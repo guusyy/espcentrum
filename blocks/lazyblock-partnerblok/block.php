@@ -31,7 +31,7 @@
                               <?php 
                                 $image = get_field('logo');
                                 if( !empty( $image ) ): ?>
-                                  <?php echo wp_get_attachment_image( $image['id'], array('300', '180'), "", array( "class" => "max-h-[120px] max-w-[200px] lg:max-h-[150px] lg:max-w-[250px] xl:max-h-[180px] xl:max-w-[300px]" ) ); ?>
+                                  <?php echo wp_get_attachment_image( $image['id'], array('300', '180'), "", array( "class" => "max-h-[120px] max-w-[200px] lg:max-h-[150px] lg:max-w-[250px] xl:max-h-[180px] xl:max-w-[300px] object-contain" ) ); ?>
                                 <?php endif; ?>
                             </div>
                           </article>
