@@ -185,7 +185,7 @@
               </div>
             </div>
 
-            <div class="hidden lg:block absolute overflow-y-scroll overscroll-contain lg:overflow-visible lg:static w-full bg-white h-[calc(100vh-5rem)] lg:h-fit" id="navigation-menu">
+            <div class="hidden lg:block absolute overflow-y-scroll overscroll-contain overflow-x-hidden lg:overflow-visible lg:static w-full bg-white h-[calc(100vh-5rem)] lg:h-fit" id="navigation-menu">
               <div class="flex flex-col items-center w-full min-h-screen gap-5 px-5 py-8 overflow-x-hidden lg:overflow-visible lg:flex-row lg:justify-between lg:gap-10 lg:flex lg:py-0 lg:px-0 lg:min-h-0">
                   <?php
                   wp_nav_menu(

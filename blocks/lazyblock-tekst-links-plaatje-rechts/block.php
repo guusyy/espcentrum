@@ -7,6 +7,9 @@
         <?php echo $attributes['text']; ?>
         </div>
         <a class="btn" href="<?php echo esc_url( $attributes['button-url'] ); ?>"><?php echo $attributes['button-label']; ?></a>
+        <?php if ($attributes['button-2-label']) : ?>
+          <a class="mt-4 ml-0 btn btn--outline lg:mt-0 lg:ml-2" href="<?php echo esc_url( $attributes['button-2-url'] ); ?>"><?php echo $attributes['button-2-label']; ?></a>
+        <?php endif; ?>
       </div>
       <div class="flex justify-center order-1 lg:order-2 col-span-full lg:col-span-6 xl:col-span-5">
         <?php if ( isset( $attributes['image']['url'] ) ) : ?>

@@ -6,7 +6,7 @@
   }
 
   &--outline {
-    @apply border-2 border-primaryAlt font-semibold rounded bg-white text-black;
+    @apply border-2 border-primaryAlt font-semibold rounded bg-white text-black py-1.5;
 
     &:hover, &:focus {
       @apply bg-white border-primaryHover
