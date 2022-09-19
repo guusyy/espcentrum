@@ -304,9 +304,9 @@ function register_custom_widget_areas() {
     )
   );
   register_sidebar( array(
+		'id'            => 'page-sidebar',
     'name' => esc_html__( 'Page Sidebar', 'espcentrum' ),
     'description' => esc_html__( 'Page Sidebar', 'espcentrum' ),
-		'id'            => 'page-sidebar',
 		'before_widget' => '<div class="widget">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3>',
