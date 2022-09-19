@@ -127,3 +127,5 @@ function regisubpages_widget()
   register_widget('ESP_subpages_widget');
 }
 add_action('widgets_init', 'regisubpages_widget');
+
+?>
