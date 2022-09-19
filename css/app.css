@@ -3075,6 +3075,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -3165,10 +3169,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .ml-8 {
   margin-left: 2rem;
-}
-
-.mb-0 {
-  margin-bottom: 0px;
 }
 
 .block {
@@ -3444,6 +3444,10 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin-top: 5rem;
 }
 
+.list-decimal {
+  list-style-type: decimal;
+}
+
 .list-none {
   list-style-type: none;
 }
@@ -3454,10 +3458,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-\[square\] {
   list-style-type: square;
-}
-
-.list-decimal {
-  list-style-type: decimal;
 }
 
 .appearance-none {
@@ -3744,19 +3744,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: rgb(237 126 6 / var(--tw-bg-opacity));
 }
 
-.bg-gray4 {
+.bg-gray3 {
   --tw-bg-opacity: 1;
-  background-color: rgb(168 168 168 / var(--tw-bg-opacity));
+  background-color: rgb(224 224 224 / var(--tw-bg-opacity));
 }
 
 .bg-gray2 {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
-}
-
-.bg-gray3 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(224 224 224 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#FAF1FF\] {
