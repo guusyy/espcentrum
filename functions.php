@@ -380,3 +380,5 @@ echo '<h2 style="margin-bottom:1rem">Hulp bij aanpassen van de content van ESPCe
 
 // Widgets
 require_once('functions/widgets/esp_wg_subpages.php');
+
+?>
