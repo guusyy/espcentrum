@@ -2060,11 +2060,6 @@ h1, h2, h3, h4, h5, h6 {
       }
 
 .sidenav .sidebarmenu .menu-item.current_page_item > a, .sidenav .sidebarmenu .menu-item.current_page_item > .menu-parent > a {
-          --tw-text-opacity: 1;
-          color: rgb(0 74 147 / var(--tw-text-opacity));
-        }
-
-.sidenav .sidebarmenu .menu-item.current_page_item > a, .sidenav .sidebarmenu .menu-item.current_page_item > .menu-parent > a {
           text-decoration: underline;
         }
 

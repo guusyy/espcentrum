@@ -373,7 +373,7 @@
       &.current_page_item {
         & > a,
         & > .menu-parent > a {
-          @apply underline text-secondary;
+          @apply underline;
         }
       }
     }
