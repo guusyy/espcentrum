@@ -371,9 +371,9 @@
       }
 
       &.current_page_item {
-
-        & > a {
-          @apply underline;
+        & > a,
+        & > .menu-parent > a {
+          @apply underline text-secondary;
         }
       }
     }
@@ -405,7 +405,8 @@
       }
     }
 
-    .current_page_item > a {
+    .current_page_item > a, 
+    .current_page_item > .menu-parent > a  {
       @apply text-themepurple;
     }
 
@@ -433,7 +434,8 @@
       }
     }
 
-    .current_page_item > a {
+    .current_page_item > a,
+    .current_page_item > .menu-parent > a {
       @apply text-themeblue;
     }
 
@@ -460,7 +462,8 @@
       }
     }
 
-    .current_page_item > a {
+    .current_page_item > a,
+    .current_page_item > .menu-parent > a {
       @apply text-themered;
     }
 
@@ -487,7 +490,8 @@
       }
     }
 
-    .current_page_item > a {
+    .current_page_item > a,
+    .current_page_item > .menu-parent > a {
       @apply text-themegreen;
     }
 
@@ -514,7 +518,8 @@
       }
     }
 
-    .current_page_item > a {
+    .current_page_item > a,
+    .current_page_item > .menu-parent > a {
       @apply text-secondary;
     }
 
