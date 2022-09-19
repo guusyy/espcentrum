@@ -31,9 +31,7 @@
         <div class="w-full mx-auto container-xl">
           <section class="grid grid-cols-12 my-4 lg:my-14 lg:gap-x-5 xl:gap-x-10">
             <aside class="col-span-full lg:col-span-4 my-4 mb-7 lg:my-0 lg:pt-[5.5rem]">
-              <?php if (is_active_sidebar('page-sidebar')) : ?>
-                <?php dynamic_sidebar('page-sidebar'); ?>
-              <?php endif; ?>
+              <?php dynamic_sidebar('page-sidebar'); ?>
             </aside>
             <article <?php post_class( 'col-span-full lg:col-start-5 lg:col-span-full bg-white min-h-full' ); ?>>
               <?php if ( !is_front_page() ) : ?>
