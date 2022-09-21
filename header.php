@@ -274,7 +274,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="#">
+                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="https://espcentrum.virtuagym.com/" target="_blank">
                           <svg width="14" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.667 7.2H3.11v1.6h1.556V7.2Zm3.11 0H6.223v1.6h1.556V7.2Zm3.112 0H9.333v1.6h1.556V7.2Zm1.555-5.6h-.777V0H10.11v1.6H3.89V0H2.333v1.6h-.777C.692 1.6.008 2.32.008 3.2L0 14.4c0 .88.692 1.6 1.556 1.6h10.888C13.3 16 14 15.28 14 14.4V3.2c0-.88-.7-1.6-1.556-1.6Zm0 12.8H1.556V5.6h10.888v8.8Z" fill="#575757" /></svg>
                           Reserveer trainingsmoment
@@ -283,7 +283,7 @@
                         </a>
                       </li>
                       <li>
-                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="#">
+                        <a class="flex items-center gap-2 hover:underline underline-offset-4 group" href="https://espcentrum.virtuagym.com/" target="_blank">
                           <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M9 8c1.66 0 2.99-1.34 2.99-3S10.66 2 9 2C7.34 2 6 3.34 6 5s1.34 3 3 3Zm0 2c-2.33 0-7 1.17-7 3.5V16h14v-2.5c0-2.33-4.67-3.5-7-3.5Z" fill="#575757" /></svg>
                           Mijn account
