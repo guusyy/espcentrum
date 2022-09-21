@@ -475,4 +475,63 @@ function createSideNav() {
     <?php
 }
 
+function debug_to_console($data) {
+  $output = $data;
+  if (is_array($output))
+      $output = implode(',', $output);
+
+  echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
+function getOpeningTime() {
+  $dayNumber = date('w');
+  
+  $openingsTijd = get_field('openingstijd_' . $dayNumber, get_option('page_on_front'));
+  $sluitingsTijd = get_field('sluitingstijd_'  . $dayNumber, get_option('page_on_front'));
+  $isOpen = false;
+  $isTodayOpen = false;
+
+  if($openingsTijd == '' || $sluitingsTijd == '') {
+    $isOpen = false;
+  } else {
+    $huidigeTijd = DateTime::createFromFormat('H:i', current_datetime()->format('H:i'));
+    $dateOpeningsTijd = DateTime::createFromFormat('H:i', $openingsTijd);
+    $dateSluitingsTijd = DateTime::createFromFormat('H:i', $sluitingsTijd);
+
+    if ($huidigeTijd > $dateOpeningsTijd && $huidigeTijd < $dateSluitingsTijd)
+    {
+      $isOpen = true;
+    }
+    if ($huidigeTijd < $dateOpeningsTijd) {
+      $isTodayOpen = true;
+    }
+  }
+
+  if ($isOpen && !$isTodayOpen) { ?>
+    <svg class="fill-themegreen" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" />
+    </svg>
+  <?php } else { ?>
+      <svg class="fill-themered" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8ZM8 14.4A6.398 6.398 0 0 1 1.6 8c0-3.536 2.864-6.4 6.4-6.4 3.536 0 6.4 2.864 6.4 6.4 0 3.536-2.864 6.4-6.4 6.4ZM8.4 4H7.2v4.8l4.2 2.52.6-.984L8.4 8.2V4Z" />
+      </svg>
+  <?php }
+  
+  if ($isOpen) {
+    echo 'Vandaag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+  } else if($dayNumber == '5' || $dayNumber == '6') {
+    $openingsTijd = get_field('openingstijd_1', get_option('page_on_front'));
+    $sluitingsTijd = get_field('sluitingstijd_1', get_option('page_on_front'));
+
+    echo 'Maandag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+  } else if ($isTodayOpen) {
+    echo 'Vandaag open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+  } else {
+    $openingsTijd = get_field('openingstijd_' . ($dayNumber + 1), get_option('page_on_front'));
+    $sluitingsTijd = get_field('sluitingstijd_' . ($dayNumber + 1), get_option('page_on_front'));
+
+    echo 'Morgen open van ' . $openingsTijd . ' - ' . $sluitingsTijd;
+  }
+}
+
 ?>
