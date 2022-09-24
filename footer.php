@@ -94,7 +94,7 @@
 </div>
 
 <?php wp_footer(); ?>
-
+<script data-goatcounter="https://espcentrum.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 
 </html>
