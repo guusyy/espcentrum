@@ -42,8 +42,11 @@ function espcentrum_theme_enqueue_scripts() {
 	$theme = wp_get_theme();
 
 	wp_enqueue_style( 'tailpress', espcentrum_theme_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
+  wp_enqueue_style( 'swiper', espcentrum_theme_asset( 'css/swiper.css' ), array(), $theme->get( 'Version' ) );
   wp_enqueue_script( 'anime', espcentrum_theme_asset( 'js/anime.min.js' ), array(), $theme->get( 'Version' ) );
+  wp_enqueue_script( 'smoothscroll', espcentrum_theme_asset( 'js/smoothscroll.min.js' ), array(), $theme->get( 'Version' ) );
 	wp_enqueue_script( 'tailpress', espcentrum_theme_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+  wp_enqueue_script( 'swiper', espcentrum_theme_asset( 'js/swiper.js' ), array(), $theme->get( 'Version' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'espcentrum_theme_enqueue_scripts' );
