@@ -152,13 +152,16 @@ function create_posttype() {
       array(
           'labels' => array(
               'name' => __( 'Nieuws' ),
-              'singular_name' => __( 'Nieuws' )
+              'singular_name' => __( 'Nieuws' ),
+              'add_new'               => __( 'Nieuwe artikel', 'nieuws' ),
+              'add_new_item'          => __( 'Nieuwe artikel', 'nieuws' ),
+              'new_item'              => __( 'Nieuwe artikel', 'nieuws' ),
           ),
           'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields'),
           'public' => true,
           'has_archive' => true,
           'rewrite' => array('slug' => 'actueel'),
-          'show_in_rest' => true,
+          'show_in_rest' => false,
           'menu_icon' => 'dashicons-format-aside',
           'publicly_queryable' =>  true,
           'hierarchical'        => true,
