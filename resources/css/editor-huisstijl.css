@@ -1,0 +1,6 @@
+/* Alleen geladen in de editor van pagina's met het under construction-template. */
+@import "brand.css";
+
+.editor-styles-wrapper {
+  @apply font-brand bg-brand-cream text-brand-green;
+}

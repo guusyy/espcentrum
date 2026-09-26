@@ -33,7 +33,7 @@ function esp_register_social_post_type() {
 }
 add_action( 'init', 'esp_register_social_post_type' );
 
-function esp_register_under_construction_fields() {
+function esp_register_social_post_fields() {
   if ( ! function_exists( 'acf_add_local_field_group' ) ) {
     return;
   }
@@ -66,95 +66,8 @@ function esp_register_under_construction_fields() {
       ),
     ),
   ) );
-
-  acf_add_local_field_group( array(
-    'key'    => 'group_esp_under_construction',
-    'title'  => 'Under construction',
-    'fields' => array(
-      array(
-        'key'   => 'field_esp_uc_label',
-        'label' => 'Label boven de titel',
-        'name'  => 'label',
-        'type'  => 'text',
-      ),
-      array(
-        'key'          => 'field_esp_uc_titel',
-        'label'        => 'Titel',
-        'name'         => 'titel',
-        'type'         => 'text',
-        'instructions' => 'Laat leeg om de paginatitel te gebruiken.',
-      ),
-      array(
-        'key'   => 'field_esp_uc_intro',
-        'label' => 'Introtekst',
-        'name'  => 'intro',
-        'type'  => 'textarea',
-        'rows'  => 4,
-      ),
-      array(
-        'key'           => 'field_esp_uc_afbeelding',
-        'label'         => 'Afbeelding',
-        'name'          => 'afbeelding',
-        'type'          => 'image',
-        'return_format' => 'id',
-        'instructions'  => 'Optioneel. Zonder afbeelding wordt het beeldmerk getoond.',
-      ),
-      array(
-        'key'   => 'field_esp_uc_social_titel',
-        'label' => 'Titel socials',
-        'name'  => 'social_titel',
-        'type'  => 'text',
-      ),
-      array(
-        'key'   => 'field_esp_uc_social_tekst',
-        'label' => 'Tekst socials',
-        'name'  => 'social_tekst',
-        'type'  => 'textarea',
-        'rows'  => 2,
-      ),
-      array(
-        'key'   => 'field_esp_uc_instagram',
-        'label' => 'Instagram-pagina',
-        'name'  => 'instagram_url',
-        'type'  => 'url',
-      ),
-      array(
-        'key'   => 'field_esp_uc_facebook',
-        'label' => 'Facebook-pagina',
-        'name'  => 'facebook_url',
-        'type'  => 'url',
-      ),
-      array(
-        'key'   => 'field_esp_uc_uitgelicht_titel',
-        'label' => 'Titel uitgelichte posts',
-        'name'  => 'uitgelicht_titel',
-        'type'  => 'text',
-      ),
-      array(
-        'key'           => 'field_esp_uc_aantal',
-        'label'         => 'Aantal uitgelichte posts',
-        'name'          => 'aantal_posts',
-        'type'          => 'number',
-        'default_value' => 6,
-        'min'           => 1,
-        'max'           => 12,
-        'instructions'  => 'De nieuwste social posts worden getoond.',
-      ),
-      array(
-        'key'   => 'field_esp_uc_afsluiter',
-        'label' => 'Afsluitende tekst',
-        'name'  => 'afsluiter',
-        'type'  => 'text',
-      ),
-    ),
-    'location' => array(
-      array(
-        array( 'param' => 'page_template', 'operator' => '==', 'value' => 'templates/page-under-construction.php' ),
-      ),
-    ),
-  ) );
 }
-add_action( 'acf/init', 'esp_register_under_construction_fields' );
+add_action( 'acf/init', 'esp_register_social_post_fields' );
 
 /**
  * Platform van een social post, afgeleid van de link.
@@ -198,68 +111,142 @@ function esp_social_icon( $platform, $class = 'w-6 h-6' ) {
 
 
 /**
- * Tijdlijn-blok voor de overgang naar de nieuwe huisstijl, template in blocks/lazyblock-tijdlijn/block.php.
+ * Control-definitie voor Lazy Blocks met de standaardwaarden ingevuld.
+ *
+ * @param string $type  Type control.
+ * @param string $name  Attribuutnaam.
+ * @param string $label Label in de editor.
+ * @param array  $extra Extra of afwijkende instellingen.
+ *
+ * @return array
  */
-function esp_register_tijdlijn_block() {
-  if ( ! function_exists( 'lazyblocks' ) ) {
-    return;
-  }
+function esp_lzb_control( $type, $name, $label, $extra = array() ) {
+  return array_merge( array(
+    'type' => $type, 'name' => $name, 'default' => '', 'label' => $label, 'help' => '',
+    'child_of' => '', 'placement' => 'content', 'width' => '100', 'hide_if_not_selected' => 'false',
+    'save_in_meta' => 'false', 'save_in_meta_name' => '', 'required' => 'false', 'placeholder' => '',
+    'characters_limit' => '',
+  ), $extra );
+}
 
-  $control = function ( $type, $name, $label, $extra = array() ) {
-    return array_merge( array(
-      'type' => $type, 'name' => $name, 'default' => '', 'label' => $label, 'help' => '',
-      'child_of' => '', 'placement' => 'content', 'width' => '100', 'hide_if_not_selected' => 'false',
-      'save_in_meta' => 'false', 'save_in_meta_name' => '', 'required' => 'false', 'placeholder' => '',
-      'characters_limit' => '',
-    ), $extra );
-  };
-
+/**
+ * Blok in de categorie "Nieuwe huisstijl", template in blocks/lazyblock-{id}/block.php.
+ *
+ * @param string $id          Blok-ID.
+ * @param string $title       Naam in de editor.
+ * @param string $icon        Dashicon.
+ * @param string $description Omschrijving.
+ * @param array  $controls    Controls.
+ */
+function esp_add_huisstijl_block( $id, $title, $icon, $description, $controls ) {
   lazyblocks()->add_block( array(
-    'id'          => 'tijdlijn',
-    'title'       => 'Tijdlijn',
-    'icon'        => 'dashicons dashicons-clock',
-    'keywords'    => array( 'tijdlijn', 'stappen', 'huisstijl' ),
-    'slug'        => 'lazyblock/tijdlijn',
-    'description' => 'Stappen van de overgang naar de nieuwe huisstijl.',
-    'category'    => 'text',
-    'supports'    => array(
-      'customClassName' => true,
-      'anchor'          => true,
+    'id'             => $id,
+    'title'          => $title,
+    'icon'           => 'dashicons dashicons-' . $icon,
+    'keywords'       => array( 'huisstijl', 'under construction' ),
+    'slug'           => 'lazyblock/' . $id,
+    'description'    => $description,
+    'category'       => 'esp-nieuwe-huisstijl',
+    'category_label' => 'Nieuwe huisstijl',
+    'supports'       => array(
+      'customClassName' => false,
+      'anchor'          => false,
       'align'           => array(),
       'html'            => false,
       'multiple'        => true,
       'inserter'        => true,
     ),
-    'controls'    => array(
-      'control_esp_tl_title' => $control( 'text', 'title', 'Titel' ),
-      'control_esp_tl_items' => $control( 'repeater', 'items', 'Stappen', array(
-        'rows_min'              => '1',
-        'rows_max'              => '',
-        'rows_label'            => '{{titel}}',
-        'rows_add_button_label' => 'Stap toevoegen',
-        'rows_collapsible'      => 'true',
-        'rows_collapsed'        => 'true',
-      ) ),
-      'control_esp_tl_moment' => $control( 'text', 'moment', 'Moment', array( 'child_of' => 'control_esp_tl_items', 'placeholder' => 'Juli 2026' ) ),
-      'control_esp_tl_titel'  => $control( 'text', 'titel', 'Titel', array( 'child_of' => 'control_esp_tl_items' ) ),
-      'control_esp_tl_tekst'  => $control( 'textarea', 'tekst', 'Tekst', array( 'child_of' => 'control_esp_tl_items' ) ),
-      'control_esp_tl_status' => $control( 'select', 'status', 'Status', array(
-        'child_of' => 'control_esp_tl_items',
-        'default'  => 'binnenkort',
-        'choices'  => array(
-          array( 'label' => 'Klaar', 'value' => 'klaar' ),
-          array( 'label' => 'Nu bezig', 'value' => 'bezig' ),
-          array( 'label' => 'Binnenkort', 'value' => 'binnenkort' ),
-        ),
-      ) ),
-    ),
-    'code'        => array(
+    'controls'       => $controls,
+    'code'           => array(
       'output_method' => 'template',
       'show_preview'  => 'always',
       'single_output' => true,
     ),
-    'condition'   => array(),
+    'condition'      => array( 'page' ),
+  ) );
+}
+
+function esp_register_huisstijl_blocks() {
+  if ( ! function_exists( 'lazyblocks' ) ) {
+    return;
+  }
+
+  esp_add_huisstijl_block( 'uc-header', 'Header nieuwe huisstijl', 'cover-image', 'Groene header met titel, intro en links naar de socials.', array(
+    'control_esp_uch_label'     => esp_lzb_control( 'text', 'label', 'Label boven de titel' ),
+    'control_esp_uch_titel'     => esp_lzb_control( 'text', 'titel', 'Titel' ),
+    'control_esp_uch_intro'     => esp_lzb_control( 'textarea', 'intro', 'Introtekst' ),
+    'control_esp_uch_afbeelding' => esp_lzb_control( 'image', 'afbeelding', 'Afbeelding', array( 'help' => 'Optioneel. Zonder afbeelding wordt het beeldmerk getoond.' ) ),
+    'control_esp_uch_instagram' => esp_lzb_control( 'url', 'instagram', 'Instagram-pagina' ),
+    'control_esp_uch_facebook'  => esp_lzb_control( 'url', 'facebook', 'Facebook-pagina' ),
+  ) );
+
+  esp_add_huisstijl_block( 'tijdlijn', 'Tijdlijn', 'clock', 'Stappen van de overgang naar de nieuwe huisstijl.', array(
+    'control_esp_tl_title'  => esp_lzb_control( 'text', 'title', 'Titel' ),
+    'control_esp_tl_items'  => esp_lzb_control( 'repeater', 'items', 'Stappen', array(
+      'rows_min'              => '1',
+      'rows_max'              => '',
+      'rows_label'            => '{{titel}}',
+      'rows_add_button_label' => 'Stap toevoegen',
+      'rows_collapsible'      => 'true',
+      'rows_collapsed'        => 'true',
+    ) ),
+    'control_esp_tl_moment' => esp_lzb_control( 'text', 'moment', 'Moment', array( 'child_of' => 'control_esp_tl_items', 'placeholder' => 'Juli 2026' ) ),
+    'control_esp_tl_titel'  => esp_lzb_control( 'text', 'titel', 'Titel', array( 'child_of' => 'control_esp_tl_items' ) ),
+    'control_esp_tl_tekst'  => esp_lzb_control( 'textarea', 'tekst', 'Tekst', array( 'child_of' => 'control_esp_tl_items' ) ),
+    'control_esp_tl_status' => esp_lzb_control( 'select', 'status', 'Status', array(
+      'child_of' => 'control_esp_tl_items',
+      'default'  => 'binnenkort',
+      'choices'  => array(
+        array( 'label' => 'Klaar', 'value' => 'klaar' ),
+        array( 'label' => 'Nu bezig', 'value' => 'bezig' ),
+        array( 'label' => 'Binnenkort', 'value' => 'binnenkort' ),
+      ),
+    ) ),
+  ) );
+
+  esp_add_huisstijl_block( 'uc-uitgelicht', 'Uitgelichte social posts', 'instagram', 'Toont de nieuwste social posts. Posts voeg je toe onder Social posts.', array(
+    'control_esp_ucu_titel' => esp_lzb_control( 'text', 'titel', 'Titel' ),
+    'control_esp_ucu_tekst' => esp_lzb_control( 'textarea', 'tekst', 'Tekst' ),
+    'control_esp_ucu_aantal' => esp_lzb_control( 'number', 'aantal', 'Aantal posts', array( 'default' => '6', 'min' => '1', 'max' => '12' ) ),
+  ) );
+
+  esp_add_huisstijl_block( 'uc-afsluiter', 'Afsluiter nieuwe huisstijl', 'format-quote', 'Groene balk met een afsluitende zin.', array(
+    'control_esp_uca_tekst' => esp_lzb_control( 'text', 'tekst', 'Tekst' ),
   ) );
 }
 // Voor Lazy Blocks' eigen registratie op init prioriteit 20.
-add_action( 'init', 'esp_register_tijdlijn_block', 10 );
+add_action( 'init', 'esp_register_huisstijl_blocks', 10 );
+
+/**
+ * Blokken die een eigen sectie over de volle breedte vormen, de rest komt in een contentsectie.
+ */
+function esp_huisstijl_sectie_blokken() {
+  return array( 'lazyblock/uc-header', 'lazyblock/uc-uitgelicht', 'lazyblock/uc-afsluiter' );
+}
+
+/**
+ * Of de editor een pagina met het under construction-template toont.
+ */
+function esp_is_under_construction_editor() {
+  if ( ! is_admin() || ! function_exists( 'get_current_screen' ) ) {
+    return false;
+  }
+
+  $screen = get_current_screen();
+  $post   = get_post();
+
+  return $screen && 'page' === $screen->post_type && $post
+    && 'templates/page-under-construction.php' === get_page_template_slug( $post );
+}
+
+/**
+ * Huisstijl in de editor van de under construction-pagina, zodat Eva ziet wat ze bewerkt.
+ */
+function esp_under_construction_editor_styles() {
+  if ( ! esp_is_under_construction_editor() ) {
+    return;
+  }
+
+  wp_enqueue_style( 'esp-editor-huisstijl', espcentrum_theme_asset( 'css/editor-huisstijl.css' ), array(), wp_get_theme()->get( 'Version' ) );
+}
+add_action( 'enqueue_block_assets', 'esp_under_construction_editor_styles' );

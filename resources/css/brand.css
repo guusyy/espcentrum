@@ -39,7 +39,7 @@
 }
 
 /* Vrije content van de under construction-pagina, zoals Eva die in de editor opbouwt. */
-.brand-content {
+.brand-content, .editor-styles-wrapper .is-root-container {
   @apply text-lg;
 
   > * + * {
