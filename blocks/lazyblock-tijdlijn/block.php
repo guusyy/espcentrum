@@ -6,9 +6,10 @@
     'binnenkort' => 'Binnenkort',
   );
 ?>
-<div class="py-8 esp-tijdlijn">
+<section class="py-10 lg:py-14">
+  <div class="container-base esp-tijdlijn">
   <?php if ( $attributes['title'] ) : ?>
-    <h2 class="mb-10"><?php echo esc_html( $attributes['title'] ); ?></h2>
+    <h2 class="mb-10 text-4xl font-bold text-brand-ochre"><?php echo esc_html( $attributes['title'] ); ?></h2>
   <?php endif; ?>
 
   <?php if ( $stappen ) : ?>
@@ -38,3 +39,4 @@
     </ol>
   <?php endif; ?>
 </div>
+</section>

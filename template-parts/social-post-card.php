@@ -13,7 +13,7 @@
       <span class="text-brand-ochre"><?php echo esp_social_icon( $platform, 'w-5 h-5 sm:w-6 sm:h-6' ); ?></span>
     </div>
     <?php if ( has_post_thumbnail() ) : ?>
-      <div class="overflow-hidden aspect-square bg-brand-sand">
+      <div class="overflow-hidden aspect-[4/3] bg-brand-sand">
         <?php the_post_thumbnail( 'medium_large', array( 'class' => 'object-cover w-full h-full transition duration-500 group-hover:scale-[1.03]' ) ); ?>
       </div>
     <?php endif; ?>

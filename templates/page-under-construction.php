@@ -10,9 +10,8 @@ Template Post Type: page
 
 <main class="flex-grow brand-page">
   <?php
-    // Header, uitgelichte posts en afsluiter zijn eigen secties over de volle breedte,
-    // de blokken daartussen komen samen in een contentsectie.
-    $sectie_blokken = esp_huisstijl_sectie_blokken();
+    // Huisstijlblokken zijn elk een eigen sectie, andere blokken komen samen in een contentsectie.
+    $sectie_blokken = esp_huisstijl_blokken();
     $content        = array();
 
     $toon_content = function () use ( &$content ) {

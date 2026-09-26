@@ -171,7 +171,7 @@ function esp_register_huisstijl_blocks() {
     return;
   }
 
-  esp_add_huisstijl_block( 'uc-header', 'Header nieuwe huisstijl', 'cover-image', 'Groene header met titel, intro en links naar de socials.', array(
+  esp_add_huisstijl_block( 'uc-header', 'Huisstijl: Header', 'cover-image', 'Groene header met titel, intro en links naar de socials.', array(
     'control_esp_uch_label'     => esp_lzb_control( 'text', 'label', 'Label boven de titel' ),
     'control_esp_uch_titel'     => esp_lzb_control( 'text', 'titel', 'Titel' ),
     'control_esp_uch_intro'     => esp_lzb_control( 'textarea', 'intro', 'Introtekst' ),
@@ -180,7 +180,26 @@ function esp_register_huisstijl_blocks() {
     'control_esp_uch_facebook'  => esp_lzb_control( 'url', 'facebook', 'Facebook-pagina' ),
   ) );
 
-  esp_add_huisstijl_block( 'tijdlijn', 'Tijdlijn', 'clock', 'Stappen van de overgang naar de nieuwe huisstijl.', array(
+  esp_add_huisstijl_block( 'uc-kaarten', 'Huisstijl: Kaarten', 'columns', 'Twee of drie witte kaarten met een titel en tekst.', array(
+    'control_esp_uck_titel'  => esp_lzb_control( 'text', 'titel', 'Titel boven de kaarten', array( 'help' => 'Optioneel.' ) ),
+    'control_esp_uck_items'  => esp_lzb_control( 'repeater', 'kaarten', 'Kaarten', array(
+      'rows_min'              => '1',
+      'rows_max'              => '3',
+      'rows_label'            => '{{titel}}',
+      'rows_add_button_label' => 'Kaart toevoegen',
+      'rows_collapsible'      => 'true',
+      'rows_collapsed'        => 'true',
+    ) ),
+    'control_esp_uck_ktitel' => esp_lzb_control( 'text', 'titel', 'Titel', array( 'child_of' => 'control_esp_uck_items' ) ),
+    'control_esp_uck_ktekst' => esp_lzb_control( 'textarea', 'tekst', 'Tekst', array( 'child_of' => 'control_esp_uck_items' ) ),
+  ) );
+
+  esp_add_huisstijl_block( 'uc-quote', 'Huisstijl: Quote', 'format-quote', 'Groen vlak met een grote quote.', array(
+    'control_esp_ucq_tekst' => esp_lzb_control( 'textarea', 'tekst', 'Quote' ),
+    'control_esp_ucq_bron'  => esp_lzb_control( 'text', 'bron', 'Van wie', array( 'help' => 'Optioneel.' ) ),
+  ) );
+
+  esp_add_huisstijl_block( 'tijdlijn', 'Huisstijl: Tijdlijn', 'clock', 'Stappen van de overgang naar de nieuwe huisstijl.', array(
     'control_esp_tl_title'  => esp_lzb_control( 'text', 'title', 'Titel' ),
     'control_esp_tl_items'  => esp_lzb_control( 'repeater', 'items', 'Stappen', array(
       'rows_min'              => '1',
@@ -204,13 +223,13 @@ function esp_register_huisstijl_blocks() {
     ) ),
   ) );
 
-  esp_add_huisstijl_block( 'uc-uitgelicht', 'Uitgelichte social posts', 'instagram', 'Toont de nieuwste social posts. Posts voeg je toe onder Social posts.', array(
+  esp_add_huisstijl_block( 'uc-uitgelicht', 'Huisstijl: Uitgelichte social posts', 'instagram', 'Toont de nieuwste social posts. Posts voeg je toe onder Social posts.', array(
     'control_esp_ucu_titel' => esp_lzb_control( 'text', 'titel', 'Titel' ),
     'control_esp_ucu_tekst' => esp_lzb_control( 'textarea', 'tekst', 'Tekst' ),
     'control_esp_ucu_aantal' => esp_lzb_control( 'number', 'aantal', 'Aantal posts', array( 'default' => '6', 'min' => '1', 'max' => '12' ) ),
   ) );
 
-  esp_add_huisstijl_block( 'uc-afsluiter', 'Afsluiter nieuwe huisstijl', 'format-quote', 'Groene balk met een afsluitende zin.', array(
+  esp_add_huisstijl_block( 'uc-afsluiter', 'Huisstijl: Afsluiter', 'megaphone', 'Groene balk met een afsluitende zin.', array(
     'control_esp_uca_tekst' => esp_lzb_control( 'text', 'tekst', 'Tekst' ),
   ) );
 }
@@ -218,10 +237,17 @@ function esp_register_huisstijl_blocks() {
 add_action( 'init', 'esp_register_huisstijl_blocks', 10 );
 
 /**
- * Blokken die een eigen sectie over de volle breedte vormen, de rest komt in een contentsectie.
+ * De huisstijlblokken. Elk blok is een eigen sectie, andere blokken komen samen in een contentsectie.
  */
-function esp_huisstijl_sectie_blokken() {
-  return array( 'lazyblock/uc-header', 'lazyblock/uc-uitgelicht', 'lazyblock/uc-afsluiter' );
+function esp_huisstijl_blokken() {
+  return array(
+    'lazyblock/uc-header',
+    'lazyblock/uc-kaarten',
+    'lazyblock/uc-quote',
+    'lazyblock/tijdlijn',
+    'lazyblock/uc-uitgelicht',
+    'lazyblock/uc-afsluiter',
+  );
 }
 
 /**
@@ -250,3 +276,28 @@ function esp_under_construction_editor_styles() {
   wp_enqueue_style( 'esp-editor-huisstijl', espcentrum_theme_asset( 'css/editor-huisstijl.css' ), array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'enqueue_block_assets', 'esp_under_construction_editor_styles' );
+
+/**
+ * Huisstijlblokken alleen in de blokkenlijst van het under construction-template.
+ *
+ * Verbergen in plaats van uitschakelen: staat een blok toch ergens anders, dan blijft het werken.
+ * Na het wisselen van template in de editor is een keer herladen nodig.
+ */
+function esp_verberg_huisstijl_blokken() {
+  if ( esp_is_under_construction_editor() ) {
+    return;
+  }
+
+  $blokken = esp_huisstijl_blokken();
+
+  wp_add_inline_script(
+    'wp-blocks',
+    'wp.hooks.addFilter( "blocks.registerBlockType", "esp/verberg-huisstijl-blokken", function ( settings, name ) {
+      if ( ' . wp_json_encode( $blokken ) . '.indexOf( name ) === -1 ) {
+        return settings;
+      }
+      return Object.assign( {}, settings, { supports: Object.assign( {}, settings.supports, { inserter: false } ) } );
+    } );'
+  );
+}
+add_action( 'enqueue_block_editor_assets', 'esp_verberg_huisstijl_blokken' );
