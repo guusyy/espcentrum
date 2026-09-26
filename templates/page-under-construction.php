@@ -63,8 +63,16 @@ $social_posts = new WP_Query( array(
     </svg>
   </section>
 
-  <?php if ( $social_posts->have_posts() ) : ?>
+  <?php if ( get_the_content() ) : ?>
     <section class="py-16 lg:py-24">
+      <div class="brand-content container-base">
+        <?php the_content(); ?>
+      </div>
+    </section>
+  <?php endif; ?>
+
+  <?php if ( $social_posts->have_posts() ) : ?>
+    <section class="py-16 bg-brand-sand lg:py-24">
       <div class="container-base">
         <div class="flex flex-col gap-4 mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div>
@@ -101,7 +109,7 @@ $social_posts = new WP_Query( array(
   <?php endif; ?>
 
   <?php if ( has_nav_menu( 'under-construction-links' ) ) : ?>
-    <section class="py-16 bg-brand-sand lg:py-20">
+    <section class="py-16 lg:py-20">
       <div class="container-base">
         <?php if ( get_field( 'links_titel' ) ) : ?>
           <h2 class="mb-8 text-4xl font-bold lg:text-5xl"><?php echo esc_html( get_field( 'links_titel' ) ); ?></h2>

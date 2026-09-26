@@ -37,3 +37,72 @@
     @apply font-brand leading-tight;
   }
 }
+
+/* Vrije content van de under construction-pagina, zoals Eva die in de editor opbouwt. */
+.brand-content {
+  @apply text-lg;
+
+  > * + * {
+    @apply mt-6;
+  }
+
+  h2 {
+    @apply text-4xl font-bold text-brand-ochre;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 + p, h3 + p {
+    @apply mt-3;
+  }
+
+  p {
+    @apply max-w-3xl;
+  }
+
+  a {
+    @apply font-semibold underline text-brand-ochre underline-offset-4;
+  }
+
+  ul {
+    @apply pl-6 list-disc;
+  }
+
+  .wp-block-columns {
+    @apply grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8;
+
+    &:has(> .wp-block-column:nth-child(3)) {
+      @apply lg:grid-cols-3;
+    }
+  }
+
+  .wp-block-column {
+    @apply p-8 bg-white shadow-sm rounded-2xl;
+
+    > * + * {
+      @apply mt-3;
+    }
+
+    h2, h3 {
+      @apply text-2xl text-brand-green;
+    }
+  }
+
+  .wp-block-quote, .wp-block-pullquote {
+    @apply py-10 my-12 text-center border-0;
+
+    p {
+      @apply max-w-3xl mx-auto text-3xl font-semibold leading-snug lg:text-4xl text-brand-green;
+    }
+
+    cite {
+      @apply block mt-4 not-italic text-brand-ochre;
+    }
+  }
+
+  .wp-block-image img {
+    @apply rounded-2xl;
+  }
+}
