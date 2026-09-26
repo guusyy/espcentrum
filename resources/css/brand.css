@@ -90,19 +90,68 @@
     }
   }
 
+  /* Quote als groen vlak met de gebogen vormen uit de huisstijl, zoals in de social posts. */
   .wp-block-quote, .wp-block-pullquote {
-    @apply py-10 my-12 text-center border-0;
+    @apply relative px-6 py-14 my-12 overflow-hidden text-center border-0 lg:px-16 lg:py-20 rounded-3xl bg-brand-green;
+
+    &::before {
+      content: '';
+      @apply relative z-10 block w-16 h-12 mx-auto mb-8 lg:w-20 lg:h-16;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Cpath fill='%23B1B68E' d='M0 30C0 13 10 3 26 0l2 6C19 9 14 15 13 22c1-.3 2-.4 3-.4 7 0 12 5 12 12.5S23 47 15.5 47C6.5 47 0 40 0 30zm36 0C36 13 46 3 62 0l2 6c-9 3-14 9-15 16 1-.3 2-.4 3-.4 7 0 12 5 12 12.5S59 47 51.5 47C42.5 47 36 40 36 30z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    &::after {
+      content: '';
+      @apply absolute inset-0 pointer-events-none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' preserveAspectRatio='xMidYMid slice'%3E%3Cpath d='M-60 60 C 160 10, 300 160, 240 300 S 380 520, 640 420' fill='none' stroke='%236D8677' stroke-width='70' stroke-linecap='round'/%3E%3Cpath d='M880 20 C 700 60, 640 200, 740 330' fill='none' stroke='%236D8677' stroke-width='70' stroke-linecap='round'/%3E%3C/svg%3E") center / cover no-repeat;
+    }
 
     p {
-      @apply max-w-3xl mx-auto text-3xl font-semibold leading-snug lg:text-4xl text-brand-green;
+      @apply relative z-10 max-w-3xl mx-auto text-3xl font-semibold leading-snug lg:text-5xl text-brand-sand;
     }
 
     cite {
-      @apply block mt-4 not-italic text-brand-ochre;
+      @apply relative z-10 block mt-6 not-italic text-brand-olive;
     }
   }
 
   .wp-block-image img {
     @apply rounded-2xl;
+  }
+}
+
+/* Tijdlijn van de overgang naar de nieuwe huisstijl. */
+.esp-tijdlijn {
+  .esp-tijdlijn__punt {
+    @apply border-2 bg-brand-cream border-brand-olive;
+  }
+
+  .esp-tijdlijn__label {
+    @apply bg-white text-brand-green;
+  }
+
+  .esp-tijdlijn__stap--klaar {
+    .esp-tijdlijn__punt {
+      @apply text-white border-brand-ochre bg-brand-ochre;
+    }
+
+    .esp-tijdlijn__label {
+      @apply bg-brand-sand text-brand-ochre;
+    }
+  }
+
+  .esp-tijdlijn__stap--bezig {
+    .esp-tijdlijn__punt {
+      @apply border-brand-green bg-brand-green ring-4 ring-brand-olive ring-opacity-50;
+
+      &::after {
+        content: '';
+        @apply w-2 h-2 rounded-full bg-brand-cream animate-pulse;
+      }
+    }
+
+    .esp-tijdlijn__label {
+      @apply bg-brand-green text-brand-cream;
+    }
   }
 }

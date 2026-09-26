@@ -33,11 +33,6 @@ function esp_register_social_post_type() {
 }
 add_action( 'init', 'esp_register_social_post_type' );
 
-function esp_register_under_construction_menu() {
-  register_nav_menu( 'under-construction-links', __( 'Under construction: snelle links' ) );
-}
-add_action( 'init', 'esp_register_under_construction_menu' );
-
 function esp_register_under_construction_fields() {
   if ( ! function_exists( 'acf_add_local_field_group' ) ) {
     return;
@@ -146,13 +141,6 @@ function esp_register_under_construction_fields() {
         'instructions'  => 'De nieuwste social posts worden getoond.',
       ),
       array(
-        'key'          => 'field_esp_uc_links_titel',
-        'label'        => 'Titel snelle links',
-        'name'         => 'links_titel',
-        'type'         => 'text',
-        'instructions' => 'De links zelf beheer je via Weergave > Menu\'s, locatie "Under construction: snelle links".',
-      ),
-      array(
         'key'   => 'field_esp_uc_afsluiter',
         'label' => 'Afsluitende tekst',
         'name'  => 'afsluiter',
@@ -208,14 +196,70 @@ function esp_social_icon( $platform, $class = 'w-6 h-6' ) {
   return '';
 }
 
+
 /**
- * Snelle links als knoppen op de under construction-pagina.
+ * Tijdlijn-blok voor de overgang naar de nieuwe huisstijl, template in blocks/lazyblock-tijdlijn/block.php.
  */
-function esp_under_construction_link_attributes( $atts, $item, $args ) {
-  if ( isset( $args->theme_location ) && 'under-construction-links' === $args->theme_location ) {
-    $atts['class'] = 'group flex items-center justify-between gap-4 px-6 py-4 text-lg font-semibold bg-white rounded-2xl shadow-sm transition hover:-translate-y-0.5 hover:shadow-md text-brand-green';
+function esp_register_tijdlijn_block() {
+  if ( ! function_exists( 'lazyblocks' ) ) {
+    return;
   }
 
-  return $atts;
+  $control = function ( $type, $name, $label, $extra = array() ) {
+    return array_merge( array(
+      'type' => $type, 'name' => $name, 'default' => '', 'label' => $label, 'help' => '',
+      'child_of' => '', 'placement' => 'content', 'width' => '100', 'hide_if_not_selected' => 'false',
+      'save_in_meta' => 'false', 'save_in_meta_name' => '', 'required' => 'false', 'placeholder' => '',
+      'characters_limit' => '',
+    ), $extra );
+  };
+
+  lazyblocks()->add_block( array(
+    'id'          => 'tijdlijn',
+    'title'       => 'Tijdlijn',
+    'icon'        => 'dashicons dashicons-clock',
+    'keywords'    => array( 'tijdlijn', 'stappen', 'huisstijl' ),
+    'slug'        => 'lazyblock/tijdlijn',
+    'description' => 'Stappen van de overgang naar de nieuwe huisstijl.',
+    'category'    => 'text',
+    'supports'    => array(
+      'customClassName' => true,
+      'anchor'          => true,
+      'align'           => array(),
+      'html'            => false,
+      'multiple'        => true,
+      'inserter'        => true,
+    ),
+    'controls'    => array(
+      'control_esp_tl_title' => $control( 'text', 'title', 'Titel' ),
+      'control_esp_tl_items' => $control( 'repeater', 'items', 'Stappen', array(
+        'rows_min'              => '1',
+        'rows_max'              => '',
+        'rows_label'            => '{{titel}}',
+        'rows_add_button_label' => 'Stap toevoegen',
+        'rows_collapsible'      => 'true',
+        'rows_collapsed'        => 'true',
+      ) ),
+      'control_esp_tl_moment' => $control( 'text', 'moment', 'Moment', array( 'child_of' => 'control_esp_tl_items', 'placeholder' => 'Juli 2026' ) ),
+      'control_esp_tl_titel'  => $control( 'text', 'titel', 'Titel', array( 'child_of' => 'control_esp_tl_items' ) ),
+      'control_esp_tl_tekst'  => $control( 'textarea', 'tekst', 'Tekst', array( 'child_of' => 'control_esp_tl_items' ) ),
+      'control_esp_tl_status' => $control( 'select', 'status', 'Status', array(
+        'child_of' => 'control_esp_tl_items',
+        'default'  => 'binnenkort',
+        'choices'  => array(
+          array( 'label' => 'Klaar', 'value' => 'klaar' ),
+          array( 'label' => 'Nu bezig', 'value' => 'bezig' ),
+          array( 'label' => 'Binnenkort', 'value' => 'binnenkort' ),
+        ),
+      ) ),
+    ),
+    'code'        => array(
+      'output_method' => 'template',
+      'show_preview'  => 'always',
+      'single_output' => true,
+    ),
+    'condition'   => array(),
+  ) );
 }
-add_filter( 'nav_menu_link_attributes', 'esp_under_construction_link_attributes', 10, 3 );
+// Voor Lazy Blocks' eigen registratie op init prioriteit 20.
+add_action( 'init', 'esp_register_tijdlijn_block', 10 );

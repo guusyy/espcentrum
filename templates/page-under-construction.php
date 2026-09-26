@@ -95,7 +95,7 @@ $social_posts = new WP_Query( array(
             </div>
           <?php endif; ?>
         </div>
-        <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <ul class="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           <?php
             while ( $social_posts->have_posts() ) {
               $social_posts->the_post();
@@ -104,26 +104,6 @@ $social_posts = new WP_Query( array(
             wp_reset_postdata();
           ?>
         </ul>
-      </div>
-    </section>
-  <?php endif; ?>
-
-  <?php if ( has_nav_menu( 'under-construction-links' ) ) : ?>
-    <section class="py-16 lg:py-20">
-      <div class="container-base">
-        <?php if ( get_field( 'links_titel' ) ) : ?>
-          <h2 class="mb-8 text-4xl font-bold lg:text-5xl"><?php echo esc_html( get_field( 'links_titel' ) ); ?></h2>
-        <?php endif; ?>
-        <?php
-          wp_nav_menu( array(
-            'theme_location' => 'under-construction-links',
-            'container'      => false,
-            'menu_class'     => 'grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4',
-            'depth'          => 1,
-            'link_before'    => '<span>',
-            'link_after'     => '</span><svg class="w-5 h-5 transition group-hover:translate-x-1" viewBox="0 0 23 23" fill="currentColor" aria-hidden="true"><path d="M11.5 0L9.47 2.03l8.03 8.03H0v2.88h17.5l-8.03 8.03L11.5 23 23 11.5z"/></svg>',
-          ) );
-        ?>
       </div>
     </section>
   <?php endif; ?>
