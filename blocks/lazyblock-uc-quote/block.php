@@ -1,12 +1,14 @@
 <?php if ( $attributes['tekst'] ) : ?>
-  <section class="py-10 lg:py-14">
+  <section class="py-12 lg:py-16">
     <div class="container-base">
-      <blockquote class="esp-quote">
-        <p><?php echo esc_html( $attributes['tekst'] ); ?></p>
+      <figure class="esp-quote">
+        <blockquote>
+          <p class="esp-balance"><?php echo esc_html( $attributes['tekst'] ); ?></p>
+        </blockquote>
         <?php if ( $attributes['bron'] ) : ?>
-          <cite><?php echo esc_html( $attributes['bron'] ); ?></cite>
+          <figcaption><?php echo esc_html( $attributes['bron'] ); ?></figcaption>
         <?php endif; ?>
-      </blockquote>
+      </figure>
     </div>
   </section>
 <?php endif; ?>
