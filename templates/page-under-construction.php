@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Under construction
+Template Name: Nieuwe huisstijl
 Template Post Type: page
 */
 ?>

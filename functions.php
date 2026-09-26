@@ -243,6 +243,8 @@ function create_posttype() {
 add_action( 'init', 'create_posttype' );
 
 require_once get_template_directory() . '/functions/under-construction.php';
+// Eenmalig, verwijderen na het vullen op productie.
+require_once get_template_directory() . '/functions/under-construction-seed.php';
 
 function register_custom_widget_areas() {
   register_sidebar(
