@@ -28,6 +28,13 @@ $social_posts = new WP_Query( array(
     <div class="relative pt-12 pb-28 lg:pt-20 lg:pb-40 container-base">
       <div class="grid items-center grid-cols-12 gap-10">
         <div class="col-span-full lg:col-span-7">
+          <div class="flex items-center gap-3 mb-8 lg:hidden" aria-hidden="true">
+            <img class="w-auto h-12" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="84" height="60">
+            <span class="flex flex-col leading-none">
+              <span class="text-2xl font-bold text-white">ESP Centrum</span>
+              <span class="text-xl text-brand-olive">samen vooruit</span>
+            </span>
+          </div>
           <?php if ( get_field( 'label' ) ) : ?>
             <span class="inline-block px-4 py-1 mb-6 font-semibold border rounded-full border-brand-olive text-brand-olive"><?php echo esc_html( get_field( 'label' ) ); ?></span>
           <?php endif; ?>
@@ -50,9 +57,19 @@ $social_posts = new WP_Query( array(
         </div>
         <div class="hidden lg:block lg:col-span-5">
           <?php if ( $afbeelding ) : ?>
-            <?php echo wp_get_attachment_image( $afbeelding, 'large', false, array( 'class' => 'w-full aspect-[4/5] object-cover rounded-[2.5rem] shadow-xl' ) ); ?>
+            <div class="relative overflow-hidden shadow-xl rounded-[2.5rem]">
+              <?php echo wp_get_attachment_image( $afbeelding, 'large', false, array( 'class' => 'w-full aspect-[4/5] object-cover' ) ); ?>
+              <svg class="absolute bottom-0 left-0 w-full h-1/4" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 120 L0 30 C 90 -10, 210 10, 290 50 C 340 75, 375 70, 400 60 L400 120 Z" fill="#A97426" opacity=".92"/>
+              </svg>
+              <span class="absolute text-3xl font-semibold bottom-6 left-8 text-brand-cream">samen vooruit</span>
+            </div>
           <?php else : ?>
-            <img class="w-full max-w-md mx-auto" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="320" height="230">
+            <div class="flex flex-col items-center text-center" aria-hidden="true">
+              <img class="w-full max-w-xs" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="320" height="230">
+              <span class="mt-6 text-5xl font-bold leading-none text-white">ESP Centrum</span>
+              <span class="mt-2 text-4xl leading-none text-brand-olive">samen vooruit</span>
+            </div>
           <?php endif; ?>
         </div>
       </div>

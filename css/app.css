@@ -3487,6 +3487,14 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 1.25rem;
 }
 
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
+.left-8 {
+  left: 2rem;
+}
+
 .left-\[11px\] {
   left: 11px;
 }
@@ -3672,6 +3680,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .\!mb-2 {
   margin-bottom: 0.5rem !important;
 }
@@ -3690,10 +3702,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .ml-0 {
   margin-left: 0px;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .\!ml-0 {
@@ -3824,6 +3832,14 @@ h1, h2, h3, h4, h5, h6 {
   height: 36px !important;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-1\/4 {
+  height: 25%;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -3834,10 +3850,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .h-3 {
   height: 0.75rem;
-}
-
-.h-12 {
-  height: 3rem;
 }
 
 .h-2 {
@@ -3932,6 +3944,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 28px !important;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -3976,8 +3992,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 42rem;
 }
 
-.max-w-md {
-  max-width: 28rem;
+.max-w-xs {
+  max-width: 20rem;
 }
 
 .max-w-\[380px\] {
@@ -4836,6 +4852,11 @@ h1, h2, h3, h4, h5, h6 {
   line-height: clamp(2.375rem, 3vw + 1rem, 4rem);
 }
 
+.text-xl {
+  font-size: 25px;
+  line-height: 35px;
+}
+
 .\!text-4xl {
   font-size: clamp(1.875rem, 2vw + 1rem, 3.25rem) !important;
   line-height: clamp(2.375rem, 3vw + 1rem, 4rem) !important;
@@ -4901,6 +4922,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .leading-\[1\.1\] {
   line-height: 1.1;
+}
+
+.leading-none {
+  line-height: 1;
 }
 
 .tracking-\[-0\.04em\] {
