@@ -180,3 +180,9 @@
     }
   }
 }
+
+/* Sticker naar de nieuwe uitstraling: draaiende tekstring die stilstaat bij hover. */
+.group:hover .esp-sticker-ring,
+.group:focus-visible .esp-sticker-ring {
+  animation-play-state: paused;
+}

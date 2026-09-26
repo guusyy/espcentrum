@@ -301,3 +301,34 @@ function esp_verberg_huisstijl_blokken() {
   );
 }
 add_action( 'enqueue_block_editor_assets', 'esp_verberg_huisstijl_blokken' );
+
+/**
+ * De gepubliceerde pagina met het under construction-template.
+ *
+ * @return WP_Post|null
+ */
+function esp_get_under_construction_page() {
+  $pages = get_pages( array(
+    'meta_key'    => '_wp_page_template',
+    'meta_value'  => 'templates/page-under-construction.php',
+    'post_status' => 'publish',
+    'number'      => 1,
+  ) );
+
+  return $pages ? $pages[0] : null;
+}
+
+/**
+ * Sticker rechtsonder op de huidige site die naar de nieuwe uitstraling verwijst.
+ * Verdwijnt vanzelf als de under construction-pagina niet gepubliceerd is.
+ */
+function esp_nieuwe_uitstraling_sticker() {
+  $page = esp_get_under_construction_page();
+
+  if ( ! $page || is_page( $page->ID ) ) {
+    return;
+  }
+
+  get_template_part( 'template-parts/nieuwe-uitstraling-sticker', null, array( 'url' => get_permalink( $page ) ) );
+}
+add_action( 'wp_footer', 'esp_nieuwe_uitstraling_sticker' );
