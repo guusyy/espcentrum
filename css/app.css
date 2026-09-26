@@ -3946,6 +3946,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 50%;
 }
 
+.w-4 {
+  width: 1rem;
+}
+
 .w-5 {
   width: 1.25rem;
 }
@@ -4042,8 +4046,8 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 36rem;
 }
 
-.max-w-xs {
-  max-width: 20rem;
+.max-w-\[260px\] {
+  max-width: 260px;
 }
 
 .max-w-2xl {
@@ -5745,6 +5749,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .sm\:w-8 {
     width: 2rem;
+  }
+
+  .sm\:w-5 {
+    width: 1.25rem;
   }
 
   .sm\:w-6 {

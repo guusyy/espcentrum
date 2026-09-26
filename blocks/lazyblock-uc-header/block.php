@@ -1,5 +1,5 @@
 <?php
-  $beeldmerk  = get_template_directory_uri() . '/assets/image/esp-beeldmerk-tijdelijk.jpg';
+  $beeldmerk  = get_template_directory_uri() . '/assets/image/esp-beeldmerk.png';
   $instagram  = $attributes['instagram'];
   $facebook   = $attributes['facebook'];
   $afbeelding = isset( $attributes['afbeelding']['id'] ) ? (int) $attributes['afbeelding']['id'] : 0;
@@ -11,10 +11,10 @@
   </svg>
 
   <div class="relative pt-14 pb-32 lg:pt-24 lg:pb-44 container-base">
-    <div class="grid items-center grid-cols-12 gap-10">
+    <div class="grid items-center grid-cols-1 gap-10 lg:grid-cols-12">
       <div class="col-span-full lg:col-span-7">
         <div class="flex items-center gap-3 mb-8 lg:hidden" aria-hidden="true">
-          <img class="w-auto h-12" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="84" height="60">
+          <img class="w-auto h-12" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="86" height="60">
           <span class="flex flex-col leading-none">
             <span class="text-2xl font-bold text-white">ESP Centrum</span>
             <span class="text-lg text-brand-olive">samen vooruit</span>
@@ -54,7 +54,7 @@
           </div>
         <?php else : ?>
           <div class="flex flex-col items-start max-w-sm mx-auto text-left" aria-hidden="true">
-            <img class="w-full max-w-xs" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="320" height="230">
+            <img class="w-full max-w-[260px]" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="320" height="223">
             <span class="mt-6 text-5xl font-bold leading-none text-white">ESP Centrum</span>
             <span class="mt-2 text-2xl leading-none text-brand-olive">samen vooruit</span>
           </div>

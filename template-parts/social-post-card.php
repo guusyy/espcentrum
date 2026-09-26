@@ -7,7 +7,9 @@
   <a class="flex flex-col h-full overflow-hidden transition duration-300 group esp-kaart rounded-2xl sm:rounded-3xl hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-ochre" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( 'Bekijk op ' . $naam ); ?>">
     <div class="flex items-center justify-between px-3 py-2 sm:px-4 sm:py-3">
       <span class="flex items-center gap-2 text-xs font-semibold sm:text-base">
-        <img class="w-6 h-6 rounded-full sm:w-8 sm:h-8" src="<?php echo esc_url( get_template_directory_uri() . '/assets/image/esp-beeldmerk-tijdelijk.jpg' ); ?>" alt="" width="32" height="32">
+        <span class="flex items-center justify-center w-6 h-6 rounded-full sm:w-8 sm:h-8 bg-brand-green">
+          <img class="w-4 sm:w-5" src="<?php echo esc_url( get_template_directory_uri() . '/assets/image/esp-beeldmerk.png' ); ?>" alt="" width="20" height="14">
+        </span>
         <span class="hidden sm:inline">ESP Centrum</span>
       </span>
       <span class="text-brand-ochre"><?php echo esp_social_icon( $platform, 'w-5 h-5 sm:w-6 sm:h-6' ); ?></span>
