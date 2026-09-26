@@ -13,7 +13,21 @@ module.exports = {
     ],
     theme: {
         extend: {
-            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme))
+            colors: {
+                ...tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
+                // Nieuwe huisstijl, overgenomen uit de social media posts.
+                brand: {
+                    green: '#5B7667',
+                    greenLight: '#6D8677',
+                    sand: '#E1D9C5',
+                    cream: '#F2EAD3',
+                    ochre: '#A97426',
+                    olive: '#B1B68E',
+                },
+            },
+            fontFamily: {
+                brand: ['"Barlow Semi Condensed"', 'Karla', 'sans-serif'],
+            },
         },
         screens: {
             'sm': '640px',
