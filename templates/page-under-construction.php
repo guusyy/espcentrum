@@ -13,20 +13,11 @@ $social_posts = new WP_Query( array(
   'posts_per_page' => (int) get_field( 'aantal_posts' ) ?: 6,
 ) );
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php wp_head(); ?>
-</head>
-
-<body <?php body_class( 'brand-page antialiased' ); ?>>
-<?php wp_body_open(); ?>
+<?php get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<main>
+<main class="flex-grow brand-page">
 
   <section class="relative overflow-hidden text-brand-cream bg-brand-green">
     <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -34,16 +25,8 @@ $social_posts = new WP_Query( array(
       <path d="M1560 60 C 1240 120, 1120 380, 1300 640" fill="none" stroke="#6D8677" stroke-width="120" stroke-linecap="round" opacity=".55"/>
     </svg>
 
-    <div class="relative pt-8 pb-28 lg:pb-40 container-base">
-      <a class="inline-flex items-center gap-4" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <img class="w-auto h-12 lg:h-14" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="84" height="60">
-        <span class="flex flex-col leading-none">
-          <span class="text-2xl font-bold text-white lg:text-3xl">ESP Centrum</span>
-          <span class="text-lg text-brand-olive lg:text-xl">samen vooruit</span>
-        </span>
-      </a>
-
-      <div class="grid items-center grid-cols-12 gap-10 mt-16 lg:mt-24">
+    <div class="relative pt-12 pb-28 lg:pt-20 lg:pb-40 container-base">
+      <div class="grid items-center grid-cols-12 gap-10">
         <div class="col-span-full lg:col-span-7">
           <?php if ( get_field( 'label' ) ) : ?>
             <span class="inline-block px-4 py-1 mb-6 font-semibold border rounded-full border-brand-olive text-brand-olive"><?php echo esc_html( get_field( 'label' ) ); ?></span>
@@ -137,19 +120,17 @@ $social_posts = new WP_Query( array(
     </section>
   <?php endif; ?>
 
-</main>
+  <?php if ( get_field( 'afsluiter' ) ) : ?>
+    <section class="py-12 text-center bg-brand-green">
+      <div class="container-base">
+        <p class="text-2xl font-semibold lg:text-3xl text-brand-sand"><?php echo esc_html( get_field( 'afsluiter' ) ); ?></p>
+      </div>
+    </section>
+  <?php endif; ?>
 
-<footer class="py-10 text-brand-cream bg-brand-green">
-  <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between container-base">
-    <?php if ( get_field( 'afsluiter' ) ) : ?>
-      <p class="text-xl font-semibold text-brand-sand"><?php echo esc_html( get_field( 'afsluiter' ) ); ?></p>
-    <?php endif; ?>
-    <p class="text-brand-olive">ESP Centrum · Langeweg 204, Gennep</p>
-  </div>
-</footer>
+</main>
 
 <?php endwhile; ?>
 
-<?php wp_footer(); ?>
-</body>
-</html>
+<?php
+get_footer();
