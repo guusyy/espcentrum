@@ -15,9 +15,9 @@
       <div class="col-span-full lg:col-span-7">
         <div class="flex items-center gap-3 mb-6 lg:hidden" aria-hidden="true">
           <img class="w-auto h-10" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="86" height="60">
-          <span class="flex flex-col leading-none">
-            <span class="text-xl font-bold text-white">ESP Centrum</span>
-            <span class="text-base text-brand-olive">samen vooruit</span>
+          <span class="flex flex-col">
+            <span class="text-xl font-bold leading-none text-white">ESP Centrum</span>
+            <span class="mt-1 text-base leading-none text-brand-olive">samen vooruit</span>
           </span>
         </div>
         <?php if ( $attributes['label'] ) : ?>
