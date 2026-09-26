@@ -243,6 +243,8 @@ function create_posttype() {
 add_action( 'init', 'create_posttype' );
 
 require_once get_template_directory() . '/functions/vacatures.php';
+// Eenmalig, verwijderen na de migratie op productie.
+require_once get_template_directory() . '/functions/werken-bij-migratie.php';
 
 function register_custom_widget_areas() {
   register_sidebar(
