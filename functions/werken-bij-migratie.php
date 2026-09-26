@@ -28,14 +28,14 @@ function esp_werken_bij_migratie( $dry_run, $log ) {
    * Teksten. Vervang de voorbeelden door de definitieve teksten van Eva voor de deploy.
    */
   $teksten = array(
-    'intro'                   => '[voorbeeld]Samen zorgen we ervoor dat mensen weer met vertrouwen vooruit bewegen. Met een team van 30 specialisten, korte lijnen en een flinke dosis werkplezier. Kom jij ons team versterken?[/voorbeeld]',
-    'vacatures_titel'         => '[voorbeeld]Openstaande vacatures[/voorbeeld]',
-    'geen_vacatures_tekst'    => '[voorbeeld]Op dit moment hebben we geen openstaande vacatures. Een open sollicitatie is altijd welkom.[/voorbeeld]',
-    'open_sollicitatie_titel' => '[voorbeeld]Staat jouw vacature er niet tussen?[/voorbeeld]',
-    'open_sollicitatie_tekst' => '[voorbeeld]Kom eens langs, proef de sfeer en ontdek hoe we samen vooruit bewegen. We maken graag kennis, ook als er nu geen passende vacature openstaat.[/voorbeeld]',
-    'sollicitatie_tekst'      => '[voorbeeld]Enthousiast? Bellen, appen of mailen mag allemaal.[/voorbeeld]',
+    'intro'                   => 'Samen zorgen we ervoor dat mensen weer met vertrouwen vooruit bewegen. Met een team van 30 specialisten, korte lijnen en een flinke dosis werkplezier. Kom jij ons team versterken?',
+    'vacatures_titel'         => 'Openstaande vacatures',
+    'geen_vacatures_tekst'    => 'Op dit moment hebben we geen openstaande vacatures. Een open sollicitatie is altijd welkom.',
+    'open_sollicitatie_titel' => 'Staat jouw vacature er niet tussen?',
+    'open_sollicitatie_tekst' => 'Kom eens langs, proef de sfeer en ontdek hoe we samen vooruit bewegen. We maken graag kennis, ook als er nu geen passende vacature openstaat.',
+    'sollicitatie_tekst'      => 'Enthousiast? Bellen, appen of mailen mag allemaal.',
     'homepage_blok_titel'     => 'Werken bij',
-    'homepage_blok_tekst'     => '[voorbeeld]Wil jij mensen met vertrouwen vooruit laten bewegen? Kom ons team van specialisten versterken.[/voorbeeld]',
+    'homepage_blok_tekst'     => 'Wil jij mensen met vertrouwen vooruit laten bewegen? Kom ons team van specialisten versterken.',
     'homepage_blok_knop'      => 'Bekijk onze vacatures',
   );
 
