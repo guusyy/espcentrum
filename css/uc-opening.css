@@ -166,15 +166,16 @@
   pointer-events: none;
   animation: esp-op-achtermerk 1.8s .2s cubic-bezier(.2, .8, .2, 1) both;
 }
-/* Over de foto: groot beeldmerkfragment, half transparant, en een okervlak met het label. */
+/* Over de foto: sterk ingezoomde krullen van het brein uit het beeldmerk, half transparant (zoals in de social posts),
+   en een okervlak met het label. */
 .esp-op-vorm__fotomerk {
   position: absolute;
   z-index: 1;
-  left: -30%;
-  top: -18%;
-  width: 150%;
+  left: -260%;
+  top: -95%;
+  width: 420%;
   max-width: none;
-  opacity: .22;
+  opacity: .2;
   pointer-events: none;
 }
 .esp-op-vorm__vlak {
