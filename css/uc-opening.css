@@ -55,11 +55,11 @@
 .esp-op .esp-op-titel {
   margin: 0 0 1.25rem;
   font-family: "Sofia Sans Condensed", sans-serif !important;
-  font-weight: 800;
+  font-weight: 700;
   font-size: clamp(3rem, 7.5vw, 6.25rem);
   line-height: .92 !important;
   letter-spacing: -.01em;
-  color: var(--groen);
+  color: var(--bruin);
   text-wrap: balance;
 }
 .esp-op .esp-op-tekst--licht .esp-op-titel { color: var(--creme); }
@@ -221,7 +221,7 @@
 .esp-op-groei__brein { -webkit-mask: linear-gradient(90deg, transparent 49%, #000 49%); mask: linear-gradient(90deg, transparent 49%, #000 49%); }
 .esp-op-groei__naam {
   margin-top: 1rem;
-  font: 800 clamp(2.2rem, 5vw, 3.6rem)/1 "Sofia Sans Condensed", sans-serif;
+  font: 700 clamp(2.2rem, 5vw, 3.6rem)/1 "Sofia Sans Condensed", sans-serif;
   color: var(--bruin);
   animation: esp-op-in .8s 1.2s both;
 }
