@@ -40,12 +40,18 @@ $groen      = ! empty( $args['groen'] );
         echo wp_get_attachment_image( $afbeelding, 'full', false, array( 'class' => 'esp-op-cover', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => empty( $args['smal'] ) ? '(min-width: 1024px) 55vw, 100vw' : '(min-width: 1024px) 36vw, 100vw' ) );
       }
       ?>
-    </div>
-    <?php if ( $groen ) : ?>
-      <?php if ( $a['label'] ) : ?>
-        <span class="esp-op-label esp-op-vorm__fotolabel"><span class="esp-op-label__stip" aria-hidden="true"></span><?php echo esc_html( $a['label'] ); ?></span>
+      <?php if ( $groen ) : ?>
+        <?php // Zoals in de social posts: een groot stuk beeldmerk licht over de foto, en een okervlak onderin. ?>
+        <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__fotomerk', 'fill' => '#ffffff' ) ); ?>
+        <svg class="esp-op-vorm__vlak" viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 260 V70 C 120 10, 300 0, 420 60 C 500 100, 560 170, 600 260 Z" fill="#b17421"/>
+        </svg>
+        <?php if ( $a['label'] ) : ?>
+          <span class="esp-op-vorm__vlaktekst"><?php echo esc_html( $a['label'] ); ?></span>
+        <?php endif; ?>
       <?php endif; ?>
-    <?php else : ?>
+    </div>
+    <?php if ( ! $groen ) : ?>
       <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__merk', 'fill' => 'verloop' ) ); ?>
     <?php endif; ?>
   </div>
