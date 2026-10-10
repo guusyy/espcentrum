@@ -15,6 +15,8 @@ $groen      = ! empty( $args['groen'] );
 <section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo $groen ? ' esp-op--groen' : ''; ?>">
   <?php if ( $groen ) : ?>
     <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__achtermerk', 'fill' => '#63806f' ) ); ?>
+    <?php // Logo rechtsboven op het groen, zoals op de presentatiedia uit het huisstijlhandboek. ?>
+    <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__hoeklogo' ) ); ?>
   <?php endif; ?>
   <div class="esp-op-vorm__beeld" aria-hidden="true">
     <?php

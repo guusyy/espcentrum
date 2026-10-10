@@ -181,12 +181,23 @@
   animation: esp-op-in .8s 1.2s both;
 }
 .esp-op--groen .esp-op-vorm__tekst { align-self: center; }
+/* Logo: op mobiel klein boven de titel, op desktop rechtsboven in het groene vlak. */
+.esp-op-vorm__hoeklogo {
+  position: absolute;
+  z-index: 2;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 6.5rem;
+  height: auto;
+  animation: esp-op-in .9s 1.3s both;
+}
 .esp-op--groen .esp-op-intro { max-width: 30rem; }
 @media (min-width: 1024px) {
   .esp-op--groen { grid-template-columns: 42% 1fr; }
   .esp-op--groen .esp-op-vorm__tekst { padding: 5rem 6rem 5rem 6rem; max-width: 52rem; }
   .esp-op-vorm__fotolabel { left: 3rem; bottom: 3rem; font-size: .85rem; }
   .esp-op-vorm__achtermerk { right: -22rem; width: 64rem; }
+  .esp-op-vorm__hoeklogo { top: 3rem; right: 3.5rem; bottom: auto; width: 10.5rem; }
   .esp-op--groen .esp-op-titel { font-size: clamp(3.5rem, 5.4vw, 6.25rem); }
 }
 
