@@ -137,7 +137,7 @@
   z-index: 2;
   left: 1.5rem;
   bottom: .7rem;
-  max-width: 60%;
+  max-width: 11.5rem;
   font: 700 clamp(1.2rem, 2.4vw, 2rem)/1.05 "Sofia Sans Condensed", sans-serif;
   color: var(--creme);
   text-wrap: balance;
