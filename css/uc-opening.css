@@ -99,14 +99,14 @@
 /* ---------------------------------------------------------------- header */
 
 .esp-op--groen { display: grid; background-color: var(--groen); }
-.esp-op-vorm__beeld { position: relative; z-index: 1; order: 1; aspect-ratio: 4 / 3.3; }
+.esp-op-vorm__beeld { position: relative; z-index: 1; order: 1; aspect-ratio: 16 / 10; }
 .esp-op-vorm__foto {
   position: absolute;
   inset: 0;
   overflow: hidden;
   animation: esp-op-vorm-foto 1.3s cubic-bezier(.2, .8, .2, 1) both;
 }
-.esp-op-vorm__foto img { object-position: 40% 20%; animation: esp-op-zoom 18s ease-out both; }
+.esp-op-vorm__foto img { object-position: 40% 30%; animation: esp-op-zoom 18s ease-out both; }
 .esp-op-vorm__clip { position: absolute; }
 
 /* Groot beeldmerk als achtergrond op het groen, rechts afgesneden. */
