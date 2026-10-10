@@ -14,6 +14,7 @@ $groen      = ! empty( $args['groen'] );
 ?>
 <section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo $groen ? ' esp-op--groen' : ''; ?>">
   <?php if ( $groen ) : ?>
+    <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__achtermerk', 'fill' => '#63806f' ) ); ?>
     <?php // Logo rechtsboven op het groen, zoals op de presentatiedia uit het huisstijlhandboek. ?>
     <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__hoeklogo' ) ); ?>
   <?php endif; ?>
@@ -40,8 +41,7 @@ $groen      = ! empty( $args['groen'] );
       }
       ?>
       <?php if ( $groen ) : ?>
-        <?php // Zoals in de social posts: een groot stuk beeldmerk licht over de foto, en een okervlak onderin. ?>
-        <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__fotomerk', 'fill' => '#ffffff' ) ); ?>
+        <?php // Zoals in de social posts: een okervlak onderin met het label. ?>
         <svg class="esp-op-vorm__vlak" viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0 260 V70 C 120 10, 300 0, 420 60 C 500 100, 560 170, 600 260 Z" fill="#b17421"/>
         </svg>
