@@ -134,9 +134,7 @@
 .esp-op-vorm__lijn path {
   stroke: var(--olijf);
   stroke-width: 2px;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: esp-op-lijn 1.6s .6s cubic-bezier(.4, 0, .2, 1) forwards;
+  animation: esp-op-in 1s .8s both;
 }
 .esp-op--groen .esp-op-vorm__lijn path { stroke: var(--zand); opacity: .55; }
 .esp-op-vorm__merk {
@@ -281,7 +279,6 @@
 @keyframes esp-op-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes esp-op-omhoog { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
 @keyframes esp-op-puls { 50% { opacity: .35; } }
-@keyframes esp-op-lijn { to { stroke-dashoffset: 0; } }
 @keyframes esp-op-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
 @keyframes esp-op-vorm-foto { from { opacity: 0; transform: translateX(-6%) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes esp-op-merk { from { opacity: 0; transform: translateY(30px) rotate(-6deg) scale(.9); } to { opacity: .95; transform: none; } }
@@ -291,5 +288,4 @@
 
 @media (prefers-reduced-motion: reduce) {
   .esp-op *, .esp-op *::before, .esp-op *::after { animation: none !important; }
-  .esp-op-vorm__lijn path { stroke-dashoffset: 0; }
 }

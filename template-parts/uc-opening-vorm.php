@@ -30,7 +30,7 @@ $groen      = ! empty( $args['groen'] );
       </clipPath>
     </svg>
     <svg class="esp-op-vorm__lijn" viewBox="0 0 1 1" preserveAspectRatio="none">
-      <path d="<?php echo esc_attr( $lijn ); ?>" fill="none" pathLength="1" vector-effect="non-scaling-stroke"/>
+      <path d="<?php echo esc_attr( $lijn ); ?>" fill="none" vector-effect="non-scaling-stroke"/>
     </svg>
     <div class="esp-op-vorm__foto" style="clip-path: url(#<?php echo esc_attr( $clip_id ); ?>)">
       <?php
