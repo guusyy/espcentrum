@@ -1,11 +1,10 @@
 <?php
 /**
- * Gedeelde tekst voor de openingsvarianten: label, titel (woord voor woord voor de animatie), intro en social-knoppen.
+ * Tekst van Huisstijl: Header: label, titel (woord voor woord voor de animatie), intro en social-knoppen.
  *
  * Args:
  *   attributes (array) Blokattributen van Huisstijl: Header.
  *   licht      (bool)  Lichte tekst op een donkere achtergrond.
- *   pil        (bool)  Toon de pil "ESP Centrum, samen vooruit" onder de titel.
  *   label      (bool)  Toon het label boven de titel (standaard ja).
  */
 
@@ -24,9 +23,6 @@ $licht = ! empty( $args['licht'] );
     <?php endforeach; ?>
   </h1>
 
-  <?php if ( ! empty( $args['pil'] ) ) : ?>
-    <span class="esp-op-pil"><strong>ESP Centrum,</strong> samen vooruit</span>
-  <?php endif; ?>
 
   <?php if ( $a['intro'] ) : ?>
     <p class="esp-op-intro"><?php echo nl2br( esc_html( $a['intro'] ) ); ?></p>

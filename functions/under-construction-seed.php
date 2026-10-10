@@ -212,9 +212,13 @@ function esp_under_construction_vullen( $dry_run, $log ) {
   } else {
     $blokken = array();
     foreach ( esp_under_construction_teksten() as $naam => $attrs ) {
+      // Headerfoto: de balansoefening (staat in de mediabibliotheek van productie).
+      if ( 'uc-header' === $naam && wp_attachment_is_image( 2496 ) ) {
+        $attrs['afbeelding'] = array( 'id' => 2496, 'url' => wp_get_attachment_url( 2496 ), 'alt' => '' );
+      }
       // Herhalende velden (kaarten, tijdlijnstappen) slaat Lazy Blocks op als gecodeerde JSON.
       foreach ( $attrs as $sleutel => $waarde ) {
-        if ( is_array( $waarde ) ) {
+        if ( is_array( $waarde ) && 'afbeelding' !== $sleutel ) {
           $attrs[ $sleutel ] = rawurlencode( wp_json_encode( $waarde ) );
         }
       }

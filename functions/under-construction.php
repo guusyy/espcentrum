@@ -171,23 +171,11 @@ function esp_register_huisstijl_blocks() {
     return;
   }
 
-  esp_add_huisstijl_block( 'uc-header', 'Huisstijl: Header', 'cover-image', 'Groene header met titel, intro en links naar de socials.', array(
-    'control_esp_uch_variant'   => esp_lzb_control( 'select', 'variant', 'Opening', array(
-      'default' => 'standaard',
-      'help'    => 'Vorm, Boog en Groei gebruiken de afbeelding hieronder; kies een sfeervolle foto.',
-      'choices' => array(
-        array( 'label' => 'Standaard', 'value' => 'standaard' ),
-        array( 'label' => 'Vorm: foto in een merkvorm', 'value' => 'vorm' ),
-        array( 'label' => 'Vorm smal: foto een derde, tekst twee derde', 'value' => 'vorm-smal' ),
-        array( 'label' => 'Vorm groen: foto in een merkvorm op groen', 'value' => 'vorm-groen' ),
-        array( 'label' => 'Boog: foto met de groene boog', 'value' => 'boog' ),
-        array( 'label' => 'Groei: beeldmerk bouwt zich op', 'value' => 'groei' ),
-      ),
-    ) ),
+  esp_add_huisstijl_block( 'uc-header', 'Huisstijl: Header', 'cover-image', 'Header met foto, logo, titel, intro en links naar de socials.', array(
     'control_esp_uch_label'     => esp_lzb_control( 'text', 'label', 'Label boven de titel' ),
     'control_esp_uch_titel'     => esp_lzb_control( 'text', 'titel', 'Titel' ),
     'control_esp_uch_intro'     => esp_lzb_control( 'textarea', 'intro', 'Introtekst' ),
-    'control_esp_uch_afbeelding' => esp_lzb_control( 'image', 'afbeelding', 'Afbeelding', array( 'help' => 'Optioneel. Zonder afbeelding wordt het beeldmerk getoond.' ) ),
+    'control_esp_uch_afbeelding' => esp_lzb_control( 'image', 'afbeelding', 'Afbeelding', array( 'help' => 'Foto links in de header. Kies een foto met de mensen in het midden.' ) ),
     'control_esp_uch_instagram' => esp_lzb_control( 'url', 'instagram', 'Instagram-pagina' ),
     'control_esp_uch_facebook'  => esp_lzb_control( 'url', 'facebook', 'Facebook-pagina' ),
   ) );
@@ -292,7 +280,7 @@ function esp_under_construction_editor_styles() {
 add_action( 'enqueue_block_assets', 'esp_under_construction_editor_styles' );
 
 /**
- * Stijlen voor de openingsvarianten van Huisstijl: Header, op de pagina en in de editor.
+ * Stijlen voor Huisstijl: Header, op de pagina en in de editor.
  */
 function esp_under_construction_opening_styles() {
   if ( is_page_template( 'templates/page-under-construction.php' ) || esp_is_under_construction_editor() ) {

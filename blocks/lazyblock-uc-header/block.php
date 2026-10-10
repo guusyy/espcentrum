@@ -1,65 +1,43 @@
 <?php
-  $variant = $attributes['variant'] ?? 'standaard';
-  if ( in_array( $variant, array( 'vorm', 'vorm-smal', 'vorm-groen', 'boog', 'groei' ), true ) ) {
-    $smal  = 'vorm-smal' === $variant;
-    $groen = 'vorm-groen' === $variant;
-    get_template_part( 'template-parts/uc-opening', $smal || $groen ? 'vorm' : $variant, array( 'attributes' => $attributes, 'smal' => $smal, 'groen' => $groen ) );
-    return;
-  }
+/**
+ * Huisstijl: Header. Foto links met de rechterrand van het brein uit het beeldmerk en een okervlak met het
+ * label (zoals in de social posts), rechts op groen het logo, de titel, intro en knoppen, met een groot
+ * beeldmerk op de achtergrond. Stijlen staan in css/uc-opening.css.
+ */
 
-  $instagram  = $attributes['instagram'];
-  $facebook   = $attributes['facebook'];
-  $afbeelding = isset( $attributes['afbeelding']['id'] ) ? (int) $attributes['afbeelding']['id'] : 0;
+$a          = $attributes;
+$afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0;
+$clip_id    = wp_unique_id( 'esp-op-clip-' );
+// Rechterkant van het brein, vereenvoudigd en afgevlakt (berekend uit het beeldmerk van Huyswerk).
+$rand       = 'M0,0 L0.780,0.000 C0.790,0.012 0.820,0.048 0.839,0.071 C0.857,0.095 0.878,0.119 0.892,0.143 C0.906,0.167 0.916,0.190 0.923,0.214 C0.931,0.238 0.930,0.262 0.938,0.286 C0.946,0.310 0.964,0.333 0.971,0.357 C0.978,0.381 0.976,0.405 0.979,0.429 C0.981,0.452 0.985,0.476 0.986,0.500 C0.987,0.524 0.990,0.548 0.985,0.571 C0.981,0.595 0.965,0.619 0.960,0.643 C0.955,0.667 0.958,0.690 0.956,0.714 C0.953,0.738 0.952,0.762 0.943,0.786 C0.934,0.810 0.913,0.833 0.900,0.857 C0.887,0.881 0.879,0.905 0.862,0.929 C0.846,0.952 0.810,0.988 0.800,1.000 L0,1 Z';
 ?>
-<section class="relative overflow-hidden text-brand-cream bg-brand-green esp-patroon">
-  <div class="relative pt-8 pb-20 lg:pt-24 lg:pb-44 container-base">
-    <div class="grid items-center grid-cols-1 gap-10 lg:grid-cols-12">
-      <div class="col-span-full lg:col-span-7">
-        <div class="mb-6 lg:hidden" aria-hidden="true">
-          <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'w-auto h-12', 'liggend' => true ) ); ?>
-        </div>
-        <?php if ( $attributes['label'] ) : ?>
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-4 lg:mb-6 text-xs font-bold tracking-wider uppercase font-brand rounded-full bg-white/10 text-brand-sand ring-1 ring-inset ring-white/20">
-            <span class="w-2 h-2 rounded-full bg-brand-olive animate-pulse" aria-hidden="true"></span>
-            <?php echo esc_html( $attributes['label'] ); ?>
-          </span>
-        <?php endif; ?>
-        <h1 class="mb-4 lg:mb-6 text-5xl font-bold tracking-[-0.02em] esp-balance lg:text-[4.5rem] leading-[0.95] text-brand-sand"><?php echo esc_html( $attributes['titel'] ?: get_the_title() ); ?></h1>
-        <?php if ( $attributes['intro'] ) : ?>
-          <p class="max-w-xl mb-6 text-small leading-relaxed lg:mb-10 text-white/90 lg:text-base lg:leading-relaxed"><?php echo nl2br( esc_html( $attributes['intro'] ) ); ?></p>
-        <?php endif; ?>
-        <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
-          <?php if ( $instagram ) : ?>
-            <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-base font-bold font-brand transition duration-300 rounded-full shadow-sm sm:px-6 sm:py-3 sm:text-lg bg-brand-cream text-brand-green hover:bg-white hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-olive focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green" href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener">
-              <?php echo esp_social_icon( 'instagram' ); ?> Instagram
-            </a>
-          <?php endif; ?>
-          <?php if ( $facebook ) : ?>
-            <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-base font-bold font-brand transition duration-300 rounded-full sm:px-6 sm:py-3 sm:text-lg ring-2 ring-inset ring-brand-cream/60 text-brand-cream hover:bg-brand-cream hover:text-brand-green hover:ring-brand-cream hover:-translate-y-0.5 focus:outline-none focus-visible:ring-brand-olive" href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener">
-              <?php echo esp_social_icon( 'facebook' ); ?> Facebook
-            </a>
-          <?php endif; ?>
-        </div>
-      </div>
-      <div class="hidden lg:block lg:col-span-5">
-        <?php if ( $afbeelding ) : ?>
-          <div class="relative overflow-hidden shadow-xl rounded-[2.5rem]">
-            <?php echo wp_get_attachment_image( $afbeelding, 'large', false, array( 'class' => 'w-full aspect-[4/5] object-cover' ) ); ?>
-            <svg class="absolute bottom-0 left-0 w-full h-1/4" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M0 120 L0 30 C 90 -10, 210 10, 290 50 C 340 75, 375 70, 400 60 L400 120 Z" fill="#B17421" opacity=".92"/>
-            </svg>
-            <span class="absolute text-3xl font-bold bottom-6 left-8 font-brand text-brand-cream">samen vooruit</span>
-          </div>
-        <?php else : ?>
-          <div class="max-w-sm mx-auto" aria-hidden="true">
-            <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'w-full max-w-[360px]' ) ); ?>
-          </div>
-        <?php endif; ?>
-      </div>
+<section class="esp-op esp-op--vorm esp-op--groen">
+  <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__achtermerk', 'fill' => '#63806f' ) ); ?>
+  <?php // Logo rechtsboven op het groen, zoals op de presentatiedia uit het huisstijlhandboek (alleen desktop). ?>
+  <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__hoeklogo' ) ); ?>
+
+  <div class="esp-op-vorm__beeld" aria-hidden="true">
+    <svg class="esp-op-vorm__clip" width="0" height="0">
+      <clipPath id="<?php echo esc_attr( $clip_id ); ?>" clipPathUnits="objectBoundingBox">
+        <path d="<?php echo esc_attr( $rand ); ?>"/>
+      </clipPath>
+    </svg>
+    <div class="esp-op-vorm__foto" style="clip-path: url(#<?php echo esc_attr( $clip_id ); ?>)">
+      <?php
+      if ( $afbeelding ) {
+        echo wp_get_attachment_image( $afbeelding, 'full', false, array( 'class' => 'esp-op-cover', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(min-width: 1024px) 45vw, 100vw' ) );
+      }
+      ?>
+      <svg class="esp-op-vorm__vlak" viewBox="0 0 600 260" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 260 V70 C 120 10, 300 0, 420 60 C 500 100, 560 170, 600 260 Z" fill="#b17421"/>
+      </svg>
+      <?php if ( $a['label'] ) : ?>
+        <span class="esp-op-vorm__vlaktekst"><?php echo esc_html( $a['label'] ); ?></span>
+      <?php endif; ?>
     </div>
   </div>
 
-  <svg class="absolute left-0 block w-full h-16 -bottom-px lg:h-28" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 120 L0 95 C 420 115, 620 20, 1000 18 C 1220 16, 1360 50, 1440 70 L1440 120 Z" fill="#F2EAD3"/>
-  </svg>
+  <div class="esp-op-vorm__tekst">
+    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'licht' => true, 'label' => false ) ); ?>
+  </div>
 </section>

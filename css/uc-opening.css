@@ -1,6 +1,6 @@
 /*
- * Openingsvarianten van Huisstijl: Header (vorm, boog, groei).
- * Losse CSS, alleen geladen op het under construction-template, zodat er geen Tailwind-build nodig is.
+ * Huisstijl: Header. Losse CSS, alleen geladen op het under construction-template, zodat er geen
+ * Tailwind-build nodig is.
  * Kleuren en lettertype uit het huisstijlhandboek van Huyswerk (Sofia Sans Condensed, OFL).
  */
 
@@ -67,17 +67,6 @@
 .esp-op-woord { display: inline-block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; line-height: inherit; vertical-align: top; }
 .esp-op-woord > span { display: inline-block; animation: esp-op-woord .9s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(.25s + var(--i) * .09s); }
 
-.esp-op-pil {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  padding: .45rem 1.1rem .5rem;
-  border-radius: 999px;
-  font: 400 clamp(1.1rem, 2vw, 1.5rem)/1.1 "Sofia Sans Condensed", sans-serif;
-  color: #fff;
-  background: var(--amber);
-  animation: esp-op-in .8s .9s both;
-}
-.esp-op-pil strong { font-weight: 700; }
 
 .esp-op-intro {
   max-width: 34rem;
@@ -107,73 +96,38 @@
 .esp-op-tekst--licht .esp-op-knop--vol { color: var(--groen); background: var(--creme); }
 .esp-op-knop svg { width: 1.1em; height: 1.1em; }
 
-/* ---------------------------------------------------------------- variant: vorm */
+/* ---------------------------------------------------------------- header */
 
-.esp-op--vorm {
-  display: grid;
-  min-height: min(90vh, 820px);
-  background: var(--creme);
-}
-.esp-op-vorm__beeld { position: relative; z-index: 1; min-height: 22rem; }
+.esp-op--groen { display: grid; background-color: var(--groen); }
+.esp-op-vorm__beeld { position: relative; z-index: 1; order: 1; aspect-ratio: 4 / 3.3; }
 .esp-op-vorm__foto {
   position: absolute;
   inset: 0;
   animation: esp-op-vorm-foto 1.3s cubic-bezier(.2, .8, .2, 1) both;
 }
-.esp-op-vorm__foto img { animation: esp-op-zoom 18s ease-out both; }
+.esp-op-vorm__foto img { object-position: 40% 20%; animation: esp-op-zoom 18s ease-out both; }
 .esp-op-vorm__clip { position: absolute; }
-.esp-op-vorm__merk {
-  position: absolute;
-  left: 5%;
-  bottom: 6%;
-  width: min(42%, 300px);
-  opacity: .95;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, .15));
-  animation: esp-op-merk 1.4s .5s cubic-bezier(.2, .8, .2, 1) both;
-}
-.esp-op-vorm__tekst { position: relative; z-index: 1; padding: 3rem 1.5rem 4rem; align-self: center; }
 
-@media (min-width: 1024px) {
-  .esp-op--vorm { grid-template-columns: 52% 1fr; }
-  .esp-op-vorm__beeld { min-height: 0; }
-  .esp-op-vorm__merk { left: 6%; bottom: 7%; width: 30%; }
-  .esp-op-vorm__tekst { padding: 6rem 4rem 6rem 3rem; }
-}
-
-/* Smal: foto een derde, tekst twee derde. */
-.esp-op--smal .esp-op-vorm__foto img { object-position: 42% 50%; }
-@media (min-width: 1024px) {
-  .esp-op--smal { grid-template-columns: 36% 1fr; }
-  .esp-op--smal .esp-op-vorm__merk { left: auto; right: -12%; bottom: 6%; width: 44%; }
-  .esp-op--smal .esp-op-vorm__tekst { padding: 6rem 5rem 6rem 6rem; max-width: 62rem; }
-  .esp-op--smal .esp-op-titel { font-size: clamp(4rem, 7.5vw, 7.5rem); }
-  .esp-op--smal .esp-op-intro { max-width: 40rem; }
-}
-
-/* Groen: groen dominant met het logopatroon achterin, zoals de standaard header, en een groter beeldmerk. */
-.esp-op--groen { background-color: var(--groen); }
-@media (min-width: 1024px) { .esp-op--groen { min-height: min(78vh, 760px); } }
-.esp-op--groen .esp-op-vorm__foto img { object-position: 40% 12%; }
-/* Eén groot beeldmerk als achtergrond op het groen, rechts afgesneden. */
+/* Groot beeldmerk als achtergrond op het groen, rechts afgesneden. */
 .esp-op-vorm__achtermerk {
   position: absolute;
   z-index: 0;
-  right: -18rem;
-  top: 50%;
-  width: 52rem;
+  right: -14rem;
+  bottom: -5rem;
+  width: 34rem;
   max-width: none;
-  transform: translateY(-50%);
   pointer-events: none;
-  animation: esp-op-achtermerk 1.8s .2s cubic-bezier(.2, .8, .2, 1) both;
+  animation: esp-op-in 1.8s .2s both;
 }
-/* Over de foto: een okervlak met het label, zoals in de social posts. */
+
+/* Okervlak met het label op de foto, zoals in de social posts. */
 .esp-op-vorm__vlak {
   position: absolute;
   z-index: 1;
   left: 0;
   bottom: -1px;
-  width: 78%;
-  height: 26%;
+  width: 85%;
+  height: 30%;
   opacity: .94;
   animation: esp-op-omhoog 1.1s .6s cubic-bezier(.2, .8, .2, 1) both;
 }
@@ -181,122 +135,44 @@
   position: absolute;
   z-index: 2;
   left: 1.5rem;
-  bottom: 1.4rem;
+  bottom: 1rem;
   max-width: 60%;
-  font: 700 clamp(1.3rem, 2.4vw, 2rem)/1.05 "Sofia Sans Condensed", sans-serif;
+  font: 700 clamp(1.2rem, 2.4vw, 2rem)/1.05 "Sofia Sans Condensed", sans-serif;
   color: var(--creme);
   text-wrap: balance;
   animation: esp-op-in .8s 1.1s both;
 }
-.esp-op--groen .esp-op-vorm__tekst { align-self: center; }
-/* Logo: op mobiel klein boven de titel, op desktop rechtsboven in het groene vlak. */
+
+/* Logo: op mobiel onder de foto boven de titel, op desktop rechtsboven in het groene vlak. */
 .esp-op-vorm__hoeklogo {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  display: none;
-  width: 6.5rem;
+  order: 2;
+  width: 9rem;
   height: auto;
-  animation: esp-op-in .9s 1.3s both;
+  margin: 2rem 1.5rem 0;
+  animation: esp-op-in .9s 1s both;
 }
+
+.esp-op-vorm__tekst { position: relative; z-index: 1; order: 3; padding: 1.25rem 1.5rem 3.5rem; }
+.esp-op--groen .esp-op-titel { font-size: clamp(2.6rem, 11vw, 3.5rem); }
 .esp-op--groen .esp-op-intro { max-width: 30rem; }
+
+@media (max-width: 1023px) {
+  /* Op mobiel geen brein-rand rechts maar een rechte foto over de volle breedte. */
+  .esp-op-vorm__foto { clip-path: none !important; }
+}
+
 @media (min-width: 1024px) {
-  .esp-op--groen { grid-template-columns: 42% 1fr; }
-  .esp-op--groen .esp-op-vorm__tekst { padding: 5rem 6rem 5rem 6rem; max-width: 52rem; }
-  .esp-op-vorm__achtermerk { right: -22rem; width: 64rem; }
-  .esp-op-vorm__vlaktekst { left: 3rem; bottom: 2.4rem; max-width: 16rem; }
+  .esp-op--groen { grid-template-columns: 42% 1fr; min-height: min(78vh, 760px); }
+  .esp-op-vorm__beeld { aspect-ratio: auto; grid-row: 1; grid-column: 1; }
+  .esp-op-vorm__foto img { object-position: 40% 12%; }
+  .esp-op-vorm__tekst { grid-row: 1; grid-column: 2; align-self: center; padding: 5rem 6rem; max-width: 52rem; }
+  .esp-op-vorm__achtermerk { top: 50%; bottom: auto; right: -22rem; width: 64rem; transform: translateY(-50%); animation-name: esp-op-achtermerk; }
   .esp-op-vorm__vlak { width: 72%; height: 30%; }
-  .esp-op-vorm__hoeklogo { display: block; top: 3rem; right: 3.5rem; bottom: auto; width: 10.5rem; }
+  .esp-op-vorm__vlaktekst { left: 3rem; bottom: 2.4rem; max-width: 16rem; }
+  .esp-op-vorm__hoeklogo { position: absolute; top: 3rem; right: 3.5rem; width: 10.5rem; margin: 0; }
   .esp-op--groen .esp-op-titel { font-size: clamp(3.5rem, 5.4vw, 6.25rem); }
-}
-
-/* ---------------------------------------------------------------- variant: boog */
-
-.esp-op--boog { color: var(--creme); background: var(--groen); }
-.esp-op-boog__foto { position: relative; height: clamp(18rem, 58vh, 34rem); overflow: hidden; }
-.esp-op-boog__foto img { object-position: 50% 30%; animation: esp-op-zoom 20s ease-out both; }
-.esp-op-boog__vlak {
-  position: absolute;
-  left: 0;
-  bottom: 100%;
-  width: 100%;
-  height: clamp(5rem, 14vw, 13rem);
-  margin-bottom: -1px;
-  animation: esp-op-boog 1.3s cubic-bezier(.2, .8, .2, 1) both;
-}
-.esp-op-boog__onder { position: relative; }
-.esp-op-boog__inhoud {
-  position: relative;
-  display: grid;
-  gap: 2rem;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1.5rem 3.5rem;
-}
-.esp-op-boog__merk { width: 7rem; animation: esp-op-merk 1.4s .7s cubic-bezier(.2, .8, .2, 1) both; }
-.esp-op-boog__tekst { margin-top: -1rem; }
-
-@media (min-width: 1024px) {
-  .esp-op-boog__inhoud { grid-template-columns: 1fr 15rem; align-items: start; padding: 0 3rem 5rem; }
-  .esp-op-boog__merk { width: 15rem; margin-top: -4rem; }
-  .esp-op-boog__tekst { margin-top: -3rem; }
-}
-
-/* ---------------------------------------------------------------- variant: groei */
-
-.esp-op--groei {
-  padding: 3rem 0 0;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(176, 181, 142, .35), transparent 45%),
-    radial-gradient(circle at 85% 0%, rgba(229, 207, 176, .6), transparent 40%),
-    var(--creme);
-}
-.esp-op-groei__grid {
-  display: grid;
-  gap: 2.5rem;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  align-items: center;
-}
-.esp-op-groei__merkvak { display: flex; flex-direction: column; align-items: flex-start; }
-.esp-op-groei__merk { position: relative; width: min(70vw, 420px); aspect-ratio: 245 / 168.5; }
-.esp-op-groei__merk svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.esp-op-groei__boom { clip-path: inset(0 50% 0 0); animation: esp-op-boom 1.6s .2s cubic-bezier(.3, .7, .2, 1) both; }
-.esp-op-groei__brein { clip-path: circle(80% at 72% 55%) ; animation: esp-op-brein 1.6s .9s cubic-bezier(.3, .7, .2, 1) both; }
-.esp-op-groei__brein { -webkit-mask: linear-gradient(90deg, transparent 49%, #000 49%); mask: linear-gradient(90deg, transparent 49%, #000 49%); }
-.esp-op-groei__naam {
-  margin-top: 1rem;
-  font: 700 clamp(2.2rem, 5vw, 3.6rem)/1 "Sofia Sans Condensed", sans-serif;
-  color: var(--bruin);
-  animation: esp-op-in .8s 1.2s both;
-}
-.esp-op-groei__payoff {
-  font: 400 clamp(1.4rem, 3vw, 2.2rem)/1.1 "Sofia Sans Condensed", sans-serif;
-  color: var(--olijf);
-  animation: esp-op-in .8s 1.35s both;
-}
-.esp-op-groei__tekst .esp-op-woord > span { animation-delay: calc(1.1s + var(--i) * .09s); }
-.esp-op-groei__tekst .esp-op-pil { animation-delay: 1.7s; }
-.esp-op-groei__tekst .esp-op-intro { animation-delay: 1.8s; }
-.esp-op-groei__tekst .esp-op-knoppen { animation-delay: 1.9s; }
-.esp-op-groei__foto {
-  position: relative;
-  height: clamp(14rem, 34vw, 26rem);
-  margin: 3rem 1.5rem 0;
-  border-radius: 999px 999px 0 0;
-  overflow: hidden;
-  animation: esp-op-omhoog 1.2s 1.4s cubic-bezier(.2, .8, .2, 1) both;
-}
-.esp-op-groei__foto img { object-position: 50% 35%; }
-.esp-op__golf { position: absolute; left: 0; bottom: -1px; width: 100%; height: 4rem; }
-
-@media (min-width: 1024px) {
-  .esp-op--groei { padding-top: 5rem; }
-  .esp-op-groei__grid { grid-template-columns: 5fr 7fr; padding: 0 3rem; }
-  .esp-op-groei__foto { margin: 4rem 3rem 0; border-radius: 22rem 22rem 0 0; }
-  .esp-op__golf { height: 7rem; }
 }
 
 /* ---------------------------------------------------------------- animaties */
@@ -308,10 +184,6 @@
 @keyframes esp-op-achtermerk { from { opacity: 0; transform: translateY(-50%) scale(.92) rotate(-4deg); } to { opacity: 1; transform: translateY(-50%); } }
 @keyframes esp-op-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
 @keyframes esp-op-vorm-foto { from { opacity: 0; transform: translateX(-6%) scale(.96); } to { opacity: 1; transform: none; } }
-@keyframes esp-op-merk { from { opacity: 0; transform: translateY(30px) rotate(-6deg) scale(.9); } to { opacity: .95; transform: none; } }
-@keyframes esp-op-boog { from { transform: translateY(60%); } to { transform: none; } }
-@keyframes esp-op-boom { from { clip-path: inset(100% 50% 0 0); } to { clip-path: inset(0 50% 0 0); } }
-@keyframes esp-op-brein { from { clip-path: circle(0% at 72% 55%); } to { clip-path: circle(80% at 72% 55%); } }
 
 @media (prefers-reduced-motion: reduce) {
   .esp-op *, .esp-op *::before, .esp-op *::after { animation: none !important; }
