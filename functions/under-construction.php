@@ -179,6 +179,7 @@ function esp_register_huisstijl_blocks() {
         array( 'label' => 'Standaard', 'value' => 'standaard' ),
         array( 'label' => 'Vorm: foto in een merkvorm', 'value' => 'vorm' ),
         array( 'label' => 'Vorm smal: foto een derde, tekst twee derde', 'value' => 'vorm-smal' ),
+        array( 'label' => 'Vorm groen: foto in een merkvorm op groen', 'value' => 'vorm-groen' ),
         array( 'label' => 'Boog: foto met de groene boog', 'value' => 'boog' ),
         array( 'label' => 'Groei: beeldmerk bouwt zich op', 'value' => 'groei' ),
       ),

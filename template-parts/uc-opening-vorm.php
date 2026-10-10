@@ -3,13 +3,14 @@
  * Opening "Vorm": foto in een grote organische vorm met het beeldmerk eroverheen, titel groot ernaast.
  * Geïnspireerd op de voorbeeldsite die Eva stuurde (beeld uitgesneden door een merkvorm).
  *
- * @var array $args ['attributes' => blokattributen, 'smal' => foto een derde in plaats van de helft]
+ * @var array $args ['attributes' => blokattributen, 'smal' => foto een derde in plaats van de helft,
+ *                   'groen' => groene achtergrond met het logopatroon, zoals de standaard header]
  */
 
 $a          = $args['attributes'];
 $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0;
 ?>
-<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?>">
+<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo empty( $args['groen'] ) ? '' : ' esp-op--groen esp-patroon'; ?>">
   <div class="esp-op-vorm__beeld" aria-hidden="true">
     <svg class="esp-op-vorm__clip" width="0" height="0">
       <clipPath id="esp-op-vorm-clip" clipPathUnits="objectBoundingBox">
@@ -27,6 +28,6 @@ $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0
   </div>
 
   <div class="esp-op-vorm__tekst">
-    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => true ) ); ?>
+    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => true, 'licht' => ! empty( $args['groen'] ) ) ); ?>
   </div>
 </section>
