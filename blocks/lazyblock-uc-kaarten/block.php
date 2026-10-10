@@ -10,7 +10,7 @@
           <div class="p-8 lg:p-10 esp-kaart">
             <span class="block w-10 h-1 mb-6 rounded-full bg-brand-ochre" aria-hidden="true"></span>
             <?php if ( ! empty( $kaart['titel'] ) ) : ?>
-              <h3 class="mb-3 text-2xl font-bold lg:text-3xl esp-balance"><?php echo esc_html( $kaart['titel'] ); ?></h3>
+              <h3 class="mb-3 text-2xl font-bold lg:text-3xl text-brand-brown esp-balance"><?php echo esc_html( $kaart['titel'] ); ?></h3>
             <?php endif; ?>
             <?php if ( ! empty( $kaart['tekst'] ) ) : ?>
               <p class="text-lg leading-relaxed text-black"><?php echo nl2br( esc_html( $kaart['tekst'] ) ); ?></p>

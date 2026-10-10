@@ -17,16 +17,20 @@ module.exports = {
                 ...tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
                 // Nieuwe huisstijl, overgenomen uit de social media posts.
                 brand: {
-                    green: '#5B7667',
+                    // Kleuren uit het huisstijlhandboek (Huyswerk, jan 2026); cream is een lichte tint van zand.
+                    green: '#5A7666',
                     greenLight: '#6D8677',
-                    sand: '#E1D9C5',
+                    sand: '#E2D8C5',
                     cream: '#F2EAD3',
-                    ochre: '#A97426',
-                    olive: '#B1B68E',
+                    ochre: '#B17421',
+                    olive: '#B0B58E',
+                    brown: '#837456',
+                    peach: '#E5CFB0',
                 },
             },
             fontFamily: {
                 brand: ['"Sofia Sans Condensed"', 'Karla', 'sans-serif'],
+                body: ['"Open Sans"', 'system-ui', 'sans-serif'],
             },
         },
         screens: {

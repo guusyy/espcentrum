@@ -10,7 +10,7 @@
 <li>
   <a class="flex flex-col h-full overflow-hidden transition duration-300 group esp-kaart rounded-2xl sm:rounded-3xl hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-ochre" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( 'Bekijk op ' . $naam ); ?>">
     <div class="flex items-center justify-between px-3 py-2 sm:px-4 sm:py-3">
-      <span class="flex items-center gap-2 text-xs font-semibold sm:text-base">
+      <span class="flex items-center gap-2 text-xs font-semibold sm:text-base font-brand">
         <span class="flex items-center justify-center w-6 h-6 rounded-full sm:w-8 sm:h-8 bg-brand-green">
           <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'w-4 sm:w-5', 'fill' => 'verloop' ) ); ?>
         </span>
@@ -27,7 +27,7 @@
       <?php if ( get_field( 'tekst' ) ) : ?>
         <p class="flex-grow mb-3 text-xs leading-relaxed sm:text-small sm:leading-relaxed text-black line-clamp-2 sm:line-clamp-4 sm:mb-4"><?php echo esc_html( get_field( 'tekst' ) ); ?></p>
       <?php endif; ?>
-      <span class="inline-flex items-center gap-1.5 text-xs font-semibold sm:text-base text-brand-ochre">
+      <span class="inline-flex items-center gap-1.5 text-xs font-semibold sm:text-base font-brand text-brand-ochre">
         Bekijk op <?php echo esc_html( $naam ); ?>
         <svg class="w-3.5 h-3.5 transition duration-300 sm:w-4 sm:h-4 group-hover:translate-x-1" viewBox="0 0 23 23" fill="currentColor" aria-hidden="true"><path d="M11.5 0L9.47 2.03l8.03 8.03H0v2.88h17.5l-8.03 8.03L11.5 23 23 11.5z"/></svg>
       </span>

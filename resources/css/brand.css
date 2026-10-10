@@ -1,6 +1,9 @@
 /*-- NIEUWE HUISSTIJL --*/
 
-/* Sofia Sans Condensed, het huisstijllettertype (variabel, 300-900, OFL). */
+/*
+ * Huisstijllettertypes (handboek): Sofia Sans Condensed voor titels, quotes en uitgelichte onderdelen,
+ * Open Sans voor bodyteksten. Beide variabel en OFL, lokaal gehost.
+ */
 @font-face {
   font-family: "Sofia Sans Condensed";
   src: url("fonts/SofiaSansCondensed-latin.woff2") format("woff2");
@@ -8,9 +11,16 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-latin.woff2") format("woff2");
+  font-weight: 300 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 .brand-page {
-  @apply font-brand bg-brand-cream text-brand-green;
+  @apply font-body bg-brand-cream text-black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -42,7 +52,7 @@
 
 /* Sectietitel van de huisstijlblokken. */
 .esp-titel {
-  @apply text-4xl font-bold lg:text-5xl text-brand-ochre tracking-[-0.01em];
+  @apply text-4xl font-bold lg:text-5xl text-brand-brown tracking-[-0.01em];
   text-wrap: balance;
 }
 
@@ -61,7 +71,7 @@
   }
 
   h2 {
-    @apply text-4xl font-bold text-brand-ochre;
+    @apply text-4xl font-bold text-brand-brown;
   }
 
   h3 {
@@ -119,9 +129,9 @@
 .editor-styles-wrapper .is-root-container .wp-block-quote {
   @apply px-6 pb-14 text-center border-0 pt-32 lg:px-16 lg:pb-20 lg:pt-40 rounded-3xl;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Cpath fill='%23B1B68E' d='M0 30C0 13 10 3 26 0l2 6C19 9 14 15 13 22c1-.3 2-.4 3-.4 7 0 12 5 12 12.5S23 47 15.5 47C6.5 47 0 40 0 30zm36 0C36 13 46 3 62 0l2 6c-9 3-14 9-15 16 1-.3 2-.4 3-.4 7 0 12 5 12 12.5S59 47 51.5 47C42.5 47 36 40 36 30z'/%3E%3C/svg%3E") center 3.5rem / 4rem 3rem no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Cpath fill='%23B0B58E' d='M0 30C0 13 10 3 26 0l2 6C19 9 14 15 13 22c1-.3 2-.4 3-.4 7 0 12 5 12 12.5S23 47 15.5 47C6.5 47 0 40 0 30zm36 0C36 13 46 3 62 0l2 6c-9 3-14 9-15 16 1-.3 2-.4 3-.4 7 0 12 5 12 12.5S59 47 51.5 47C42.5 47 36 40 36 30z'/%3E%3C/svg%3E") center 3.5rem / 4rem 3rem no-repeat,
     url("../assets/image/beeldmerk-patroon.svg") right -22rem center / 60rem auto no-repeat,
-    #5B7667;
+    #5A7666;
 
   @screen lg {
     background-position: center 5rem, right -30rem center, center;
@@ -131,7 +141,7 @@
   box-shadow: 0 30px 60px -30px rgb(91 118 103 / 0.6);
 
   p {
-    @apply max-w-3xl mx-auto text-3xl font-semibold leading-tight lg:text-5xl lg:leading-tight text-brand-sand tracking-[-0.01em];
+    @apply max-w-3xl mx-auto text-3xl font-semibold leading-tight lg:text-5xl lg:leading-tight font-brand text-brand-sand tracking-[-0.01em];
     text-wrap: balance;
   }
 
