@@ -4,14 +4,18 @@
  * Geïnspireerd op de voorbeeldsite die Eva stuurde (beeld uitgesneden door een merkvorm).
  *
  * @var array $args ['attributes' => blokattributen, 'smal' => foto een derde in plaats van de helft,
- *                   'groen' => groene achtergrond met het logopatroon en het volledige logo, zoals de standaard header]
+ *                   'groen' => groen met één groot beeldmerk op de achtergrond, het label als pil op de foto
+ *                              en alleen titel, intro en knoppen in de tekstkolom]
  */
 
 $a          = $args['attributes'];
 $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0;
 $groen      = ! empty( $args['groen'] );
 ?>
-<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo $groen ? ' esp-op--groen esp-patroon' : ''; ?>">
+<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo $groen ? ' esp-op--groen' : ''; ?>">
+  <?php if ( $groen ) : ?>
+    <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__achtermerk', 'fill' => '#63806f' ) ); ?>
+  <?php endif; ?>
   <div class="esp-op-vorm__beeld" aria-hidden="true">
     <?php
     // Rechterrand van de foto: één strakke boog, of bij Vorm groen de rechterkant van het brein
@@ -35,15 +39,16 @@ $groen      = ! empty( $args['groen'] );
       }
       ?>
     </div>
-    <?php if ( ! $groen ) : ?>
+    <?php if ( $groen ) : ?>
+      <?php if ( $a['label'] ) : ?>
+        <span class="esp-op-label esp-op-vorm__fotolabel"><span class="esp-op-label__stip" aria-hidden="true"></span><?php echo esc_html( $a['label'] ); ?></span>
+      <?php endif; ?>
+    <?php else : ?>
       <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__merk', 'fill' => 'verloop' ) ); ?>
     <?php endif; ?>
   </div>
 
   <div class="esp-op-vorm__tekst">
-    <?php if ( $groen ) : ?>
-      <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__logo esp-op-vorm__logo--liggend', 'liggend' => true ) ); ?>
-    <?php endif; ?>
-    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => ! $groen, 'licht' => $groen ) ); ?>
+    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => ! $groen, 'licht' => $groen, 'label' => ! $groen ) ); ?>
   </div>
 </section>

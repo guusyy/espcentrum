@@ -6,6 +6,7 @@
  *   attributes (array) Blokattributen van Huisstijl: Header.
  *   licht      (bool)  Lichte tekst op een donkere achtergrond.
  *   pil        (bool)  Toon de pil "ESP Centrum, samen vooruit" onder de titel.
+ *   label      (bool)  Toon het label boven de titel (standaard ja).
  */
 
 $a     = $args['attributes'];
@@ -13,7 +14,7 @@ $titel = $a['titel'] ?: get_the_title();
 $licht = ! empty( $args['licht'] );
 ?>
 <div class="esp-op-tekst<?php echo $licht ? ' esp-op-tekst--licht' : ''; ?>">
-  <?php if ( $a['label'] ) : ?>
+  <?php if ( $a['label'] && ( $args['label'] ?? true ) ) : ?>
     <span class="esp-op-label"><span class="esp-op-label__stip" aria-hidden="true"></span><?php echo esc_html( $a['label'] ); ?></span>
   <?php endif; ?>
 
