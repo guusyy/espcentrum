@@ -23,7 +23,7 @@ $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0
       }
       ?>
     </div>
-    <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__merk', 'fill' => '#5a7666' ) ); ?>
+    <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__merk', 'fill' => 'verloop' ) ); ?>
   </div>
 
   <div class="esp-op-vorm__tekst">

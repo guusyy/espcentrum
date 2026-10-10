@@ -1,7 +1,7 @@
 <?php
 /**
- * Opening "Boog": foto over de hele breedte, de groene boog uit de huisstijl (visitekaartjes,
- * briefpapier) schuift eroverheen met de titel en het beeldmerk.
+ * Opening "Boog": foto over de hele breedte, daaronder de groene boog uit de huisstijl (visitekaartjes,
+ * briefpapier) die over de foto heen schuift, met de titel en het beeldmerk.
  *
  * @var array $args ['attributes' => blokattributen]
  */
@@ -18,15 +18,16 @@ $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0
     ?>
   </div>
 
-  <svg class="esp-op-boog__vlak" viewBox="0 0 1440 620" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 620 V250 C 260 140, 560 150, 820 250 C 900 280, 940 300, 980 290 C 1120 120, 1300 90, 1440 140 V620 Z" fill="#5a7666"/>
-    <path d="M980 290 C 1120 120, 1300 90, 1440 140" fill="none" stroke="#b0b58e" stroke-width="3" opacity=".7"/>
-  </svg>
+  <div class="esp-op-boog__onder">
+    <svg class="esp-op-boog__vlak" viewBox="0 0 1440 620" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 620 V330 C 260 150, 560 160, 820 330 C 900 380, 940 400, 980 390 C 1120 120, 1300 60, 1440 120 V620 Z" fill="#5a7666"/>
+    </svg>
 
-  <div class="esp-op-boog__inhoud">
-    <div class="esp-op-boog__tekst">
-      <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'licht' => true ) ); ?>
+    <div class="esp-op-boog__inhoud">
+      <div class="esp-op-boog__tekst">
+        <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'licht' => true ) ); ?>
+      </div>
+      <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-boog__merk', 'fill' => 'verloop' ) ); ?>
     </div>
-    <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-boog__merk', 'fill' => 'verloop' ) ); ?>
   </div>
 </section>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Opening "Groei": het beeldmerk bouwt zich deel voor deel op (boom groeit, brein vult zich),
+ * Opening "Groei": het beeldmerk bouwt zich op (de boom groeit omhoog, het brein vult zich vanuit het midden),
  * daarna komen titel en teamfoto in beeld. Zonder animatie (prefers-reduced-motion) staat alles meteen goed.
  *
  * @var array $args ['attributes' => blokattributen]
@@ -12,7 +12,10 @@ $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0
 <section class="esp-op esp-op--groei">
   <div class="esp-op-groei__grid">
     <div class="esp-op-groei__merkvak" aria-hidden="true">
-      <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-groei__merk', 'fill' => 'verloop', 'delen' => true ) ); ?>
+      <div class="esp-op-groei__merk">
+        <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-groei__boom', 'fill' => 'verloop' ) ); ?>
+        <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-groei__brein', 'fill' => 'verloop' ) ); ?>
+      </div>
       <span class="esp-op-groei__naam">ESP Centrum</span>
       <span class="esp-op-groei__payoff">samen vooruit</span>
     </div>

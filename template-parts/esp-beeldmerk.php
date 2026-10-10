@@ -5,7 +5,6 @@
  * Args:
  *   class (string) Extra classes op de <svg>.
  *   fill  (string) 'verloop' (huisstijlverloop olijf naar zand) of een CSS-kleur, standaard currentColor.
- *   delen (bool)   Elk deel als eigen <path class="esp-bm-deel" style="--i:n">, voor animaties.
  */
 
 $esp_bm_delen = array(
@@ -31,11 +30,5 @@ $esp_bm_paint = 'verloop' === $esp_bm_fill ? 'url(#' . $esp_bm_id . ')' : $esp_b
       </linearGradient>
     </defs>
   <?php endif; ?>
-  <?php if ( ! empty( $args['delen'] ) ) : ?>
-    <?php foreach ( $esp_bm_delen as $i => $deel ) : ?>
-      <path class="esp-bm-deel" style="--i:<?php echo (int) $i; ?>" fill="<?php echo esc_attr( $esp_bm_paint ); ?>" d="<?php echo esc_attr( $deel ); ?>"/>
-    <?php endforeach; ?>
-  <?php else : ?>
-    <path fill="<?php echo esc_attr( $esp_bm_paint ); ?>" d="<?php echo esc_attr( implode( '', $esp_bm_delen ) ); ?>"/>
-  <?php endif; ?>
+  <path fill="<?php echo esc_attr( $esp_bm_paint ); ?>" d="<?php echo esc_attr( implode( '', $esp_bm_delen ) ); ?>"/>
 </svg>
