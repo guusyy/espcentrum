@@ -8,12 +8,8 @@
   <div class="relative pt-8 pb-20 lg:pt-24 lg:pb-44 container-base">
     <div class="grid items-center grid-cols-1 gap-10 lg:grid-cols-12">
       <div class="col-span-full lg:col-span-7">
-        <div class="flex items-center gap-3 mb-6 lg:hidden" aria-hidden="true">
-          <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'w-auto h-10', 'fill' => 'verloop' ) ); ?>
-          <span class="flex flex-col">
-            <span class="text-xl font-bold leading-none font-brand text-white">ESP Centrum</span>
-            <span class="mt-1 text-base leading-none font-brand text-brand-olive">samen vooruit</span>
-          </span>
+        <div class="mb-6 lg:hidden" aria-hidden="true">
+          <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'w-40 h-auto' ) ); ?>
         </div>
         <?php if ( $attributes['label'] ) : ?>
           <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-4 lg:mb-6 text-xs font-bold tracking-wider uppercase font-brand rounded-full bg-white/10 text-brand-sand ring-1 ring-inset ring-white/20">
@@ -48,10 +44,8 @@
             <span class="absolute text-3xl font-bold bottom-6 left-8 font-brand text-brand-cream">samen vooruit</span>
           </div>
         <?php else : ?>
-          <div class="flex flex-col items-start max-w-sm mx-auto text-left" aria-hidden="true">
-            <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'w-full max-w-[260px]', 'fill' => 'verloop' ) ); ?>
-            <span class="mt-6 text-5xl font-bold leading-none font-brand text-white">ESP Centrum</span>
-            <span class="mt-2 text-2xl leading-none font-brand text-brand-olive">samen vooruit</span>
+          <div class="max-w-sm mx-auto" aria-hidden="true">
+            <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'w-full max-w-[360px]' ) ); ?>
           </div>
         <?php endif; ?>
       </div>
