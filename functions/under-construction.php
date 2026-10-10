@@ -320,12 +320,13 @@ function esp_get_under_construction_page() {
 
 /**
  * Sticker rechtsonder op de huidige site die naar de nieuwe uitstraling verwijst.
- * Verdwijnt vanzelf als de under construction-pagina niet gepubliceerd is.
+ * Verdwijnt vanzelf als de under construction-pagina niet gepubliceerd is, en staat niet op
+ * pagina's met het under construction-template zelf.
  */
 function esp_nieuwe_uitstraling_sticker() {
   $page = esp_get_under_construction_page();
 
-  if ( ! $page || is_page( $page->ID ) ) {
+  if ( ! $page || is_page_template( 'templates/page-under-construction.php' ) ) {
     return;
   }
 
