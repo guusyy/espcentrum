@@ -2,6 +2,10 @@
   $link     = get_field( 'link' );
   $platform = esp_social_platform( $link );
   $naam     = 'facebook' === $platform ? 'Facebook' : 'Instagram';
+
+  // Afbeeldingen breder dan de Instagram-verhouding 4:5 (bijv. vierkant) passend tonen, zodat er geen tekst wegvalt.
+  $meta     = wp_get_attachment_metadata( get_post_thumbnail_id() );
+  $passend  = ! empty( $meta['width'] ) && ! empty( $meta['height'] ) && $meta['width'] / $meta['height'] > 0.85;
 ?>
 <li>
   <a class="flex flex-col h-full overflow-hidden transition duration-300 group esp-kaart rounded-2xl sm:rounded-3xl hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-ochre" href="<?php echo esc_url( $link ); ?>" target="_blank" rel="noopener" aria-label="<?php echo esc_attr( 'Bekijk op ' . $naam ); ?>">
@@ -16,7 +20,7 @@
     </div>
     <?php if ( has_post_thumbnail() ) : ?>
       <div class="overflow-hidden aspect-[4/5] bg-brand-sand">
-        <?php the_post_thumbnail( 'medium_large', array( 'class' => 'object-cover w-full h-full transition duration-500 group-hover:scale-[1.03]' ) ); ?>
+        <?php the_post_thumbnail( 'medium_large', array( 'class' => ( $passend ? 'object-contain' : 'object-cover' ) . ' w-full h-full transition duration-500 group-hover:scale-[1.03]' ) ); ?>
       </div>
     <?php endif; ?>
     <div class="flex flex-col flex-grow p-3 sm:p-4">
