@@ -377,3 +377,37 @@ function esp_vacature_structured_data() {
   echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n";
 }
 add_action( 'wp_head', 'esp_vacature_structured_data' );
+
+/**
+ * Maak telefoonnummers en mailadressen in vacatureteksten en op de Werken bij-pagina klikbaar,
+ * zodat ESP ze in de editor niet zelf hoeft te koppelen. Bestaande links blijven ongemoeid.
+ *
+ * @param string $content Inhoud van de post.
+ */
+function esp_vacature_klikbare_contactgegevens( $content ) {
+  if ( ! is_singular( 'vacature' ) && ! is_page_template( 'templates/page-werken-bij.php' ) ) {
+    return $content;
+  }
+
+  // Splits in links (blijven zoals ze zijn), tags en tekst; alleen de tekst wordt aangepast.
+  $delen = preg_split( '#(<a\b[^>]*>.*?</a>|<[^>]+>)#is', $content, -1, PREG_SPLIT_DELIM_CAPTURE );
+  foreach ( $delen as $i => $deel ) {
+    if ( '' === $deel || '<' === $deel[0] ) {
+      continue;
+    }
+    $deel = make_clickable( $deel );
+    // Nederlandse nummers, zoals 06-12345678, 0485 123456 of +31 6 12345678.
+    $deel = preg_replace_callback(
+      '/(?<![\w+])(?:\+31[\s-]?|0)[1-9](?:[\s-]?\d){7,8}(?!\d)/',
+      function ( $m ) {
+        $nummer = preg_replace( '/[^0-9+]/', '', $m[0] );
+        return '<a href="tel:' . esc_attr( $nummer ) . '">' . $m[0] . '</a>';
+      },
+      $deel
+    );
+    $delen[ $i ] = $deel;
+  }
+
+  return implode( '', $delen );
+}
+add_filter( 'the_content', 'esp_vacature_klikbare_contactgegevens', 20 );
