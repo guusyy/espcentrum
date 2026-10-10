@@ -175,7 +175,11 @@ function esp_under_construction_vullen( $dry_run, $log ) {
       'post_status' => 'publish',
       'post_title'  => $post['titel'],
       'post_date'   => $post['datum'],
-    ) );
+    ), true );
+    if ( is_wp_error( $id ) || ! $id ) {
+      $waarschuwingen[] = "Post {$post['titel']} aanmaken mislukt" . ( is_wp_error( $id ) ? ': ' . $id->get_error_message() : '.' );
+      continue;
+    }
     update_field( 'field_esp_social_post_link', $post['link'], $id );
     update_field( 'field_esp_social_post_tekst', $post['tekst'], $id );
 
@@ -235,7 +239,11 @@ function esp_under_construction_vullen( $dry_run, $log ) {
         'post_title'   => 'Nieuwe huisstijl',
         'post_name'    => 'nieuwe-huisstijl',
         'post_content' => wp_slash( $inhoud ),
-      ) );
+      ), true );
+      if ( is_wp_error( $id ) || ! $id ) {
+        $log( 'Pagina aanmaken mislukt' . ( is_wp_error( $id ) ? ': ' . $id->get_error_message() : '.' ), 'error' );
+        return $waarschuwingen;
+      }
       update_post_meta( $id, '_wp_page_template', 'templates/page-under-construction.php' );
       $log( 'Bekijk en publiceer de pagina via: ' . admin_url( 'post.php?post=' . $id . '&action=edit' ) );
     }
