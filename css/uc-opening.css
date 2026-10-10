@@ -154,7 +154,7 @@
 /* Groen: groen dominant met het logopatroon achterin, zoals de standaard header, en een groter beeldmerk. */
 .esp-op--groen { background-color: var(--groen); }
 .esp-op--groen.esp-patroon { background-image: url("../assets/image/beeldmerk-patroon-zacht.svg"); }
-.esp-op--groen .esp-op-vorm__foto img { object-position: 55% 12%; }
+.esp-op--groen .esp-op-vorm__foto img { object-position: 40% 12%; }
 .esp-op-vorm__logo { display: block; height: auto; margin-bottom: 1.75rem; animation: esp-op-in .9s .1s both; }
 .esp-op-vorm__logo--staand { display: none; }
 .esp-op-vorm__logo--liggend { width: auto; height: 3rem; }
@@ -165,10 +165,10 @@
 .esp-op--groen .esp-op-label { color: var(--zand); background: rgba(255, 255, 255, .12); }
 .esp-op--groen .esp-op-vorm__merk { left: auto; right: 4%; bottom: 6%; width: min(52%, 340px); filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .25)); }
 @media (min-width: 1024px) {
-  .esp-op--groen { grid-template-columns: 50% 1fr; background-position: right -30rem bottom -10rem; }
+  .esp-op--groen { grid-template-columns: 42% 1fr; background-position: right -30rem bottom -10rem; }
   .esp-op--groen .esp-op-vorm__merk { right: -19%; bottom: 5%; width: 40%; }
-  .esp-op--groen .esp-op-vorm__tekst { padding: 3.5rem 4rem 4.5rem 9rem; }
-  .esp-op--groen .esp-op-titel { font-size: clamp(3.5rem, 5.6vw, 6rem); }
+  .esp-op--groen .esp-op-vorm__tekst { padding: 3.5rem 7rem 4.5rem 7rem; max-width: 52rem; }
+  .esp-op--groen .esp-op-titel { font-size: clamp(3rem, 4.7vw, 5.25rem); }
 }
 
 /* ---------------------------------------------------------------- variant: boog */
