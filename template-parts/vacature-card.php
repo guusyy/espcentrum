@@ -15,9 +15,10 @@
             <span class="px-2 py-0.5 text-xs font-semibold rounded bg-gray2 text-secondary"><?php echo esc_html( get_field( 'uren' ) ); ?></span>
           <?php endif; ?>
           <span class="px-2 py-0.5 text-xs font-semibold rounded bg-gray2 text-secondary">Gennep</span>
-          <?php if ( get_field( 'sluitingsdatum' ) ) : ?>
+          <?php $sluitingsdatum = esp_vacature_sluitingsdatum(); ?>
+          <?php if ( $sluitingsdatum ) : ?>
             <span class="px-2 py-0.5 text-xs font-semibold rounded bg-gray2 text-secondary">
-              Reageren t/m <?php echo esc_html( date_i18n( 'j F', DateTime::createFromFormat( 'Ymd', get_field( 'sluitingsdatum' ) )->getTimestamp() ) ); ?>
+              Reageren t/m <?php echo esc_html( wp_date( 'j F', $sluitingsdatum ) ); ?>
             </span>
           <?php endif; ?>
         </div>

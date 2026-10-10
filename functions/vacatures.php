@@ -253,6 +253,18 @@ function esp_register_vacatures_block() {
 add_action( 'init', 'esp_register_vacatures_block', 10 );
 
 /**
+ * Sluitingsdatum van een vacature als timestamp, of null als die leeg of ongeldig is.
+ * ACF slaat datums op als Ymd; een afwijkend formaat mag geen fatale fout geven.
+ *
+ * @param int|null $post_id Vacature, standaard de huidige post.
+ */
+function esp_vacature_sluitingsdatum( $post_id = null ) {
+  $waarde = get_field( 'sluitingsdatum', $post_id );
+  $datum  = $waarde ? DateTime::createFromFormat( 'Ymd', (string) $waarde, wp_timezone() ) : false;
+  return $datum ? $datum->getTimestamp() : null;
+}
+
+/**
  * Openstaande vacatures: gepubliceerd en sluitingsdatum niet verstreken.
  *
  * @param int $amount Aantal vacatures, 0 voor alle.
@@ -357,11 +369,11 @@ function esp_vacature_structured_data() {
     ),
   );
 
-  $sluitingsdatum = get_field( 'sluitingsdatum', $post_id );
+  $sluitingsdatum = esp_vacature_sluitingsdatum( $post_id );
   if ( $sluitingsdatum ) {
-    $data['validThrough'] = DateTime::createFromFormat( 'Ymd', $sluitingsdatum )->format( 'Y-m-d' ) . 'T23:59:59';
+    $data['validThrough'] = wp_date( 'Y-m-d', $sluitingsdatum ) . 'T23:59:59';
   }
 
-  echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+  echo '<script type="application/ld+json">' . wp_json_encode( $data, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n";
 }
 add_action( 'wp_head', 'esp_vacature_structured_data' );

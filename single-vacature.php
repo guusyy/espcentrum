@@ -6,7 +6,7 @@
         the_post();
         $contact        = esp_get_vacature_contact( get_the_ID() );
         $werken_bij     = esp_get_werken_bij_page();
-        $sluitingsdatum = get_field( 'sluitingsdatum' );
+        $sluitingsdatum = esp_vacature_sluitingsdatum();
 			?>
 
       <main class="flex-grow min-h-full bg-white">
@@ -36,7 +36,7 @@
                     <span class="px-3 py-1 font-semibold rounded text-small bg-gray2 text-secondary">Gennep</span>
                     <?php if ( $sluitingsdatum ) : ?>
                       <span class="px-3 py-1 font-semibold rounded text-small bg-gray2 text-secondary">
-                        Reageren t/m <?php echo esc_html( date_i18n( 'j F Y', DateTime::createFromFormat( 'Ymd', $sluitingsdatum )->getTimestamp() ) ); ?>
+                        Reageren t/m <?php echo esc_html( wp_date( 'j F Y', $sluitingsdatum ) ); ?>
                       </span>
                     <?php endif; ?>
                   </div>
