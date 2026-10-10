@@ -15,7 +15,7 @@
           <h2 class="mb-3 esp-titel"><?php echo esc_html( $attributes['titel'] ); ?></h2>
         <?php endif; ?>
         <?php if ( $attributes['tekst'] ) : ?>
-          <p class="max-w-2xl text-base leading-relaxed text-black"><?php echo esc_html( $attributes['tekst'] ); ?></p>
+          <p class="max-w-2xl text-small leading-relaxed text-black"><?php echo esc_html( $attributes['tekst'] ); ?></p>
         <?php endif; ?>
       </div>
     <?php endif; ?>

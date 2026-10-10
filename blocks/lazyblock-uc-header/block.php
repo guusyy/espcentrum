@@ -30,7 +30,7 @@
         <?php endif; ?>
         <h1 class="mb-4 lg:mb-6 text-5xl font-bold tracking-[-0.02em] esp-balance lg:text-[4.5rem] leading-[0.95] text-brand-sand"><?php echo esc_html( $attributes['titel'] ?: get_the_title() ); ?></h1>
         <?php if ( $attributes['intro'] ) : ?>
-          <p class="max-w-xl mb-6 text-base leading-relaxed lg:mb-10 text-white/90 lg:text-lg lg:leading-relaxed"><?php echo nl2br( esc_html( $attributes['intro'] ) ); ?></p>
+          <p class="max-w-xl mb-6 text-small leading-relaxed lg:mb-10 text-white/90 lg:text-base lg:leading-relaxed"><?php echo nl2br( esc_html( $attributes['intro'] ) ); ?></p>
         <?php endif; ?>
         <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
           <?php if ( $instagram ) : ?>
