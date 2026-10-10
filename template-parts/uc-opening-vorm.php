@@ -42,7 +42,6 @@ $groen      = ! empty( $args['groen'] );
 
   <div class="esp-op-vorm__tekst">
     <?php if ( $groen ) : ?>
-      <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__logo esp-op-vorm__logo--staand' ) ); ?>
       <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__logo esp-op-vorm__logo--liggend', 'liggend' => true ) ); ?>
     <?php endif; ?>
     <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => ! $groen, 'licht' => $groen ) ); ?>
