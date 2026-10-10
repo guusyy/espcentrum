@@ -1,7 +1,8 @@
 <?php
   $variant = $attributes['variant'] ?? 'standaard';
-  if ( in_array( $variant, array( 'vorm', 'boog', 'groei' ), true ) ) {
-    get_template_part( 'template-parts/uc-opening', $variant, array( 'attributes' => $attributes ) );
+  if ( in_array( $variant, array( 'vorm', 'vorm-smal', 'boog', 'groei' ), true ) ) {
+    $smal = 'vorm-smal' === $variant;
+    get_template_part( 'template-parts/uc-opening', $smal ? 'vorm' : $variant, array( 'attributes' => $attributes, 'smal' => $smal ) );
     return;
   }
 

@@ -141,6 +141,16 @@
   .esp-op-vorm__tekst { padding: 6rem 4rem 6rem 3rem; }
 }
 
+/* Smal: foto een derde, tekst twee derde. */
+.esp-op--smal .esp-op-vorm__foto img { object-position: 68% 50%; }
+@media (min-width: 1024px) {
+  .esp-op--smal { grid-template-columns: 36% 1fr; }
+  .esp-op--smal .esp-op-vorm__merk { left: auto; right: -12%; bottom: 6%; width: 44%; }
+  .esp-op--smal .esp-op-vorm__tekst { padding: 6rem 5rem 6rem 6rem; max-width: 62rem; }
+  .esp-op--smal .esp-op-titel { font-size: clamp(4rem, 7.5vw, 7.5rem); }
+  .esp-op--smal .esp-op-intro { max-width: 40rem; }
+}
+
 /* ---------------------------------------------------------------- variant: boog */
 
 .esp-op--boog { color: var(--creme); background: var(--groen); }

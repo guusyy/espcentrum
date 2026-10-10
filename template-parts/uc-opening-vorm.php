@@ -3,13 +3,13 @@
  * Opening "Vorm": foto in een grote organische vorm met het beeldmerk eroverheen, titel groot ernaast.
  * Geïnspireerd op de voorbeeldsite die Eva stuurde (beeld uitgesneden door een merkvorm).
  *
- * @var array $args ['attributes' => blokattributen]
+ * @var array $args ['attributes' => blokattributen, 'smal' => foto een derde in plaats van de helft]
  */
 
 $a          = $args['attributes'];
 $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0;
 ?>
-<section class="esp-op esp-op--vorm">
+<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?>">
   <div class="esp-op-vorm__beeld" aria-hidden="true">
     <svg class="esp-op-vorm__clip" width="0" height="0">
       <clipPath id="esp-op-vorm-clip" clipPathUnits="objectBoundingBox">
@@ -19,7 +19,7 @@ $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0
     <div class="esp-op-vorm__foto">
       <?php
       if ( $afbeelding ) {
-        echo wp_get_attachment_image( $afbeelding, 'full', false, array( 'class' => 'esp-op-cover', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(min-width: 1024px) 55vw, 100vw' ) );
+        echo wp_get_attachment_image( $afbeelding, 'full', false, array( 'class' => 'esp-op-cover', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => empty( $args['smal'] ) ? '(min-width: 1024px) 55vw, 100vw' : '(min-width: 1024px) 36vw, 100vw' ) );
       }
       ?>
     </div>
