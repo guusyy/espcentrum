@@ -118,7 +118,6 @@
 .esp-op-vorm__foto {
   position: absolute;
   inset: 0;
-  clip-path: url(#esp-op-vorm-clip);
   animation: esp-op-vorm-foto 1.3s cubic-bezier(.2, .8, .2, 1) both;
 }
 .esp-op-vorm__foto img { animation: esp-op-zoom 18s ease-out both; }
@@ -187,30 +186,6 @@
   .esp-op--groen .esp-op-vorm__tekst { padding: 3.5rem 7rem 4.5rem 7rem; max-width: 52rem; }
   .esp-op--groen .esp-op-titel { font-size: clamp(3rem, 4.7vw, 5.25rem); }
 }
-
-/* ---------------------------------------------------------------- variant: logovorm */
-
-.esp-op--logo { display: grid; align-items: center; min-height: min(90vh, 820px); }
-.esp-op-logo__beeld { padding: 2.5rem 1.5rem 0; }
-.esp-op-logo__svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, .22));
-  animation: esp-op-logo 1.4s cubic-bezier(.2, .8, .2, 1) both;
-}
-.esp-op-logo__foto { animation: esp-op-zoom 18s ease-out both; transform-origin: center; transform-box: fill-box; }
-.esp-op-logo__lijnen { fill: var(--zand); opacity: .35; mix-blend-mode: soft-light; }
-.esp-op--logo .esp-op-vorm__tekst { padding: 2rem 1.5rem 4rem; }
-
-@media (min-width: 1024px) {
-  .esp-op--logo { grid-template-columns: 50% 1fr; }
-  .esp-op-logo__beeld { padding: 4rem 0 4rem 4rem; }
-  .esp-op--logo .esp-op-vorm__tekst { padding: 3.5rem 6rem 4.5rem 4rem; max-width: 50rem; }
-}
-
-@keyframes esp-op-logo { from { opacity: 0; transform: scale(.9) rotate(-3deg); } to { opacity: 1; transform: none; } }
 
 /* ---------------------------------------------------------------- variant: boog */
 

@@ -1,6 +1,6 @@
 <?php
   $variant = $attributes['variant'] ?? 'standaard';
-  if ( in_array( $variant, array( 'vorm', 'vorm-smal', 'vorm-groen', 'logo', 'boog', 'groei' ), true ) ) {
+  if ( in_array( $variant, array( 'vorm', 'vorm-smal', 'vorm-groen', 'boog', 'groei' ), true ) ) {
     $smal  = 'vorm-smal' === $variant;
     $groen = 'vorm-groen' === $variant;
     get_template_part( 'template-parts/uc-opening', $smal || $groen ? 'vorm' : $variant, array( 'attributes' => $attributes, 'smal' => $smal, 'groen' => $groen ) );
