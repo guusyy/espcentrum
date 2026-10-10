@@ -18,9 +18,9 @@
 function esp_under_construction_teksten() {
   return array(
     'uc-header'     => array(
-      'label'     => 'Onze nieuwe website is in de maak',
+      'label'     => 'Onze nieuwe website is in beweging',
       'titel'     => 'Nieuw gezicht, vertrouwde zorg!',
-      'intro'     => 'Het ESP Centrum heeft een nieuwe uitstraling, en ook aan onze website wordt hard gewerkt. Hier geven we je alvast een voorproefje van ons nieuwe verhaal.',
+      'intro'     => 'ESP Centrum heeft een nieuwe uitstraling, en ook achter de schermen bouwen we hard aan een nieuwe digitale thuisbasis. Hier krijg je alvast een voorproefje van ons nieuwe verhaal: je volgt welke stappen we zetten en hoe we in beweging blijven via social media.',
       'instagram' => 'https://www.instagram.com/espcentrum/',
       'facebook'  => 'https://www.facebook.com/espcentrum/',
     ),
@@ -38,7 +38,7 @@ function esp_under_construction_teksten() {
       ),
     ),
     'uc-quote'      => array(
-      'tekst' => 'Gezondheid is geen eenmalige sprint, maar een duurzame beweging die bij jou past.',
+      'tekst' => 'Gezondheid is geen eenmalige sprint, maar een duurzame beweging die bij jou past. Of je nu werkt aan herstel, meer kracht of een gezondere leefstijl. Ons team staat naast je om samen stappen te zetten waar je de rest van je leven wat aan hebt.',
       'bron'  => '',
     ),
     'tijdlijn'      => array(
@@ -57,26 +57,28 @@ function esp_under_construction_teksten() {
           'status' => 'klaar',
         ),
         array(
-          'moment' => 'Najaar 2026',
+          'moment' => 'November 2026',
+          'titel'  => 'Nieuwe kleding voor het team',
+          'tekst'  => 'Ook ons team krijgt een nieuw jasje en nieuwe kleding.',
+          'status' => 'binnenkort',
+        ),
+        array(
+          'moment' => 'Begin 2027',
           'titel'  => 'Nieuwe website',
           'tekst'  => 'Achter de schermen bouwen we aan een nieuwe website in onze nieuwe huisstijl.',
           'status' => 'bezig',
         ),
-        array(
-          'moment' => 'Binnenkort',
-          'titel'  => 'Nieuwe kleding voor het team',
-          'tekst'  => 'Ook de kleding van het team krijgt het nieuwe jasje.',
-          'status' => 'binnenkort',
-        ),
       ),
     ),
     'uc-uitgelicht' => array(
-      'titel'  => 'Uitgelicht',
-      'tekst'  => 'Ons nieuwe verhaal delen we nu al op Instagram en Facebook.',
-      'aantal' => 6,
+      'titel'  => 'Volg onze beweging alvast via social media',
+      'tekst'  => 'Ontdek wat ons achter de schermen beweegt, ga direct aan de slag met gezondheidstips en vind de begeleiding die bij jou past.',
+      'aantal' => 3,
     ),
     'uc-afsluiter'  => array(
       'tekst' => 'Kom gerust langs, proef de sfeer en ontdek hoe we samen vooruit blijven bewegen!',
+      'knop_tekst' => 'Neem contact op',
+      'knop_link'  => '/contact/',
     ),
   );
 }
@@ -85,57 +87,29 @@ function esp_under_construction_teksten() {
  * Social posts, oudste eerst. Afbeeldingen staan in scripts/under-construction-afbeeldingen.
  */
 function esp_under_construction_posts() {
+  // De drie posts die Eva koos (mail van 7 oktober 2026).
   return array(
-    array(
-      'titel'      => 'Nieuw gezicht, vertrouwde zorg!',
-      'datum'      => '2026-07-16 10:00:00',
-      'afbeelding' => 'nieuwe-uitstraling.jpg',
-      'link'       => 'https://www.instagram.com/espcentrum/',
-      'tekst'      => 'Nieuw gezicht, vertrouwde zorg! ✨
-Vanaf vandaag zie je het meteen zodra je bij ons binnenloopt: het ESP Centrum heeft een gloednieuwe uitstraling! Van de wapperende vlaggen buiten tot het nieuwe logo in onze entreehal.',
-    ),
     array(
       'titel'      => 'Na je vakantie weer terug naar een gezonde routine?',
       'datum'      => '2026-08-24 10:00:00',
       'afbeelding' => 'gezonde-gewoonte.jpg',
-      'link'       => 'https://www.instagram.com/espcentrum/',
+      'link'       => 'https://www.instagram.com/p/DcbmI03jFni/',
       'tekst'      => 'Na je vakantie weer terug naar een gezonde routine? 🥗👟
 Grote veranderingen beginnen vaak klein. Niet met een streng dieet of een complete reset, maar met gewoontes die je echt kunt volhouden.',
     ),
     array(
-      'titel'      => 'Dagelijks 30 minuten bewegen',
-      'datum'      => '2026-09-08 10:00:00',
-      'afbeelding' => 'dagelijks-30-minuten.jpg',
-      'link'       => 'https://www.facebook.com/photo?fbid=1718228100286176&set=a.478601980915467',
-      'tekst'      => 'Wist je dat dagelijks 30 minuten matig intensief bewegen de kans op een beroerte met 20% tot 30% kan verlagen?
-In beweging blijven is een van de belangrijkste manieren om hart- en vaatziekten te voorkomen en van beroertes te herstellen.',
-    ),
-    array(
       'titel'      => 'Ik moet gewoon even doorzetten',
-      'datum'      => '2026-09-15 10:00:00',
+      'datum'      => '2026-09-16 10:00:00',
       'afbeelding' => 'doorzetten.jpg',
-      'link'       => 'https://www.facebook.com/photo?fbid=1726483246127328&set=a.478601980915467',
+      'link'       => 'https://www.instagram.com/p/DdYPwMEMiVr/',
       'tekst'      => '‘Ik moet gewoon even doorzetten.’ Dat hopen veel mensen als ze merken dat hun energie opraakt. Je voelt dat je doorgaat, maar eigenlijk staat je lijf voortdurend in de overlevingsstand.',
     ),
     array(
-      'titel'      => 'Bewegen is pas echt leuk als je ervaart wat het met je doet',
-      'datum'      => '2026-09-23 10:00:00',
-      'afbeelding' => 'duurzame-beweging.jpg',
-      'link'       => 'https://www.facebook.com/photo?fbid=1732549205520732&set=a.478601980915467',
-      'tekst'      => 'Bewegen is pas echt leuk als je ervaart wat het met je doet.
-Vandaag is het #BEACTIVEDAY: de dag waarop heel Nederland in beweging komt.
-Maar ‘gewoon meer bewegen’ omdat het moet? Dat houd je zelden vol.',
-    ),
-    array(
-      'titel'      => 'Het zal wel stress zijn',
-      'datum'      => '2026-09-25 10:00:00',
-      'afbeelding' => 'nieuwe-uitstraling.jpg',
-      'link'       => 'https://www.instagram.com/p/DbIJnwTs_Ie/',
-      'tekst'      => '‘Het zal wel stress zijn…’
-
-Nekpijn heeft invloed op hoe je beweegt. Stress op hoe je herstelt. Vermoeidheid op je energie en motivatie.
-
-Daarom kijken we bij ESP Centrum niet alleen naar de klacht zelf, maar naar het totaalplaatje. Fysiotherapeuten, leefstijlcoaches en trainers stemmen regelmatig samen af om te kijken wat jóu helpt om vooruit te komen.',
+      'titel'      => 'Maak kennis met onze nieuwe diëtist',
+      'datum'      => '2026-10-01 10:00:00',
+      'afbeelding' => 'voorstellen-helene.jpg',
+      'link'       => 'https://www.instagram.com/p/Dd-4ntyMUnE/',
+      'tekst'      => 'Gezondheid draait om de wisselwerking tussen wat je doet, hoe je herstelt en wat er op je bord ligt. Om die aanpak nog completer te maken, kun je vanaf nu bij ESP Centrum ook terecht voor begeleiding op het gebied van voeding & diëtetiek!',
     ),
   );
 }
