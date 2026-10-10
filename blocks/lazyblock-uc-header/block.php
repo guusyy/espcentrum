@@ -23,7 +23,7 @@
           </span>
         </div>
         <?php if ( $attributes['label'] ) : ?>
-          <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-4 lg:mb-6 text-xs font-semibold tracking-wider uppercase font-brand rounded-full bg-white/10 text-brand-sand ring-1 ring-inset ring-white/20">
+          <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-4 lg:mb-6 text-xs font-bold tracking-wider uppercase font-brand rounded-full bg-white/10 text-brand-sand ring-1 ring-inset ring-white/20">
             <span class="w-2 h-2 rounded-full bg-brand-olive animate-pulse" aria-hidden="true"></span>
             <?php echo esc_html( $attributes['label'] ); ?>
           </span>
@@ -34,12 +34,12 @@
         <?php endif; ?>
         <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
           <?php if ( $instagram ) : ?>
-            <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-base font-semibold font-brand transition duration-300 rounded-full shadow-sm sm:px-6 sm:py-3 sm:text-lg bg-brand-cream text-brand-green hover:bg-white hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-olive focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green" href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener">
+            <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-base font-bold font-brand transition duration-300 rounded-full shadow-sm sm:px-6 sm:py-3 sm:text-lg bg-brand-cream text-brand-green hover:bg-white hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-olive focus-visible:ring-offset-2 focus-visible:ring-offset-brand-green" href="<?php echo esc_url( $instagram ); ?>" target="_blank" rel="noopener">
               <?php echo esp_social_icon( 'instagram' ); ?> Instagram
             </a>
           <?php endif; ?>
           <?php if ( $facebook ) : ?>
-            <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-base font-semibold font-brand transition duration-300 rounded-full sm:px-6 sm:py-3 sm:text-lg ring-2 ring-inset ring-brand-cream/60 text-brand-cream hover:bg-brand-cream hover:text-brand-green hover:ring-brand-cream hover:-translate-y-0.5 focus:outline-none focus-visible:ring-brand-olive" href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener">
+            <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-base font-bold font-brand transition duration-300 rounded-full sm:px-6 sm:py-3 sm:text-lg ring-2 ring-inset ring-brand-cream/60 text-brand-cream hover:bg-brand-cream hover:text-brand-green hover:ring-brand-cream hover:-translate-y-0.5 focus:outline-none focus-visible:ring-brand-olive" href="<?php echo esc_url( $facebook ); ?>" target="_blank" rel="noopener">
               <?php echo esp_social_icon( 'facebook' ); ?> Facebook
             </a>
           <?php endif; ?>
@@ -52,7 +52,7 @@
             <svg class="absolute bottom-0 left-0 w-full h-1/4" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
               <path d="M0 120 L0 30 C 90 -10, 210 10, 290 50 C 340 75, 375 70, 400 60 L400 120 Z" fill="#B17421" opacity=".92"/>
             </svg>
-            <span class="absolute text-3xl font-semibold bottom-6 left-8 font-brand text-brand-cream">samen vooruit</span>
+            <span class="absolute text-3xl font-bold bottom-6 left-8 font-brand text-brand-cream">samen vooruit</span>
           </div>
         <?php else : ?>
           <div class="flex flex-col items-start max-w-sm mx-auto text-left" aria-hidden="true">

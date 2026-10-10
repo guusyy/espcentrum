@@ -141,12 +141,12 @@
   box-shadow: 0 30px 60px -30px rgb(91 118 103 / 0.6);
 
   p {
-    @apply max-w-3xl mx-auto text-3xl font-semibold leading-tight lg:text-5xl lg:leading-tight font-brand text-brand-sand tracking-[-0.01em];
+    @apply max-w-3xl mx-auto text-3xl font-medium leading-tight lg:text-5xl lg:leading-tight font-brand text-brand-sand tracking-[-0.01em];
     text-wrap: balance;
   }
 
   cite, figcaption {
-    @apply block mt-8 text-lg not-italic font-semibold tracking-wide text-brand-olive;
+    @apply block mt-8 text-lg not-italic font-bold tracking-wide font-brand text-brand-olive;
   }
 }
 

@@ -25,7 +25,7 @@
               <?php endif; ?>
             </span>
             <?php if ( ! empty( $stap['moment'] ) ) : ?>
-              <span class="block mb-2 text-xs font-semibold tracking-widest uppercase font-brand text-brand-ochre"><?php echo esc_html( $stap['moment'] ); ?></span>
+              <span class="block mb-2 text-xs font-bold tracking-widest uppercase font-brand text-brand-ochre"><?php echo esc_html( $stap['moment'] ); ?></span>
             <?php endif; ?>
             <?php if ( ! empty( $stap['titel'] ) ) : ?>
               <h3 class="mb-2 text-xl font-bold lg:text-2xl text-brand-brown esp-balance"><?php echo esc_html( $stap['titel'] ); ?></h3>
@@ -33,7 +33,7 @@
             <?php if ( ! empty( $stap['tekst'] ) ) : ?>
               <p class="mb-4 leading-relaxed text-black"><?php echo esc_html( $stap['tekst'] ); ?></p>
             <?php endif; ?>
-            <span class="inline-flex items-center px-2.5 py-1 text-xs font-semibold tracking-wider uppercase rounded-full font-brand esp-tijdlijn__label"><?php echo esc_html( $labels[ $status ] ); ?></span>
+            <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold tracking-wider uppercase rounded-full font-brand esp-tijdlijn__label"><?php echo esc_html( $labels[ $status ] ); ?></span>
           </li>
         <?php endforeach; ?>
       </ol>
