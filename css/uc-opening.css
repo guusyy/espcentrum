@@ -103,6 +103,7 @@
 .esp-op-vorm__foto {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   animation: esp-op-vorm-foto 1.3s cubic-bezier(.2, .8, .2, 1) both;
 }
 .esp-op-vorm__foto img { object-position: 40% 20%; animation: esp-op-zoom 18s ease-out both; }
