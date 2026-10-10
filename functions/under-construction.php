@@ -240,8 +240,10 @@ function esp_register_huisstijl_blocks() {
     'control_esp_ucu_aantal' => esp_lzb_control( 'number', 'aantal', 'Aantal posts', array( 'default' => '6', 'min' => '1', 'max' => '12' ) ),
   ) );
 
-  esp_add_huisstijl_block( 'uc-afsluiter', 'Huisstijl: Afsluiter', 'megaphone', 'Groene balk met een afsluitende zin.', array(
-    'control_esp_uca_tekst' => esp_lzb_control( 'text', 'tekst', 'Tekst' ),
+  esp_add_huisstijl_block( 'uc-afsluiter', 'Huisstijl: Afsluiter', 'megaphone', 'Groene balk met een afsluitende zin en een knop.', array(
+    'control_esp_uca_tekst'      => esp_lzb_control( 'text', 'tekst', 'Tekst' ),
+    'control_esp_uca_knop_tekst' => esp_lzb_control( 'text', 'knop_tekst', 'Tekst op de knop', array( 'help' => 'Optioneel, bijvoorbeeld "Neem contact op".' ) ),
+    'control_esp_uca_knop_link'  => esp_lzb_control( 'url', 'knop_link', 'Link van de knop' ),
   ) );
 }
 // Voor Lazy Blocks' eigen registratie op init prioriteit 20.

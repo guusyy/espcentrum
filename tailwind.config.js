@@ -26,7 +26,7 @@ module.exports = {
                 },
             },
             fontFamily: {
-                brand: ['"Barlow Semi Condensed"', 'Karla', 'sans-serif'],
+                brand: ['"Sofia Sans Condensed"', 'Karla', 'sans-serif'],
             },
         },
         screens: {

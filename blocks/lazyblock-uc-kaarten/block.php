@@ -13,7 +13,7 @@
               <h3 class="mb-3 text-2xl font-bold lg:text-3xl esp-balance"><?php echo esc_html( $kaart['titel'] ); ?></h3>
             <?php endif; ?>
             <?php if ( ! empty( $kaart['tekst'] ) ) : ?>
-              <p class="text-lg leading-relaxed text-brand-green/80"><?php echo nl2br( esc_html( $kaart['tekst'] ) ); ?></p>
+              <p class="text-lg leading-relaxed text-black"><?php echo nl2br( esc_html( $kaart['tekst'] ) ); ?></p>
             <?php endif; ?>
           </div>
         <?php endforeach; ?>

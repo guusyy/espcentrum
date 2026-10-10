@@ -7,5 +7,5 @@
       <textPath href="#esp-sticker-cirkel" textLength="236">nieuwe uitstraling • samen vooruit •</textPath>
     </text>
   </svg>
-  <img class="absolute w-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" src="<?php echo esc_url( get_template_directory_uri() . '/assets/image/esp-beeldmerk.png' ); ?>" alt="" width="86" height="60">
+  <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'absolute w-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2', 'fill' => 'verloop' ) ); ?>
 </a>

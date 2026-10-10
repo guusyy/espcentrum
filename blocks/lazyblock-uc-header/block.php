@@ -6,22 +6,16 @@
     return;
   }
 
-  $beeldmerk  = get_template_directory_uri() . '/assets/image/esp-beeldmerk.png';
   $instagram  = $attributes['instagram'];
   $facebook   = $attributes['facebook'];
   $afbeelding = isset( $attributes['afbeelding']['id'] ) ? (int) $attributes['afbeelding']['id'] : 0;
 ?>
-<section class="relative overflow-hidden text-brand-cream bg-brand-green">
-  <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <path d="M-120 120 C 260 40, 620 260, 520 520 S 760 960, 1180 780" fill="none" stroke="#6D8677" stroke-width="120" stroke-linecap="round" opacity=".55"/>
-    <path d="M1560 60 C 1240 120, 1120 380, 1300 640" fill="none" stroke="#6D8677" stroke-width="120" stroke-linecap="round" opacity=".55"/>
-  </svg>
-
+<section class="relative overflow-hidden text-brand-cream bg-brand-green esp-patroon">
   <div class="relative pt-8 pb-20 lg:pt-24 lg:pb-44 container-base">
     <div class="grid items-center grid-cols-1 gap-10 lg:grid-cols-12">
       <div class="col-span-full lg:col-span-7">
         <div class="flex items-center gap-3 mb-6 lg:hidden" aria-hidden="true">
-          <img class="w-auto h-10" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="86" height="60">
+          <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'w-auto h-10', 'fill' => 'verloop' ) ); ?>
           <span class="flex flex-col">
             <span class="text-xl font-bold leading-none text-white">ESP Centrum</span>
             <span class="mt-1 text-base leading-none text-brand-olive">samen vooruit</span>
@@ -33,7 +27,7 @@
             <?php echo esc_html( $attributes['label'] ); ?>
           </span>
         <?php endif; ?>
-        <h1 class="mb-4 lg:mb-6 text-5xl font-bold tracking-[-0.02em] esp-balance lg:text-[4.5rem] lg:leading-[1.02] text-brand-sand"><?php echo esc_html( $attributes['titel'] ?: get_the_title() ); ?></h1>
+        <h1 class="mb-4 lg:mb-6 text-5xl font-bold tracking-[-0.02em] esp-balance lg:text-[4.5rem] leading-[0.95] text-brand-sand"><?php echo esc_html( $attributes['titel'] ?: get_the_title() ); ?></h1>
         <?php if ( $attributes['intro'] ) : ?>
           <p class="max-w-xl mb-6 text-base leading-relaxed lg:mb-10 text-white/90 lg:text-xl lg:leading-relaxed"><?php echo nl2br( esc_html( $attributes['intro'] ) ); ?></p>
         <?php endif; ?>
@@ -61,7 +55,7 @@
           </div>
         <?php else : ?>
           <div class="flex flex-col items-start max-w-sm mx-auto text-left" aria-hidden="true">
-            <img class="w-full max-w-[260px]" src="<?php echo esc_url( $beeldmerk ); ?>" alt="" width="320" height="223">
+            <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'w-full max-w-[260px]', 'fill' => 'verloop' ) ); ?>
             <span class="mt-6 text-5xl font-bold leading-none text-white">ESP Centrum</span>
             <span class="mt-2 text-2xl leading-none text-brand-olive">samen vooruit</span>
           </div>
