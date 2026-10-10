@@ -31,7 +31,7 @@
               <h3 class="mb-2 text-xl font-bold lg:text-2xl text-brand-brown esp-balance"><?php echo esc_html( $stap['titel'] ); ?></h3>
             <?php endif; ?>
             <?php if ( ! empty( $stap['tekst'] ) ) : ?>
-              <p class="mb-4 leading-relaxed text-black"><?php echo esc_html( $stap['tekst'] ); ?></p>
+              <p class="mb-4 text-base leading-relaxed text-black"><?php echo esc_html( $stap['tekst'] ); ?></p>
             <?php endif; ?>
             <span class="inline-flex items-center px-2.5 py-1 text-xs font-bold tracking-wider uppercase rounded-full font-brand esp-tijdlijn__label"><?php echo esc_html( $labels[ $status ] ); ?></span>
           </li>
