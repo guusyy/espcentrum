@@ -122,21 +122,6 @@
 }
 .esp-op-vorm__foto img { animation: esp-op-zoom 18s ease-out both; }
 .esp-op-vorm__clip { position: absolute; }
-.esp-op-vorm__lijn {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  pointer-events: none;
-}
-.esp-op-vorm__lijn path {
-  stroke: var(--olijf);
-  stroke-width: 2px;
-  animation: esp-op-in 1s .8s both;
-}
-.esp-op--groen .esp-op-vorm__lijn path { stroke: var(--zand); opacity: .55; }
 .esp-op-vorm__merk {
   position: absolute;
   left: 5%;
