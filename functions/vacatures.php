@@ -82,7 +82,7 @@ function esp_register_vacature_fields() {
         'type'           => 'date_picker',
         'display_format' => 'd-m-Y',
         'return_format'  => 'Ymd',
-        'instructions'   => 'Optioneel. Na deze datum verdwijnt de vacature automatisch uit de overzichten.',
+        'instructions'   => 'Optioneel. Vul hier de sluitingsdatum in, niet alleen in de tekst: na deze datum verdwijnt de vacature automatisch van de Werken bij-pagina en de homepage, en toont de vacature "Reageren t/m …". De vacaturepagina zelf blijft bereikbaar tot je de vacature depubliceert.',
       ),
       array(
         'key'   => 'field_esp_vacature_contact_naam',
