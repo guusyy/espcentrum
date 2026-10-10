@@ -153,6 +153,7 @@
 
 /* Groen: groen dominant met het logopatroon achterin, zoals de standaard header, en een groter beeldmerk. */
 .esp-op--groen { background-color: var(--groen); }
+.esp-op--groen.esp-patroon { background-image: url("../assets/image/beeldmerk-patroon-zacht.svg"); }
 .esp-op--groen .esp-op-label { color: var(--zand); background: rgba(255, 255, 255, .12); }
 .esp-op--groen .esp-op-vorm__merk { left: auto; right: 4%; bottom: 6%; width: min(52%, 340px); filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .25)); }
 @media (min-width: 1024px) {
