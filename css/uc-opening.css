@@ -174,7 +174,7 @@
   top: -18%;
   width: 150%;
   max-width: none;
-  opacity: .16;
+  opacity: .22;
   pointer-events: none;
 }
 .esp-op-vorm__vlak {
@@ -214,7 +214,8 @@
 @media (min-width: 1024px) {
   .esp-op--groen { grid-template-columns: 42% 1fr; }
   .esp-op--groen .esp-op-vorm__tekst { padding: 5rem 6rem 5rem 6rem; max-width: 52rem; }
-  .esp-op-vorm__vlaktekst { left: 3rem; bottom: 2.6rem; max-width: 26rem; }
+  .esp-op-vorm__vlaktekst { left: 3rem; bottom: 2.4rem; max-width: 16rem; }
+  .esp-op-vorm__vlak { width: 72%; height: 30%; }
   .esp-op-vorm__achtermerk { right: -22rem; width: 64rem; }
   .esp-op-vorm__hoeklogo { display: block; top: 3rem; right: 3.5rem; bottom: auto; width: 10.5rem; }
   .esp-op--groen .esp-op-titel { font-size: clamp(3.5rem, 5.4vw, 6.25rem); }
