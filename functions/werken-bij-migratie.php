@@ -25,17 +25,17 @@ function esp_werken_bij_migratie( $dry_run, $log ) {
   };
 
   /*
-   * Teksten. Vervang de voorbeelden door de definitieve teksten van Eva voor de deploy.
+   * Teksten van Eva (mail van 7 oktober 2026).
    */
   $teksten = array(
-    'intro'                   => 'Samen zorgen we ervoor dat mensen weer met vertrouwen vooruit bewegen. Met een team van 30 specialisten, korte lijnen en een flinke dosis werkplezier. Kom jij ons team versterken?',
+    'intro'                   => 'Werken bij ESP Centrum betekent mensen begeleiden om weer met plezier en vertrouwen vooruit te kunnen bewegen. Ons team bestaat uit 30 therapeuten, fitnessinstructeurs en leefstijlcoaches. Samen combineren we vernieuwende vormen van bewegen en behandelen met gerichte programma’s voor revalidatie en verantwoord trainen. We geloven niet in standaardtrajecten, maar wel in samen positieve doelen stellen. Soms klein, soms uitdagend, maar altijd persoonlijk en met aandacht. Sluit jij je aan bij ons team?',
     'vacatures_titel'         => 'Openstaande vacatures',
     'geen_vacatures_tekst'    => 'Op dit moment hebben we geen openstaande vacatures. Een open sollicitatie is altijd welkom.',
     'open_sollicitatie_titel' => 'Staat jouw vacature er niet tussen?',
-    'open_sollicitatie_tekst' => 'Kom eens langs, proef de sfeer en ontdek hoe we samen vooruit bewegen. We maken graag kennis, ook als er nu geen passende vacature openstaat.',
-    'sollicitatie_tekst'      => 'Enthousiast? Bellen, appen of mailen mag allemaal.',
+    'open_sollicitatie_tekst' => 'Staat jouw ideale vacature er niet tussen? Stuur jouw open sollicitatie, inclusief CV en motivatie, naar ons op. We maken graag kennis. Vertel ons wie je bent, wat je drijft en hoe je denkt een bijdrage te kunnen leveren. We ontdekken graag samen hoe we de beweging vooruit kunnen maken.',
+    'sollicitatie_tekst'      => 'Enthousiast om samen de beweging vooruit te maken? Bel, app of mail ons gerust om meer te horen. Of loop gezellig binnen om de sfeer te proeven. Laat vooraf wel even van je horen, dan zetten we de koffie klaar en maken we graag kennis!',
     'homepage_blok_titel'     => 'Werken bij',
-    'homepage_blok_tekst'     => 'Wil jij mensen met vertrouwen vooruit laten bewegen? Kom ons team van specialisten versterken.',
+    'homepage_blok_tekst'     => 'Wil jij mensen met plezier én vertrouwen vooruit laten bewegen? Kom ons team versterken en maak samen met ons de beweging vooruit!',
     'homepage_blok_knop'      => 'Bekijk onze vacatures',
   );
 
