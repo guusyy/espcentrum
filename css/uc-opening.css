@@ -162,7 +162,7 @@
 @media (min-width: 1024px) {
   .esp-op--groen { grid-template-columns: 50% 1fr; background-position: right -30rem bottom -10rem; }
   .esp-op--groen .esp-op-vorm__merk { right: -19%; bottom: 5%; width: 40%; }
-  .esp-op--groen .esp-op-vorm__tekst { padding: 6rem 4rem 6rem 9rem; }
+  .esp-op--groen .esp-op-vorm__tekst { padding: 3.5rem 4rem 4.5rem 9rem; }
   .esp-op--groen .esp-op-titel { font-size: clamp(3.5rem, 5.6vw, 6rem); }
 }
 
