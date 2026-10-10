@@ -142,7 +142,7 @@
 }
 
 /* Smal: foto een derde, tekst twee derde. */
-.esp-op--smal .esp-op-vorm__foto img { object-position: 68% 50%; }
+.esp-op--smal .esp-op-vorm__foto img { object-position: 42% 50%; }
 @media (min-width: 1024px) {
   .esp-op--smal { grid-template-columns: 36% 1fr; }
   .esp-op--smal .esp-op-vorm__merk { left: auto; right: -12%; bottom: 6%; width: 44%; }
