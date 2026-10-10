@@ -172,6 +172,16 @@ function esp_register_huisstijl_blocks() {
   }
 
   esp_add_huisstijl_block( 'uc-header', 'Huisstijl: Header', 'cover-image', 'Groene header met titel, intro en links naar de socials.', array(
+    'control_esp_uch_variant'   => esp_lzb_control( 'select', 'variant', 'Opening', array(
+      'default' => 'standaard',
+      'help'    => 'Vorm, Boog en Groei gebruiken de afbeelding hieronder; kies een sfeervolle foto.',
+      'choices' => array(
+        array( 'label' => 'Standaard', 'value' => 'standaard' ),
+        array( 'label' => 'Vorm: foto in een merkvorm', 'value' => 'vorm' ),
+        array( 'label' => 'Boog: foto met de groene boog', 'value' => 'boog' ),
+        array( 'label' => 'Groei: beeldmerk bouwt zich op', 'value' => 'groei' ),
+      ),
+    ) ),
     'control_esp_uch_label'     => esp_lzb_control( 'text', 'label', 'Label boven de titel' ),
     'control_esp_uch_titel'     => esp_lzb_control( 'text', 'titel', 'Titel' ),
     'control_esp_uch_intro'     => esp_lzb_control( 'textarea', 'intro', 'Introtekst' ),
@@ -276,6 +286,17 @@ function esp_under_construction_editor_styles() {
   wp_enqueue_style( 'esp-editor-huisstijl', espcentrum_theme_asset( 'css/editor-huisstijl.css' ), array(), wp_get_theme()->get( 'Version' ) );
 }
 add_action( 'enqueue_block_assets', 'esp_under_construction_editor_styles' );
+
+/**
+ * Stijlen voor de openingsvarianten van Huisstijl: Header, op de pagina en in de editor.
+ */
+function esp_under_construction_opening_styles() {
+  if ( is_page_template( 'templates/page-under-construction.php' ) || esp_is_under_construction_editor() ) {
+    wp_enqueue_style( 'esp-uc-opening', espcentrum_theme_asset( 'css/uc-opening.css' ), array(), wp_get_theme()->get( 'Version' ) );
+  }
+}
+add_action( 'wp_enqueue_scripts', 'esp_under_construction_opening_styles' );
+add_action( 'enqueue_block_assets', 'esp_under_construction_opening_styles' );
 
 /**
  * Huisstijlblokken alleen in de blokkenlijst van het under construction-template.

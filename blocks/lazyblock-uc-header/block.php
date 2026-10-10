@@ -1,4 +1,10 @@
 <?php
+  $variant = $attributes['variant'] ?? 'standaard';
+  if ( in_array( $variant, array( 'vorm', 'boog', 'groei' ), true ) ) {
+    get_template_part( 'template-parts/uc-opening', $variant, array( 'attributes' => $attributes ) );
+    return;
+  }
+
   $beeldmerk  = get_template_directory_uri() . '/assets/image/esp-beeldmerk.png';
   $instagram  = $attributes['instagram'];
   $facebook   = $attributes['facebook'];
