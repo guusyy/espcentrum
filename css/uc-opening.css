@@ -155,6 +155,8 @@
 .esp-op--groen { background-color: var(--groen); }
 .esp-op--groen.esp-patroon { background-image: url("../assets/image/beeldmerk-patroon-zacht.svg"); }
 .esp-op--groen .esp-op-vorm__foto img { object-position: 55% 12%; }
+.esp-op-vorm__logo { display: block; width: min(60vw, 15rem); height: auto; margin-bottom: 2rem; animation: esp-op-in .9s .1s both; }
+@media (min-width: 1024px) { .esp-op-vorm__logo { width: 17rem; margin-bottom: 2.5rem; } }
 .esp-op--groen .esp-op-label { color: var(--zand); background: rgba(255, 255, 255, .12); }
 .esp-op--groen .esp-op-vorm__merk { left: auto; right: 4%; bottom: 6%; width: min(52%, 340px); filter: drop-shadow(0 12px 30px rgba(0, 0, 0, .25)); }
 @media (min-width: 1024px) {

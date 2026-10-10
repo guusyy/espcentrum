@@ -4,13 +4,14 @@
  * Geïnspireerd op de voorbeeldsite die Eva stuurde (beeld uitgesneden door een merkvorm).
  *
  * @var array $args ['attributes' => blokattributen, 'smal' => foto een derde in plaats van de helft,
- *                   'groen' => groene achtergrond met het logopatroon, zoals de standaard header]
+ *                   'groen' => groene achtergrond met het logopatroon en het volledige logo, zoals de standaard header]
  */
 
 $a          = $args['attributes'];
 $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0;
+$groen      = ! empty( $args['groen'] );
 ?>
-<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo empty( $args['groen'] ) ? '' : ' esp-op--groen esp-patroon'; ?>">
+<section class="esp-op esp-op--vorm<?php echo empty( $args['smal'] ) ? '' : ' esp-op--smal'; ?><?php echo $groen ? ' esp-op--groen esp-patroon' : ''; ?>">
   <div class="esp-op-vorm__beeld" aria-hidden="true">
     <svg class="esp-op-vorm__clip" width="0" height="0">
       <clipPath id="esp-op-vorm-clip" clipPathUnits="objectBoundingBox">
@@ -24,10 +25,15 @@ $afbeelding = isset( $a['afbeelding']['id'] ) ? (int) $a['afbeelding']['id'] : 0
       }
       ?>
     </div>
-    <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__merk', 'fill' => 'verloop' ) ); ?>
+    <?php if ( ! $groen ) : ?>
+      <?php get_template_part( 'template-parts/esp-beeldmerk', null, array( 'class' => 'esp-op-vorm__merk', 'fill' => 'verloop' ) ); ?>
+    <?php endif; ?>
   </div>
 
   <div class="esp-op-vorm__tekst">
-    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => true, 'licht' => ! empty( $args['groen'] ) ) ); ?>
+    <?php if ( $groen ) : ?>
+      <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'esp-op-vorm__logo' ) ); ?>
+    <?php endif; ?>
+    <?php get_template_part( 'template-parts/uc-opening-tekst', null, array( 'attributes' => $a, 'pil' => ! $groen, 'licht' => $groen ) ); ?>
   </div>
 </section>
