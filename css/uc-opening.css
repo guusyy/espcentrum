@@ -154,18 +154,6 @@
 .esp-op--groen { background-color: var(--groen); }
 @media (min-width: 1024px) { .esp-op--groen { min-height: min(78vh, 760px); } }
 .esp-op--groen .esp-op-vorm__foto img { object-position: 40% 12%; }
-/* Eén groot beeldmerk als achtergrond op het groen, rechts afgesneden. */
-.esp-op-vorm__achtermerk {
-  position: absolute;
-  z-index: 0;
-  right: -18rem;
-  top: 50%;
-  width: 52rem;
-  max-width: none;
-  transform: translateY(-50%);
-  pointer-events: none;
-  animation: esp-op-achtermerk 1.8s .2s cubic-bezier(.2, .8, .2, 1) both;
-}
 /* Over de foto: sterk ingezoomde krullen van het brein uit het beeldmerk, half transparant (zoals in de social posts),
    en een okervlak met het label. */
 .esp-op-vorm__fotomerk {
@@ -176,6 +164,8 @@
   width: 420%;
   max-width: none;
   opacity: .2;
+  transform: rotate(-28deg);
+  transform-origin: 70% 40%;
   pointer-events: none;
 }
 .esp-op-vorm__vlak {
@@ -217,7 +207,6 @@
   .esp-op--groen .esp-op-vorm__tekst { padding: 5rem 6rem 5rem 6rem; max-width: 52rem; }
   .esp-op-vorm__vlaktekst { left: 3rem; bottom: 2.4rem; max-width: 16rem; }
   .esp-op-vorm__vlak { width: 72%; height: 30%; }
-  .esp-op-vorm__achtermerk { right: -22rem; width: 64rem; }
   .esp-op-vorm__hoeklogo { display: block; top: 3rem; right: 3.5rem; bottom: auto; width: 10.5rem; }
   .esp-op--groen .esp-op-titel { font-size: clamp(3.5rem, 5.4vw, 6.25rem); }
 }
@@ -316,7 +305,6 @@
 @keyframes esp-op-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes esp-op-omhoog { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
 @keyframes esp-op-puls { 50% { opacity: .35; } }
-@keyframes esp-op-achtermerk { from { opacity: 0; transform: translateY(-50%) scale(.92) rotate(-4deg); } to { opacity: 1; transform: translateY(-50%); } }
 @keyframes esp-op-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
 @keyframes esp-op-vorm-foto { from { opacity: 0; transform: translateX(-6%) scale(.96); } to { opacity: 1; transform: none; } }
 @keyframes esp-op-merk { from { opacity: 0; transform: translateY(30px) rotate(-6deg) scale(.9); } to { opacity: .95; transform: none; } }
