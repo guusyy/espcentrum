@@ -16,7 +16,7 @@
     <div class="grid items-center grid-cols-1 gap-10 lg:grid-cols-12">
       <div class="col-span-full lg:col-span-7">
         <div class="mb-6 lg:hidden" aria-hidden="true">
-          <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'w-40 h-auto' ) ); ?>
+          <?php get_template_part( 'template-parts/esp-logo', null, array( 'class' => 'w-auto h-12', 'liggend' => true ) ); ?>
         </div>
         <?php if ( $attributes['label'] ) : ?>
           <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-4 lg:mb-6 text-xs font-bold tracking-wider uppercase font-brand rounded-full bg-white/10 text-brand-sand ring-1 ring-inset ring-white/20">
