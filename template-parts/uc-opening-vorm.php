@@ -15,8 +15,11 @@ $groen      = ! empty( $args['groen'] );
   <div class="esp-op-vorm__beeld" aria-hidden="true">
     <svg class="esp-op-vorm__clip" width="0" height="0">
       <clipPath id="esp-op-vorm-clip" clipPathUnits="objectBoundingBox">
-        <path d="M0,0 H0.86 C0.97,0.08 1,0.24 0.93,0.38 C0.86,0.52 0.99,0.64 0.97,0.79 C0.95,0.93 0.82,1 0.66,1 H0 Z"/>
+        <path d="M0,0 H0.8 C0.95,0.16 1,0.42 0.97,0.62 C0.94,0.82 0.86,0.95 0.74,1 H0 Z"/>
       </clipPath>
+    </svg>
+    <svg class="esp-op-vorm__lijn" viewBox="0 0 1 1" preserveAspectRatio="none">
+      <path d="M0.83,0 C0.98,0.16 1.03,0.42 1,0.62 C0.97,0.82 0.89,0.95 0.77,1" fill="none" pathLength="1" vector-effect="non-scaling-stroke"/>
     </svg>
     <div class="esp-op-vorm__foto">
       <?php
