@@ -19,7 +19,8 @@ const ESP_VACATURE_KOP_MAX_LENGTE = 80;
  */
 function esp_vacature_template() {
   $blok = function ( $kopje, $tekst = '' ) {
-    return array( 'lazyblock/vacature-blok', array( 'title' => $kopje, 'text' => $tekst ) );
+    $alinea = $tekst ? array( 'content' => $tekst ) : array( 'placeholder' => 'Typ of plak hier de tekst. Een lijstje maak je met een streepje (-) en een spatie.' );
+    return array( 'lazyblock/vacature-blok', array( 'title' => $kopje ), array( array( 'core/paragraph', $alinea ) ) );
   };
 
   return array(
@@ -27,7 +28,7 @@ function esp_vacature_template() {
       'className'   => 'vacature-intro',
       'placeholder' => 'Intro: wie zoeken jullie, en waarom is dit een mooie plek om te werken?',
     ) ),
-    $blok( 'Wat ons bijzonder maakt', '<p>Gezondheid gaat verder dan klachten verhelpen. Bij ESP Centrum combineren we daarom zorg en preventie met vernieuwende manieren van bewegen en behandelen, voor alle leeftijden en doelgroepen. Denk aan fysiotherapie, leefstijlcoaching en specifieke programma’s zoals revalidatie of verantwoord trainen. Geen standaardtraject, maar samen met collega’s positieve doelen stellen die bij onze cliënten passen: soms klein, soms uitdagend. Altijd persoonlijk en met aandacht.</p>' ),
+    $blok( 'Wat ons bijzonder maakt', 'Gezondheid gaat verder dan klachten verhelpen. Bij ESP Centrum combineren we daarom zorg en preventie met vernieuwende manieren van bewegen en behandelen, voor alle leeftijden en doelgroepen. Denk aan fysiotherapie, leefstijlcoaching en specifieke programma’s zoals revalidatie of verantwoord trainen. Geen standaardtraject, maar samen met collega’s positieve doelen stellen die bij onze cliënten passen: soms klein, soms uitdagend. Altijd persoonlijk en met aandacht.' ),
     $blok( 'Wat jou bijzonder maakt' ),
     $blok( 'Hoe ziet jouw werkdag eruit?' ),
     array( 'lazyblock/citaat', array() ),
@@ -84,7 +85,7 @@ function esp_register_vacature_blokken() {
 
   $blok( 'vacature-blok', 'Vacatureblok', 'text-page', 'Kopje met tekst. De achtergrond wisselt vanzelf tussen wit en grijs.', array(
     'control_esp_vacblok_title' => $control( 'text', 'title', 'Kopje' ),
-    'control_esp_vacblok_text'  => $control( 'classic_editor', 'text', 'Tekst', array(
+    'control_esp_vacblok_text'  => $control( 'inner_blocks', 'text', 'Tekst', array(
       'help' => 'Een blok zonder tekst wordt niet getoond.',
     ) ),
   ), array( 'vacature' ) );
@@ -274,7 +275,7 @@ function esp_vacature_naar_blokken( $post_content ) {
 
   $sluit = function () use ( &$huidig, &$citaten, &$blokken, &$aantal ) {
     if ( $huidig ) {
-      $blokken[] = esp_vacature_lazyblock( 'vacature-blok', $huidig );
+      $blokken[] = esp_vacature_lazyblock( 'vacature-blok', array( 'title' => $huidig['title'] ), $huidig['binnen'] );
       $aantal['blokken']++;
     }
     foreach ( $citaten as $citaat ) {
@@ -288,7 +289,7 @@ function esp_vacature_naar_blokken( $post_content ) {
   foreach ( $items as $item ) {
     if ( 'kop' === $item[0] ) {
       $sluit();
-      $huidig = array( 'title' => $item[1], 'text' => '' );
+      $huidig = array( 'title' => $item[1], 'binnen' => array() );
       continue;
     }
 
@@ -300,20 +301,16 @@ function esp_vacature_naar_blokken( $post_content ) {
     }
 
     if ( $huidig ) {
-      $huidig['text'] .= $node->ownerDocument->saveHTML( $node ) . "\n";
+      $blok = esp_vacature_als_blok( $node );
+      if ( $blok ) {
+        $huidig['binnen'][] = $blok;
+      }
       continue;
     }
 
     $tekst = preg_replace( '/\s+/u', ' ', esp_vacature_tekst( $node->textContent ) );
     if ( '' !== $tekst ) {
-      $p         = '<p class="vacature-intro">' . esc_html( $tekst ) . '</p>';
-      $blokken[] = array(
-        'blockName'    => 'core/paragraph',
-        'attrs'        => array( 'className' => 'vacature-intro' ),
-        'innerBlocks'  => array(),
-        'innerHTML'    => $p,
-        'innerContent' => array( $p ),
-      );
+      $blokken[] = esp_vacature_core_blok( 'paragraph', '<p class="vacature-intro">' . esc_html( $tekst ) . '</p>', array( 'className' => 'vacature-intro' ) );
     }
   }
   $sluit();
@@ -322,19 +319,100 @@ function esp_vacature_naar_blokken( $post_content ) {
 }
 
 /**
- * @param string $naam  Naam van het Lazy Block zonder "lazyblock/".
- * @param array  $attrs Waarden van de velden.
+ * @param string $naam   Naam van het Lazy Block zonder "lazyblock/".
+ * @param array  $attrs  Waarden van de velden.
+ * @param array  $binnen Binnenblokken (het veld Tekst van het Vacatureblok).
  */
-function esp_vacature_lazyblock( $naam, array $attrs ) {
+function esp_vacature_lazyblock( $naam, array $attrs, array $binnen = array() ) {
   $id = substr( md5( uniqid( $naam, true ) ), 0, 8 );
 
   return array(
     'blockName'    => 'lazyblock/' . $naam,
     'attrs'        => $attrs + array( 'blockId' => $id, 'blockUniqueClass' => 'lazyblock-' . $naam . '-' . $id ),
-    'innerBlocks'  => array(),
+    'innerBlocks'  => $binnen,
     'innerHTML'    => '',
-    'innerContent' => array(),
+    'innerContent' => array_fill( 0, count( $binnen ), null ),
   );
+}
+
+/**
+ * Een core-blok, met de binnenblokken (zoals de punten van een lijst) tussen $voor en $na.
+ */
+function esp_vacature_core_blok( $naam, $voor, array $attrs = array(), array $binnen = array(), $na = '' ) {
+  return array(
+    'blockName'    => 'core/' . $naam,
+    'attrs'        => $attrs,
+    'innerBlocks'  => $binnen,
+    'innerHTML'    => $voor . $na,
+    'innerContent' => $binnen ? array_merge( array( $voor ), array_fill( 0, count( $binnen ), null ), array( $na ) ) : array( $voor . $na ),
+  );
+}
+
+/**
+ * Zet een alinea, lijst of kopje uit een oude vacature om naar een blok voor de blokeditor.
+ *
+ * @param DOMNode $node Element.
+ * @return array|null Blok, of null als het leeg is.
+ */
+function esp_vacature_als_blok( DOMNode $node ) {
+  $tag = strtolower( $node->nodeName );
+
+  if ( 'ul' === $tag || 'ol' === $tag ) {
+    $punten = array();
+    foreach ( $node->childNodes as $li ) {
+      if ( 'li' !== strtolower( $li->nodeName ) ) {
+        continue;
+      }
+      $sublijsten = array();
+      $inhoud     = '';
+      foreach ( $li->childNodes as $kind ) {
+        $kindtag = strtolower( $kind->nodeName );
+        if ( 'ul' === $kindtag || 'ol' === $kindtag ) {
+          $sub = esp_vacature_als_blok( $kind );
+          if ( $sub ) {
+            $sublijsten[] = $sub;
+          }
+        } else {
+          $inhoud .= $kind->ownerDocument->saveHTML( $kind );
+        }
+      }
+      $punten[] = esp_vacature_core_blok( 'list-item', '<li>' . esp_vacature_inline_html( $inhoud ), array(), $sublijsten, '</li>' );
+    }
+    if ( ! $punten ) {
+      return null;
+    }
+    $attrs = 'ol' === $tag ? array( 'ordered' => true ) : array();
+    return esp_vacature_core_blok( 'list', "<$tag class=\"wp-block-list\">", $attrs, $punten, "</$tag>" );
+  }
+
+  $inhoud = '';
+  foreach ( $node->childNodes as $kind ) {
+    $inhoud .= $kind->ownerDocument->saveHTML( $kind );
+  }
+  $inhoud = esp_vacature_inline_html( $inhoud );
+  if ( '' === trim( wp_strip_all_tags( $inhoud ) ) ) {
+    return null;
+  }
+
+  if ( preg_match( '/^h([3-6])$/', $tag, $niveau ) ) {
+    return esp_vacature_core_blok( 'heading', "<h{$niveau[1]} class=\"wp-block-heading\">$inhoud</h{$niveau[1]}>", array( 'level' => (int) $niveau[1] ) );
+  }
+
+  return esp_vacature_core_blok( 'paragraph', "<p>$inhoud</p>" );
+}
+
+/**
+ * Alleen vet, cursief, links en regeleinden overhouden; de rest (spans en stijlen uit Word) weg.
+ */
+function esp_vacature_inline_html( $html ) {
+  $html = wp_kses( $html, array(
+    'strong' => array(), 'b' => array(), 'em' => array(), 'i' => array(), 'br' => array(),
+    'a'      => array( 'href' => true, 'target' => true, 'rel' => true ),
+  ) );
+  $html = preg_replace( array( '#<(/?)b>#', '#<(/?)i>#' ), array( '<$1strong>', '<$1em>' ), $html );
+  $html = preg_replace( '/\s+/u', ' ', str_replace( "\xc2\xa0", ' ', $html ) );
+
+  return trim( preg_replace( '#^(\s*<br\s*/?>)+|(<br\s*/?>\s*)+$#i', '', trim( $html ) ) );
 }
 
 /**
