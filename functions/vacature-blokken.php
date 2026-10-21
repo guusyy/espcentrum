@@ -102,6 +102,28 @@ function esp_register_vacature_blokken() {
 add_action( 'init', 'esp_register_vacature_blokken', 10 );
 
 /**
+ * In een vacature alleen de blokken die daar horen, zodat bijvoorbeeld "Hier heb ik pijn" niet in
+ * de lijst staat. Andersom staan de vacatureblokken alleen bij vacatures (condition hierboven).
+ *
+ * @param bool|string[]           $toegestaan Toegestane blokken.
+ * @param WP_Block_Editor_Context $context    Editor.
+ */
+function esp_vacature_toegestane_blokken( $toegestaan, $context ) {
+  if ( empty( $context->post ) || 'vacature' !== $context->post->post_type ) {
+    return $toegestaan;
+  }
+
+  return array(
+    'lazyblock/vacature-blok',
+    'lazyblock/vacature-citaat',
+    'core/paragraph',
+    'core/list',
+    'core/list-item',
+  );
+}
+add_filter( 'allowed_block_types_all', 'esp_vacature_toegestane_blokken', 10, 2 );
+
+/**
  * Volgnummer van het volgende Vacatureblok op de pagina, voor de wisseling wit/grijs.
  *
  * @param bool $opnieuw Begin weer bij 0, aan het begin van elke the_content.
