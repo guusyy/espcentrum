@@ -82,6 +82,38 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/*-- VACATURE: tekst in blokken, om en om wit en grijs (zie functions/vacature-blokken.php) --*/
+
+.entry-content {
+    .vacature-intro {
+        @apply text-lg2 mb-6;
+    }
+
+    .vacature-blok {
+        @apply py-8 md:py-10 px-5 md:px-8 -mx-5 md:-mx-8 rounded;
+
+        h2 {
+            @apply mt-0;
+        }
+
+        > :last-child {
+            @apply mb-0;
+        }
+    }
+
+    .vacature-blok--grijs {
+        @apply bg-gray2;
+    }
+
+    .vacature-citaat {
+        @apply border-l-4 border-primary pl-5 text-lg2 not-italic;
+
+        b, strong, i, em {
+            @apply font-normal not-italic;
+        }
+    }
+}
+
 /*-- ARTICLE --*/
 
 .entry-header .entry-title {

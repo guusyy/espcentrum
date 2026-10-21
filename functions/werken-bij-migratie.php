@@ -33,7 +33,7 @@ function esp_werken_bij_migratie( $dry_run, $log ) {
     'geen_vacatures_tekst'    => 'Op dit moment hebben we geen openstaande vacatures. Een open sollicitatie is altijd welkom.',
     'open_sollicitatie_titel' => 'Staat jouw vacature er niet tussen?',
     'open_sollicitatie_tekst' => 'Staat jouw ideale vacature er niet tussen? Stuur jouw open sollicitatie, inclusief CV en motivatie, naar ons op. We maken graag kennis. Vertel ons wie je bent, wat je drijft en hoe je denkt een bijdrage te kunnen leveren. We ontdekken graag samen hoe we de beweging vooruit kunnen maken.',
-    'sollicitatie_tekst'      => 'Enthousiast om samen de beweging vooruit te maken? Bel, app of mail ons gerust om meer te horen. Of loop gezellig binnen om de sfeer te proeven. Laat vooraf wel even van je horen, dan zetten we de koffie klaar en maken we graag kennis!',
+    'sollicitatie_tekst'      => 'Klaar om samen de beweging vooruit te maken? Bel, app of mail ons vrijblijvend om kennis te maken. Kom je liever persoonlijk langs om de sfeer te proeven? Laat het ons weten, dan zetten we de koffie voor je klaar!',
     'homepage_blok_titel'     => 'Werken bij',
     'homepage_blok_tekst'     => 'Wil jij mensen met plezier én vertrouwen vooruit laten bewegen? Kom ons team versterken en maak samen met ons de beweging vooruit!',
     'homepage_blok_knop'      => 'Bekijk onze vacatures',
