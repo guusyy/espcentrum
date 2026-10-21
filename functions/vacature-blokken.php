@@ -1,36 +1,146 @@
 <?php
 /**
- * Deel vacatureteksten op in blokken, met om en om een witte en een grijze achtergrond.
+ * Vacatureteksten in blokken, met om en om een witte en een grijze achtergrond.
  *
- * Vacatures worden vaak uit Word of Google Docs geplakt: de kopjes zijn dan vetgedrukte regels
- * midden in een alinea in plaats van echte kopjes. Deze filter herkent zowel echte kopjes (Kop 2)
- * als zulke vetgedrukte regels, maakt er een h2 van en begint bij elk kopje een nieuw blok.
- * De tekst in de database blijft ongewijzigd.
+ * In de blokeditor bestaat een vacature uit een intro (gewone alinea), Vacatureblokken (kopje en
+ * tekst) en hier en daar een Citaat collega. Een nieuwe vacature begint met de vaste blokken.
+ *
+ * Oudere vacatures zijn uit Word geplakt: de kopjes zijn daar vetgedrukte regels midden in een
+ * alinea. De Werken bij-migratie zet die om naar blokken (esp_vacature_naar_blokken); vacatures
+ * die nog niet zijn omgezet worden bij het tonen op dezelfde manier opgedeeld (esp_vacature_blokken).
  */
 
 // Langere vetgedrukte regels zijn een benadrukte zin, geen kopje.
 const ESP_VACATURE_KOP_MAX_LENGTE = 80;
 
 /**
- * @param string $content Inhoud van de vacature, na wpautop.
+ * Blokken waarmee een nieuwe vacature begint. Lege blokken worden niet getoond, dus wat Eva niet
+ * nodig heeft mag ze leeg laten of weghalen.
  */
-function esp_vacature_blokken( $content ) {
-  if ( ! is_singular( 'vacature' ) || ! class_exists( 'DOMDocument' ) || '' === trim( $content ) ) {
-    return $content;
+function esp_vacature_template() {
+  $blok = function ( $kopje, $tekst = '' ) {
+    return array( 'lazyblock/vacature-blok', array( 'title' => $kopje, 'text' => $tekst ) );
+  };
+
+  return array(
+    array( 'core/paragraph', array(
+      'className'   => 'vacature-intro',
+      'placeholder' => 'Intro: wie zoeken jullie, en waarom is dit een mooie plek om te werken?',
+    ) ),
+    $blok( 'Wat ons bijzonder maakt', '<p>Gezondheid gaat verder dan klachten verhelpen. Bij ESP Centrum combineren we daarom zorg en preventie met vernieuwende manieren van bewegen en behandelen, voor alle leeftijden en doelgroepen. Denk aan fysiotherapie, leefstijlcoaching en specifieke programma’s zoals revalidatie of verantwoord trainen. Geen standaardtraject, maar samen met collega’s positieve doelen stellen die bij onze cliënten passen: soms klein, soms uitdagend. Altijd persoonlijk en met aandacht.</p>' ),
+    $blok( 'Wat jou bijzonder maakt' ),
+    $blok( 'Hoe ziet jouw werkdag eruit?' ),
+    array( 'lazyblock/vacature-citaat', array() ),
+    $blok( 'Wat breng je mee?' ),
+    $blok( 'Wat bieden we?' ),
+    $blok( 'Het team' ),
+    $blok( 'Enthousiast?' ),
+  );
+}
+
+/**
+ * Vacatureblok en Citaat collega, in code zodat ze met het theme mee naar productie gaan.
+ * Templates in blocks/lazyblock-vacature-blok/ en blocks/lazyblock-vacature-citaat/.
+ */
+function esp_register_vacature_blokken() {
+  if ( ! function_exists( 'lazyblocks' ) ) {
+    return;
+  }
+
+  $control = function ( $type, $name, $label, $extra = array() ) {
+    return array_merge( array(
+      'type' => $type, 'name' => $name, 'default' => '', 'label' => $label,
+      'help' => '', 'child_of' => '', 'placement' => 'content', 'width' => '100',
+      'hide_if_not_selected' => 'false', 'save_in_meta' => 'false', 'save_in_meta_name' => '',
+      'required' => 'false', 'placeholder' => '', 'characters_limit' => '',
+    ), $extra );
+  };
+  $blok = function ( $id, $title, $icon, $description, $controls ) {
+    lazyblocks()->add_block( array(
+      'id'          => $id,
+      'title'       => $title,
+      'icon'        => 'dashicons dashicons-' . $icon,
+      'keywords'    => array( 'vacature', 'werken bij' ),
+      'slug'        => 'lazyblock/' . $id,
+      'description' => $description,
+      'category'    => 'text',
+      'supports'    => array(
+        'customClassName' => false,
+        'anchor'          => false,
+        'align'           => array(),
+        'html'            => false,
+        'multiple'        => true,
+        'inserter'        => true,
+      ),
+      'controls'    => $controls,
+      'code'        => array(
+        'output_method' => 'template',
+        'show_preview'  => 'never',
+        'single_output' => false,
+      ),
+      'condition'   => array( 'vacature' ),
+    ) );
+  };
+
+  $blok( 'vacature-blok', 'Vacatureblok', 'text-page', 'Kopje met tekst. De achtergrond wisselt vanzelf tussen wit en grijs.', array(
+    'control_esp_vacblok_title' => $control( 'text', 'title', 'Kopje' ),
+    'control_esp_vacblok_text'  => $control( 'classic_editor', 'text', 'Tekst', array(
+      'help' => 'Een blok zonder tekst wordt niet getoond.',
+    ) ),
+  ) );
+
+  $blok( 'vacature-citaat', 'Citaat collega', 'format-quote', 'Een uitspraak van een collega, tussen de blokken in.', array(
+    'control_esp_vaccitaat_quote' => $control( 'textarea', 'quote', 'Citaat', array(
+      'help' => 'Zonder aanhalingstekens, die komen er vanzelf omheen. Leeg laten = niet tonen.',
+    ) ),
+    'control_esp_vaccitaat_naam'  => $control( 'text', 'naam', 'Naam', array(
+      'placeholder' => 'Bijvoorbeeld: Martijn, fysiotherapeut',
+    ) ),
+  ) );
+}
+// Voor Lazy Blocks' eigen registratie op init prioriteit 20.
+add_action( 'init', 'esp_register_vacature_blokken', 10 );
+
+/**
+ * Volgnummer van het volgende Vacatureblok op de pagina, voor de wisseling wit/grijs.
+ *
+ * @param bool $opnieuw Begin weer bij 0, aan het begin van elke the_content.
+ */
+function esp_vacature_blok_nummer( $opnieuw = false ) {
+  static $nummer = 0;
+  if ( $opnieuw ) {
+    $nummer = 0;
+    return 0;
+  }
+  return $nummer++;
+}
+add_filter( 'the_content', function ( $content ) {
+  esp_vacature_blok_nummer( true );
+  return $content;
+}, 1 );
+
+/**
+ * Deel de HTML van een vacature op in kopjes en losse blokken (alinea's, lijsten, citaten).
+ *
+ * @param string $html HTML, na wpautop.
+ * @return array|null Items: array( 'kop', tekst ) of array( 'blok', DOMElement ); null als er geen kopjes zijn.
+ */
+function esp_vacature_items( $html ) {
+  if ( ! class_exists( 'DOMDocument' ) || '' === trim( $html ) ) {
+    return null;
   }
 
   $doc = new DOMDocument();
   libxml_use_internal_errors( true );
-  $doc->loadHTML( '<?xml encoding="utf-8"?><div>' . $content . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+  $doc->loadHTML( '<?xml encoding="utf-8"?><div>' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
   libxml_clear_errors();
   $root = $doc->getElementsByTagName( 'div' )->item( 0 );
   if ( ! $root ) {
-    return $content;
+    return null;
   }
 
   esp_vacature_vet_opschonen( $doc );
 
-  // Alle inhoud als een rij van kopjes en losse blokken (alinea's, lijsten, citaten).
   $items  = array();
   $inline = array();
   foreach ( iterator_to_array( $root->childNodes ) as $node ) {
@@ -58,11 +168,25 @@ function esp_vacature_blokken( $content ) {
     $items = array_merge( $items, esp_vacature_regels( $doc, $inline ) );
   }
 
-  if ( ! in_array( 'kop', array_column( $items, 0 ), true ) ) {
+  return in_array( 'kop', array_column( $items, 0 ), true ) ? $items : null;
+}
+
+/**
+ * Toon een vacature die nog niet in blokken staat toch in blokken.
+ *
+ * @param string $content Inhoud van de vacature, na wpautop.
+ */
+function esp_vacature_blokken( $content ) {
+  if ( ! is_singular( 'vacature' ) || has_block( 'lazyblock/vacature-blok', get_the_ID() ) ) {
     return $content;
   }
 
-  // Groepeer: alles voor het eerste kopje is de intro, daarna een blok per kopje.
+  $items = esp_vacature_items( $content );
+  if ( ! $items ) {
+    return $content;
+  }
+
+  // Alles voor het eerste kopje is de intro, daarna een blok per kopje.
   $uit     = new DOMDocument( '1.0', 'UTF-8' );
   $intro   = null;
   $blok    = null;
@@ -101,6 +225,116 @@ function esp_vacature_blokken( $content ) {
   return $html;
 }
 add_filter( 'the_content', 'esp_vacature_blokken', 25 );
+
+/**
+ * Zet de tekst van een oude vacature om naar blokken: de intro als alinea, een Vacatureblok per
+ * kopje en een Citaat collega voor elk citaat (direct na het blok waarin het stond).
+ *
+ * @param string $post_content Inhoud uit de database.
+ * @return array|null Array( 'content' => blokken, 'blokken' => aantal, 'citaten' => aantal ), of null
+ *                    als de vacature al in blokken staat of geen kopjes heeft.
+ */
+function esp_vacature_naar_blokken( $post_content ) {
+  if ( has_block( 'lazyblock/vacature-blok', $post_content ) ) {
+    return null;
+  }
+
+  $items = esp_vacature_items( has_blocks( $post_content ) ? do_blocks( $post_content ) : wpautop( $post_content ) );
+  if ( ! $items ) {
+    return null;
+  }
+
+  $blokken = array();
+  $huidig  = null;
+  $citaten = array();
+  $aantal  = array( 'blokken' => 0, 'citaten' => 0 );
+
+  $sluit = function () use ( &$huidig, &$citaten, &$blokken, &$aantal ) {
+    if ( $huidig ) {
+      $blokken[] = esp_vacature_lazyblock( 'vacature-blok', $huidig );
+      $aantal['blokken']++;
+    }
+    foreach ( $citaten as $citaat ) {
+      $blokken[] = esp_vacature_lazyblock( 'vacature-citaat', $citaat );
+      $aantal['citaten']++;
+    }
+    $huidig  = null;
+    $citaten = array();
+  };
+
+  foreach ( $items as $item ) {
+    if ( 'kop' === $item[0] ) {
+      $sluit();
+      $huidig = array( 'title' => $item[1], 'text' => '' );
+      continue;
+    }
+
+    $node   = $item[1];
+    $citaat = esp_vacature_als_citaat( $node );
+    if ( $citaat ) {
+      $citaten[] = $citaat;
+      continue;
+    }
+
+    if ( $huidig ) {
+      $huidig['text'] .= $node->ownerDocument->saveHTML( $node ) . "\n";
+      continue;
+    }
+
+    $tekst = preg_replace( '/\s+/u', ' ', esp_vacature_tekst( $node->textContent ) );
+    if ( '' !== $tekst ) {
+      $p         = '<p class="vacature-intro">' . esc_html( $tekst ) . '</p>';
+      $blokken[] = array(
+        'blockName'    => 'core/paragraph',
+        'attrs'        => array( 'className' => 'vacature-intro' ),
+        'innerBlocks'  => array(),
+        'innerHTML'    => $p,
+        'innerContent' => array( $p ),
+      );
+    }
+  }
+  $sluit();
+
+  return array( 'content' => serialize_blocks( $blokken ) ) + $aantal;
+}
+
+/**
+ * @param string $naam  Naam van het Lazy Block zonder "lazyblock/".
+ * @param array  $attrs Waarden van de velden.
+ */
+function esp_vacature_lazyblock( $naam, array $attrs ) {
+  $id = substr( md5( uniqid( $naam, true ) ), 0, 8 );
+
+  return array(
+    'blockName'    => 'lazyblock/' . $naam,
+    'attrs'        => $attrs + array( 'blockId' => $id, 'blockUniqueClass' => 'lazyblock-' . $naam . '-' . $id ),
+    'innerBlocks'  => array(),
+    'innerHTML'    => '',
+    'innerContent' => array(),
+  );
+}
+
+/**
+ * Herken een citaat van een collega, zoals “We zijn een hecht team.” (Martijn).
+ *
+ * @param DOMNode $node Alinea of blockquote.
+ * @return array|null Array( 'quote' => tekst, 'naam' => naam ).
+ */
+function esp_vacature_als_citaat( DOMNode $node ) {
+  $tag = strtolower( $node->nodeName );
+  if ( 'blockquote' !== $tag && ! ( 'p' === $tag && 'vacature-citaat' === $node->getAttribute( 'class' ) ) ) {
+    return null;
+  }
+
+  $tekst = preg_replace( '/\s+/u', ' ', esp_vacature_tekst( $node->textContent ) );
+  $naam  = '';
+  if ( preg_match( '/^(.*?)\s*\(([^()]{2,60})\)$/u', $tekst, $match ) ) {
+    $tekst = $match[1];
+    $naam  = $match[2];
+  }
+
+  return array( 'quote' => preg_replace( '/^["“„\s]+|["”\s]+$/u', '', $tekst ), 'naam' => $naam );
+}
 
 /**
  * Haal regeleinden uit vetgedrukte stukken (zoals "<b>Kopje<br></b>") en gooi lege vetgedrukte

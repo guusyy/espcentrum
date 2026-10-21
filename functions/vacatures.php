@@ -20,7 +20,9 @@ function esp_register_vacature_post_type() {
       'public'       => true,
       'has_archive'  => false,
       'rewrite'      => array( 'slug' => 'werken-bij', 'with_front' => false ),
-      'show_in_rest' => false,
+      // Blokeditor met vaste startblokken, zie functions/vacature-blokken.php.
+      'show_in_rest' => true,
+      'template'     => esp_vacature_template(),
       'menu_icon'    => 'dashicons-id-alt',
       'menu_position'=> 21,
     )

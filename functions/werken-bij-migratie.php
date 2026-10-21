@@ -7,7 +7,8 @@
  *   wp eval-file wp-content/themes/espcentrum/scripts/migrate-werken-bij.php dry-run
  *
  * De migratie leest de actuele staat van de site en kan veilig vaker gedraaid worden:
- * wat al gemigreerd is wordt overgeslagen. Bestaande teksten worden niet aangepast.
+ * wat al gemigreerd is wordt overgeslagen. Bestaande teksten worden niet aangepast, behalve dat
+ * vacatureteksten in blokken worden gezet (de oude tekst blijft als revisie bewaard).
  * Verwijder dit bestand en de require in functions.php na de migratie op productie.
  */
 
@@ -130,6 +131,44 @@ function esp_werken_bij_migratie( $dry_run, $log ) {
         'post_type' => 'vacature',
         'post_name' => sanitize_title( preg_replace( '/^Vacature:\s*/i', '', $post->post_title ) ),
       ) );
+    }
+  }
+
+  /*
+   * 1b. Vacatureteksten naar blokken (Vacatureblok en Citaat collega), zodat ze in de blokeditor
+   * per blok te bewerken zijn. De oude tekst blijft bewaard als revisie.
+   */
+  $log( "\n-- Vacatureteksten naar blokken --" );
+
+  $te_omzetten = array_merge( array_keys( $vacatures ), wp_list_pluck( $onbekend, 'ID' ) );
+  $te_omzetten = array_merge( $te_omzetten, get_posts( array(
+    'post_type'      => 'vacature',
+    'post_status'    => 'any',
+    'posts_per_page' => -1,
+    'fields'         => 'ids',
+    'post__not_in'   => $te_omzetten,
+  ) ) );
+
+  foreach ( $te_omzetten as $id ) {
+    $post = get_post( $id );
+    if ( ! $post || ( 'vacature' !== $post->post_type && 0 !== mb_stripos( $post->post_title, 'Vacature' ) ) ) {
+      continue;
+    }
+
+    if ( has_block( 'lazyblock/vacature-blok', $post->post_content ) ) {
+      $melding( "Staat al in blokken: {$post->post_title}" );
+      continue;
+    }
+
+    $omgezet = esp_vacature_naar_blokken( $post->post_content );
+    if ( ! $omgezet ) {
+      $waarschuwingen[] = "Geen kopjes gevonden in {$post->post_title} (ID $id): tekst niet naar blokken omgezet, zet die zelf in blokken.";
+      continue;
+    }
+
+    $melding( "Naar blokken: {$post->post_title} ({$omgezet['blokken']} blokken, {$omgezet['citaten']} citaten)" );
+    if ( ! $dry_run ) {
+      wp_update_post( wp_slash( array( 'ID' => $id, 'post_content' => $omgezet['content'] ) ) );
     }
   }
 
