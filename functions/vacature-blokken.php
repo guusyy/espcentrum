@@ -3,7 +3,7 @@
  * Vacatureteksten in blokken, met om en om een witte en een grijze achtergrond.
  *
  * In de blokeditor bestaat een vacature uit een intro (gewone alinea), Vacatureblokken (kopje en
- * tekst) en hier en daar een Citaat collega. Een nieuwe vacature begint met de vaste blokken.
+ * tekst) en hier en daar een Citaat. Een nieuwe vacature begint met de vaste blokken.
  *
  * Oudere vacatures zijn uit Word geplakt: de kopjes zijn daar vetgedrukte regels midden in een
  * alinea. De Werken bij-migratie zet die om naar blokken (esp_vacature_naar_blokken); vacatures
@@ -30,7 +30,7 @@ function esp_vacature_template() {
     $blok( 'Wat ons bijzonder maakt', '<p>Gezondheid gaat verder dan klachten verhelpen. Bij ESP Centrum combineren we daarom zorg en preventie met vernieuwende manieren van bewegen en behandelen, voor alle leeftijden en doelgroepen. Denk aan fysiotherapie, leefstijlcoaching en specifieke programma’s zoals revalidatie of verantwoord trainen. Geen standaardtraject, maar samen met collega’s positieve doelen stellen die bij onze cliënten passen: soms klein, soms uitdagend. Altijd persoonlijk en met aandacht.</p>' ),
     $blok( 'Wat jou bijzonder maakt' ),
     $blok( 'Hoe ziet jouw werkdag eruit?' ),
-    array( 'lazyblock/vacature-citaat', array() ),
+    array( 'lazyblock/citaat', array() ),
     $blok( 'Wat breng je mee?' ),
     $blok( 'Wat bieden we?' ),
     $blok( 'Het team' ),
@@ -39,8 +39,8 @@ function esp_vacature_template() {
 }
 
 /**
- * Vacatureblok en Citaat collega, in code zodat ze met het theme mee naar productie gaan.
- * Templates in blocks/lazyblock-vacature-blok/ en blocks/lazyblock-vacature-citaat/.
+ * Vacatureblok en Citaat, in code zodat ze met het theme mee naar productie gaan.
+ * Templates in blocks/lazyblock-vacature-blok/ en blocks/lazyblock-citaat/.
  */
 function esp_register_vacature_blokken() {
   if ( ! function_exists( 'lazyblocks' ) ) {
@@ -55,7 +55,7 @@ function esp_register_vacature_blokken() {
       'required' => 'false', 'placeholder' => '', 'characters_limit' => '',
     ), $extra );
   };
-  $blok = function ( $id, $title, $icon, $description, $controls ) {
+  $blok = function ( $id, $title, $icon, $description, $controls, $post_types ) {
     lazyblocks()->add_block( array(
       'id'          => $id,
       'title'       => $title,
@@ -78,7 +78,7 @@ function esp_register_vacature_blokken() {
         'show_preview'  => 'never',
         'single_output' => false,
       ),
-      'condition'   => array( 'vacature' ),
+      'condition'   => $post_types,
     ) );
   };
 
@@ -87,16 +87,17 @@ function esp_register_vacature_blokken() {
     'control_esp_vacblok_text'  => $control( 'classic_editor', 'text', 'Tekst', array(
       'help' => 'Een blok zonder tekst wordt niet getoond.',
     ) ),
-  ) );
+  ), array( 'vacature' ) );
 
-  $blok( 'vacature-citaat', 'Citaat collega', 'format-quote', 'Een uitspraak van een collega, tussen de blokken in.', array(
+  // Citaat is ook op gewone pagina's te gebruiken.
+  $blok( 'citaat', 'Citaat', 'format-quote', 'Een uitspraak van bijvoorbeeld een collega of cliënt, met naam eronder.', array(
     'control_esp_vaccitaat_quote' => $control( 'textarea', 'quote', 'Citaat', array(
       'help' => 'Zonder aanhalingstekens, die komen er vanzelf omheen. Leeg laten = niet tonen.',
     ) ),
     'control_esp_vaccitaat_naam'  => $control( 'text', 'naam', 'Naam', array(
       'placeholder' => 'Bijvoorbeeld: Martijn, fysiotherapeut',
     ) ),
-  ) );
+  ), array() );
 }
 // Voor Lazy Blocks' eigen registratie op init prioriteit 20.
 add_action( 'init', 'esp_register_vacature_blokken', 10 );
@@ -115,7 +116,7 @@ function esp_vacature_toegestane_blokken( $toegestaan, $context ) {
 
   return array(
     'lazyblock/vacature-blok',
-    'lazyblock/vacature-citaat',
+    'lazyblock/citaat',
     'core/paragraph',
     'core/list',
     'core/list-item',
@@ -250,7 +251,7 @@ add_filter( 'the_content', 'esp_vacature_blokken', 25 );
 
 /**
  * Zet de tekst van een oude vacature om naar blokken: de intro als alinea, een Vacatureblok per
- * kopje en een Citaat collega voor elk citaat (direct na het blok waarin het stond).
+ * kopje en een Citaat voor elk citaat (direct na het blok waarin het stond).
  *
  * @param string $post_content Inhoud uit de database.
  * @return array|null Array( 'content' => blokken, 'blokken' => aantal, 'citaten' => aantal ), of null
@@ -277,7 +278,7 @@ function esp_vacature_naar_blokken( $post_content ) {
       $aantal['blokken']++;
     }
     foreach ( $citaten as $citaat ) {
-      $blokken[] = esp_vacature_lazyblock( 'vacature-citaat', $citaat );
+      $blokken[] = esp_vacature_lazyblock( 'citaat', $citaat );
       $aantal['citaten']++;
     }
     $huidig  = null;
@@ -344,7 +345,7 @@ function esp_vacature_lazyblock( $naam, array $attrs ) {
  */
 function esp_vacature_als_citaat( DOMNode $node ) {
   $tag = strtolower( $node->nodeName );
-  if ( 'blockquote' !== $tag && ! ( 'p' === $tag && 'vacature-citaat' === $node->getAttribute( 'class' ) ) ) {
+  if ( 'blockquote' !== $tag && ! ( 'p' === $tag && 'citaat' === $node->getAttribute( 'class' ) ) ) {
     return null;
   }
 
@@ -577,7 +578,7 @@ function esp_vacature_bouw_alinea( DOMDocument $doc, array $stukjes ) {
 
   // Een alinea die helemaal cursief is en met een aanhalingsteken begint, is een citaat van een collega.
   if ( $citaat && preg_match( '/^["“„]/u', esp_vacature_tekst( $p->textContent ) ) ) {
-    $p->setAttribute( 'class', 'vacature-citaat' );
+    $p->setAttribute( 'class', 'citaat' );
   }
 
   return $p;

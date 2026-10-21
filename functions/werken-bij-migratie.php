@@ -135,7 +135,7 @@ function esp_werken_bij_migratie( $dry_run, $log ) {
   }
 
   /*
-   * 1b. Vacatureteksten naar blokken (Vacatureblok en Citaat collega), zodat ze in de blokeditor
+   * 1b. Vacatureteksten naar blokken (Vacatureblok en Citaat), zodat ze in de blokeditor
    * per blok te bewerken zijn. De oude tekst blijft bewaard als revisie.
    */
   $log( "\n-- Vacatureteksten naar blokken --" );

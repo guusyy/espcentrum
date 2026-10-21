@@ -4,8 +4,8 @@ if ( '' === $citaat ) {
   return;
 }
 ?>
-<figure class="vacature-citaat-blok">
-  <blockquote class="vacature-citaat">
+<figure class="citaat-blok">
+  <blockquote class="citaat">
     <p>“<?php echo esc_html( $citaat ); ?>”</p>
   </blockquote>
   <?php if ( $attributes['naam'] ) : ?>

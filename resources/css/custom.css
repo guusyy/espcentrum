@@ -104,26 +104,6 @@ h1, h2, h3, h4, h5, h6 {
     .vacature-blok--grijs {
         @apply bg-gray2;
     }
-
-    .vacature-citaat {
-        @apply border-l-4 border-primary pl-5 text-lg2 not-italic;
-
-        b, strong, i, em {
-            @apply font-normal not-italic;
-        }
-
-        p {
-            @apply mb-0;
-        }
-    }
-
-    .vacature-citaat-blok {
-        @apply my-10;
-
-        figcaption {
-            @apply mt-2 pl-6 font-semibold text-small text-secondary;
-        }
-    }
 }
 
 /*-- ARTICLE --*/
@@ -349,4 +329,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .lazyloaded {
   transition: all 400ms !important;
+}
+
+/*-- CITAAT (blok Citaat, ook voor citaten in oude vacatureteksten). Na ARTICLE, zodat het voorgaat op .entry-content p en figure --*/
+
+.citaat {
+    @apply border-l-4 border-primary pl-5 text-lg2 not-italic;
+
+    b, strong, i, em {
+        @apply font-normal not-italic;
+    }
+
+    p {
+        @apply mb-0;
+    }
+}
+
+figure.citaat-blok {
+    @apply my-10;
+
+    figcaption {
+        @apply mt-2 pl-6 font-semibold text-small text-secondary;
+    }
 }
