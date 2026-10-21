@@ -63,7 +63,7 @@ function esp_vacature_blokken( $content ) {
   }
 
   // Groepeer: alles voor het eerste kopje is de intro, daarna een blok per kopje.
-  $uit     = new DOMDocument();
+  $uit     = new DOMDocument( '1.0', 'UTF-8' );
   $intro   = null;
   $blok    = null;
   $nummer  = 0;
