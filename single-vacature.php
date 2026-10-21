@@ -47,7 +47,7 @@
               </div>
 
               <aside class="col-span-full lg:col-span-4 lg:mt-[8.5rem]">
-                <div class="p-6 border-2 rounded shadow lg:sticky lg:top-8 border-gray2 bg-gray1">
+                <div class="p-6 border-2 rounded shadow lg:sticky lg:top-36 border-gray2 bg-gray1">
                   <h2 class="mb-2 text-xl font-bold">Solliciteren</h2>
                   <?php if ( esp_get_werken_bij_field( 'sollicitatie_tekst' ) ) : ?>
                     <p class="mb-4"><?php echo esc_html( esp_get_werken_bij_field( 'sollicitatie_tekst' ) ); ?></p>
