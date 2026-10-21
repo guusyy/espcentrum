@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .vacature-blok {
-        @apply py-8 md:py-10 px-5 md:px-8 -mx-5 md:-mx-8 rounded;
+        @apply py-8 md:py-10 px-5 md:px-8 -mx-5 md:-mx-8 lg:mr-0 rounded;
 
         h2 {
             @apply mt-0;
