@@ -242,6 +242,10 @@ function create_posttype() {
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
 
+require_once get_template_directory() . '/functions/vacatures.php';
+require_once get_template_directory() . '/functions/vacature-blokken.php';
+// Eenmalig, verwijderen na de migratie op productie.
+require_once get_template_directory() . '/functions/werken-bij-migratie.php';
 require_once get_template_directory() . '/functions/under-construction.php';
 // Eenmalig, verwijderen na het vullen op productie.
 require_once get_template_directory() . '/functions/under-construction-seed.php';
