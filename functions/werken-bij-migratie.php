@@ -173,6 +173,23 @@ function esp_werken_bij_migratie( $dry_run, $log ) {
   }
 
   /*
+   * 1c. Vacatureblokken van de eerste versie: tekst als alinea's en lijsten in het blok zetten.
+   */
+  $log( "\n-- Tekst in de Vacatureblokken --" );
+
+  foreach ( get_posts( array( 'post_type' => 'vacature', 'post_status' => 'any', 'posts_per_page' => -1 ) ) as $post ) {
+    $omgezet = esp_vacature_tekst_naar_binnenblokken( $post->post_content );
+    if ( ! $omgezet ) {
+      $melding( "Tekst staat al in de blokken: {$post->post_title}" );
+      continue;
+    }
+    $melding( "Tekst in de blokken zetten: {$post->post_title} ({$omgezet['blokken']} blokken)" );
+    if ( ! $dry_run ) {
+      wp_update_post( wp_slash( array( 'ID' => $post->ID, 'post_content' => $omgezet['content'] ) ) );
+    }
+  }
+
+  /*
    * 2. Dubbele vacaturepagina's naar concept en uit het menu.
    */
   $log( "\n-- Dubbele vacaturepagina's --" );

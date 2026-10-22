@@ -319,6 +319,57 @@ function esp_vacature_naar_blokken( $post_content ) {
 }
 
 /**
+ * Vacatureblokken van de eerste versie hadden hun tekst als HTML in het veld "text"; nu staat de tekst
+ * als alinea's en lijsten in het blok zelf. Lazy Blocks overschrijft "text" met de binnenblokken, dus
+ * bewaar de oude tekst eerst, zodat zo'n blok tot de omzetting gewoon getoond wordt.
+ */
+add_filter( 'lzb/block_render/attributes', function ( $attributes, $content, $block ) {
+  if ( isset( $block['slug'] ) && 'lazyblock/vacature-blok' === $block['slug'] && ! empty( $attributes['text'] ) && is_string( $attributes['text'] ) ) {
+    $attributes['tekst_oud'] = $attributes['text'];
+  }
+  return $attributes;
+}, 5, 3 );
+
+/**
+ * Zet de tekst van Vacatureblokken van de eerste versie om naar alinea's en lijsten in het blok.
+ *
+ * @param string $post_content Inhoud uit de database.
+ * @return array|null Array( 'content' => blokken, 'blokken' => aantal omgezet ), of null als er niets om te zetten is.
+ */
+function esp_vacature_tekst_naar_binnenblokken( $post_content ) {
+  $blokken = parse_blocks( $post_content );
+  $aantal  = 0;
+
+  foreach ( $blokken as &$blok ) {
+    if ( 'lazyblock/vacature-blok' !== $blok['blockName'] || empty( $blok['attrs']['text'] ) || ! empty( $blok['innerBlocks'] ) ) {
+      continue;
+    }
+
+    $doc = new DOMDocument();
+    libxml_use_internal_errors( true );
+    $doc->loadHTML( '<?xml encoding="utf-8"?><div>' . wpautop( $blok['attrs']['text'] ) . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+    libxml_clear_errors();
+
+    $binnen = array();
+    foreach ( iterator_to_array( $doc->getElementsByTagName( 'div' )->item( 0 )->childNodes ) as $node ) {
+      $omgezet = XML_ELEMENT_NODE === $node->nodeType ? esp_vacature_als_blok( $node ) : null;
+      if ( $omgezet ) {
+        $binnen[] = $omgezet;
+      }
+    }
+
+    unset( $blok['attrs']['text'] );
+    $blok['innerBlocks']  = $binnen;
+    $blok['innerHTML']    = '';
+    $blok['innerContent'] = array_fill( 0, count( $binnen ), null );
+    $aantal++;
+  }
+  unset( $blok );
+
+  return $aantal ? array( 'content' => serialize_blocks( $blokken ), 'blokken' => $aantal ) : null;
+}
+
+/**
  * @param string $naam   Naam van het Lazy Block zonder "lazyblock/".
  * @param array  $attrs  Waarden van de velden.
  * @param array  $binnen Binnenblokken (het veld Tekst van het Vacatureblok).
