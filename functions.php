@@ -332,6 +332,15 @@ function my_remove_admin_menus() {
 }
 add_action( 'admin_init', 'my_remove_admin_menus' );
 
+// Disable comments and pingbacks everywhere; the site doesn't show them and only spambots post
+add_filter( 'comments_open', '__return_false', 20 );
+add_filter( 'pings_open', '__return_false', 20 );
+add_filter( 'comments_array', '__return_empty_array', 10 );
+add_filter( 'xmlrpc_methods', function ( $methods ) {
+	unset( $methods['pingback.ping'] );
+	return $methods;
+} );
+
 // add editor the privilege to edit theme
 
 // get the the role object
