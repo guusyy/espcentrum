@@ -244,13 +244,9 @@ add_action( 'init', 'create_posttype' );
 
 require_once get_template_directory() . '/functions/vacatures.php';
 require_once get_template_directory() . '/functions/vacature-blokken.php';
-// Eenmalig, verwijderen na de migratie op productie.
-require_once get_template_directory() . '/functions/werken-bij-migratie.php';
 require_once get_template_directory() . '/functions/under-construction.php';
 // Eenmalig, verwijderen na het vullen op productie.
 require_once get_template_directory() . '/functions/under-construction-seed.php';
-// Eenmalig, verwijderen na de opschoning op productie.
-require_once get_template_directory() . '/functions/opschoning-2026-10.php';
 
 function register_custom_widget_areas() {
   register_sidebar(
