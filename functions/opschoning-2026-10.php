@@ -22,13 +22,13 @@ function esp_opschoning_2026_10() {
   }
 
   $bericht = get_post( 527 );
-  if ( $bericht && 'post' === $bericht->post_type && 'publish' === $bericht->post_status && '' === trim( $bericht->post_content ) ) {
+  if ( $bericht && 'post' === $bericht->post_type && 'manuele-therapie' === $bericht->post_name && 'publish' === $bericht->post_status && '' === trim( $bericht->post_content ) ) {
     wp_trash_post( 527 );
   }
 
   // Specialisaties linkt rechtstreeks naar het oude adres.
   $specialisaties = get_post( 47 );
-  if ( $specialisaties && false !== strpos( $specialisaties->post_content, 'maneuel-therapie-luuk' ) ) {
+  if ( $specialisaties && 'specialisaties' === $specialisaties->post_name && false !== strpos( $specialisaties->post_content, 'maneuel-therapie-luuk' ) ) {
     wp_update_post( array(
       'ID'           => 47,
       'post_content' => wp_slash( str_replace( 'specialisaties/maneuel-therapie-luuk/', 'specialisaties/manuele-therapie/', $specialisaties->post_content ) ),
