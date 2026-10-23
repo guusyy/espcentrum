@@ -249,6 +249,8 @@ require_once get_template_directory() . '/functions/werken-bij-migratie.php';
 require_once get_template_directory() . '/functions/under-construction.php';
 // Eenmalig, verwijderen na het vullen op productie.
 require_once get_template_directory() . '/functions/under-construction-seed.php';
+// Eenmalig, verwijderen na de opschoning op productie.
+require_once get_template_directory() . '/functions/opschoning-2026-10.php';
 
 function register_custom_widget_areas() {
   register_sidebar(
@@ -342,6 +344,27 @@ add_filter( 'comments_array', '__return_empty_array', 10 );
 add_filter( 'xmlrpc_methods', function ( $methods ) {
 	unset( $methods['pingback.ping'] );
 	return $methods;
+} );
+
+// Hide usernames from visitors: no users endpoint, author archives or author sitemap
+add_filter( 'rest_endpoints', function ( $endpoints ) {
+	if ( ! is_user_logged_in() ) {
+		unset( $endpoints['/wp/v2/users'], $endpoints['/wp/v2/users/(?P<id>[\d]+)'] );
+	}
+	return $endpoints;
+} );
+// Priority 1: before redirect_canonical sends ?author=1 to /author/<username>/
+add_action( 'template_redirect', function () {
+	if ( is_author() ) {
+		wp_safe_redirect( home_url( '/' ), 301 );
+		exit;
+	}
+}, 1 );
+add_filter( 'option_wpseo_titles', function ( $titles ) {
+	if ( is_array( $titles ) ) {
+		$titles['disable-author'] = true;
+	}
+	return $titles;
 } );
 
 // add editor the privilege to edit theme
